@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "withers_overhaul:block/larch_log_top",
+    "side": "withers_overhaul:block/larch_log"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "values": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    "minecraft:forest",
+    "minecraft:flower_forest",
+    "minecraft:meadow",
+    "minecraft:dark_forest",
+    "withers_overhaul:cloud_forest",
+    "minecraft:windswept_hills",
+    "minecraft:windswept_forest",
+    "minecraft:stony_peaks",
+    "withers_overhaul:marsh",
+    "minecraft:beach",
+    "minecraft:river",
+    "minecraft:ocean",
+    "minecraft:deep_ocean",
+    "minecraft:mushroom_fields",
+    "withers_overhaul:echoing_hollow",
+    "minecraft:deep_dark",
+    "withers_overhaul:crystal_caves"
+  ]
+}

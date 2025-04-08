@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gabbro_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:gabbro_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "withers_overhaul:gabbro_brick_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gabbro_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "withers_overhaul:gabbro_brick_wall"
+    ]
+  }
+}

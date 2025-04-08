@@ -1,0 +1,117 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 7,
+    "targets": [
+      {
+        "state": {
+          "Name": "minecraft:lapis_ore"
+        },
+        "target": {
+          "block": "minecraft:stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "minecraft:deepslate_lapis_ore"
+        },
+        "target": {
+          "block": "minecraft:deepslate",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:granite_lapis_ore"
+        },
+        "target": {
+          "block": "minecraft:granite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:diorite_lapis_ore"
+        },
+        "target": {
+          "block": "minecraft:diorite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:andesite_lapis_ore"
+        },
+        "target": {
+          "block": "minecraft:andesite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:tuff_lapis_ore"
+        },
+        "target": {
+          "block": "minecraft:tuff",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:gneiss_lapis_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:gneiss",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:shale_lapis_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:shale",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:limestone_lapis_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:limestone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:marble_lapis_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:marble",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:gabbro_lapis_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:gabbro",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:phyllite_lapis_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:phyllite",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

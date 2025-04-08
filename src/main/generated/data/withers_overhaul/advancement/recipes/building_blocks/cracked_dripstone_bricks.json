@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dripstone_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:dripstone_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "withers_overhaul:cracked_dripstone_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dripstone_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "withers_overhaul:cracked_dripstone_bricks"
+    ]
+  }
+}

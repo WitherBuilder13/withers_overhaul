@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "withers_overhaul:block/polished_gneiss_pressure_plate"
+    },
+    "powered=true": {
+      "model": "withers_overhaul:block/polished_gneiss_pressure_plate_down"
+    }
+  }
+}

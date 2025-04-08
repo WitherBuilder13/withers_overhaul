@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "withers_overhaul:block/larch_sapling"
+  }
+}

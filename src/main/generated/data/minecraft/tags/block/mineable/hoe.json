@@ -1,0 +1,11 @@
+{
+  "values": [
+    {
+      "id": "#minecraft:leaves",
+      "required": false
+    },
+    "withers_overhaul:peat_block",
+    "withers_overhaul:peat",
+    "withers_overhaul:purple_petals"
+  ]
+}

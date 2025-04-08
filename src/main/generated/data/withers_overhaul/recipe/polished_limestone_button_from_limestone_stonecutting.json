@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:limestone",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:polished_limestone_button"
+  }
+}

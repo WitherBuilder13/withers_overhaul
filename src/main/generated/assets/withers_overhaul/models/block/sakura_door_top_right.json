@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "withers_overhaul:block/sakura_door_bottom",
+    "top": "withers_overhaul:block/sakura_door_top"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "values": [
+    "minecraft:desert",
+    "withers_overhaul:desert_fields",
+    "withers_overhaul:grasslands",
+    "minecraft:sparse_jungle",
+    "minecraft:jungle",
+    "withers_overhaul:tropical_rainforest",
+    "minecraft:badlands",
+    "minecraft:wooded_badlands",
+    "minecraft:bamboo_jungle",
+    "withers_overhaul:monsoon_rainforest",
+    "minecraft:eroded_badlands",
+    "withers_overhaul:tangled_tropics",
+    "withers_overhaul:volcanic_peaks",
+    "withers_overhaul:oasis",
+    "minecraft:mangrove_swamp",
+    "withers_overhaul:tropical_beach",
+    "withers_overhaul:sandy_river",
+    "withers_overhaul:lush_river",
+    "minecraft:warm_ocean",
+    "withers_overhaul:deep_warm_ocean",
+    "withers_overhaul:lagoon",
+    "withers_overhaul:buried_dunes",
+    "minecraft:lush_caves",
+    "withers_overhaul:fossilized_depths",
+    "withers_overhaul:molten_undergrowth",
+    "withers_overhaul:crystal_caves_warm"
+  ]
+}

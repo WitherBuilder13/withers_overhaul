@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "withers_overhaul:block/polished_gneiss_slab"
+    },
+    "type=double": {
+      "model": "withers_overhaul:block/polished_gneiss"
+    },
+    "type=top": {
+      "model": "withers_overhaul:block/polished_gneiss_slab_top"
+    }
+  }
+}

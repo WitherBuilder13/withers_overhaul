@@ -1,0 +1,117 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 20,
+    "targets": [
+      {
+        "state": {
+          "Name": "minecraft:copper_ore"
+        },
+        "target": {
+          "block": "minecraft:stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "minecraft:deepslate_copper_ore"
+        },
+        "target": {
+          "block": "minecraft:deepslate",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:granite_copper_ore"
+        },
+        "target": {
+          "block": "minecraft:granite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:diorite_copper_ore"
+        },
+        "target": {
+          "block": "minecraft:diorite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:andesite_copper_ore"
+        },
+        "target": {
+          "block": "minecraft:andesite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:tuff_copper_ore"
+        },
+        "target": {
+          "block": "minecraft:tuff",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:gneiss_copper_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:gneiss",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:shale_copper_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:shale",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:limestone_copper_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:limestone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:marble_copper_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:marble",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:gabbro_copper_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:gabbro",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "withers_overhaul:phyllite_copper_ore"
+        },
+        "target": {
+          "block": "withers_overhaul:phyllite",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

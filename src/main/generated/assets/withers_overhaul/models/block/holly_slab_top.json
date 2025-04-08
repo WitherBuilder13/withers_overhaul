@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "withers_overhaul:block/holly_planks",
+    "side": "withers_overhaul:block/holly_planks",
+    "top": "withers_overhaul:block/holly_planks"
+  }
+}

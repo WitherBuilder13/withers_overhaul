@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "withers_overhaul:frosted_sand",
+    "T": "withers_overhaul:frosted_sandstone"
+  },
+  "pattern": [
+    "ST",
+    "TS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "withers_overhaul:rough_frosted_sandstone"
+  }
+}

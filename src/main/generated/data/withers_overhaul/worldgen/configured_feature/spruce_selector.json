@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": "minecraft:spruce_checked",
+    "feature_true": "minecraft:pine_checked"
+  }
+}

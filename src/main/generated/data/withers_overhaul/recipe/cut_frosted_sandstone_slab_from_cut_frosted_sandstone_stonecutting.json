@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:cut_frosted_sandstone",
+  "result": {
+    "count": 2,
+    "id": "withers_overhaul:cut_frosted_sandstone_slab"
+  }
+}

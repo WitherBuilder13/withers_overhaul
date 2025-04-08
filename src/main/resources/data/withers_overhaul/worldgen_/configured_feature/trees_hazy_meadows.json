@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "withers_overhaul:teak",
+    "features": [
+      {
+        "feature": "withers_overhaul:elm",
+        "chance": 0.4
+      }
+    ]
+  }
+}

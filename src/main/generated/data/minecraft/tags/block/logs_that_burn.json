@@ -1,0 +1,124 @@
+{
+  "values": [
+    {
+      "id": "#withers_overhaul:maple_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:poplar_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:beech_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:hickory_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:walnut_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:chestnut_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:cedar_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:redwood_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:fir_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:hemlock_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:holly_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:pine_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:larch_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:aspen_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:kapok_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:mahogany_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:eucalyptus_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:baobab_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:palo_verde_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:joshua_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:juniper_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:palm_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:ebony_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:teak_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:elm_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:willow_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:cypress_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:sakura_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:magnolia_logs",
+      "required": false
+    },
+    {
+      "id": "#withers_overhaul:jacaranda_logs",
+      "required": false
+    }
+  ]
+}

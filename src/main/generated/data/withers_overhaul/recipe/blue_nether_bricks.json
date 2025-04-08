@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "N": "minecraft:nether_brick",
+    "W": "withers_overhaul:warped_wart"
+  },
+  "pattern": [
+    "WN",
+    "NW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:blue_nether_bricks"
+  }
+}

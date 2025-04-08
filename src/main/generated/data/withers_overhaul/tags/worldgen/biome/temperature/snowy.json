@@ -1,0 +1,23 @@
+{
+  "values": [
+    "minecraft:ice_spikes",
+    "minecraft:snowy_plains",
+    "minecraft:snowy_taiga",
+    "withers_overhaul:old_growth_snowy_taiga",
+    "withers_overhaul:winter_wonderland",
+    "minecraft:snowy_slopes",
+    "minecraft:grove",
+    "withers_overhaul:glacial_sweep",
+    "withers_overhaul:frosted_tangle",
+    "minecraft:frozen_peaks",
+    "withers_overhaul:frozen_wetlands",
+    "minecraft:snowy_beach",
+    "minecraft:frozen_river",
+    "minecraft:frozen_ocean",
+    "minecraft:deep_frozen_ocean",
+    "withers_overhaul:shimmering_wastelands",
+    "withers_overhaul:frostburn_caves",
+    "withers_overhaul:subzero_abyss",
+    "withers_overhaul:crystal_caves_frozen"
+  ]
+}

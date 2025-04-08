@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "withers_overhaul:chestnut_planks"
+  ],
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:chestnut_button"
+  }
+}

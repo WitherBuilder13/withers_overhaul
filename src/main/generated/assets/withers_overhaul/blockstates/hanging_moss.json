@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "tip=false": {
+      "model": "withers_overhaul:block/hanging_moss"
+    },
+    "tip=true": {
+      "model": "withers_overhaul:block/hanging_moss_tip"
+    }
+  }
+}

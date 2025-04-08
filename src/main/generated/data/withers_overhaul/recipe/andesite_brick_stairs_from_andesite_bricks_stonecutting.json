@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:andesite_bricks",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:andesite_brick_stairs"
+  }
+}

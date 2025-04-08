@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "withers_overhaul:block/gourd_top",
+    "side": "withers_overhaul:block/gourd_side"
+  }
+}

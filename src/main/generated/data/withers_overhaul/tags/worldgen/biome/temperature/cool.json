@@ -1,0 +1,25 @@
+{
+  "values": [
+    "withers_overhaul:prairie",
+    "withers_overhaul:pine_taiga",
+    "minecraft:old_growth_pine_taiga",
+    "minecraft:birch_forest",
+    "minecraft:old_growth_birch_forest",
+    "withers_overhaul:steppe",
+    "withers_overhaul:montane_woodlands",
+    "withers_overhaul:aspen_grove",
+    "minecraft:pale_garden",
+    "minecraft:windswept_gravelly_hills",
+    "withers_overhaul:golden_sweep",
+    "minecraft:jagged_peaks",
+    "minecraft:swamp",
+    "minecraft:stony_shore",
+    "withers_overhaul:cool_river",
+    "withers_overhaul:cool_ocean",
+    "withers_overhaul:deep_cool_ocean",
+    "withers_overhaul:forgotten_isles",
+    "minecraft:dripstone_caves",
+    "withers_overhaul:toxic_wastes",
+    "withers_overhaul:crystal_caves_cool"
+  ]
+}

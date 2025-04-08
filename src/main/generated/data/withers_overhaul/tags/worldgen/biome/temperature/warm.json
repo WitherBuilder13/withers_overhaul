@@ -1,0 +1,28 @@
+{
+  "values": [
+    "minecraft:savanna",
+    "withers_overhaul:shrublands",
+    "withers_overhaul:lavender_fields",
+    "withers_overhaul:enchanted_forest",
+    "minecraft:savanna_plateau",
+    "minecraft:cherry_grove",
+    "minecraft:windswept_savanna",
+    "withers_overhaul:whimsy",
+    "withers_overhaul:sunbaked_peaks",
+    "withers_overhaul:painted_peaks",
+    "withers_overhaul:salt_marsh",
+    "withers_overhaul:bayou",
+    "withers_overhaul:sunbaked_shore",
+    "withers_overhaul:painted_beach",
+    "withers_overhaul:salt_river",
+    "withers_overhaul:lukewarm_river",
+    "minecraft:lukewarm_ocean",
+    "minecraft:deep_lukewarm_ocean",
+    "withers_overhaul:rainbow_fields",
+    "withers_overhaul:phantom_hollow",
+    "withers_overhaul:pastel_caverns",
+    "withers_overhaul:spectral_abyss",
+    "withers_overhaul:muted_tunnels",
+    "withers_overhaul:crystal_caves_lukewarm"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "withers_overhaul:block/polished_limestone"
+  }
+}

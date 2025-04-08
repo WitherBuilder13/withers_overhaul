@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "withers_overhaul:block/magnolia_slab"
+    },
+    "type=double": {
+      "model": "withers_overhaul:block/magnolia_planks"
+    },
+    "type=top": {
+      "model": "withers_overhaul:block/magnolia_slab_top"
+    }
+  }
+}

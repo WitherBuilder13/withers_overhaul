@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "withers_overhaul:polished_marble"
+  ],
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:polished_marble_button"
+  }
+}

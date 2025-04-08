@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:polished_dripstone",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:polished_dripstone_stairs"
+  }
+}

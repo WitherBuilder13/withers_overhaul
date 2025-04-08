@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "minecraft:red_sand",
+    "T": "minecraft:red_sandstone"
+  },
+  "pattern": [
+    "ST",
+    "TS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "withers_overhaul:rough_red_sandstone"
+  }
+}

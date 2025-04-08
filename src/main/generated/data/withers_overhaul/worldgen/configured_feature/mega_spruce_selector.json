@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": "minecraft:mega_spruce_checked",
+    "feature_true": "minecraft:mega_pine_checked"
+  }
+}

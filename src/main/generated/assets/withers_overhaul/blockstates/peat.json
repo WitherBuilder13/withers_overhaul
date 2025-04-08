@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "layers=1": {
+      "model": "withers_overhaul:block/peat_height2"
+    },
+    "layers=2": {
+      "model": "withers_overhaul:block/peat_height4"
+    },
+    "layers=3": {
+      "model": "withers_overhaul:block/peat_height6"
+    },
+    "layers=4": {
+      "model": "withers_overhaul:block/peat_height8"
+    },
+    "layers=5": {
+      "model": "withers_overhaul:block/peat_height10"
+    },
+    "layers=6": {
+      "model": "withers_overhaul:block/peat_height12"
+    },
+    "layers=7": {
+      "model": "withers_overhaul:block/peat_height14"
+    },
+    "layers=8": {
+      "model": "withers_overhaul:block/peat_block"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "withers_overhaul:block/lavender_bottom"
+    },
+    "half=upper": {
+      "model": "withers_overhaul:block/lavender_top"
+    }
+  }
+}

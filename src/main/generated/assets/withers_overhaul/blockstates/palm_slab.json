@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "withers_overhaul:block/palm_slab"
+    },
+    "type=double": {
+      "model": "withers_overhaul:block/palm_planks"
+    },
+    "type=top": {
+      "model": "withers_overhaul:block/palm_slab_top"
+    }
+  }
+}

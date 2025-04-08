@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:shale_bricks",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:shale_brick_pillar"
+  }
+}

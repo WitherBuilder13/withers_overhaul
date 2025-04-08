@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:mossy_marble_bricks",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:mossy_marble_brick_stairs"
+  }
+}

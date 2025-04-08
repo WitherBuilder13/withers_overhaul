@@ -1,0 +1,15 @@
+{
+  "feature": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "default": "withers_overhaul:larch",
+      "features": [
+        {
+          "feature": "withers_overhaul:larch_top",
+          "chance": 0.5
+        }
+      ]
+    }
+  },
+  "placement": []
+}

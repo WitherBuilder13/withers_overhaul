@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "withers_overhaul:block/joshua_door_bottom",
+    "top": "withers_overhaul:block/joshua_door_top"
+  }
+}

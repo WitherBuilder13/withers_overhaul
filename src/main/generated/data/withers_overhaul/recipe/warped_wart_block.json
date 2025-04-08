@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart",
+    "withers_overhaul:warped_wart"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:warped_wart_block"
+  }
+}

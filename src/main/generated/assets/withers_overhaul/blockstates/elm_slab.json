@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "withers_overhaul:block/elm_slab"
+    },
+    "type=double": {
+      "model": "withers_overhaul:block/elm_planks"
+    },
+    "type=top": {
+      "model": "withers_overhaul:block/elm_slab_top"
+    }
+  }
+}

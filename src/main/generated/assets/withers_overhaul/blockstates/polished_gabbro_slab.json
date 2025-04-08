@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "withers_overhaul:block/polished_gabbro_slab"
+    },
+    "type=double": {
+      "model": "withers_overhaul:block/polished_gabbro"
+    },
+    "type=top": {
+      "model": "withers_overhaul:block/polished_gabbro_slab_top"
+    }
+  }
+}

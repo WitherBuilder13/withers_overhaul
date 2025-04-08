@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": "withers_overhaul:spruce_selector",
+    "feature_true": "withers_overhaul:cedar_selector"
+  }
+}

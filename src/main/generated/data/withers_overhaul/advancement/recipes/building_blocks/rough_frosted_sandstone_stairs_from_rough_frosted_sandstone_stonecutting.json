@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rough_frosted_sandstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:rough_frosted_sandstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:rough_frosted_sandstone_stairs_from_rough_frosted_sandstone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rough_frosted_sandstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:rough_frosted_sandstone_stairs_from_rough_frosted_sandstone_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:red_chalk_bricks",
+  "result": {
+    "count": 2,
+    "id": "withers_overhaul:red_chalk_brick_slab"
+  }
+}

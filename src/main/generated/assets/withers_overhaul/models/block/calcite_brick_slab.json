@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "withers_overhaul:block/calcite_bricks",
+    "side": "withers_overhaul:block/calcite_bricks",
+    "top": "withers_overhaul:block/calcite_bricks"
+  }
+}

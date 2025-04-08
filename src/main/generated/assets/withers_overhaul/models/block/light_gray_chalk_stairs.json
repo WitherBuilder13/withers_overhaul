@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "withers_overhaul:block/light_gray_chalk",
+    "side": "withers_overhaul:block/light_gray_chalk",
+    "top": "withers_overhaul:block/light_gray_chalk"
+  }
+}

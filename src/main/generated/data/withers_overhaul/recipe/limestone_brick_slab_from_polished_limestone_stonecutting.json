@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:polished_limestone",
+  "result": {
+    "count": 2,
+    "id": "withers_overhaul:limestone_brick_slab"
+  }
+}

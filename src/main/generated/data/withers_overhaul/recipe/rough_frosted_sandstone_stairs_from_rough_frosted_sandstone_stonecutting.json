@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:rough_frosted_sandstone",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:rough_frosted_sandstone_stairs"
+  }
+}

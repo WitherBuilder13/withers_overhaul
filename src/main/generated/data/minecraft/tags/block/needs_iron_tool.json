@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "#minecraft:diamond_ores",
+      "required": false
+    },
+    {
+      "id": "#minecraft:emerald_ores",
+      "required": false
+    },
+    {
+      "id": "#minecraft:gold_ores",
+      "required": false
+    },
+    {
+      "id": "#minecraft:redstone_ores",
+      "required": false
+    }
+  ]
+}

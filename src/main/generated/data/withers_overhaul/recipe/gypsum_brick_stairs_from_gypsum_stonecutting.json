@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:gypsum",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:gypsum_brick_stairs"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "withers_overhaul:block/aspen_planks"
+  }
+}

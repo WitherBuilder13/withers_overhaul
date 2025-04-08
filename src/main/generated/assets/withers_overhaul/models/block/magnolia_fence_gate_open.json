@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fence_gate_open",
+  "textures": {
+    "texture": "withers_overhaul:block/magnolia_planks"
+  }
+}

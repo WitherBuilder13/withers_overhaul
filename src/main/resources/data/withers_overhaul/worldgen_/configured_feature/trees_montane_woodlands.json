@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "withers_overhaul:larch_tall_checked",
+    "features": [
+      {
+        "feature": "withers_overhaul:larch_checked",
+        "chance": 0.3
+      },
+      {
+        "feature": "withers_overhaul:pine_checked",
+        "chance": 0.05
+      }
+    ]
+  }
+}

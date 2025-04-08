@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": "minecraft:birch_bees_0002",
+    "feature_true": "withers_overhaul:aspen"
+  }
+}

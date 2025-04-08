@@ -1,0 +1,11 @@
+// 1.21.5	-999999999-01-01T00:00:00	Wither's Overhaul/Tags for minecraft:worldgen/biome
+873eec5a15a02da1372c25a527a951fb7f0178de data/minecraft/tags/worldgen/biome/spawns_cold_variant_farm_animals.json
+873eec5a15a02da1372c25a527a951fb7f0178de data/minecraft/tags/worldgen/biome/spawns_cold_variant_frogs.json
+d01b6eb451999c22f1f1fbad4782679aba23ed14 data/minecraft/tags/worldgen/biome/spawns_warm_variant_farm_animals.json
+d01b6eb451999c22f1f1fbad4782679aba23ed14 data/minecraft/tags/worldgen/biome/spawns_warm_variant_frogs.json
+09020fc59f21afaa16007509caa8139e3c3d9840 data/withers_overhaul/tags/worldgen/biome/temperature/cold.json
+c226bfc58197889ff78527a8e2443039e7ad9342 data/withers_overhaul/tags/worldgen/biome/temperature/cool.json
+e9b9a0073c92ff32846d1173cda577e89c53fa17 data/withers_overhaul/tags/worldgen/biome/temperature/hot.json
+c9f97f16c1e93af6042ed85b0150b3693ebfc36b data/withers_overhaul/tags/worldgen/biome/temperature/snowy.json
+3c54f21e64e67c75693f51235c6aa6bd3b40debc data/withers_overhaul/tags/worldgen/biome/temperature/temperate.json
+7128cb1ead12bcd6e4e6cbfa3b0755f97ce50c41 data/withers_overhaul/tags/worldgen/biome/temperature/warm.json

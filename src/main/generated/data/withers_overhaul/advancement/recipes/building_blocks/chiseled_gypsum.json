@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gypsum_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:gypsum_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "withers_overhaul:chiseled_gypsum"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gypsum_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "withers_overhaul:chiseled_gypsum"
+    ]
+  }
+}

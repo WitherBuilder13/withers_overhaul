@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gypsum_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:gypsum_tiles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:gypsum_tile_slab_from_gypsum_tiles_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gypsum_tiles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:gypsum_tile_slab_from_gypsum_tiles_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:white_chalk_brick_slab_from_white_chalk_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_chalk_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:white_chalk_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_chalk_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:white_chalk_brick_slab_from_white_chalk_bricks_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "withers_overhaul:block/mossy_granite_bricks",
+    "side": "withers_overhaul:block/mossy_granite_bricks",
+    "top": "withers_overhaul:block/mossy_granite_bricks"
+  }
+}

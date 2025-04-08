@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_3",
+  "textures": {
+    "flowerbed": "withers_overhaul:block/purple_petals",
+    "stem": "withers_overhaul:block/purple_petals_stem"
+  }
+}

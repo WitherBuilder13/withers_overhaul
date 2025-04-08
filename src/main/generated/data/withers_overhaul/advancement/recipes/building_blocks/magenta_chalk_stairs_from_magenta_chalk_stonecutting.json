@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_magenta_chalk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:magenta_chalk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:magenta_chalk_stairs_from_magenta_chalk_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_magenta_chalk"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:magenta_chalk_stairs_from_magenta_chalk_stonecutting"
+    ]
+  }
+}

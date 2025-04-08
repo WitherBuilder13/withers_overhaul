@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "withers_overhaul:block/flowering_magnolia_sapling"
+  }
+}

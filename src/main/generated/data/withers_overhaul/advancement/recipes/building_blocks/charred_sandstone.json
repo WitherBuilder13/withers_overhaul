@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_charred_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:charred_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "withers_overhaul:charred_sandstone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_charred_sand"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "withers_overhaul:charred_sandstone"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "withers_overhaul:block/carved_gourd",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "withers_overhaul:block/carved_gourd"
+    },
+    "facing=south": {
+      "model": "withers_overhaul:block/carved_gourd",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "withers_overhaul:block/carved_gourd",
+      "y": 270
+    }
+  }
+}

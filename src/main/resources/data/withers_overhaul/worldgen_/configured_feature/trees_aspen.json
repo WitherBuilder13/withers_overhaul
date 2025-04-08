@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "withers_overhaul:aspen",
+    "features": [
+      {
+        "feature": "withers_overhaul:birch_checked",
+        "chance": 0.05
+      }
+    ]
+  }
+}

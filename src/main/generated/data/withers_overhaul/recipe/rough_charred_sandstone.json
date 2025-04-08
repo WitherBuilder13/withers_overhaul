@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "withers_overhaul:charred_sand",
+    "T": "withers_overhaul:charred_sandstone"
+  },
+  "pattern": [
+    "ST",
+    "TS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "withers_overhaul:rough_charred_sandstone"
+  }
+}

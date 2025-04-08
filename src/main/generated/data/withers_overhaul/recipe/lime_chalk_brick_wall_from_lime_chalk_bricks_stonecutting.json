@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "withers_overhaul:lime_chalk_bricks",
+  "result": {
+    "count": 1,
+    "id": "withers_overhaul:lime_chalk_brick_wall"
+  }
+}

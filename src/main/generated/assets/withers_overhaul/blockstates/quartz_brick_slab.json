@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "withers_overhaul:block/quartz_brick_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/quartz_bricks"
+    },
+    "type=top": {
+      "model": "withers_overhaul:block/quartz_brick_slab_top"
+    }
+  }
+}

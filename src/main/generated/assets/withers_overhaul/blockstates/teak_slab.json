@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "withers_overhaul:block/teak_slab"
+    },
+    "type=double": {
+      "model": "withers_overhaul:block/teak_planks"
+    },
+    "type=top": {
+      "model": "withers_overhaul:block/teak_slab_top"
+    }
+  }
+}

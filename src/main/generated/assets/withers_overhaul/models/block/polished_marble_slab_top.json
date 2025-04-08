@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "withers_overhaul:block/polished_marble",
+    "side": "withers_overhaul:block/polished_marble",
+    "top": "withers_overhaul:block/polished_marble"
+  }
+}

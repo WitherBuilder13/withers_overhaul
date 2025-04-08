@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orange_chalk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "withers_overhaul:orange_chalk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "withers_overhaul:orange_chalk_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_orange_chalk"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "withers_overhaul:orange_chalk_bricks"
+    ]
+  }
+}

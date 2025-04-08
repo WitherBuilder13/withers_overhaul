@@ -1,0 +1,22 @@
+{
+  "values": [
+    "withers_overhaul:tundra",
+    "minecraft:taiga",
+    "minecraft:old_growth_spruce_taiga",
+    "withers_overhaul:redwood_forest",
+    "withers_overhaul:alpine_forest",
+    "withers_overhaul:alpine_thicket",
+    "withers_overhaul:windswept_tundra",
+    "withers_overhaul:alpine_tangle",
+    "withers_overhaul:alpine_peaks",
+    "withers_overhaul:bog",
+    "withers_overhaul:charcoal_shore",
+    "withers_overhaul:cold_river",
+    "minecraft:cold_ocean",
+    "minecraft:deep_cold_ocean",
+    "withers_overhaul:ashen_fields",
+    "withers_overhaul:fungal_chasm",
+    "withers_overhaul:pale_undergrowth",
+    "withers_overhaul:crystal_caves_cold"
+  ]
+}

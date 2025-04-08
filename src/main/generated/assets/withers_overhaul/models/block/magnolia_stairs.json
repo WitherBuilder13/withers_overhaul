@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "withers_overhaul:block/magnolia_planks",
+    "side": "withers_overhaul:block/magnolia_planks",
+    "top": "withers_overhaul:block/magnolia_planks"
+  }
+}

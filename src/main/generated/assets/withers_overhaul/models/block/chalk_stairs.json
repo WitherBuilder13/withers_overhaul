@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "withers_overhaul:block/chalk",
+    "side": "withers_overhaul:block/chalk",
+    "top": "withers_overhaul:block/chalk"
+  }
+}

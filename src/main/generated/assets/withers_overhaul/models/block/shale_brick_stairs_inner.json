@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "withers_overhaul:block/shale_bricks",
+    "side": "withers_overhaul:block/shale_bricks",
+    "top": "withers_overhaul:block/shale_bricks"
+  }
+}
