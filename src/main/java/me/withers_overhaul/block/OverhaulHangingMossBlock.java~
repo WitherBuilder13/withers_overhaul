@@ -1,0 +1,4 @@
+package me.withers_overhaul.block;
+
+public class HangingMossBlock {
+}

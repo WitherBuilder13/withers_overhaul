@@ -3213,7 +3213,6 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
-                "withers_overhaul:grasslands",
                 "minecraft:sparse_jungle",
                 "minecraft:jungle",
                 "withers_overhaul:tropical_rainforest",
