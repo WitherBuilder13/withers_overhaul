@@ -7,7 +7,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import static me.withers_overhaul.WithersOverhaul.MOD_ID;
-import static me.withers_overhaul.block.util.OverhaulWoodTypes.OverhaulWoodType.*;
+import static me.withers_overhaul.block.util.OverhaulWoodTypes.WoodType.*;
 
 public class OverhaulItemTags {
 
@@ -42,7 +42,7 @@ public class OverhaulItemTags {
     public static final TagKey<Item> MAGNOLIA_LOGS = LogTagKey(MAGNOLIA);
     public static final TagKey<Item> JACARANDA_LOGS = LogTagKey(JACARANDA);
 
-    public static TagKey<Item> LogTagKey(OverhaulWoodTypes.OverhaulWoodType woodType) {
+    public static TagKey<Item> LogTagKey(OverhaulWoodTypes.WoodType woodType) {
 
         return ItemTagKey(woodType.getName() + "_logs");
 

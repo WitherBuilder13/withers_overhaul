@@ -15,10 +15,15 @@ import net.minecraft.world.gen.feature.PlacedFeatures;
 import static me.withers_overhaul.world.feature.OverhaulPlacedFeatures.of;
 import static net.minecraft.world.gen.feature.PlacedFeatures.wouldSurvive;
 
-public class OverhaulTreePlacedFeatures {public static final RegistryKey<PlacedFeature> MAPLE = of("maple");
+public class OverhaulTreePlacedFeatures {
+    public static final RegistryKey<PlacedFeature> MAPLE = of("maple");
     public static final RegistryKey<PlacedFeature> FANCY_MAPLE = of("fancy_maple");
     public static final RegistryKey<PlacedFeature> POPLAR = of("poplar");
     public static final RegistryKey<PlacedFeature> BEECH = of("beech");
+    public static final RegistryKey<PlacedFeature> HICKORY = of("hickory");
+    public static final RegistryKey<PlacedFeature> HICKORY_BUSH = of("hickory_bush");
+    public static final RegistryKey<PlacedFeature> WALNUT = of("walnut");
+    public static final RegistryKey<PlacedFeature> CHESTNUT = of("chestnut");
     public static final RegistryKey<PlacedFeature> CEDAR = of("cedar");
     public static final RegistryKey<PlacedFeature> CEDAR_FLAT = of("cedar_flat");
     public static final RegistryKey<PlacedFeature> MEGA_CEDAR = of("mega_cedar");
@@ -62,6 +67,7 @@ public class OverhaulTreePlacedFeatures {public static final RegistryKey<PlacedF
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatureLookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
+        RegistryEntry<ConfiguredFeature<?, ?>> hickoryBush = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.HICKORY_BUSH);
         RegistryEntry<ConfiguredFeature<?, ?>> maple = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.MAPLE);
         RegistryEntry<ConfiguredFeature<?, ?>> fancyMaple = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.FANCY_MAPLE);
         RegistryEntry<ConfiguredFeature<?, ?>> poplar = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.POPLAR);
@@ -113,9 +119,10 @@ public class OverhaulTreePlacedFeatures {public static final RegistryKey<PlacedF
         PlacedFeatures.register(featureRegisterable, FANCY_MAPLE, fancyMaple, wouldSurvive(NaturalBlocks.MAPLE_SAPLING));
         PlacedFeatures.register(featureRegisterable, POPLAR, poplar, wouldSurvive(NaturalBlocks.POPLAR_SAPLING));
         PlacedFeatures.register(featureRegisterable, BEECH, beech, wouldSurvive(NaturalBlocks.BEECH_SAPLING));
-        /*PlacedFeatures.register(featureRegisterable, HICKORY, pine, wouldSurvive(NaturalBlocks.HICKORY_SAPLING));
-        PlacedFeatures.register(featureRegisterable, WALNUT, pine, wouldSurvive(NaturalBlocks.WALNUT_SAPLING));
-        PlacedFeatures.register(featureRegisterable, CHESTNUT, pine, wouldSurvive(NaturalBlocks.CHESTNUT_SAPLING));*/
+        //PlacedFeatures.register(featureRegisterable, HICKORY, pine, wouldSurvive(NaturalBlocks.HICKORY_SAPLING));
+        PlacedFeatures.register(featureRegisterable, HICKORY_BUSH, hickoryBush, wouldSurvive(NaturalBlocks.HICKORY_SAPLING));
+        //PlacedFeatures.register(featureRegisterable, WALNUT, pine, wouldSurvive(NaturalBlocks.WALNUT_SAPLING));
+        //PlacedFeatures.register(featureRegisterable, CHESTNUT, pine, wouldSurvive(NaturalBlocks.CHESTNUT_SAPLING));
         PlacedFeatures.register(featureRegisterable, CEDAR, cedar, wouldSurvive(NaturalBlocks.CEDAR_SAPLING));
         PlacedFeatures.register(featureRegisterable, CEDAR_FLAT, cedarFlat, wouldSurvive(NaturalBlocks.CEDAR_SAPLING));
         PlacedFeatures.register(featureRegisterable, MEGA_CEDAR, megaCedar, wouldSurvive(NaturalBlocks.CEDAR_SAPLING));

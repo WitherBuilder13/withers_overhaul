@@ -1464,6 +1464,9 @@ public class OverhaulBiomes {
                 grassColor = 12086123;
                 foliageColor = 9987967;
                 dryFoliageColor = 9987967;
+
+                lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
+
             }
             case COOL -> {
                 temp = 0.4F;
@@ -1475,6 +1478,9 @@ public class OverhaulBiomes {
                 dryFoliageColor = null;
 
                 DefaultBiomeFeatures.addPlainsMobs(builder);
+
+                lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
+                OverhaulBiomeFeatures.prairieVegetation(lookupBackedBuilder);
             }
             case WARM -> {
                 temp = 1.0F;
@@ -1486,6 +1492,8 @@ public class OverhaulBiomes {
                 dryFoliageColor = null;
 
                 DefaultBiomeFeatures.addFarmAnimals(builder);
+
+                OverhaulBiomeFeatures.shrublandsVegetation(lookupBackedBuilder);
             }
             case HOT -> {
                 temp = 2.0F;

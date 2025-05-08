@@ -18,7 +18,6 @@ import static me.withers_overhaul.registry.block.NaturalBlocks.*;
 import static me.withers_overhaul.registry.block.StoneBlocks.*;
 import static me.withers_overhaul.registry.block.WoodBlocks.*;
 import static me.withers_overhaul.registry.item.BasicItems.*;
-import static me.withers_overhaul.registry.item.BlockItems.PINE_CONE;
 import static net.minecraft.item.Items.*;
 
 public class OverhaulItemGroups {
@@ -2950,8 +2949,8 @@ public class OverhaulItemGroups {
             content.addAfter(REDWOOD_SAPLING, FIR_SAPLING);
             content.addAfter(FIR_SAPLING, HEMLOCK_SAPLING);
             content.addAfter(HEMLOCK_SAPLING, HOLLY_SAPLING);
-            content.addAfter(HOLLY_SAPLING, PINE_CONE);
-            content.addAfter(PINE_CONE, LARCH_SAPLING);
+            content.addAfter(HOLLY_SAPLING, PINE_SAPLING);
+            content.addAfter(PINE_SAPLING, LARCH_SAPLING);
             content.addAfter(BIRCH_SAPLING, ASPEN_SAPLING);
             content.addAfter(JUNGLE_SAPLING, KAPOK_SAPLING);
             content.addAfter(KAPOK_SAPLING, MAHOGANY_SAPLING);

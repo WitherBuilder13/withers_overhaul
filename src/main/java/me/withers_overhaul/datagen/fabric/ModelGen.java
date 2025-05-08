@@ -25,7 +25,6 @@ import static me.withers_overhaul.registry.block.NaturalBlocks.*;
 import static me.withers_overhaul.registry.block.StoneBlocks.*;
 import static me.withers_overhaul.registry.block.WoodBlocks.*;
 import static me.withers_overhaul.registry.item.BasicItems.*;
-import static me.withers_overhaul.registry.item.BlockItems.PINE_CONE;
 import static net.minecraft.block.Blocks.*;
 import static net.minecraft.client.data.BlockStateModelGenerator.createSingletonBlockState;
 import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
@@ -388,6 +387,7 @@ public class ModelGen extends FabricModelProvider {
         saplings.put(FIR_SAPLING, POTTED_FIR_SAPLING);
         saplings.put(HEMLOCK_SAPLING, POTTED_HEMLOCK_SAPLING);
         saplings.put(HOLLY_SAPLING, POTTED_HOLLY_SAPLING);
+        saplings.put(PINE_SAPLING, POTTED_PINE_SAPLING);
         saplings.put(LARCH_SAPLING, POTTED_LARCH_SAPLING);
         saplings.put(ASPEN_SAPLING, POTTED_ASPEN_SAPLING);
         saplings.put(KAPOK_SAPLING, POTTED_KAPOK_SAPLING);
@@ -437,7 +437,6 @@ public class ModelGen extends FabricModelProvider {
         blockStateModelGenerator.registerDoubleBlockAndItem(TALL_PRAIRIE_GRASS, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlockAndItem(CATTAIL, BlockStateModelGenerator.CrossType.NOT_TINTED);
         registerPeat(blockStateModelGenerator);
-        blockStateModelGenerator.registerFlowerPotPlant(PINE_SAPLING, POTTED_PINE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlockAndItem(LAVENDER, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerbed(PURPLE_PETALS);
         blockStateModelGenerator.registerHangingMoss(HANGING_MOSS);
@@ -445,7 +444,7 @@ public class ModelGen extends FabricModelProvider {
 
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         Item[] simpleItems = {
-                WARPED_WART, GOURD_SEEDS, PINE_CONE,
+                WARPED_WART, GOURD_SEEDS,
                 RUNE_AQUA_AFFINITY, RUNE_BANE_OF_ARTHROPODS, RUNE_BLAST_PROTECTION, RUNE_BREACH, RUNE_CHANNELING, RUNE_DENSITY, RUNE_DEPTH_STRIDER, RUNE_EFFICIENCY, RUNE_FEATHER_FALLING,
                 RUNE_FIRE_ASPECT, RUNE_FIRE_PROTECTION, RUNE_FLAME, RUNE_FORTUNE, RUNE_FROST_WALKER, RUNE_IMPALING, RUNE_INFINITY, RUNE_KNOCKBACK, RUNE_LOOTING, RUNE_LOYALTY,
                 RUNE_LUCK_OF_THE_SEA, RUNE_LURE, RUNE_MENDING, RUNE_MULTISHOT, RUNE_PIERCING, RUNE_POWER, RUNE_PROJECTILE_PROTECTION, RUNE_PROTECTION, RUNE_PUNCH, RUNE_QUICK_CHARGE,

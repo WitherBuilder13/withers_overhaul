@@ -477,23 +477,23 @@ public class StoneBlocks {
     private static Block registerStoneBlock(String stoneName) {
         AbstractBlock.Settings settings;
         if (stoneName.contains("calcite")) {
-            settings = copy(CALCITE).registryKey(keyOf(stoneName));
+            settings = copy(CALCITE);
         } else if (stoneName.contains("dripstone")) {
-            settings = copy(DRIPSTONE_BLOCK).registryKey(keyOf(stoneName));
+            settings = copy(DRIPSTONE_BLOCK);
         } else if (containsAny(stoneName, "amethyst", "dolomite", "gypsum")) {
-            settings = copy(AMETHYST_BLOCK).registryKey(keyOf(stoneName));
+            settings = copy(AMETHYST_BLOCK);
         } else if (stoneName.contains("quartz")) {
-            settings = copy(QUARTZ_BLOCK).registryKey(keyOf(stoneName));
+            settings = copy(QUARTZ_BLOCK);
         } else if (stoneName.contains("sandstone")) {
-            settings = copy(SANDSTONE).registryKey(keyOf(stoneName));
+            settings = copy(SANDSTONE);
         } else if (stoneName.contains("prismarine")) {
-            settings = copy(PRISMARINE).registryKey(keyOf(stoneName));
+            settings = copy(PRISMARINE);
         } else if (stoneName.contains("nether_brick")) {
-            settings = copy(NETHER_BRICKS).registryKey(keyOf(stoneName));
+            settings = copy(NETHER_BRICKS);
         } else {
-            settings = copy(STONE).registryKey(keyOf(stoneName));
+            settings = copy(STONE);
         }
-        return register(stoneName, new Block(settings), true);
+        return register(stoneName, new Block(settings.registryKey(keyOf(stoneName))), true);
     }
 
     private static Block registerStoneBlock(String stoneName, BlockFamily.Variant variant) {
@@ -504,30 +504,32 @@ public class StoneBlocks {
         String name = stoneName + "_" + variant.getName();
 
         if (stoneName.contains("calcite")) {
-            settings = copy(Blocks.CALCITE).registryKey(keyOf(name));
+            settings = copy(Blocks.CALCITE);
             blockState = Blocks.CALCITE.getDefaultState();
         } else if (stoneName.contains("dripstone")) {
-            settings = copy(Blocks.DRIPSTONE_BLOCK).registryKey(keyOf(name));
+            settings = copy(Blocks.DRIPSTONE_BLOCK);
             blockState = Blocks.DRIPSTONE_BLOCK.getDefaultState();
         } else if (containsAny(stoneName, "amethyst", "dolomite", "gypsum")) {
-            settings = copy(Blocks.AMETHYST_BLOCK).registryKey(keyOf(name));
+            settings = copy(Blocks.AMETHYST_BLOCK);
             blockState = Blocks.AMETHYST_BLOCK.getDefaultState();
         } else if (stoneName.contains("quartz")) {
-            settings = copy(Blocks.QUARTZ_BLOCK).registryKey(keyOf(name));
+            settings = copy(Blocks.QUARTZ_BLOCK);
             blockState = Blocks.QUARTZ_BLOCK.getDefaultState();
         } else if (stoneName.contains("sandstone")) {
-            settings = copy(Blocks.SANDSTONE).registryKey(keyOf(name));
+            settings = copy(Blocks.SANDSTONE);
             blockState = Blocks.SANDSTONE.getDefaultState();
         } else if (stoneName.contains("prismarine")) {
-            settings = copy(Blocks.PRISMARINE).registryKey(keyOf(name));
+            settings = copy(Blocks.PRISMARINE);
             blockState = Blocks.PRISMARINE.getDefaultState();
         } else if (stoneName.contains("nether_brick")) {
-            settings = copy(Blocks.NETHER_BRICKS).registryKey(keyOf(name));
+            settings = copy(Blocks.NETHER_BRICKS);
             blockState = Blocks.NETHER_BRICKS.getDefaultState();
         } else {
-            settings = copy(STONE).registryKey(keyOf(name));
+            settings = copy(STONE);
             blockState = STONE.getDefaultState();
         }
+
+        settings = settings.registryKey(keyOf(name));
 
         switch (variant) {
             case SLAB ->
@@ -560,27 +562,24 @@ public class StoneBlocks {
 
 
     private static Block registerOreBlock(String stoneType, String oreType) {
+        String name = stoneType + "_" + oreType + "_ore";
         return switch (oreType) {
             case "iron", "copper", "gold" ->
-                    register(stoneType + "_" + oreType + "_ore", new Block(copy(IRON_ORE).registryKey(keyOf(stoneType + "_" + oreType + "_ore"))), false);
+                    register(name, new Block(copy(IRON_ORE).registryKey(keyOf(name))), false);
             case "coal" ->
-                    register(stoneType + "_coal_ore", new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), copy(COAL_ORE).registryKey(keyOf(stoneType + "_coal_ore"))), false);
+                    register(name, new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), copy(COAL_ORE).registryKey(keyOf(name))), false);
             case "lapis" ->
-                    register(stoneType + "_lapis_ore", new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), copy(LAPIS_ORE).registryKey(keyOf(stoneType + "_lapis_ore"))), false);
+                    register(name, new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), copy(LAPIS_ORE).registryKey(keyOf(name))), false);
             case "emerald", "diamond" ->
-                    register(stoneType + "_" + oreType + "_ore", new ExperienceDroppingBlock(UniformIntProvider.create(3, 7), copy(EMERALD_ORE).registryKey(keyOf(stoneType + "_" + oreType + "_ore"))), false);
+                    register(name, new ExperienceDroppingBlock(UniformIntProvider.create(3, 7), copy(EMERALD_ORE).registryKey(keyOf(name))), false);
             case "redstone" ->
-                    register(stoneType + "_redstone_ore", new RedstoneOreBlock(copy(REDSTONE_ORE).registryKey(keyOf(stoneType + "_redstone_ore"))), false);
+                    register(name, new RedstoneOreBlock(copy(REDSTONE_ORE).registryKey(keyOf(name))), false);
             default ->
-                    throw new IllegalStateException("Unexpected value for 'oreType':" + oreType);
+                    throw new IllegalStateException("Unexpected value for 'oreType': " + oreType);
         };
     }
 
-
     public static void registerStoneBlocks() {
-
         WithersOverhaul.LOGGER.info("Registering Stone Blocks for" + WithersOverhaul.MOD_ID);
-
     }
-
 }

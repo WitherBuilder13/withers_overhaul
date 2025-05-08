@@ -7,7 +7,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.data.family.BlockFamily;
 
-import static me.withers_overhaul.block.util.OverhaulWoodTypes.OverhaulWoodType.*;
+import static me.withers_overhaul.block.util.OverhaulWoodTypes.WoodType.*;
 import static me.withers_overhaul.registry.block.OverhaulBlocks.keyOf;
 import static me.withers_overhaul.registry.block.OverhaulBlocks.register;
 import static net.minecraft.block.AbstractBlock.Settings.copy;
@@ -548,16 +548,15 @@ public class WoodBlocks {
     public static final Block JACARANDA_WALL_HANGING_SIGN = registerSignBlock(JACARANDA, true, JACARANDA_HANGING_SIGN);
 
     public static Block registerLogBlock(String logName) {
-        return register(logName, new PillarBlock(copy(OAK_LOG)
-                .registryKey(keyOf(logName))), true);
+        return register(logName, new PillarBlock(copy(OAK_LOG).registryKey(keyOf(logName))), true);
     }
 
-    public static Block registerWoodBlock(OverhaulWoodTypes.OverhaulWoodType woodType) {
+    public static Block registerWoodBlock(OverhaulWoodTypes.WoodType woodType) {
         String name = woodType.getName() + "_planks";
         return register(name, new Block(copy(OAK_PLANKS).registryKey(keyOf(name))), true);
     }
 
-    public static Block registerWoodBlock(OverhaulWoodTypes.OverhaulWoodType woodType, BlockFamily.Variant variant) {
+    public static Block registerWoodBlock(OverhaulWoodTypes.WoodType woodType, BlockFamily.Variant variant) {
         String name = woodType.getName() + "_" + variant.getName();
         AbstractBlock.Settings settings = copy(OAK_PLANKS).registryKey(keyOf(name));
         Block block;
@@ -584,7 +583,7 @@ public class WoodBlocks {
         return register(name, block, true);
     }
 
-    public static Block registerSignBlock(OverhaulWoodTypes.OverhaulWoodType woodType, boolean isHanging) {
+    public static Block registerSignBlock(OverhaulWoodTypes.WoodType woodType, boolean isHanging) {
         String name = woodType.getName() + (isHanging ? "_hanging" : "") + "_sign";
         AbstractBlock.Settings settings = Block.Settings.create().solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().registryKey(keyOf(name));
             if (isHanging) {
@@ -594,7 +593,7 @@ public class WoodBlocks {
             }
     }
 
-    public static Block registerSignBlock(OverhaulWoodTypes.OverhaulWoodType woodType, boolean isHanging, Block drops) {
+    public static Block registerSignBlock(OverhaulWoodTypes.WoodType woodType, boolean isHanging, Block drops) {
         String name = woodType.getName() + "_wall" + (isHanging ? "_hanging" : "") + "_sign";
         AbstractBlock.Settings settings = copyLootTable(drops, true).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().registryKey(keyOf(name));
         if (isHanging) {

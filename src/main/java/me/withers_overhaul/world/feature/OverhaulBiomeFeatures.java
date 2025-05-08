@@ -100,6 +100,8 @@ public class OverhaulBiomeFeatures extends DefaultBiomeFeatures {
 
     public static void lavenderFieldsVegetation(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_LAVENDER_FIELDS);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.LAVENDER_FLOWERS);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.PURPLE_PETALS);
     }
 
     public static void meadowVegetation(GenerationSettings.LookupBackedBuilder builder) {
@@ -140,12 +142,22 @@ public class OverhaulBiomeFeatures extends DefaultBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_PINE_TAIGA);
     }
 
+    public static void prairieVegetation(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.PATCH_PRAIRIE_GRASS);
+    }
+
     public static void redwoodForestVegetation(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_REDWOOD_FOREST);
     }
 
     public static void savannaPlateauVegetation(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_SAVANNA_PLATEAU);
+    }
+
+    public static void shrublandsVegetation(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_SHRUBLANDS);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_PLAIN);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
     }
 
     public static void snowyPlainsVegetation(GenerationSettings.LookupBackedBuilder builder) {

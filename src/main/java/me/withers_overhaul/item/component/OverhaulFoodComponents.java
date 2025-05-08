@@ -1,0 +1,52 @@
+package me.withers_overhaul.item.component;
+
+import net.minecraft.component.type.FoodComponent;
+
+public class OverhaulFoodComponents {
+    public static final FoodComponent APRICOT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent AVOCADO = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent BANANA = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent BLACKBERRIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent BLUEBERRIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent BROCCOLI = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent CABBAGE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent CANTALOUPE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent CAULIFLOWER = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent CELERY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent CHERRY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent CORN = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent CUCUMBER = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent DATE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent DRAGON_FRUIT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent EGGPLANT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent FIG = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent GRAPEFRUIT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent GRAPES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent GUAVA = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent KIWI = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent KUMQUAT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent LEMON = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent LETTUCE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent LIME = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent MANGO = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent NECTARINE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent OLIVE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent ONION = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent ORANGE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PEACH = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PEAR = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PEAS = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PEPPER = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PERSIMMON = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PICKLE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PINEAPPLE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PLUM = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent POMEGRANATE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent RADISH = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent RASPBERRY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent SPINACH = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent STARFRUIT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent STRAWBERRY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent TANGERINE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent TOMATO = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+}

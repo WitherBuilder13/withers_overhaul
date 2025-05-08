@@ -2,15 +2,16 @@ package me.withers_overhaul.world.feature.configured;
 
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.collection.Pool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.intprovider.WeightedListIntProvider;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.ConfiguredFeatures;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
@@ -25,14 +26,14 @@ import static net.minecraft.block.Blocks.ACACIA_LEAVES;
 import static net.minecraft.block.Blocks.ACACIA_LOG;
 
 public class OverhaulTreeConfiguredFeatures {
-    // * The actual trees themselves
     public static final RegistryKey<ConfiguredFeature<?, ?>> MAPLE = of("maple");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_MAPLE = of("fancy_maple");
     public static final RegistryKey<ConfiguredFeature<?, ?>> POPLAR = of("poplar");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BEECH = of("beech");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> HICKORY = of("hickory");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> WALNUT = of("walnut");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> CHESTNUT = of("chestnut");
+    //public static final RegistryKey<ConfiguredFeature<?, ?>> HICKORY = of("hickory");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> HICKORY_BUSH = of("hickory_bush");
+    //public static final RegistryKey<ConfiguredFeature<?, ?>> WALNUT = of("walnut");
+    //public static final RegistryKey<ConfiguredFeature<?, ?>> CHESTNUT = of("chestnut");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CEDAR = of("cedar");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CEDAR_FLAT = of("cedar_flat");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_CEDAR = of("mega_cedar");
@@ -76,12 +77,12 @@ public class OverhaulTreeConfiguredFeatures {
     // ` ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
-        RegistryEntryLookup<PlacedFeature> lookup = featureRegisterable.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
 
         ConfiguredFeatures.register(featureRegisterable, MAPLE, Feature.TREE, simple(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2).build());
         ConfiguredFeatures.register(featureRegisterable, FANCY_MAPLE, Feature.TREE, simpleFancy(MAPLE_LOG, MAPLE_LEAVES, 7).build());
         ConfiguredFeatures.register(featureRegisterable, POPLAR, Feature.TREE, poplar().build());
         ConfiguredFeatures.register(featureRegisterable, BEECH, Feature.TREE, beech().build());
+        ConfiguredFeatures.register(featureRegisterable, HICKORY_BUSH, Feature.TREE, bush(HICKORY_LOG, HICKORY_LEAVES).build());
         ConfiguredFeatures.register(featureRegisterable, CEDAR, Feature.TREE, conifer(false, CEDAR_LOG, CEDAR_LEAVES,
                 7, 3, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)).build());
         ConfiguredFeatures.register(featureRegisterable, CEDAR_FLAT, Feature.TREE, smallFlat(CEDAR_LOG, CEDAR_LEAVES, 5).build());
@@ -236,7 +237,9 @@ public class OverhaulTreeConfiguredFeatures {
         );
     }
 
-    private static TreeFeatureConfig.Builder megaFlat(Block log, Block leaves, int baseHeight, int heightRandA, int heightRandB, IntProvider radius, IntProvider offset, int height) {
+    private static TreeFeatureConfig.Builder megaFlat(
+            Block log, Block leaves, int baseHeight, int heightRandA, int heightRandB, IntProvider radius, IntProvider offset, int height
+    ) {
         return new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(log),
                 new MegaJungleTrunkPlacer(baseHeight, heightRandA, heightRandB),

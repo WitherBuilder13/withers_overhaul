@@ -3,6 +3,7 @@ package me.withers_overhaul.registry.block;
 import me.withers_overhaul.WithersOverhaul;
 import me.withers_overhaul.block.util.OverhaulBlockFamilies;
 import me.withers_overhaul.block.util.OverhaulBlockSetType;
+import me.withers_overhaul.registry.item.OverhaulItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,18 +15,17 @@ import net.minecraft.util.Identifier;
 
 public class OverhaulBlocks {
 
-    public static Block register(String name, Block block, boolean registerBlockItem) {
-        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(WithersOverhaul.MOD_ID, name));
+    public static Block register(String id, Block block, boolean registerBlockItem) {
         if (registerBlockItem) {
-            RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, blockKey.getValue());
+            RegistryKey<Item> itemKey = OverhaulItems.keyOf(id);
             BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey).useBlockPrefixedTranslationKey());
             Registry.register(Registries.ITEM, itemKey, blockItem);
         }
-        return Registry.register(Registries.BLOCK, blockKey, block);
+        return Registry.register(Registries.BLOCK, keyOf(id), block);
     }
 
-    public static RegistryKey<Block> keyOf(String name) {
-        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(WithersOverhaul.MOD_ID, name));
+    public static RegistryKey<Block> keyOf(String id) {
+        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(WithersOverhaul.MOD_ID, id));
     }
 
     public static void registerBlocks() {

@@ -7,7 +7,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import static me.withers_overhaul.WithersOverhaul.MOD_ID;
-import static me.withers_overhaul.block.util.OverhaulWoodTypes.OverhaulWoodType.*;
+import static me.withers_overhaul.block.util.OverhaulWoodTypes.WoodType.*;
 
 public class OverhaulBlockTags {
 
@@ -44,7 +44,7 @@ public class OverhaulBlockTags {
 
     public static final TagKey<Block> CATTAILS_CAN_GROW_ON = BlockTagKey("cattails_can_grow_on");
 
-    public static TagKey<Block> LogTagKey(OverhaulWoodTypes.OverhaulWoodType woodType) {
+    public static TagKey<Block> LogTagKey(OverhaulWoodTypes.WoodType woodType) {
 
         return BlockTagKey(woodType.getName() + "_logs");
 

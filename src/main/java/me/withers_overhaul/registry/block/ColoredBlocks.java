@@ -389,15 +389,15 @@ public class ColoredBlocks {
     private static Block registerColoredBlock(String name) {
         AbstractBlock.Settings settings;
         if (name.contains("concrete")) {
-            settings = copy(Blocks.WHITE_CONCRETE).registryKey(keyOf(name));
+            settings = copy(Blocks.WHITE_CONCRETE);
         } else if (name.contains("terracotta")) {
-            settings = copy(Blocks.TERRACOTTA).registryKey(keyOf(name));
+            settings = copy(Blocks.TERRACOTTA);
         } else if (name.contains("chalk")) {
-            settings = copy(Blocks.CALCITE).registryKey(keyOf(name));
+            settings = copy(Blocks.CALCITE);
         } else {
-            settings = copy(Blocks.STONE).registryKey(keyOf(name));
+            settings = copy(Blocks.STONE);
         }
-        return register(name, new Block(settings), true);
+        return register(name, new Block(settings.registryKey(keyOf(name))), true);
     }
 
     private static Block registerColoredBlock(String name, BlockFamily.Variant variant) {
@@ -407,15 +407,17 @@ public class ColoredBlocks {
         String blockName = name + "_" + variant.getName();
 
         if (name.contains("concrete")) {
-            settings = copy(Blocks.WHITE_CONCRETE).registryKey(keyOf(blockName));
+            settings = copy(Blocks.WHITE_CONCRETE);
             blockState = Blocks.WHITE_CONCRETE.getDefaultState();
         } else if (name.contains("terracotta")) {
-            settings = copy(Blocks.TERRACOTTA).registryKey(keyOf(blockName));
+            settings = copy(Blocks.TERRACOTTA);
             blockState = Blocks.TERRACOTTA.getDefaultState();
         } else {
-            settings = copy(Blocks.STONE).registryKey(keyOf(blockName));
+            settings = copy(Blocks.STONE);
             blockState = Blocks.STONE.getDefaultState();
         }
+
+        settings = settings.registryKey(keyOf(blockName));
 
         switch (variant) {
             case STAIRS ->
@@ -432,9 +434,7 @@ public class ColoredBlocks {
     }
 
     public static void registerColoredBlocks() {
-
         WithersOverhaul.LOGGER.info("Registering Colored Blocks for" + WithersOverhaul.MOD_ID);
-
     }
 
 }

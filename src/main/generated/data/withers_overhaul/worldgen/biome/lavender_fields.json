@@ -59,6 +59,8 @@
     [],
     [
       "withers_overhaul:trees_lavender_fields",
+      "withers_overhaul:lavender_flowers",
+      "withers_overhaul:purple_petals",
       "minecraft:patch_bush",
       "minecraft:flower_default",
       "minecraft:patch_grass_forest",

@@ -15,10 +15,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
-import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
-import net.minecraft.world.gen.placementmodifier.RandomOffsetPlacementModifier;
-import net.minecraft.world.gen.placementmodifier.SurfaceWaterDepthFilterPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -85,6 +82,7 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> TREES_REDWOOD_FOREST = of("trees_redwood_forest");
     //public static final RegistryKey<PlacedFeature> TREES_SAVANNA = of("trees_savanna");
     public static final RegistryKey<PlacedFeature> TREES_SAVANNA_PLATEAU = of("trees_savanna_plateau");
+    public static final RegistryKey<PlacedFeature> TREES_SHRUBLANDS = of("trees_shrublands");
     public static final RegistryKey<PlacedFeature> TREES_SNOWY_PLAINS = of("trees_snowy_plains");
     public static final RegistryKey<PlacedFeature> TREES_SNOWY_SLOPES = of("trees_snowy_slopes");
     public static final RegistryKey<PlacedFeature> TREES_SNOWY_TAIGA = of("trees_snowy_taiga");
@@ -100,6 +98,10 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> TREES_WINDSWEPT_HILLS = of("trees_windswept_hills");
     public static final RegistryKey<PlacedFeature> TREES_WINDSWEPT_SAVANNA = of("trees_windswept_savanna");
     public static final RegistryKey<PlacedFeature> TREES_WINTER_WONDERLAND = of("trees_winter_wonderland");
+
+    public static final RegistryKey<PlacedFeature> PATCH_PRAIRIE_GRASS = of("patch_prairie_grass");
+    public static final RegistryKey<PlacedFeature> LAVENDER_FLOWERS = of("lavender_flowers");
+    public static final RegistryKey<PlacedFeature> PURPLE_PETALS = of("purple_petals");
 
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatureLookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -155,6 +157,7 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> treesPineTaiga = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_PINE_TAIGA);
         RegistryEntry<ConfiguredFeature<?, ?>> treesRedwoodForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_REDWOOD_FOREST);
         RegistryEntry<ConfiguredFeature<?, ?>> treesSavannaPlateau = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_SAVANNA_PLATEAU);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesShrublands = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_SHRUBLANDS);
         RegistryEntry<ConfiguredFeature<?, ?>> treesSnowyPlains = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.CLUMP_TREES_FIR);
         RegistryEntry<ConfiguredFeature<?, ?>> treesSnowySlopes = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.CLUMP_TREES_HEMLOCK);
         RegistryEntry<ConfiguredFeature<?, ?>> treesSnowyTaiga = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_SNOWY_TAIGA);
@@ -164,6 +167,11 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> treesWindsweptHills = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINDSWEPT_HILLS);
         RegistryEntry<ConfiguredFeature<?, ?>> treesWindsweptSavanna = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINDSWEPT_FOREST);
         RegistryEntry<ConfiguredFeature<?, ?>> treesWinterWonderland = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINTER_WONDERLAND);
+
+        // * Other plants
+        RegistryEntry<ConfiguredFeature<?, ?>> patchPrairieGrass = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_PRAIRIE_GRASS);
+        RegistryEntry<ConfiguredFeature<?, ?>> lavenderFlowers = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.LAVENDER_FLOWERS);
+        RegistryEntry<ConfiguredFeature<?, ?>> purplePetals = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PURPLE_PETALS);
 
         PlacedFeatures.register(featureRegisterable, SPRUCE_SELECTOR, spruceSelector, empty());
         PlacedFeatures.register(featureRegisterable, MEGA_SPRUCE_SELECTOR, megaSpruceSelector, empty());
@@ -213,6 +221,7 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, TREES_PINE_TAIGA, treesPineTaiga, treeModifiers(6));
         PlacedFeatures.register(featureRegisterable, TREES_REDWOOD_FOREST, treesRedwoodForest, treeModifiers(20));
         PlacedFeatures.register(featureRegisterable, TREES_SAVANNA_PLATEAU, treesSavannaPlateau, treeModifiers(8));
+        PlacedFeatures.register(featureRegisterable, TREES_SHRUBLANDS, treesShrublands, treeModifiers(7));
         PlacedFeatures.register(featureRegisterable, TREES_SNOWY_PLAINS, treesSnowyPlains, treeSparseModifiers(5));
         PlacedFeatures.register(featureRegisterable, TREES_SNOWY_SLOPES, treesSnowySlopes, treeSparseModifiers(5));
         PlacedFeatures.register(featureRegisterable, TREES_SNOWY_TAIGA, treesSnowyTaiga, treeModifiers(10));
@@ -223,6 +232,28 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, TREES_WINDSWEPT_HILLS, treesWindsweptHills, treeModifiers(1));
         PlacedFeatures.register(featureRegisterable, TREES_WINDSWEPT_SAVANNA, treesWindsweptSavanna, treeModifiers(2));
         PlacedFeatures.register(featureRegisterable, TREES_WINTER_WONDERLAND, treesWinterWonderland, treeModifiers(15));
+
+        PlacedFeatures.register(featureRegisterable, PATCH_PRAIRIE_GRASS, patchPrairieGrass, ImmutableList.<PlacementModifier>builder()
+                .add(NoiseThresholdCountPlacementModifier.of(0.4F, 10, 14))
+                .add(SquarePlacementModifier.of())
+                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
+                .add(BiomePlacementModifier.of())
+                .build()
+        );
+        PlacedFeatures.register(featureRegisterable, LAVENDER_FLOWERS, lavenderFlowers, ImmutableList.<PlacementModifier>builder()
+                .add(NoiseThresholdCountPlacementModifier.of(0.3F, 10, 6))
+                .add(SquarePlacementModifier.of())
+                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
+                .add(BiomePlacementModifier.of())
+                .build()
+        );
+        PlacedFeatures.register(featureRegisterable, PURPLE_PETALS, purplePetals, ImmutableList.<PlacementModifier>builder()
+                .add(NoiseThresholdCountPlacementModifier.of(-0.2F, 6, 8))
+                .add(SquarePlacementModifier.of())
+                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
+                .add(BiomePlacementModifier.of())
+                .build()
+        );
     }
 
     private static ImmutableList.Builder<PlacementModifier> clumpModifiers() {

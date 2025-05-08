@@ -19,7 +19,6 @@ import static me.withers_overhaul.registry.block.NaturalBlocks.*;
 import static me.withers_overhaul.registry.block.StoneBlocks.*;
 import static me.withers_overhaul.registry.block.WoodBlocks.*;
 import static me.withers_overhaul.registry.item.BasicItems.*;
-import static me.withers_overhaul.registry.item.BlockItems.PINE_CONE;
 import static me.withers_overhaul.registry.item.OverhaulItemGroups.WITHERS_OVERHAUL_BLOCKS_KEY;
 import static me.withers_overhaul.registry.item.OverhaulItemGroups.WITHERS_OVERHAUL_ITEMS_KEY;
 import static me.withers_overhaul.registry.item.OverhaulItems.TOOLTIP_PATH;
@@ -118,7 +117,7 @@ public class LangGen extends FabricLanguageProvider {
         }
 
         Item[] simpleItems = {
-                WARPED_WART, GOURD_SEEDS, PINE_CONE
+                WARPED_WART, GOURD_SEEDS
         };
 
         for (Item item : simpleItems) {

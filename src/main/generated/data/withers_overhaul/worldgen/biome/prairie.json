@@ -53,7 +53,9 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "minecraft:patch_grass_plain",
+      "withers_overhaul:patch_prairie_grass"
     ],
     [
       "minecraft:freeze_top_layer"

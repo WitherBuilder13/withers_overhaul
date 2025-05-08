@@ -1,14 +1,26 @@
 package me.withers_overhaul.world.feature.configured;
 
 import com.mojang.datafixers.util.Pair;
+import me.withers_overhaul.registry.block.NaturalBlocks;
 import me.withers_overhaul.world.feature.placed.OverhaulTreePlacedFeatures;
 import me.withers_overhaul.world.feature.placed.OverhaulVegetationPlacedFeatures;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerbedBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.state.property.EnumProperty;
+import net.minecraft.state.property.IntProperty;
+import net.minecraft.util.collection.Pool;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -90,6 +102,7 @@ public class OverhaulVegetationConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_REDWOOD_FOREST = of("trees_redwood_forest");
     //public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_SAVANNA = of("trees_savanna");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_SAVANNA_PLATEAU = of("trees_savanna_plateau");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_SHRUBLANDS = of("trees_shrublands");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_SNOWY_TAIGA = of("trees_snowy_taiga");
     //public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_SPARSE_JUNGLE = of("trees_sparse_jungle");
     //public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_SWAMP = of("trees_swamp");
@@ -102,6 +115,10 @@ public class OverhaulVegetationConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_WINDSWEPT_HILLS = of("trees_windswept_hills");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_WINDSWEPT_SAVANNA = of("trees_windswept_savanna");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_WINTER_WONDERLAND = of("trees_winter_wonderland");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_PRAIRIE_GRASS = of("patch_prairie_grass");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LAVENDER_FLOWERS = of("lavender_flowers");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PURPLE_PETALS = of("purple_petals");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatureLookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -140,9 +157,10 @@ public class OverhaulVegetationConfiguredFeatures {
         RegistryEntry<PlacedFeature> fancyMaple = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.FANCY_MAPLE);
         RegistryEntry<PlacedFeature> poplar = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.POPLAR);
         RegistryEntry<PlacedFeature> beech = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.BEECH);
-        /*RegistryEntry<PlacedFeature> hickory = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.POPLAR);
-        RegistryEntry<PlacedFeature> walnut = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.POPLAR);
-        RegistryEntry<PlacedFeature> chestnut = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.POPLAR);*/
+        //RegistryEntry<PlacedFeature> hickory = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.HICKORY);
+        RegistryEntry<PlacedFeature> hickoryBush = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.HICKORY_BUSH);
+        //RegistryEntry<PlacedFeature> walnut = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.WALNUT);
+        //RegistryEntry<PlacedFeature> chestnut = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.CHESTNUT);
         RegistryEntry<PlacedFeature> cedar = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.CEDAR);
         RegistryEntry<PlacedFeature> cedarFlat = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.CEDAR_FLAT);
         RegistryEntry<PlacedFeature> megaCedar = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.MEGA_CEDAR);
@@ -337,6 +355,7 @@ public class OverhaulVegetationConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, TREES_PINE_TAIGA, Feature.RANDOM_SELECTOR, biomeTrees(pineSelector, Pair.of(larchClump, 0.05F)));
         ConfiguredFeatures.register(featureRegisterable, TREES_REDWOOD_FOREST, Feature.RANDOM_SELECTOR, biomeTrees(redwood, Pair.of(spruceClump, 0.2F), Pair.of(cedarClump, 0.2F)));
         ConfiguredFeatures.register(featureRegisterable, TREES_SAVANNA_PLATEAU, Feature.RANDOM_SELECTOR, biomeTrees(paloVerde, Pair.of(acaciaBush, 0.4F)));
+        ConfiguredFeatures.register(featureRegisterable, TREES_SHRUBLANDS, Feature.RANDOM_SELECTOR, biomeTrees(hickoryBush, Pair.of(fancyOak, 0.05F)));
         ConfiguredFeatures.register(featureRegisterable, TREES_SNOWY_TAIGA, Feature.RANDOM_SELECTOR, biomeTrees(fir, Pair.of(hemlockClump, 0.05F)));
         ConfiguredFeatures.register(featureRegisterable, TREES_TAIGA, Feature.RANDOM_SELECTOR, biomeTrees(spruceSelector, Pair.of(cedarClump, 0.05F)));
         ConfiguredFeatures.register(featureRegisterable, TREES_WINDSWEPT_FOREST, Feature.RANDOM_SELECTOR, biomeTrees(maple, Pair.of(fancyMaple, 0.1F), Pair.of(darkOak, 0.5F)));
@@ -344,6 +363,36 @@ public class OverhaulVegetationConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, TREES_WINDSWEPT_HILLS, Feature.RANDOM_SELECTOR, biomeTrees(oak, Pair.of(fancyOak, 0.1F), Pair.of(elm, 0.5F)));
         ConfiguredFeatures.register(featureRegisterable, TREES_WINDSWEPT_SAVANNA, Feature.RANDOM_BOOLEAN_SELECTOR, treeBooleanSelector(acacia, paloVerde));
         ConfiguredFeatures.register(featureRegisterable, TREES_WINTER_WONDERLAND, Feature.RANDOM_SELECTOR, biomeTrees(holly, Pair.of(firClump, 0.05F), Pair.of(hemlockClump, 0.05F)));
+
+        // * Other plants
+        ConfiguredFeatures.register(featureRegisterable, PATCH_PRAIRIE_GRASS, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
+                        32, 7, 3, PlacedFeatures.createEntry(
+                                Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+                                        new WeightedBlockStateProvider(
+                                                Pool.<BlockState>builder()
+                                                        .add(NaturalBlocks.SHORT_PRAIRIE_GRASS.getDefaultState(), 1)
+                                                        .add(NaturalBlocks.TALL_PRAIRIE_GRASS.getDefaultState(), 1)
+                                        )
+                )))
+        );
+        ConfiguredFeatures.register(featureRegisterable, LAVENDER_FLOWERS, Feature.RANDOM_SELECTOR, new RandomFeatureConfig(
+                List.of(
+                        new RandomFeatureEntry(PlacedFeatures.createEntry(Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(32, 7, 3, PlacedFeatures.createEntry(
+                                Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.LILAC.getDefaultState())), BlockPredicate.IS_AIR
+                        ))), 0.01F),
+                        new RandomFeatureEntry(PlacedFeatures.createEntry(Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(32, 7, 3, PlacedFeatures.createEntry(
+                                Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.PEONY.getDefaultState())), BlockPredicate.IS_AIR
+                        ))), 0.01F)
+                ),
+                PlacedFeatures.createEntry(Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(32, 7, 3, PlacedFeatures.createEntry(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(NaturalBlocks.LAVENDER.getDefaultState())), BlockPredicate.IS_AIR
+                )))
+        ));
+        ConfiguredFeatures.register(featureRegisterable, PURPLE_PETALS, Feature.FLOWER, new RandomPatchFeatureConfig(
+                96, 6, 2, PlacedFeatures.createEntry(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(flowerbed(NaturalBlocks.PURPLE_PETALS))),
+                BlockPredicate.IS_AIR
+        )));
     }
 
     // ` ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -364,5 +413,21 @@ public class OverhaulVegetationConfiguredFeatures {
         }
 
         return new RandomFeatureConfig(entries, defaultTrees);
+    }
+
+    private static Pool.Builder<BlockState> flowerbed(Block flowerbed) {
+        return segmentedBlock(flowerbed, 1, 4, FlowerbedBlock.FLOWER_AMOUNT, FlowerbedBlock.HORIZONTAL_FACING);
+    }
+
+    private static Pool.Builder<BlockState> segmentedBlock(Block block, int min, int max, IntProperty amountProperty, EnumProperty<Direction> facingProperty) {
+        Pool.Builder<BlockState> builder = Pool.builder();
+
+        for (int i = min; i <= max; i++) {
+            for (Direction direction : Direction.Type.HORIZONTAL) {
+                builder.add(block.getDefaultState().with(amountProperty, i).with(facingProperty, direction), 1);
+            }
+        }
+
+        return builder;
     }
 }

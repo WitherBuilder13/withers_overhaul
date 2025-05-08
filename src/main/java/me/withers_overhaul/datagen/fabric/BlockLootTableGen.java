@@ -1,8 +1,20 @@
 package me.withers_overhaul.datagen.fabric;
 
+import me.withers_overhaul.block.AridFruitLeavesBlock;
+import me.withers_overhaul.block.TemperateFruitLeavesBlock;
+import me.withers_overhaul.block.util.TreeFruit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -11,6 +23,7 @@ import static me.withers_overhaul.registry.block.ColoredBlocks.*;
 import static me.withers_overhaul.registry.block.NaturalBlocks.*;
 import static me.withers_overhaul.registry.block.StoneBlocks.*;
 import static me.withers_overhaul.registry.block.WoodBlocks.*;
+import static me.withers_overhaul.registry.item.BasicItems.*;
 import static net.minecraft.item.Items.*;
 
 public class BlockLootTableGen extends FabricBlockLootTableProvider {
@@ -258,12 +271,12 @@ public class BlockLootTableGen extends FabricBlockLootTableProvider {
                 0.05F, 0.0625F, 0.083333336F, 0.1F
         };
 
-        addDrop(MAPLE_LEAVES, leavesDrops(MAPLE_LEAVES, MAPLE_SAPLING, saplingChance));
-        addDrop(POPLAR_LEAVES, leavesDrops(POPLAR_LEAVES, POPLAR_SAPLING, saplingChance));
-        addDrop(BEECH_LEAVES, leavesDrops(BEECH_LEAVES, BEECH_SAPLING, saplingChance));
-        addDrop(HICKORY_LEAVES, leavesDrops(HICKORY_LEAVES, HICKORY_SAPLING, saplingChance));
-        addDrop(WALNUT_LEAVES, leavesDrops(WALNUT_LEAVES, WALNUT_SAPLING, saplingChance));
-        addDrop(CHESTNUT_LEAVES, leavesDrops(CHESTNUT_LEAVES, CHESTNUT_SAPLING, saplingChance));
+        addDrop(MAPLE_LEAVES, temperateFruitLeavesDrops(MAPLE_LEAVES, MAPLE_SAPLING, saplingChance));
+        addDrop(POPLAR_LEAVES, temperateFruitLeavesDrops(POPLAR_LEAVES, POPLAR_SAPLING, saplingChance));
+        addDrop(BEECH_LEAVES, temperateFruitLeavesDrops(BEECH_LEAVES, BEECH_SAPLING, saplingChance));
+        addDrop(HICKORY_LEAVES, subtropicalFruitLeavesDrops(HICKORY_LEAVES, HICKORY_SAPLING, saplingChance));
+        addDrop(WALNUT_LEAVES, subtropicalFruitLeavesDrops(WALNUT_LEAVES, WALNUT_SAPLING, saplingChance));
+        addDrop(CHESTNUT_LEAVES, subtropicalFruitLeavesDrops(CHESTNUT_LEAVES, CHESTNUT_SAPLING, saplingChance));
         addDrop(CEDAR_LEAVES, leavesDrops(CEDAR_LEAVES, CEDAR_SAPLING, saplingChance));
         addDrop(REDWOOD_LEAVES, leavesDrops(REDWOOD_LEAVES, REDWOOD_SAPLING, saplingChance));
         addDrop(FIR_LEAVES, leavesDrops(FIR_LEAVES, FIR_SAPLING, saplingChance));
@@ -272,17 +285,17 @@ public class BlockLootTableGen extends FabricBlockLootTableProvider {
         addDrop(PINE_LEAVES, leavesDrops(PINE_LEAVES, PINE_SAPLING, saplingChance));
         addDrop(LARCH_LEAVES, leavesDrops(LARCH_LEAVES, LARCH_SAPLING, saplingChance));
         addDrop(ASPEN_LEAVES, leavesDrops(ASPEN_LEAVES, ASPEN_SAPLING, saplingChance));
-        addDrop(KAPOK_LEAVES, leavesDrops(KAPOK_LEAVES, KAPOK_SAPLING, saplingChance));
-        addDrop(MAHOGANY_LEAVES, leavesDrops(MAHOGANY_LEAVES, MAHOGANY_SAPLING, saplingChance));
-        addDrop(EUCALYPTUS_LEAVES, leavesDrops(EUCALYPTUS_LEAVES, EUCALYPTUS_SAPLING, saplingChance));
-        addDrop(BAOBAB_LEAVES, leavesDrops(BAOBAB_LEAVES, BAOBAB_SAPLING, saplingChance));
-        addDrop(PALO_VERDE_LEAVES, leavesDrops(PALO_VERDE_LEAVES, PALO_VERDE_SAPLING, saplingChance));
-        addDrop(JOSHUA_LEAVES, leavesDrops(JOSHUA_LEAVES, JOSHUA_SAPLING, saplingChance));
-        addDrop(JUNIPER_LEAVES, leavesDrops(JUNIPER_LEAVES, JUNIPER_SAPLING, saplingChance));
+        addDrop(KAPOK_LEAVES, tropicalFruitLeavesDrops(KAPOK_LEAVES, KAPOK_SAPLING, saplingChance));
+        addDrop(MAHOGANY_LEAVES, tropicalFruitLeavesDrops(MAHOGANY_LEAVES, MAHOGANY_SAPLING, saplingChance));
+        addDrop(EUCALYPTUS_LEAVES, tropicalFruitLeavesDrops(EUCALYPTUS_LEAVES, EUCALYPTUS_SAPLING, saplingChance));
+        addDrop(BAOBAB_LEAVES, mediterraneanFruitLeavesDrops(BAOBAB_LEAVES, BAOBAB_SAPLING, saplingChance));
+        addDrop(PALO_VERDE_LEAVES, mediterraneanFruitLeavesDrops(PALO_VERDE_LEAVES, PALO_VERDE_SAPLING, saplingChance));
+        addDrop(JOSHUA_LEAVES, aridFruitLeavesDrops(JOSHUA_LEAVES, JOSHUA_SAPLING, saplingChance));
+        addDrop(JUNIPER_LEAVES, aridFruitLeavesDrops(JUNIPER_LEAVES, JUNIPER_SAPLING, saplingChance));
         addDrop(PALM_LEAVES, leavesDrops(PALM_LEAVES, PALM_SAPLING, saplingChance));
-        addDrop(EBONY_LEAVES, leavesDrops(EBONY_LEAVES, EBONY_SAPLING, saplingChance));
-        addDrop(TEAK_LEAVES, leavesDrops(TEAK_LEAVES, TEAK_SAPLING, saplingChance));
-        addDrop(ELM_LEAVES, leavesDrops(ELM_LEAVES, ELM_SAPLING, saplingChance));
+        addDrop(EBONY_LEAVES, temperateFruitLeavesDrops(EBONY_LEAVES, EBONY_SAPLING, saplingChance));
+        addDrop(TEAK_LEAVES, temperateFruitLeavesDrops(TEAK_LEAVES, TEAK_SAPLING, saplingChance));
+        addDrop(ELM_LEAVES, temperateFruitLeavesDrops(ELM_LEAVES, ELM_SAPLING, saplingChance));
         addDrop(WILLOW_LEAVES, leavesDrops(WILLOW_LEAVES, WILLOW_SAPLING, saplingChance));
         addDrop(CYPRESS_LEAVES, leavesDrops(CYPRESS_LEAVES, CYPRESS_SAPLING, saplingChance));
         addDrop(SAKURA_LEAVES, leavesDrops(SAKURA_LEAVES, SAKURA_SAPLING, saplingChance));
@@ -290,10 +303,311 @@ public class BlockLootTableGen extends FabricBlockLootTableProvider {
         addDrop(FLOWERING_MAGNOLIA_LEAVES, leavesDrops(FLOWERING_MAGNOLIA_LEAVES, FLOWERING_MAGNOLIA_SAPLING, saplingChance));
         addDrop(JACARANDA_LEAVES, leavesDrops(JACARANDA_LEAVES, JACARANDA_SAPLING, saplingChance));
 
-        addDrop(SHORT_PRAIRIE_GRASS, (block) -> shortPlantDrops(SHORT_PRAIRIE_GRASS));
+        addDrop(SHORT_PRAIRIE_GRASS, this::shortPlantDrops);
         addDrop(TALL_PRAIRIE_GRASS, (block -> tallPlantDrops(block, SHORT_PRAIRIE_GRASS)));
         addDrop(CATTAIL, this::dropsWithShears);
-        addDrop(PURPLE_PETALS, segmentedDrops(PURPLE_PETALS));
+        addDrop(PURPLE_PETALS, this::segmentedDrops);
         addDrop(HANGING_MOSS, this::dropsWithSilkTouchOrShears);
+    }
+
+    public LootTable.Builder temperateFruitLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
+        LootPoolEntry.Builder<?> apple = this.addSurvivesExplosionCondition(APPLE, ItemEntry.builder(leaves).apply(
+                SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                        .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APPLE)))
+                )
+        );
+        LootPoolEntry.Builder<?> apricot = this.addSurvivesExplosionCondition(APRICOT, ItemEntry.builder(leaves).apply(
+                SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                        .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APRICOT)))
+                )
+        );
+        LootPoolEntry.Builder<?> kiwi = this.addSurvivesExplosionCondition(KIWI, ItemEntry.builder(leaves).apply(
+                SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                        .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.KIWI)))
+                )
+        );
+        LootPoolEntry.Builder<?> peach = this.addSurvivesExplosionCondition(PEACH, ItemEntry.builder(leaves).apply(
+                SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                        .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PEACH)))
+                )
+        );
+        LootPoolEntry.Builder<?> pear = this.addSurvivesExplosionCondition(PEAR, ItemEntry.builder(leaves).apply(
+                SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                        .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PEAR)))
+                )
+        );
+        LootPoolEntry.Builder<?> plum = this.addSurvivesExplosionCondition(PLUM, ItemEntry.builder(leaves).apply(
+            SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                    .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PLUM)))
+            )
+        );
+
+        return this.leavesDrops(leaves, sapling, saplingChance)
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(apple)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(apricot)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(kiwi)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(peach)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(pear)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(plum)
+                                .build()
+                );
+    }
+
+    public LootTable.Builder mediterraneanFruitLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
+        LootPoolEntry.Builder<?> kumquat = this.addSurvivesExplosionCondition(KUMQUAT, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APPLE)))
+                )
+        );
+        LootPoolEntry.Builder<?> olive = this.addSurvivesExplosionCondition(OLIVE, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APRICOT)))
+                )
+        );
+        LootPoolEntry.Builder<?> persimmon = this.addSurvivesExplosionCondition(PERSIMMON, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.KIWI)))
+                )
+        );
+        LootPoolEntry.Builder<?> pomegranate = this.addSurvivesExplosionCondition(POMEGRANATE, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PEACH)))
+                )
+        );
+
+        return this.leavesDrops(leaves, sapling, saplingChance)
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(kumquat)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(olive)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(persimmon)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(pomegranate)
+                                .build()
+                );
+    }
+
+    public LootTable.Builder subtropicalFruitLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
+        LootPoolEntry.Builder<?> cherry = this.addSurvivesExplosionCondition(CHERRY, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APPLE)))
+                )
+        );
+        LootPoolEntry.Builder<?> fig = this.addSurvivesExplosionCondition(FIG, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APRICOT)))
+                )
+        );
+        LootPoolEntry.Builder<?> grapefruit = this.addSurvivesExplosionCondition(GRAPEFRUIT, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.KIWI)))
+                )
+        );
+        LootPoolEntry.Builder<?> guava = this.addSurvivesExplosionCondition(GUAVA, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PEACH)))
+                )
+        );
+        LootPoolEntry.Builder<?> tangerine = this.addSurvivesExplosionCondition(TANGERINE, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PEAR)))
+                )
+        );
+
+        return this.leavesDrops(leaves, sapling, saplingChance)
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(cherry)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(fig)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(grapefruit)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(guava)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(tangerine)
+                                .build()
+                );
+    }
+
+    public LootTable.Builder tropicalFruitLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
+        LootPoolEntry.Builder<?> avocado = this.addSurvivesExplosionCondition(AVOCADO, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APPLE)))
+                )
+        );
+        LootPoolEntry.Builder<?> banana = this.addSurvivesExplosionCondition(BANANA, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.APRICOT)))
+                )
+        );
+        LootPoolEntry.Builder<?> lemon = this.addSurvivesExplosionCondition(LEMON, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.KIWI)))
+                )
+        );
+        LootPoolEntry.Builder<?> lime = this.addSurvivesExplosionCondition(LIME, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PEACH)))
+                )
+        );
+        LootPoolEntry.Builder<?> mango = this.addSurvivesExplosionCondition(MANGO, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PEAR)))
+                )
+        );
+        LootPoolEntry.Builder<?> orange = this.addSurvivesExplosionCondition(ORANGE, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PLUM)))
+                )
+        );
+        LootPoolEntry.Builder<?> starfruit = this.addSurvivesExplosionCondition(STARFRUIT, ItemEntry.builder(leaves).apply(
+                        SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(TemperateFruitLeavesBlock.FRUIT, TreeFruit.Temperate.PLUM)))
+                )
+        );
+
+        return this.leavesDrops(leaves, sapling, saplingChance)
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(avocado)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(banana)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(lemon)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(lime)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(mango)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(orange)
+                                .build()
+                )
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(starfruit)
+                                .build()
+                );
+    }
+
+    public LootTable.Builder aridFruitLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
+        return this.leavesDrops(leaves, sapling, saplingChance)
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(this.createWithoutShearsOrSilkTouchCondition())
+                                .with(
+                                        this.addSurvivesExplosionCondition(DATE, ItemEntry.builder(leaves).apply(
+                                                SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F))
+                                                        .conditionally(BlockStatePropertyLootCondition.builder(leaves).properties(StatePredicate.Builder.create().exactMatch(AridFruitLeavesBlock.FRUIT, true)))
+                                                        )
+                                                )
+                                )
+                                .build()
+                );
     }
 }

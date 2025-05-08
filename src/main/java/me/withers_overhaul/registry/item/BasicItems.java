@@ -2,6 +2,8 @@ package me.withers_overhaul.registry.item;
 
 import me.withers_overhaul.WithersOverhaul;
 import me.withers_overhaul.item.RuneItem;
+import me.withers_overhaul.item.component.OverhaulFoodComponents;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.Rarity;
 
@@ -11,52 +13,102 @@ import static net.minecraft.util.Rarity.*;
 public class BasicItems {
     public static final Item WARPED_WART = register("warped_wart", Item::new);
 
+    public static final Item APRICOT = foodItem("apricot", OverhaulFoodComponents.APRICOT);
+    public static final Item AVOCADO = foodItem("avocado", OverhaulFoodComponents.AVOCADO);
+    public static final Item BANANA = foodItem("banana", OverhaulFoodComponents.BANANA);
+    public static final Item BLACKBERRIES = foodItem("blackberries", OverhaulFoodComponents.BLACKBERRIES);
+    public static final Item BLUEBERRIES = foodItem("blueberries", OverhaulFoodComponents.BLUEBERRIES);
+    public static final Item BROCCOLI = foodItem("broccoli", OverhaulFoodComponents.BROCCOLI);
+    public static final Item CABBAGE = foodItem("cabbage", OverhaulFoodComponents.CABBAGE);
+    public static final Item CANTALOUPE = foodItem("cantaloupe", OverhaulFoodComponents.CANTALOUPE);
+    public static final Item CAULIFLOWER = foodItem("cauliflower", OverhaulFoodComponents.CAULIFLOWER);
+    public static final Item CELERY = foodItem("celery", OverhaulFoodComponents.CELERY);
+    public static final Item CHERRY = foodItem("cherry", OverhaulFoodComponents.CHERRY);
+    public static final Item CUCUMBER = foodItem("cucumber", OverhaulFoodComponents.CUCUMBER);
+    public static final Item DATE = foodItem("date", OverhaulFoodComponents.DATE);
+    public static final Item DRAGON_FRUIT = foodItem("dragon_fruit", OverhaulFoodComponents.DRAGON_FRUIT);
+    public static final Item EGGPLANT = foodItem("eggplant", OverhaulFoodComponents.EGGPLANT);
+    public static final Item FIG = foodItem("fig", OverhaulFoodComponents.FIG);
+    public static final Item GRAPEFRUIT = foodItem("grapefruit", OverhaulFoodComponents.GRAPEFRUIT);
+    public static final Item GRAPES = foodItem("grape", OverhaulFoodComponents.GRAPES);
+    public static final Item GUAVA = foodItem("guava", OverhaulFoodComponents.GUAVA);
+    public static final Item KIWI = foodItem("kiwi", OverhaulFoodComponents.KIWI);
+    public static final Item KUMQUAT = foodItem("kumquat", OverhaulFoodComponents.KUMQUAT);
+    public static final Item LEMON = foodItem("lemon", OverhaulFoodComponents.LEMON);
+    public static final Item LETTUCE = foodItem("lettuce", OverhaulFoodComponents.LETTUCE);
+    public static final Item LIME = foodItem("lime", OverhaulFoodComponents.LIME);
+    public static final Item MANGO = foodItem("mango", OverhaulFoodComponents.MANGO);
+    public static final Item NECTARINE = foodItem("nectarine", OverhaulFoodComponents.NECTARINE);
+    public static final Item OLIVE = foodItem("olive", OverhaulFoodComponents.OLIVE);
+    public static final Item ONION = foodItem("onion", OverhaulFoodComponents.ONION);
+    public static final Item ORANGE = foodItem("orange", OverhaulFoodComponents.ORANGE);
+    public static final Item PEACH = foodItem("peach", OverhaulFoodComponents.PEACH);
+    public static final Item PEAR = foodItem("pear", OverhaulFoodComponents.PEAR);
+    public static final Item PERSIMMON = foodItem("persimmon", OverhaulFoodComponents.PERSIMMON);
+    public static final Item PICKLE = foodItem("pickle", OverhaulFoodComponents.PICKLE);
+    public static final Item PINEAPPLE = foodItem("pineapple", OverhaulFoodComponents.PINEAPPLE);
+    public static final Item PLUM = foodItem("plum", OverhaulFoodComponents.PLUM);
+    public static final Item POMEGRANATE = foodItem("pomegranate", OverhaulFoodComponents.POMEGRANATE);
+    public static final Item RADISH = foodItem("radish", OverhaulFoodComponents.RADISH);
+    public static final Item RASPBERRY = foodItem("raspberry", OverhaulFoodComponents.RASPBERRY);
+    public static final Item SPINACH = foodItem("spinach", OverhaulFoodComponents.SPINACH);
+    public static final Item STARFRUIT = foodItem("starfruit", OverhaulFoodComponents.STARFRUIT);
+    public static final Item STRAWBERRY = foodItem("strawberry", OverhaulFoodComponents.STRAWBERRY);
+    public static final Item TANGERINE = foodItem("tangerine", OverhaulFoodComponents.TANGERINE);
+    public static final Item TOMATO = foodItem("tomato", OverhaulFoodComponents.TOMATO);
+
     //RUNES
-    public static final Item RUNE_AQUA_AFFINITY = registerRuneItem("aqua_affinity", UNCOMMON);
-    public static final Item RUNE_BANE_OF_ARTHROPODS = registerRuneItem("bane_of_arthropods", UNCOMMON);
-    public static final Item RUNE_BLAST_PROTECTION = registerRuneItem("blast_protection", UNCOMMON);
-    public static final Item RUNE_BREACH = registerRuneItem ("breach", RARE);
-    public static final Item RUNE_CHANNELING = registerRuneItem("channeling", RARE);
-    public static final Item RUNE_DENSITY = registerRuneItem("density", RARE);
-    public static final Item RUNE_DEPTH_STRIDER = registerRuneItem("depth_strider", UNCOMMON);
-    public static final Item RUNE_EFFICIENCY = registerRuneItem("efficiency", UNCOMMON);
-    public static final Item RUNE_FEATHER_FALLING = registerRuneItem("feather_falling", UNCOMMON);
-    public static final Item RUNE_FIRE_ASPECT = registerRuneItem("fire_aspect", UNCOMMON);
-    public static final Item RUNE_FIRE_PROTECTION = registerRuneItem("fire_protection", UNCOMMON);
-    public static final Item RUNE_FLAME = registerRuneItem("flame", UNCOMMON);
-    public static final Item RUNE_FORTUNE = registerRuneItem("fortune", UNCOMMON);
-    public static final Item RUNE_FROST_WALKER = registerRuneItem("frost_walker", UNCOMMON);
-    public static final Item RUNE_IMPALING = registerRuneItem("impaling", RARE);
-    public static final Item RUNE_INFINITY = registerRuneItem("infinity", RARE);
-    public static final Item RUNE_KNOCKBACK = registerRuneItem("knockback", UNCOMMON);
-    public static final Item RUNE_LOOTING = registerRuneItem("looting", UNCOMMON);
-    public static final Item RUNE_LOYALTY = registerRuneItem("loyalty", RARE);
-    public static final Item RUNE_LUCK_OF_THE_SEA = registerRuneItem("luck_of_the_sea", UNCOMMON);
-    public static final Item RUNE_LURE = registerRuneItem("lure", UNCOMMON);
-    public static final Item RUNE_MENDING = registerRuneItem("mending", EPIC);
-    public static final Item RUNE_MULTISHOT = registerRuneItem("multishot", UNCOMMON);
-    public static final Item RUNE_PIERCING = registerRuneItem("piercing", UNCOMMON);
-    public static final Item RUNE_POWER = registerRuneItem("power", UNCOMMON);
-    public static final Item RUNE_PROJECTILE_PROTECTION = registerRuneItem("projectile_protection", UNCOMMON);
-    public static final Item RUNE_PROTECTION = registerRuneItem("protection", UNCOMMON);
-    public static final Item RUNE_PUNCH = registerRuneItem("punch", UNCOMMON);
-    public static final Item RUNE_QUICK_CHARGE = registerRuneItem("quick_charge", UNCOMMON);
-    public static final Item RUNE_RESPIRATION = registerRuneItem("respiration", UNCOMMON);
-    public static final Item RUNE_RIPTIDE = registerRuneItem("riptide", EPIC);
-    public static final Item RUNE_SHARPNESS = registerRuneItem("sharpness", UNCOMMON);
-    public static final Item RUNE_SILK_TOUCH = registerRuneItem("silk_touch", UNCOMMON);
-    public static final Item RUNE_SMITE = registerRuneItem("smite", UNCOMMON);
-    public static final Item RUNE_SOUL_SPEED = registerRuneItem("soul_speed", RARE);
-    public static final Item RUNE_SWEEPING_EDGE = registerRuneItem("sweeping_edge", UNCOMMON);
-    public static final Item RUNE_SWIFT_SNEAK = registerRuneItem("swift_sneak", RARE);
-    public static final Item RUNE_THORNS = registerRuneItem("thorns", RARE);
-    public static final Item RUNE_UNBREAKING = registerRuneItem("unbreaking", UNCOMMON);
-    public static final Item RUNE_WIND_BURST = registerRuneItem("wind_burst", EPIC);
+    public static final Item RUNE_AQUA_AFFINITY = runeItem("aqua_affinity", UNCOMMON);
+    public static final Item RUNE_BANE_OF_ARTHROPODS = runeItem("bane_of_arthropods", UNCOMMON);
+    public static final Item RUNE_BLAST_PROTECTION = runeItem("blast_protection", UNCOMMON);
+    public static final Item RUNE_BREACH = runeItem("breach", RARE);
+    public static final Item RUNE_CHANNELING = runeItem("channeling", RARE);
+    public static final Item RUNE_DENSITY = runeItem("density", RARE);
+    public static final Item RUNE_DEPTH_STRIDER = runeItem("depth_strider", UNCOMMON);
+    public static final Item RUNE_EFFICIENCY = runeItem("efficiency", UNCOMMON);
+    public static final Item RUNE_FEATHER_FALLING = runeItem("feather_falling", UNCOMMON);
+    public static final Item RUNE_FIRE_ASPECT = runeItem("fire_aspect", UNCOMMON);
+    public static final Item RUNE_FIRE_PROTECTION = runeItem("fire_protection", UNCOMMON);
+    public static final Item RUNE_FLAME = runeItem("flame", UNCOMMON);
+    public static final Item RUNE_FORTUNE = runeItem("fortune", UNCOMMON);
+    public static final Item RUNE_FROST_WALKER = runeItem("frost_walker", UNCOMMON);
+    public static final Item RUNE_IMPALING = runeItem("impaling", RARE);
+    public static final Item RUNE_INFINITY = runeItem("infinity", RARE);
+    public static final Item RUNE_KNOCKBACK = runeItem("knockback", UNCOMMON);
+    public static final Item RUNE_LOOTING = runeItem("looting", UNCOMMON);
+    public static final Item RUNE_LOYALTY = runeItem("loyalty", RARE);
+    public static final Item RUNE_LUCK_OF_THE_SEA = runeItem("luck_of_the_sea", UNCOMMON);
+    public static final Item RUNE_LURE = runeItem("lure", UNCOMMON);
+    public static final Item RUNE_MENDING = runeItem("mending", EPIC);
+    public static final Item RUNE_MULTISHOT = runeItem("multishot", UNCOMMON);
+    public static final Item RUNE_PIERCING = runeItem("piercing", UNCOMMON);
+    public static final Item RUNE_POWER = runeItem("power", UNCOMMON);
+    public static final Item RUNE_PROJECTILE_PROTECTION = runeItem("projectile_protection", UNCOMMON);
+    public static final Item RUNE_PROTECTION = runeItem("protection", UNCOMMON);
+    public static final Item RUNE_PUNCH = runeItem("punch", UNCOMMON);
+    public static final Item RUNE_QUICK_CHARGE = runeItem("quick_charge", UNCOMMON);
+    public static final Item RUNE_RESPIRATION = runeItem("respiration", UNCOMMON);
+    public static final Item RUNE_RIPTIDE = runeItem("riptide", EPIC);
+    public static final Item RUNE_SHARPNESS = runeItem("sharpness", UNCOMMON);
+    public static final Item RUNE_SILK_TOUCH = runeItem("silk_touch", UNCOMMON);
+    public static final Item RUNE_SMITE = runeItem("smite", UNCOMMON);
+    public static final Item RUNE_SOUL_SPEED = runeItem("soul_speed", RARE);
+    public static final Item RUNE_SWEEPING_EDGE = runeItem("sweeping_edge", UNCOMMON);
+    public static final Item RUNE_SWIFT_SNEAK = runeItem("swift_sneak", RARE);
+    public static final Item RUNE_THORNS = runeItem("thorns", RARE);
+    public static final Item RUNE_UNBREAKING = runeItem("unbreaking", UNCOMMON);
+    public static final Item RUNE_WIND_BURST = runeItem("wind_burst", EPIC);
 
     public static final Item GOURD_SEEDS = register("gourd_seeds", Item::new);
 
-    private static Item registerRuneItem(String enchantmentName, Rarity rarity) {
+    // ` --------------------------------------------------------------------------------------------------------------------
+
+    private static Item runeItem(String enchantmentName, Rarity rarity) {
         return register("rune_" + enchantmentName, RuneItem::new, new Item.Settings().rarity(rarity));
+    }
+
+    private static Item foodItem(String name, FoodComponent foodComponent) {
+        return register(name, Item::new, new Item.Settings().food(foodComponent));
     }
 
     public static void registerBasicItems() {

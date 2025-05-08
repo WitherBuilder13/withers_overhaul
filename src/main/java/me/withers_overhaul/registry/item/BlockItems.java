@@ -5,11 +5,12 @@ import me.withers_overhaul.item.ore.*;
 import me.withers_overhaul.registry.block.StoneBlocks;
 import me.withers_overhaul.registry.block.WoodBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.item.*;
+import net.minecraft.item.HangingSignItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.item.SignItem;
 
-import static me.withers_overhaul.registry.block.NaturalBlocks.PINE_SAPLING;
 import static me.withers_overhaul.registry.block.WoodBlocks.*;
-//import static me.withers_overhaul.item.ToolTipItem.Tooltips.*;
 
 public class BlockItems {
     //SIGNS
@@ -166,8 +167,6 @@ public class BlockItems {
     public static final Item PHYLLITE_EMERALD_ORE = registerPhylliteOre(StoneBlocks.PHYLLITE_EMERALD_ORE);
     public static final Item PHYLLITE_LAPIS_ORE = registerPhylliteOre(StoneBlocks.PHYLLITE_LAPIS_ORE);
     public static final Item PHYLLITE_DIAMOND_ORE = registerPhylliteOre(StoneBlocks.PHYLLITE_DIAMOND_ORE);
-
-    public static final Item PINE_CONE = OverhaulItems.register("pine_cone", settings -> new BlockItem(PINE_SAPLING, new Item.Settings().registryKey(OverhaulItems.keyOf("pine_cone")).useItemPrefixedTranslationKey()));
 
     public static Item registerSignItem(Block sign, Block wallSign, boolean hangingSign) {
         if (hangingSign) {
