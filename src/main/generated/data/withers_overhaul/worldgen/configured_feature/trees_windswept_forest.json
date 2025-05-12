@@ -1,11 +1,11 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "withers_overhaul:maple",
+    "default": "withers_overhaul:maple_selector",
     "features": [
       {
         "chance": 0.1,
-        "feature": "withers_overhaul:fancy_maple"
+        "feature": "withers_overhaul:fancy_maple_selector"
       },
       {
         "chance": 0.5,

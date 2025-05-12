@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:random_patch",
-  "config": {
-    "feature": "withers_overhaul:oak_checked",
-    "tries": 16
-  }
-}

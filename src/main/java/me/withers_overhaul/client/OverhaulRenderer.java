@@ -29,16 +29,26 @@ public class OverhaulRenderer {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
         }
 
-        Block[] tintedBlocks = {
-                MAPLE_LEAVES, POPLAR_LEAVES, BEECH_LEAVES, KAPOK_LEAVES, MAHOGANY_LEAVES, EUCALYPTUS_LEAVES, BAOBAB_LEAVES, PALO_VERDE_LEAVES,
-                JOSHUA_LEAVES, JUNIPER_LEAVES, PALM_LEAVES, EBONY_LEAVES, TEAK_LEAVES, ELM_LEAVES, WILLOW_LEAVES, CYPRESS_LEAVES, PURPLE_PETALS
+        Block[] tintedFoliageBlocks = {
+                MAPLE_LEAVES, POPLAR_LEAVES, BEECH_LEAVES, HICKORY_LEAVES, KAPOK_LEAVES, MAHOGANY_LEAVES, EUCALYPTUS_LEAVES, BAOBAB_LEAVES, PALO_VERDE_LEAVES,
+                JOSHUA_LEAVES, JUNIPER_LEAVES, PALM_LEAVES, EBONY_LEAVES, TEAK_LEAVES, ELM_LEAVES, WILLOW_LEAVES, CYPRESS_LEAVES
+        };
+
+        Block[] tintedGrassBlocks = {
+                PURPLE_PETALS
         };
 
         if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
-            for (Block block : tintedBlocks) {
-                ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
-                    return world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : -1;
-                }, block);
+            for (Block block : tintedFoliageBlocks) {
+                ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) ->
+                        world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : -1, block
+                );
+            }
+
+            for (Block block : tintedGrassBlocks) {
+                ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) ->
+                        world != null && pos != null ? BiomeColors.getGrassColor(world, pos) : -1, block
+                );
             }
 
             renderSigns();

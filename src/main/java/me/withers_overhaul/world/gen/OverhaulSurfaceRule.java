@@ -125,7 +125,11 @@ public class OverhaulSurfaceRule {
                 ),
                 MaterialRules.condition(
                         MaterialRules.biome(STONY_SHORE, COOL_RIVER),
-                        MaterialRules.sequence(MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, 0.0, 1.0), gravelWithAndesiteCeiling), ANDESITE)
+                        MaterialRules.sequence(MaterialRules.condition(MaterialRules.noiseThreshold(OverhaulNoiseParameters.GRAVEL, 0.0, 1.0), gravelWithAndesiteCeiling), ANDESITE)
+                ),
+                MaterialRules.condition(
+                        MaterialRules.biome(DESERT_FIELDS),
+                        MaterialRules.sequence(MaterialRules.condition(MaterialRules.noiseThreshold(OverhaulNoiseParameters.COARSE_DIRT_DESERT, 0.0, 1.0), COARSE_DIRT), sandWithSandstoneCeiling)
                 ),
                 MaterialRules.condition(MaterialRules.biome(WINDSWEPT_HILLS), MaterialRules.condition(surfaceNoiseThreshold(1.0), STONE)),
                 MaterialRules.condition(sandstoneShallowBiomes, sandWithSandstoneCeiling),

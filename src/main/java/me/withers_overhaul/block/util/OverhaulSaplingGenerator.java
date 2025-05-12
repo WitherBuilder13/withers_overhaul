@@ -169,14 +169,14 @@ public class OverhaulSaplingGenerator {
     // ` ---------------------------------------------------------------------------------------------------------------------------------------------------
 
     @Nullable
-    private RegistryKey<ConfiguredFeature<?, ?>> getRedwoodTreeFeature(Random random) {
+    private RegistryKey<ConfiguredFeature<?, ?>> getRedwoodTreeFeature() {
         return this.redwoodConfiguredFeature.orElse(null);
     }
 
     public boolean generate(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state, Random random) {
-        RegistryKey<ConfiguredFeature<?, ?>> registryKeyRedwood = this.getRedwoodTreeFeature(random);
+        RegistryKey<ConfiguredFeature<?, ?>> registryKeyRedwood = this.getRedwoodTreeFeature();
         //if (registryKeyRedwood != null) {
-            RegistryEntry<ConfiguredFeature<?, ?>> registryEntry = (RegistryEntry<ConfiguredFeature<?, ?>>) world.getRegistryManager()
+            RegistryEntry<ConfiguredFeature<?, ?>> registryEntry = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.CONFIGURED_FEATURE)
                     .getOptional(registryKeyRedwood)
                     .orElse(null);

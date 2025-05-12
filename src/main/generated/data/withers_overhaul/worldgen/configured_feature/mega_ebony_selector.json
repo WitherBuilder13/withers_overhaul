@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": "withers_overhaul:mega_ebony",
+    "feature_true": "withers_overhaul:trees_fruit_mega_ebony"
+  }
+}

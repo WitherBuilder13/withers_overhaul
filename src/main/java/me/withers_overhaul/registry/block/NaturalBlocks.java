@@ -2,6 +2,7 @@ package me.withers_overhaul.registry.block;
 
 import me.withers_overhaul.block.*;
 import me.withers_overhaul.block.HangingMossBlock;
+import me.withers_overhaul.block.fruit.*;
 import me.withers_overhaul.block.util.OverhaulSaplingGenerator;
 import me.withers_overhaul.block.util.OverhaulWoodTypes;
 import net.minecraft.block.*;
@@ -55,10 +56,10 @@ public class NaturalBlocks {
     // * ---------------------------------------------------------------------------------------------------------------------------------
 
     //SAPLINGS
-    public static final Block MAPLE_SAPLING = saplingBlock(MAPLE, OverhaulSaplingGenerator.MAPLE);
-    public static final Block POPLAR_SAPLING = saplingBlock(POPLAR, OverhaulSaplingGenerator.POPLAR);
-    public static final Block BEECH_SAPLING = saplingBlock(BEECH, OverhaulSaplingGenerator.BEECH);
-    public static final Block HICKORY_SAPLING = saplingBlock(HICKORY, SaplingGenerator.OAK);
+    public static final Block MAPLE_SAPLING = temperateFruitSaplingBlock(MAPLE, FruitSaplingGenerator.MAPLE);
+    public static final Block POPLAR_SAPLING = temperateFruitSaplingBlock(POPLAR, FruitSaplingGenerator.POPLAR);
+    public static final Block BEECH_SAPLING = temperateFruitSaplingBlock(BEECH, FruitSaplingGenerator.BEECH);
+    public static final Block HICKORY_SAPLING = subtropicalFruitSaplingBlock(HICKORY, FruitSaplingGenerator.HICKORY);
     public static final Block WALNUT_SAPLING = saplingBlock(WALNUT, SaplingGenerator.OAK);
     public static final Block CHESTNUT_SAPLING = saplingBlock(CHESTNUT, SaplingGenerator.OAK);
     public static final Block CEDAR_SAPLING = saplingBlock(CEDAR, OverhaulSaplingGenerator.CEDAR);
@@ -75,13 +76,13 @@ public class NaturalBlocks {
     public static final Block MAHOGANY_SAPLING = saplingBlock(MAHOGANY, SaplingGenerator.JUNGLE);
     public static final Block EUCALYPTUS_SAPLING = saplingBlock(EUCALYPTUS, SaplingGenerator.JUNGLE);
     public static final Block BAOBAB_SAPLING = saplingBlock(BAOBAB, SaplingGenerator.ACACIA);
-    public static final Block PALO_VERDE_SAPLING = saplingBlock(PALO_VERDE, OverhaulSaplingGenerator.PALO_VERDE);
+    public static final Block PALO_VERDE_SAPLING = mediterraneanFruitSaplingBlock(PALO_VERDE, FruitSaplingGenerator.PALO_VERDE);
     public static final Block JOSHUA_SAPLING = saplingBlock(JOSHUA, SaplingGenerator.ACACIA);
     public static final Block JUNIPER_SAPLING = saplingBlock(JUNIPER, SaplingGenerator.ACACIA);
     public static final Block PALM_SAPLING = saplingBlock(PALM, SaplingGenerator.ACACIA);
-    public static final Block EBONY_SAPLING = saplingBlock(EBONY, OverhaulSaplingGenerator.EBONY);
-    public static final Block TEAK_SAPLING = saplingBlock(TEAK, OverhaulSaplingGenerator.TEAK);
-    public static final Block ELM_SAPLING = saplingBlock(ELM, OverhaulSaplingGenerator.ELM);
+    public static final Block EBONY_SAPLING = temperateFruitSaplingBlock(EBONY, FruitSaplingGenerator.EBONY);
+    public static final Block TEAK_SAPLING = temperateFruitSaplingBlock(TEAK, FruitSaplingGenerator.TEAK);
+    public static final Block ELM_SAPLING = temperateFruitSaplingBlock(ELM, FruitSaplingGenerator.ELM);
     public static final Block WILLOW_SAPLING = saplingBlock(WILLOW, SaplingGenerator.MANGROVE);
     public static final Block CYPRESS_SAPLING = saplingBlock(CYPRESS, SaplingGenerator.MANGROVE);
     public static final Block SAKURA_SAPLING = saplingBlock(SAKURA, SaplingGenerator.CHERRY, BlockSoundGroup.CHERRY_SAPLING);
@@ -131,6 +132,23 @@ public class NaturalBlocks {
 
     public static final Block FROSTED_SAND = gravityBlock("frosted_sand", AbstractBlock.Settings.copy(SAND), 13232621);
     public static final Block CHARRED_SAND = gravityBlock("charred_sand", AbstractBlock.Settings.copy(SAND), 5134426);
+
+    // * -----------------------------------------------------------------------------------------------------------------------------------------
+
+    /*public static final Block ARTICHOKES = cropBlock("artichokes");
+    public static final Block BROCCOLI = cropBlock("broccoli");
+    public static final Block CABBAGE = cropBlock("cabbage");
+    public static final Block CANTALOUPE = cropBlock("cantaloupe");
+    public static final Block CAULIFLOWER = cropBlock("cauliflower");
+    public static final Block CELERY = cropBlock("celery");
+    public static final Block CUCUMBERS = cropBlock("cucumbers");
+    public static final Block EGGPLANT = cropBlock("eggplant");
+    public static final Block JALAPENOS = cropBlock("jalapenos");
+    public static final Block KALE = cropBlock("kale");
+    public static final Block LETTUCE = cropBlock("lettuce");
+    public static final Block ONIONS = cropBlock("onions");
+    public static final Block RADISHES = cropBlock("radishes");
+    public static final Block SPINACH = cropBlock("spinach");*/
 
     // * -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -220,20 +238,40 @@ public class NaturalBlocks {
     // * -----------------------------------------------------------------------------------------------------------------------------
 
     public static Block saplingBlock(OverhaulWoodTypes.WoodType woodType, SaplingGenerator generator) {
-        return register(woodType.getName() + "_sapling", new SaplingBlock(
-                generator, AbstractBlock.Settings.copy(OAK_SAPLING)), true
-        );
+        String id = woodType.getName() + "_sapling";
+        return register(id, new SaplingBlock(generator, AbstractBlock.Settings.copy(OAK_SAPLING).registryKey(keyOf(id))), true);
     }
 
     public static Block snowSaplingBlock(OverhaulWoodTypes.WoodType woodType, SaplingGenerator generator) {
-        return register(woodType.getName() + "_sapling", new SnowSaplingBlock(
-                generator, AbstractBlock.Settings.copy(SPRUCE_SAPLING)), true
-        );
+        String id = woodType.getName() + "_sapling";
+        return register(id, new SnowSaplingBlock(generator, AbstractBlock.Settings.copy(SPRUCE_SAPLING).registryKey(keyOf(id))), true);
     }
 
     public static Block saplingBlock(OverhaulWoodTypes.WoodType woodType, SaplingGenerator generator, BlockSoundGroup soundGroup) {
         String id = woodType.getName() + "_sapling";
         return register(id, new SaplingBlock(generator, AbstractBlock.Settings.copy(OAK_SAPLING).sounds(soundGroup).registryKey(keyOf(id))), true);
+    }
+
+    // * ----------------------------------------------------------------------------------------------------------------------------------
+
+    public static Block temperateFruitSaplingBlock(OverhaulWoodTypes.WoodType woodType, FruitSaplingGenerator generator) {
+        String id = woodType.getName() + "_sapling";
+        return register(id, new TemperateFruitSaplingBlock(generator, AbstractBlock.Settings.copy(OAK_SAPLING).registryKey(keyOf(id))), true);
+    }
+
+    public static Block mediterraneanFruitSaplingBlock(OverhaulWoodTypes.WoodType woodType, FruitSaplingGenerator generator) {
+        String id = woodType.getName() + "_sapling";
+        return register(id, new MediterraneanFruitSaplingBlock(generator, AbstractBlock.Settings.copy(ACACIA_SAPLING).registryKey(keyOf(id))), true);
+    }
+
+    public static Block subtropicalFruitSaplingBlock(OverhaulWoodTypes.WoodType woodType, FruitSaplingGenerator generator) {
+        String id = woodType.getName() + "_sapling";
+        return register(id, new SubtropicalFruitSaplingBlock(generator, AbstractBlock.Settings.copy(OAK_SAPLING).registryKey(keyOf(id))), true);
+    }
+
+    public static Block tropicalFruitSaplingBlock(OverhaulWoodTypes.WoodType woodType, FruitSaplingGenerator generator) {
+        String id = woodType.getName() + "_sapling";
+        return register(id, new TropicalFruitSaplingBlock(generator, AbstractBlock.Settings.copy(JUNGLE_SAPLING).registryKey(keyOf(id))), true);
     }
 
     // * ----------------------------------------------------------------------------------------------------------------------------------
@@ -247,6 +285,12 @@ public class NaturalBlocks {
 
     public static Block gravityBlock(String name, AbstractBlock.Settings settings, int color) {
         return register(name, new ColoredFallingBlock(new ColorCode(color), settings.registryKey(keyOf(name))), true);
+    }
+
+    // * ----------------------------------------------------------------------------------------------------------------------------------
+
+    public static Block cropBlock(String name) {
+        return register(name, new CropBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf(name))), false);
     }
 
     // ` --------------------------------------------------------------------------------------------------------------------------------------

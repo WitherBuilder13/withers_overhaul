@@ -1,11 +1,11 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "withers_overhaul:oak_bush",
+    "default": "withers_overhaul:hickory_bush_selector",
     "features": [
       {
         "chance": 0.05,
-        "feature": "minecraft:fancy_oak_checked"
+        "feature": "withers_overhaul:hickory_selector"
       }
     ]
   }

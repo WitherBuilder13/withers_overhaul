@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "withers_overhaul:elm",
+    "default": "withers_overhaul:elm_selector",
     "features": []
   }
 }

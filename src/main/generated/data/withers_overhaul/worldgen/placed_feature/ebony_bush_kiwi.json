@@ -1,0 +1,18 @@
+{
+  "feature": "withers_overhaul:ebony_bush_kiwi",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "withers_overhaul:ebony_sapling",
+          "Properties": {
+            "fruit": "none",
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

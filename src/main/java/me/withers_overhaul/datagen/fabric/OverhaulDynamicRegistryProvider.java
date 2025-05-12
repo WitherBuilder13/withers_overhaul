@@ -5,6 +5,7 @@ import me.withers_overhaul.world.biome.OverhaulBiomes;
 import me.withers_overhaul.world.feature.OverhaulConfiguredFeatures;
 import me.withers_overhaul.world.feature.OverhaulPlacedFeatures;
 import me.withers_overhaul.world.gen.OverhaulChunkGenerator;
+import me.withers_overhaul.world.gen.OverhaulNoiseParameters;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.registry.RegistryBuilder;
@@ -25,7 +26,7 @@ public class OverhaulDynamicRegistryProvider extends FabricDynamicRegistryProvid
                 .addRegistry(RegistryKeys.CONFIGURED_FEATURE, OverhaulConfiguredFeatures::bootstrap)
                 .addRegistry(RegistryKeys.PLACED_FEATURE, OverhaulPlacedFeatures::bootstrap)
                 .addRegistry(RegistryKeys.CHUNK_GENERATOR_SETTINGS, OverhaulChunkGenerator::bootstrap)
-                //.addRegistry(RegistryKeys.WORLD_PRESET, OverhaulPresets::bootstrap)
+                .addRegistry(RegistryKeys.NOISE_PARAMETERS, OverhaulNoiseParameters::bootstrap)
         ;
     }
 
@@ -36,7 +37,7 @@ public class OverhaulDynamicRegistryProvider extends FabricDynamicRegistryProvid
         addAll(entries, registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE));
         addAll(entries, registries.getOrThrow(RegistryKeys.PLACED_FEATURE));
         addAll(entries, registries.getOrThrow(RegistryKeys.CHUNK_GENERATOR_SETTINGS));
-        //addAll(entries, registries.getOrThrow(RegistryKeys.WORLD_PRESET));
+        addAll(entries, registries.getOrThrow(RegistryKeys.NOISE_PARAMETERS));
     }
 
     @Override

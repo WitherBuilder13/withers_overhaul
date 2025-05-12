@@ -2,6 +2,6 @@
   "type": "minecraft:random_boolean_selector",
   "config": {
     "feature_false": "minecraft:acacia_checked",
-    "feature_true": "withers_overhaul:palo_verde"
+    "feature_true": "withers_overhaul:palo_verde_selector"
   }
 }

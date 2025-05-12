@@ -2,11 +2,13 @@ package me.withers_overhaul.datagen.fabric;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
 import static me.withers_overhaul.registry.block.WoodBlocks.*;
+import static me.withers_overhaul.registry.item.BasicItems.*;
 import static me.withers_overhaul.tag.OverhaulItemTags.*;
 
 public class ItemTagGen extends FabricTagProvider.ItemTagProvider {
@@ -106,5 +108,17 @@ public class ItemTagGen extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(JACARANDA_LOGS)
                 .add(JACARANDA_LOG.asItem(), JACARANDA_WOOD.asItem(), STRIPPED_JACARANDA_LOG.asItem(), STRIPPED_JACARANDA_WOOD.asItem());
+
+        getOrCreateTagBuilder(TEMPERATE_FRUITS)
+                .add(Items.APPLE, APRICOT, KIWI, NECTARINE, PEACH, PEAR, PLUM);
+
+        getOrCreateTagBuilder(MEDITERRANEAN_FRUITS)
+                .add(KUMQUAT, OLIVE, PERSIMMON, POMEGRANATE);
+
+        getOrCreateTagBuilder(SUBTROPICAL_FRUITS)
+                .add(CHERRY, FIG, GRAPEFRUIT, GUAVA, TANGERINE);
+
+        getOrCreateTagBuilder(TROPICAL_FRUITS)
+                .add(AVOCADO, BANANA, LEMON, LIME, MANGO, ORANGE, STARFRUIT);
     }
 }

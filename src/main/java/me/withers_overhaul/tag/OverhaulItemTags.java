@@ -42,16 +42,17 @@ public class OverhaulItemTags {
     public static final TagKey<Item> MAGNOLIA_LOGS = LogTagKey(MAGNOLIA);
     public static final TagKey<Item> JACARANDA_LOGS = LogTagKey(JACARANDA);
 
+    public static final TagKey<Item> TEMPERATE_FRUITS = ItemTagKey("temperate_fruits");
+    public static final TagKey<Item> MEDITERRANEAN_FRUITS = ItemTagKey("mediterranean_fruits");
+    public static final TagKey<Item> SUBTROPICAL_FRUITS = ItemTagKey("subtropical_fruits");
+    public static final TagKey<Item> TROPICAL_FRUITS = ItemTagKey("tropical_fruits");
+
     public static TagKey<Item> LogTagKey(OverhaulWoodTypes.WoodType woodType) {
-
         return ItemTagKey(woodType.getName() + "_logs");
-
     }
 
     public static TagKey<Item> ItemTagKey(String name) {
-
         return TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name));
-
     }
 
 }

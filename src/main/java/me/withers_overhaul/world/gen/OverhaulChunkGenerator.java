@@ -76,13 +76,13 @@ public class OverhaulChunkGenerator {
                 shiftX,
                 shiftZ,
                 0.25,
-                noiseParametersLookup.getOrThrow(NoiseParametersKeys.TEMPERATURE)
+                noiseParametersLookup.getOrThrow(OverhaulNoiseParameters.TEMPERATURE)
         );
         DensityFunction vegetation = DensityFunctionTypes.shiftedNoise(
                 shiftX,
                 shiftZ,
                 0.25,
-                noiseParametersLookup.getOrThrow(NoiseParametersKeys.VEGETATION)
+                noiseParametersLookup.getOrThrow(OverhaulNoiseParameters.VEGETATION)
         );
         DensityFunction factorOverworld = entryHolder(
                 densityFunctionLookup, (FACTOR_OVERWORLD)

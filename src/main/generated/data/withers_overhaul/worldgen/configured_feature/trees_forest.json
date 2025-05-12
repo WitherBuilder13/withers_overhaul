@@ -9,11 +9,11 @@
       },
       {
         "chance": 0.3,
-        "feature": "withers_overhaul:maple"
+        "feature": "withers_overhaul:maple_selector"
       },
       {
         "chance": 0.2,
-        "feature": "withers_overhaul:fancy_maple"
+        "feature": "withers_overhaul:fancy_maple_selector"
       }
     ]
   }

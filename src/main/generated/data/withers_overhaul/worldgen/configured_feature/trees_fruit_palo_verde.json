@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "withers_overhaul:palo_verde_kumquat",
+    "features": [
+      {
+        "chance": 0.14,
+        "feature": "withers_overhaul:palo_verde_olive"
+      },
+      {
+        "chance": 0.14,
+        "feature": "withers_overhaul:palo_verde_persimmon"
+      },
+      {
+        "chance": 0.07,
+        "feature": "withers_overhaul:palo_verde_pomegranate"
+      }
+    ]
+  }
+}

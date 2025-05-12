@@ -12,13 +12,16 @@ import java.nio.file.StandardCopyOption;
 public class OverhaulDataGenerator {
     public static void main(String[] args) {
         String vanillaDir = "src/main/generated/data/vanilla";
-        String destinationDirectory = "src/main/resources/data/minecraft";
+        String destinationDirectory = "src/main/generated/data/minecraft";
 
         DimensionGen.addBiomes();
         DimensionGen.generate(OverhaulChunkGenerator.OVERHAUL, DimensionTypes.OVERWORLD);
         moveFiles(vanillaDir + "/worldgen/biome", destinationDirectory + "/worldgen/biome");
         moveFiles(vanillaDir + "/dimension", destinationDirectory + "/dimension");
-        deleteDirectory(vanillaDir);
+        /*deleteDirectory(vanillaDir + "/worldgen/biome");
+        deleteDirectory(vanillaDir + "/worldgen");
+        deleteDirectory(vanillaDir + "/dimension");
+        deleteDirectory(vanillaDir);*/
     }
 
     public static void moveFiles(String sourceDirectory, String destinationDirectory) {

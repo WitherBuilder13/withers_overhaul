@@ -4,6 +4,7 @@ import net.minecraft.component.type.FoodComponent;
 
 public class OverhaulFoodComponents {
     public static final FoodComponent APRICOT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent ARTICHOKE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent AVOCADO = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent BANANA = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent BLACKBERRIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
@@ -23,6 +24,8 @@ public class OverhaulFoodComponents {
     public static final FoodComponent GRAPEFRUIT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent GRAPES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent GUAVA = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent JALAPEÑO = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent KALE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent KIWI = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent KUMQUAT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent LEMON = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
@@ -45,6 +48,7 @@ public class OverhaulFoodComponents {
     public static final FoodComponent RADISH = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent RASPBERRY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent SPINACH = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent SQUASH = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent STARFRUIT = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent STRAWBERRY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodComponent TANGERINE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();

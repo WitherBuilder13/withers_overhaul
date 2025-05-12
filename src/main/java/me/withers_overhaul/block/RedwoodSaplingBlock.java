@@ -45,7 +45,7 @@ public class RedwoodSaplingBlock extends PlantBlock implements Fertilizable {
     }
 
     public void generate(ServerWorld world, BlockPos pos, BlockState state, Random random) {
-        if ((Integer)state.get(STAGE) == 0) {
+        if (state.get(STAGE) == 0) {
             world.setBlockState(pos, state.cycle(STAGE), Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
         } else {
             this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "withers_overhaul:ebony_apple",
+    "features": [
+      {
+        "chance": 0.14,
+        "feature": "withers_overhaul:ebony_apricot"
+      },
+      {
+        "chance": 0.14,
+        "feature": "withers_overhaul:ebony_kiwi"
+      },
+      {
+        "chance": 0.07,
+        "feature": "withers_overhaul:ebony_nectarine"
+      },
+      {
+        "chance": 0.16,
+        "feature": "withers_overhaul:ebony_peach"
+      },
+      {
+        "chance": 0.16,
+        "feature": "withers_overhaul:ebony_pear"
+      },
+      {
+        "chance": 0.1,
+        "feature": "withers_overhaul:ebony_plum"
+      }
+    ]
+  }
+}

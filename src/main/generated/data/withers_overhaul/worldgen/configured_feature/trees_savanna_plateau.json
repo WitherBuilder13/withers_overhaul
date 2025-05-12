@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "withers_overhaul:palo_verde",
+    "default": "withers_overhaul:palo_verde_selector",
     "features": [
       {
         "chance": 0.4,

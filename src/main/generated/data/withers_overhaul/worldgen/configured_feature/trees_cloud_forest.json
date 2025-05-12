@@ -1,11 +1,11 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "withers_overhaul:mega_ebony",
+    "default": "withers_overhaul:mega_ebony_selector",
     "features": [
       {
         "chance": 0.2,
-        "feature": "withers_overhaul:ebony"
+        "feature": "withers_overhaul:ebony_selector"
       },
       {
         "chance": 0.2,
@@ -13,7 +13,7 @@
       },
       {
         "chance": 0.2,
-        "feature": "withers_overhaul:ebony_bush"
+        "feature": "withers_overhaul:ebony_bush_selector"
       },
       {
         "chance": 0.05,

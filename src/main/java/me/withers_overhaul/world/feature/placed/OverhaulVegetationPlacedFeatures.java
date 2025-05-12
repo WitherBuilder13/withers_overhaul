@@ -23,6 +23,20 @@ import java.util.List;
 import static me.withers_overhaul.world.feature.OverhaulPlacedFeatures.of;
 
 public class OverhaulVegetationPlacedFeatures {
+
+    public static final RegistryKey<PlacedFeature> MAPLE_SELECTOR = of("maple_selector");
+    public static final RegistryKey<PlacedFeature> FANCY_MAPLE_SELECTOR = of("fancy_maple_selector");
+    public static final RegistryKey<PlacedFeature> POPLAR_SELECTOR = of("poplar_selector");
+    public static final RegistryKey<PlacedFeature> BEECH_SELECTOR = of("beech_selector");
+    public static final RegistryKey<PlacedFeature> HICKORY_SELECTOR = of("hickory_selector");
+    public static final RegistryKey<PlacedFeature> HICKORY_BUSH_SELECTOR = of("hickory_bush_selector");
+    public static final RegistryKey<PlacedFeature> PALO_VERDE_SELECTOR = of("palo_verde_selector");
+    public static final RegistryKey<PlacedFeature> EBONY_SELECTOR = of("ebony_selector");
+    public static final RegistryKey<PlacedFeature> MEGA_EBONY_SELECTOR = of("mega_ebony_selector");
+    public static final RegistryKey<PlacedFeature> EBONY_BUSH_SELECTOR = of("ebony_bush_selector");
+    public static final RegistryKey<PlacedFeature> TEAK_SELECTOR = of("teak_selector");
+    public static final RegistryKey<PlacedFeature> ELM_SELECTOR = of("elm_selector");
+
     public static final RegistryKey<PlacedFeature> SPRUCE_SELECTOR = of("spruce_selector");
     public static final RegistryKey<PlacedFeature> MEGA_SPRUCE_SELECTOR = of("mega_spruce_selector");
     public static final RegistryKey<PlacedFeature> CEDAR_SELECTOR = of("cedar_selector");
@@ -31,6 +45,8 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> PINE_TALL_SELECTOR = of("pine_tall_selector");
     public static final RegistryKey<PlacedFeature> LARCH_SELECTOR = of("larch_selector");
     public static final RegistryKey<PlacedFeature> LARCH_TALL_SELECTOR = of("larch_tall_selector");
+
+    // * ------------------------------------------------------------------------------------------------------------------------------
 
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_OAK = of("clump_trees_oak");
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_SPRUCE = of("clump_trees_spruce");
@@ -43,6 +59,23 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_ASPEN = of("clump_trees_aspen");
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_TEAK = of("clump_trees_teak");
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_ELM = of("clump_trees_elm");
+
+    // * ------------------------------------------------------------------------------------------------------------------------------
+
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_MAPLE = of("trees_fruit_maple");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_FANCY_MAPLE = of("trees_fruit_fancy_maple");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_POPLAR = of("trees_fruit_poplar");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_BEECH = of("trees_fruit_beech");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_HICKORY = of("trees_fruit_hickory");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_HICKORY_BUSH = of("trees_fruit_hickory_bush");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_PALO_VERDE = of("trees_fruit_palo_verde");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_EBONY = of("trees_fruit_ebony");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_MEGA_EBONY = of("trees_fruit_mega_ebony");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_EBONY_BUSH = of("trees_fruit_ebony_bush");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_TEAK = of("trees_fruit_teak");
+    public static final RegistryKey<PlacedFeature> TREES_FRUIT_ELM = of("trees_fruit_elm");
+
+    // * ------------------------------------------------------------------------------------------------------------------------------
 
     public static final RegistryKey<PlacedFeature> TREES_ALPINE_FOREST = of("trees_alpine_forest");
     public static final RegistryKey<PlacedFeature> TREES_ALPINE_TANGLE = of("trees_alpine_tangle");
@@ -99,14 +132,31 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> TREES_WINDSWEPT_SAVANNA = of("trees_windswept_savanna");
     public static final RegistryKey<PlacedFeature> TREES_WINTER_WONDERLAND = of("trees_winter_wonderland");
 
+    // * ------------------------------------------------------------------------------------------------------------------------------
+
     public static final RegistryKey<PlacedFeature> PATCH_PRAIRIE_GRASS = of("patch_prairie_grass");
     public static final RegistryKey<PlacedFeature> LAVENDER_FLOWERS = of("lavender_flowers");
     public static final RegistryKey<PlacedFeature> PURPLE_PETALS = of("purple_petals");
+
+    // ` -------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatureLookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         // * Tree selectors
+        RegistryEntry<ConfiguredFeature<?, ?>> mapleSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.MAPLE_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> fancyMapleSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.FANCY_MAPLE_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> poplarSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.POPLAR_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> beechSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.BEECH_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> hickorySelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.HICKORY_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> hickoryBushSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.HICKORY_BUSH_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> paloVerdeSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PALO_VERDE_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> ebonySelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.EBONY_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> megaEbonySelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.MEGA_EBONY_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> ebonyBushSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.EBONY_BUSH_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> teakSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TEAK_SELECTOR);
+        RegistryEntry<ConfiguredFeature<?, ?>> elmSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.ELM_SELECTOR);
+
         RegistryEntry<ConfiguredFeature<?, ?>> spruceSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.SPRUCE_SELECTOR);
         RegistryEntry<ConfiguredFeature<?, ?>> megaSpruceSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.MEGA_SPRUCE_SELECTOR);
         RegistryEntry<ConfiguredFeature<?, ?>> cedarSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.CEDAR_SELECTOR);
@@ -115,6 +165,20 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> pineTallSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PINE_TALL_SELECTOR);
         RegistryEntry<ConfiguredFeature<?, ?>> larchSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.LARCH_SELECTOR);
         RegistryEntry<ConfiguredFeature<?, ?>> larchTallSelector = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.LARCH_TALL_SELECTOR);
+
+        // * Fruit trees
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitMaple = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_MAPLE);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitFancyMaple = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_FANCY_MAPLE);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitPoplar = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_POPLAR);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitBeech = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_BEECH);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitHickory = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_HICKORY);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitHickoryBush = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_HICKORY_BUSH);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitPaloVerde = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_PALO_VERDE);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitEbony = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_EBONY);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitMegaEbony = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_MEGA_EBONY);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitEbonyBush = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_EBONY_BUSH);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitTeak = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_TEAK);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesFruitElm = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FRUIT_ELM);
 
         // * Individual trees
         RegistryEntry<ConfiguredFeature<?, ?>> oak = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_OAK);
@@ -137,7 +201,6 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> treesBirchForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_BIRCH_FOREST);
         RegistryEntry<ConfiguredFeature<?, ?>> treesCloudForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_CLOUD_FOREST);
         RegistryEntry<ConfiguredFeature<?, ?>> treesDarkForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_DARK_FOREST);
-        //RegistryEntry<ConfiguredFeature<?, ?>> treesEbonyThicket = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_EBONY_THICKET);
         RegistryEntry<ConfiguredFeature<?, ?>> treesFlowerForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FLOWER_FOREST);
         RegistryEntry<ConfiguredFeature<?, ?>> treesForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FOREST);
         RegistryEntry<ConfiguredFeature<?, ?>> treesFrostedTangle = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_FROSTED_TANGLE);
@@ -173,6 +236,21 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> lavenderFlowers = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.LAVENDER_FLOWERS);
         RegistryEntry<ConfiguredFeature<?, ?>> purplePetals = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PURPLE_PETALS);
 
+        // ` --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        PlacedFeatures.register(featureRegisterable, MAPLE_SELECTOR, mapleSelector, empty());
+        PlacedFeatures.register(featureRegisterable, FANCY_MAPLE_SELECTOR, fancyMapleSelector, empty());
+        PlacedFeatures.register(featureRegisterable, POPLAR_SELECTOR, poplarSelector, empty());
+        PlacedFeatures.register(featureRegisterable, BEECH_SELECTOR, beechSelector, empty());
+        PlacedFeatures.register(featureRegisterable, HICKORY_SELECTOR, hickorySelector, empty());
+        PlacedFeatures.register(featureRegisterable, HICKORY_BUSH_SELECTOR, hickoryBushSelector, empty());
+        PlacedFeatures.register(featureRegisterable, PALO_VERDE_SELECTOR, paloVerdeSelector, empty());
+        PlacedFeatures.register(featureRegisterable, EBONY_SELECTOR, ebonySelector, empty());
+        PlacedFeatures.register(featureRegisterable, MEGA_EBONY_SELECTOR, megaEbonySelector, empty());
+        PlacedFeatures.register(featureRegisterable, EBONY_BUSH_SELECTOR, ebonyBushSelector, empty());
+        PlacedFeatures.register(featureRegisterable, TEAK_SELECTOR, teakSelector, empty());
+        PlacedFeatures.register(featureRegisterable, ELM_SELECTOR, elmSelector, empty());
+
         PlacedFeatures.register(featureRegisterable, SPRUCE_SELECTOR, spruceSelector, empty());
         PlacedFeatures.register(featureRegisterable, MEGA_SPRUCE_SELECTOR, megaSpruceSelector, empty());
         PlacedFeatures.register(featureRegisterable, CEDAR_SELECTOR, cedarSelector, empty());
@@ -181,6 +259,8 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, PINE_TALL_SELECTOR, pineTallSelector, empty());
         PlacedFeatures.register(featureRegisterable, LARCH_SELECTOR, larchSelector, empty());
         PlacedFeatures.register(featureRegisterable, LARCH_TALL_SELECTOR, larchTallSelector, empty());
+
+        // * --------------------------------------------------------------------------------------------------------------------
 
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_OAK, oak, clumpModifiers().build());
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_SPRUCE, spruce, clumpModifiers().build());
@@ -193,6 +273,23 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_ASPEN, aspen, clumpModifiers().build());
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_TEAK, teak, clumpModifiers().build());
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_ELM, elm, clumpModifiers().build());
+
+        // * --------------------------------------------------------------------------------------------------------------------
+
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_MAPLE, treesFruitMaple, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_FANCY_MAPLE, treesFruitFancyMaple, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_POPLAR, treesFruitPoplar, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_BEECH, treesFruitBeech, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_HICKORY, treesFruitHickory, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_HICKORY_BUSH, treesFruitHickoryBush, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_PALO_VERDE, treesFruitPaloVerde, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_EBONY, treesFruitEbony, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_MEGA_EBONY, treesFruitMegaEbony, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_EBONY_BUSH, treesFruitEbonyBush, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_TEAK, treesFruitTeak, empty());
+        PlacedFeatures.register(featureRegisterable, TREES_FRUIT_ELM, treesFruitElm, empty());
+
+        // * --------------------------------------------------------------------------------------------------------------------
         
         PlacedFeatures.register(featureRegisterable, TREES_ALPINE_FOREST, treesAlpineForest, treeModifiers(10));
         PlacedFeatures.register(featureRegisterable, TREES_ALPINE_TANGLE, treesAlpineTangle, treeModifiers(3));
@@ -201,7 +298,6 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, TREES_BIRCH_FOREST, treesBirchForest, treeModifiers(10));
         PlacedFeatures.register(featureRegisterable, TREES_CLOUD_FOREST, treesCloudForest, treeModifiers(40));
         PlacedFeatures.register(featureRegisterable, TREES_DARK_FOREST, treesDarkForest, treeModifiers(20));
-        //PlacedFeatures.register(featureRegisterable, TREES_EBONY_THICKET, treesEbonyThicket, treeModifiers(30));
         PlacedFeatures.register(featureRegisterable, TREES_FLOWER_FOREST, treesFlowerForest, treeModifiers(20));
         PlacedFeatures.register(featureRegisterable, TREES_FOREST, treesForest, treeModifiers(15));
         PlacedFeatures.register(featureRegisterable, TREES_FROSTED_TANGLE, treesFrostedTangle, treeModifiers(3));
@@ -233,6 +329,8 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, TREES_WINDSWEPT_SAVANNA, treesWindsweptSavanna, treeModifiers(2));
         PlacedFeatures.register(featureRegisterable, TREES_WINTER_WONDERLAND, treesWinterWonderland, treeModifiers(15));
 
+        // * --------------------------------------------------------------------------------------------------------------------
+
         PlacedFeatures.register(featureRegisterable, PATCH_PRAIRIE_GRASS, patchPrairieGrass, ImmutableList.<PlacementModifier>builder()
                 .add(NoiseThresholdCountPlacementModifier.of(0.4F, 10, 14))
                 .add(SquarePlacementModifier.of())
@@ -255,6 +353,8 @@ public class OverhaulVegetationPlacedFeatures {
                 .build()
         );
     }
+
+    // ` ----------------------------------------------------------------------------------------------------------------------------------------
 
     private static ImmutableList.Builder<PlacementModifier> clumpModifiers() {
         return ImmutableList.<PlacementModifier>builder()

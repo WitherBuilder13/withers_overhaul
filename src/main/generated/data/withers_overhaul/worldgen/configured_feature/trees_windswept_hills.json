@@ -9,7 +9,7 @@
       },
       {
         "chance": 0.5,
-        "feature": "withers_overhaul:elm"
+        "feature": "withers_overhaul:elm_selector"
       }
     ]
   }
