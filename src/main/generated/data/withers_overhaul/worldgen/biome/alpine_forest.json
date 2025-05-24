@@ -58,7 +58,6 @@
     [],
     [],
     [
-      "withers_overhaul:trees_alpine_forest",
       "minecraft:patch_large_fern",
       "minecraft:flower_default",
       "minecraft:patch_grass_taiga_2",
@@ -69,7 +68,9 @@
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_berry_common",
+      "withers_overhaul:trees_alpine_forest",
+      "withers_overhaul:patch_ground_fruit_cold"
     ],
     [
       "minecraft:freeze_top_layer"

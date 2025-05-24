@@ -48,7 +48,6 @@
     [],
     [],
     [
-      "withers_overhaul:trees_windswept_gravelly_hills",
       "minecraft:patch_bush",
       "minecraft:flower_default",
       "minecraft:patch_grass_badlands",
@@ -56,7 +55,9 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "withers_overhaul:trees_windswept_gravelly_hills",
+      "withers_overhaul:patch_ground_fruit_cool"
     ],
     [
       "minecraft:freeze_top_layer"

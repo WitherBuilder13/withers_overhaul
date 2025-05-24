@@ -50,6 +50,7 @@
     [],
     [],
     [
+      "minecraft:patch_grass_plain",
       "minecraft:patch_tall_grass_2",
       "minecraft:patch_bush",
       "minecraft:brown_mushroom_normal",
@@ -57,7 +58,7 @@
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
-      "minecraft:patch_grass_plain"
+      "withers_overhaul:patch_ground_fruit_cold"
     ],
     [
       "minecraft:freeze_top_layer"

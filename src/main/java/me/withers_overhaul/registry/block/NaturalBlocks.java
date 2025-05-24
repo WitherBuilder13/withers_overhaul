@@ -2,7 +2,8 @@ package me.withers_overhaul.registry.block;
 
 import me.withers_overhaul.block.*;
 import me.withers_overhaul.block.HangingMossBlock;
-import me.withers_overhaul.block.fruit.*;
+import me.withers_overhaul.block.fruit.crop.*;
+import me.withers_overhaul.block.fruit.tree.*;
 import me.withers_overhaul.block.util.OverhaulSaplingGenerator;
 import me.withers_overhaul.block.util.OverhaulWoodTypes;
 import net.minecraft.block.*;
@@ -135,22 +136,26 @@ public class NaturalBlocks {
 
     // * -----------------------------------------------------------------------------------------------------------------------------------------
 
-    /*public static final Block ARTICHOKES = cropBlock("artichokes");
-    public static final Block BROCCOLI = cropBlock("broccoli");
-    public static final Block CABBAGE = cropBlock("cabbage");
-    public static final Block CANTALOUPE = cropBlock("cantaloupe");
-    public static final Block CAULIFLOWER = cropBlock("cauliflower");
-    public static final Block CELERY = cropBlock("celery");
-    public static final Block CUCUMBERS = cropBlock("cucumbers");
-    public static final Block EGGPLANT = cropBlock("eggplant");
-    public static final Block JALAPENOS = cropBlock("jalapenos");
-    public static final Block KALE = cropBlock("kale");
-    public static final Block LETTUCE = cropBlock("lettuce");
-    public static final Block ONIONS = cropBlock("onions");
-    public static final Block RADISHES = cropBlock("radishes");
-    public static final Block SPINACH = cropBlock("spinach");*/
+    public static final Block ARTICHOKES = register("artichokes", new ArtichokesBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("artichokes"))), false);
+    public static final Block BROCCOLI = register("broccoli", new BroccoliBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("broccoli"))), false);
+    public static final Block CABBAGE = register("cabbage", new CabbageBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("cabbage"))), false);
+    public static final Block CANTALOUPE = register("cantaloupe", new CantaloupeBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("cantaloupe"))), false);
+    public static final Block CAULIFLOWER = register("cauliflower", new CauliflowerBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("cauliflower"))), false);
+    public static final Block CELERY = register("celery", new CeleryBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("celery"))), false);
+    public static final Block CUCUMBERS = register("cucumbers", new CucumbersBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("cucumbers"))), false);
+    public static final Block EGGPLANT = register("eggplant", new EggplantBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("eggplant"))), false);
+    public static final Block JALAPENOS = register("jalapenos", new JalapenosBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("jalapenos"))), false);
+    public static final Block KALE = register("kale", new KaleBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("kale"))), false);
+    public static final Block LETTUCE = register("lettuce", new LettuceBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("lettuce"))), false);
+    public static final Block ONIONS = register("onions", new OnionsBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("onions"))), false);
+    public static final Block PARSNIPS = register("parsnips", new ParsnipsBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("parsnips"))), false);
+    public static final Block PEAS = register("peas", new PeasBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("peas"))), false);
+    public static final Block PEPPERS = register("peppers", new PeppersBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("peppers"))), false);
+    public static final Block RADISHES = register("radishes", new RadishesBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("radishes"))), false);
+    public static final Block SPINACH = register("spinach", new SpinachBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("spinach"))), false);
+    public static final Block TURNIPS = register("tomatoes", new TurnipsBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf("turnips"))), false);
 
-    // * -----------------------------------------------------------------------------------------------------------------------------------------
+    // * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static final Block SHORT_PRAIRIE_GRASS = register(
             "short_prairie_grass", new ShortPrairieGrassBlock(AbstractBlock.Settings.copy(SHORT_GRASS).registryKey(keyOf("short_prairie_grass"))), true
@@ -285,12 +290,6 @@ public class NaturalBlocks {
 
     public static Block gravityBlock(String name, AbstractBlock.Settings settings, int color) {
         return register(name, new ColoredFallingBlock(new ColorCode(color), settings.registryKey(keyOf(name))), true);
-    }
-
-    // * ----------------------------------------------------------------------------------------------------------------------------------
-
-    public static Block cropBlock(String name) {
-        return register(name, new CropBlock(AbstractBlock.Settings.copy(WHEAT).registryKey(keyOf(name))), false);
     }
 
     // ` --------------------------------------------------------------------------------------------------------------------------------------

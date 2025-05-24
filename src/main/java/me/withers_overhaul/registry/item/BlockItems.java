@@ -1,7 +1,9 @@
 package me.withers_overhaul.registry.item;
 
 import me.withers_overhaul.WithersOverhaul;
+import me.withers_overhaul.item.component.OverhaulFoodComponents;
 import me.withers_overhaul.item.ore.*;
+import me.withers_overhaul.registry.block.NaturalBlocks;
 import me.withers_overhaul.registry.block.StoneBlocks;
 import me.withers_overhaul.registry.block.WoodBlocks;
 import net.minecraft.block.Block;
@@ -168,7 +170,7 @@ public class BlockItems {
 
     // * -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    /*public static final Item ARTICHOKE = foodItem("apple", NaturalBlocks.ARTICHOKES, OverhaulFoodComponents.ARTICHOKE);
+    public static final Item ARTICHOKE = foodItem("artichoke", NaturalBlocks.ARTICHOKES, OverhaulFoodComponents.ARTICHOKE);
     public static final Item BROCCOLI = foodItem("broccoli", NaturalBlocks.BROCCOLI, OverhaulFoodComponents.BROCCOLI);
     public static final Item CABBAGE = foodItem("cabbage", NaturalBlocks.CABBAGE, OverhaulFoodComponents.CABBAGE);
     public static final Item CANTALOUPE = foodItem("cantaloupe", NaturalBlocks.CANTALOUPE, OverhaulFoodComponents.CANTALOUPE);
@@ -176,12 +178,16 @@ public class BlockItems {
     public static final Item CELERY = foodItem("celery", NaturalBlocks.CELERY, OverhaulFoodComponents.CELERY);
     public static final Item CUCUMBER = foodItem("cucumber", NaturalBlocks.CUCUMBERS, OverhaulFoodComponents.CUCUMBER);
     public static final Item EGGPLANT = foodItem("eggplant", NaturalBlocks.EGGPLANT, OverhaulFoodComponents.EGGPLANT);
-    public static final Item JALAPEÑOS = foodItem("jalapeño", NaturalBlocks.JALAPENOS, OverhaulFoodComponents.JALAPENO);
+    public static final Item JALAPENO = foodItem("jalapeno", NaturalBlocks.JALAPENOS, OverhaulFoodComponents.JALAPENO);
     public static final Item KALE = foodItem("kale", NaturalBlocks.KALE, OverhaulFoodComponents.KALE);
     public static final Item LETTUCE = foodItem("lettuce", NaturalBlocks.LETTUCE, OverhaulFoodComponents.LETTUCE);
     public static final Item ONION = foodItem("onion", NaturalBlocks.ONIONS, OverhaulFoodComponents.ONION);
+    public static final Item PARSNIP = foodItem("parsnip", NaturalBlocks.PARSNIPS, OverhaulFoodComponents.PARSNIP);
+    public static final Item PEAS = foodItem("peas", NaturalBlocks.PEAS, OverhaulFoodComponents.PEAS);
+    public static final Item PEPPER = foodItem("pepper", NaturalBlocks.PEPPERS, OverhaulFoodComponents.PEPPER);
     public static final Item RADISH = foodItem("radish", NaturalBlocks.RADISHES, OverhaulFoodComponents.RADISH);
-    public static final Item SPINACH = foodItem("spinach", NaturalBlocks.SPINACH, OverhaulFoodComponents.SPINACH);*/
+    public static final Item SPINACH = foodItem("spinach", NaturalBlocks.SPINACH, OverhaulFoodComponents.SPINACH);
+    public static final Item TURNIP = foodItem("turnip", NaturalBlocks.TURNIPS, OverhaulFoodComponents.TURNIP);
 
     // ` -------------------------------------------------------------------------------------------------------------------------------------------------------------
 

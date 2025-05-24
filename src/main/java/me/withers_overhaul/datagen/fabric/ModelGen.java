@@ -412,13 +412,13 @@ public class ModelGen extends FabricModelProvider {
             blockStateModelGenerator.registerFlowerPotPlantAndItem(sapling.getKey(), sapling.getValue(), BlockStateModelGenerator.CrossType.NOT_TINTED);
         }
 
-        /*Block[] crops = {
-            ARTICHOKES, BROCCOLI, CABBAGE, CANTALOUPE, CAULIFLOWER, CELERY, CUCUMBERS, EGGPLANT, JALAPEÑOS, KALE, LETTUCE, ONIONS, RADISHES, SPINACH
+        Block[] crops = {
+            ARTICHOKES, BROCCOLI, CABBAGE, CANTALOUPE, CAULIFLOWER, CELERY, CUCUMBERS, EGGPLANT, JALAPENOS, KALE, LETTUCE, ONIONS, RADISHES, SPINACH
         };
 
         for (Block crop : crops) {
-            blockStateModelGenerator.registerCrop(crop, Properties.AGE_7, 0, 1, 1, 2, 2, 3, 3);
-        }*/
+            blockStateModelGenerator.registerCrop(crop, Properties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
+        }
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(STONE).wall(STONE_WALL);
         blockStateModelGenerator.registerCubeAllModelTexturePool(SMOOTH_STONE).stairs(SMOOTH_STONE_STAIRS).wall(SMOOTH_STONE_WALL);

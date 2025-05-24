@@ -66,10 +66,6 @@ public class OverhaulBiomeFeatures extends DefaultBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_DARK_FOREST);
     }
 
-   /* public static void ebonyThicketVegetation(GenerationSettings.LookupBackedBuilder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_EBONY_THICKET);
-    }*/
-
     public static void flowerForestVegetation(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_FLOWER_FOREST);
     }
@@ -156,8 +152,6 @@ public class OverhaulBiomeFeatures extends DefaultBiomeFeatures {
 
     public static void shrublandsVegetation(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_SHRUBLANDS);
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_PLAIN);
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
     }
 
     public static void snowyPlainsVegetation(GenerationSettings.LookupBackedBuilder builder) {
@@ -173,6 +167,7 @@ public class OverhaulBiomeFeatures extends DefaultBiomeFeatures {
     }
 
     public static void sunflowerPlainsVegetation(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_SUNFLOWER);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_SUNFLOWER_PLAINS);
     }
 
@@ -198,5 +193,25 @@ public class OverhaulBiomeFeatures extends DefaultBiomeFeatures {
 
     public static void winterWonderlandVegetation(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_WINTER_WONDERLAND);
+    }
+
+    public static void coldFruitPatch(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.PATCH_GROUND_FRUIT_COLD);
+    }
+
+    public static void coolFruitPatch(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.PATCH_GROUND_FRUIT_COOL);
+    }
+
+    public static void temperateFruitPatch(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.PATCH_GROUND_FRUIT_TEMPERATE);
+    }
+
+    public static void mediterraneanFruitPatch(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.PATCH_GROUND_FRUIT_MEDITERRANEAN);
+    }
+
+    public static void subtropicalFruitPatch(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.PATCH_JALAPENOS);
     }
 }

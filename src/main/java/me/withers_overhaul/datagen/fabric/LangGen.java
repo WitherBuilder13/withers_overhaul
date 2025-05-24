@@ -109,7 +109,8 @@ public class LangGen extends FabricLanguageProvider {
                 LIME_CHALK_BRICKS, LIME_CHALK_BRICK_STAIRS, LIME_CHALK_BRICK_SLAB, LIME_CHALK_BRICK_WALL, GREEN_CHALK_BRICKS, GREEN_CHALK_BRICK_STAIRS, GREEN_CHALK_BRICK_SLAB, GREEN_CHALK_BRICK_WALL, CYAN_CHALK_BRICKS, CYAN_CHALK_BRICK_STAIRS, CYAN_CHALK_BRICK_SLAB, CYAN_CHALK_BRICK_WALL, LIGHT_BLUE_CHALK_BRICKS, LIGHT_BLUE_CHALK_BRICK_STAIRS, LIGHT_BLUE_CHALK_BRICK_SLAB, LIGHT_BLUE_CHALK_BRICK_WALL,
                 BLUE_CHALK_BRICKS, BLUE_CHALK_BRICK_STAIRS, BLUE_CHALK_BRICK_SLAB, BLUE_CHALK_BRICK_WALL, PURPLE_CHALK_BRICKS, PURPLE_CHALK_BRICK_STAIRS, PURPLE_CHALK_BRICK_SLAB, PURPLE_CHALK_BRICK_WALL, MAGENTA_CHALK_BRICKS, MAGENTA_CHALK_BRICK_STAIRS, MAGENTA_CHALK_BRICK_SLAB, MAGENTA_CHALK_BRICK_WALL, PINK_CHALK_BRICKS, PINK_CHALK_BRICK_STAIRS, PINK_CHALK_BRICK_SLAB, PINK_CHALK_BRICK_WALL,
 
-                SHORT_PRAIRIE_GRASS, TALL_PRAIRIE_GRASS, CATTAIL, PEAT_BLOCK, PEAT, GOURD, CARVED_GOURD, LAVENDER, PURPLE_PETALS, HANGING_MOSS
+                SHORT_PRAIRIE_GRASS, TALL_PRAIRIE_GRASS, CATTAIL, PEAT_BLOCK, PEAT, GOURD, CARVED_GOURD, LAVENDER, PURPLE_PETALS, HANGING_MOSS,
+                ARTICHOKES, BROCCOLI, CABBAGE, CANTALOUPE, CAULIFLOWER, CELERY, CUCUMBERS, EGGPLANT, KALE, LETTUCE, ONIONS, RADISHES, SPINACH
         };
 
         for (Block block : allBlocks) {
@@ -117,15 +118,14 @@ public class LangGen extends FabricLanguageProvider {
         }
 
         Item[] simpleItems = {
-                WARPED_WART, GOURD_SEEDS
+                WARPED_WART, GOURD_SEEDS,
+                APRICOT, KIWI, NECTARINE, PEACH, PEAR, PLUM, KUMQUAT, OLIVE, PERSIMMON, POMEGRANATE, CHERRY, FIG, GRAPEFRUIT, GUAVA, TANGERINE, AVOCADO, BANANA, LEMON, LIME, MANGO, ORANGE, STARFRUIT,
+                BlockItems.ARTICHOKE, BlockItems.BROCCOLI, BlockItems.CABBAGE, BlockItems.CANTALOUPE, BlockItems.CAULIFLOWER, BlockItems.CELERY, BlockItems.CUCUMBER, BlockItems.EGGPLANT, BlockItems.KALE, BlockItems.LETTUCE, BlockItems.ONION, BlockItems.RADISH, BlockItems.SPINACH
         };
 
         for (Item item : simpleItems) {
             translationBuilder.add(item, format(item.getTranslationKey()));
         }
-
-        translationBuilder.add(WITHERS_OVERHAUL_BLOCKS_KEY, "Wither's Overhaul - Blocks");
-        translationBuilder.add(WITHERS_OVERHAUL_ITEMS_KEY, "Wither's Overhaul - Items");
 
         Item[] shortItems = {
                 BlockItems.GRANITE_COAL_ORE, BlockItems.DIORITE_COAL_ORE, BlockItems.ANDESITE_COAL_ORE, BlockItems.TUFF_COAL_ORE, BlockItems.GNEISS_COAL_ORE, BlockItems.SHALE_COAL_ORE, BlockItems.LIMESTONE_COAL_ORE, BlockItems.MARBLE_COAL_ORE, BlockItems.GABBRO_COAL_ORE, BlockItems.PHYLLITE_COAL_ORE,
@@ -147,6 +147,9 @@ public class LangGen extends FabricLanguageProvider {
             translationBuilder.add(shortItem, shortFormat(shortItem.getTranslationKey()));
         }
 
+        translationBuilder.add(JALAPENOS, "Jalapeños");
+        translationBuilder.add(BlockItems.JALAPENO, "Jalapeño");
+
         translationBuilder.add(TOOLTIP_PATH + "ore_granite", "Granite");
         translationBuilder.add(TOOLTIP_PATH + "ore_diorite", "Diorite");
         translationBuilder.add(TOOLTIP_PATH + "ore_andesite", "Andesite");
@@ -158,6 +161,9 @@ public class LangGen extends FabricLanguageProvider {
         translationBuilder.add(TOOLTIP_PATH + "ore_gabbro", "Gabbro");
         translationBuilder.add(TOOLTIP_PATH + "ore_phyllite", "Phyllite");
         translationBuilder.add(TOOLTIP_PATH + "rune", "Enchantment Rune");
+
+        translationBuilder.add(WITHERS_OVERHAUL_BLOCKS_KEY, "Wither's Overhaul - Blocks");
+        translationBuilder.add(WITHERS_OVERHAUL_ITEMS_KEY, "Wither's Overhaul - Items");
 
         List<RegistryKey<Biome>> biomes = List.of(
                 ALPINE_FOREST, ALPINE_PEAKS, ALPINE_TANGLE, ASHEN_FIELDS, ASPEN_GROVE,

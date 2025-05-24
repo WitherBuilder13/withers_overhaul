@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "withers_overhaul:patch_cabbage",
+      "withers_overhaul:patch_carrots",
+      "withers_overhaul:patch_kale",
+      "withers_overhaul:patch_onions",
+      "withers_overhaul:patch_peas",
+      "withers_overhaul:patch_radishes",
+      "withers_overhaul:patch_turnips",
+      "withers_overhaul:patch_parsnips"
+    ]
+  }
+}

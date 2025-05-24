@@ -1,8 +1,8 @@
 package me.withers_overhaul.datagen.fabric;
 
-import me.withers_overhaul.block.fruit.AridFruitLeavesBlock;
-import me.withers_overhaul.block.fruit.TemperateFruitLeavesBlock;
-import me.withers_overhaul.block.fruit.TreeFruit;
+import me.withers_overhaul.block.fruit.tree.AridFruitLeavesBlock;
+import me.withers_overhaul.block.fruit.tree.TemperateFruitLeavesBlock;
+import me.withers_overhaul.block.fruit.tree.TreeFruit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;

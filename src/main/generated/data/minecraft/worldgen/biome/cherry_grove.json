@@ -60,10 +60,11 @@
     [],
     [],
     [
-      "minecraft:patch_tall_grass_2",
       "minecraft:patch_grass_plain",
       "minecraft:flower_cherry",
-      "minecraft:trees_cherry"
+      "minecraft:trees_cherry",
+      "minecraft:patch_tall_grass_2",
+      "withers_overhaul:patch_jalapenos"
     ],
     [
       "minecraft:freeze_top_layer"

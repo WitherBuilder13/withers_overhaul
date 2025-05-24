@@ -4,11 +4,11 @@
     "default": "withers_overhaul:holly",
     "features": [
       {
-        "chance": 0.05,
+        "chance": 0.01,
         "feature": "withers_overhaul:clump_trees_fir"
       },
       {
-        "chance": 0.05,
+        "chance": 0.01,
         "feature": "withers_overhaul:clump_trees_hemlock"
       }
     ]

@@ -60,7 +60,6 @@
     [
       "minecraft:patch_large_fern",
       "minecraft:flower_default",
-      "withers_overhaul:trees_pine_taiga",
       "minecraft:patch_grass_taiga_2",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_taiga",
@@ -69,7 +68,9 @@
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_berry_common",
+      "withers_overhaul:trees_pine_taiga",
+      "withers_overhaul:patch_ground_fruit_cool"
     ],
     [
       "minecraft:freeze_top_layer"

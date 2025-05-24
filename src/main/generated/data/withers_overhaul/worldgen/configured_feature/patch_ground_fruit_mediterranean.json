@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "withers_overhaul:patch_beetroots",
+      "withers_overhaul:patch_eggplant",
+      "withers_overhaul:patch_peppers"
+    ]
+  }
+}

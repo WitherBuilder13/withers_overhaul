@@ -1403,7 +1403,6 @@ public class OverhaulItemGroups {
                         content.add(LIMESTONE_DIAMOND_ORE);
                         content.add(GABBRO_DIAMOND_ORE);
                         content.add(PHYLLITE_DIAMOND_ORE);
-
                     }))
                     .build());
 
@@ -1415,6 +1414,30 @@ public class OverhaulItemGroups {
                     .entries(((displayContext, content) -> {
 
                         content.add(WARPED_WART);
+
+                        content.add(APRICOT);
+                        content.add(KIWI);
+                        content.add(NECTARINE);
+                        content.add(PEACH);
+                        content.add(PEAR);
+                        content.add(PLUM);
+                        content.add(KUMQUAT);
+                        content.add(OLIVE);
+                        content.add(PERSIMMON);
+                        content.add(POMEGRANATE);
+                        content.add(CHERRY);
+                        content.add(FIG);
+                        content.add(GRAPEFRUIT);
+                        content.add(GUAVA);
+                        content.add(TANGERINE);
+                        content.add(AVOCADO);
+                        content.add(BANANA);
+                        content.add(LEMON);
+                        content.add(LIME);
+                        content.add(MANGO);
+                        content.add(ORANGE);
+                        content.add(STARFRUIT);
+
                         content.add(RUNE_AQUA_AFFINITY);
                         content.add(RUNE_BANE_OF_ARTHROPODS);
                         content.add(RUNE_BLAST_PROTECTION);
@@ -1455,7 +1478,6 @@ public class OverhaulItemGroups {
                         content.add(RUNE_THORNS);
                         content.add(RUNE_UNBREAKING);
                         content.add(RUNE_WIND_BURST);
-
                     }))
                     .build());
 
@@ -2388,7 +2410,6 @@ public class OverhaulItemGroups {
             content.addAfter(GYPSUM_TILE_STAIRS, GYPSUM_TILE_SLAB);
             content.addAfter(GYPSUM_TILE_SLAB, GYPSUM_TILE_WALL);
             content.addAfter(GYPSUM_TILE_WALL, CHISELED_GYPSUM);
-
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(content -> {
@@ -2749,7 +2770,6 @@ public class OverhaulItemGroups {
             content.addAfter(PINK_CHALK_BRICKS, PINK_CHALK_BRICK_STAIRS);
             content.addAfter(PINK_CHALK_BRICK_STAIRS, PINK_CHALK_BRICK_SLAB);
             content.addAfter(PINK_CHALK_BRICK_SLAB, PINK_CHALK_BRICK_WALL);
-
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
@@ -3092,14 +3112,51 @@ public class OverhaulItemGroups {
             content.addAfter(RUNE_SWIFT_SNEAK, RUNE_THORNS);
             content.addAfter(RUNE_THORNS, RUNE_UNBREAKING);
             content.addAfter(RUNE_UNBREAKING, RUNE_WIND_BURST);
+        });
 
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(content -> {
+            content.addAfter(APPLE, APRICOT);
+            content.addAfter(APRICOT, KIWI);
+            content.addAfter(KIWI, NECTARINE);
+            content.addAfter(NECTARINE, PEACH);
+            content.addAfter(PEACH, PEAR);
+            content.addAfter(PEAR, PLUM);
+            content.addAfter(PLUM, KUMQUAT);
+            content.addAfter(KUMQUAT, OLIVE);
+            content.addAfter(OLIVE, PERSIMMON);
+            content.addAfter(PERSIMMON, POMEGRANATE);
+            content.addAfter(POMEGRANATE, CHERRY);
+            content.addAfter(CHERRY, FIG);
+            content.addAfter(FIG, GRAPEFRUIT);
+            content.addAfter(GRAPEFRUIT, GUAVA);
+            content.addAfter(GUAVA, TANGERINE);
+            content.addAfter(TANGERINE, AVOCADO);
+            content.addAfter(AVOCADO, BANANA);
+            content.addAfter(BANANA, LEMON);
+            content.addAfter(LEMON, LIME);
+            content.addAfter(LIME, MANGO);
+            content.addAfter(MANGO, ORANGE);
+            content.addAfter(ORANGE, STARFRUIT);
+
+            content.addAfter(BEETROOT, BlockItems.ARTICHOKE);
+            content.addAfter(BlockItems.ARTICHOKE, BlockItems.BROCCOLI);
+            content.addAfter(BlockItems.BROCCOLI, BlockItems.CABBAGE);
+            content.addAfter(BlockItems.CABBAGE, BlockItems.CANTALOUPE);
+            content.addAfter(BlockItems.CANTALOUPE, BlockItems.CAULIFLOWER);
+            content.addAfter(BlockItems.CAULIFLOWER, BlockItems.CELERY);
+            content.addAfter(BlockItems.CELERY, BlockItems.CUCUMBER);
+            content.addAfter(BlockItems.CUCUMBER, BlockItems.EGGPLANT);
+            content.addAfter(BlockItems.EGGPLANT, BlockItems.JALAPENO);
+            content.addAfter(BlockItems.JALAPENO, BlockItems.KALE);
+            content.addAfter(BlockItems.KALE, BlockItems.LETTUCE);
+            content.addAfter(BlockItems.LETTUCE, BlockItems.ONION);
+            content.addAfter(BlockItems.ONION, BlockItems.RADISH);
+            content.addAfter(BlockItems.RADISH, BlockItems.SPINACH);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> {
-
             content.addAfter(ENDERMITE_SPAWN_EGG, ENDER_DRAGON_SPAWN_EGG);
             content.addAfter(WITCH_SPAWN_EGG, WITHER_SPAWN_EGG);
-
         });
     }
 }

@@ -4,11 +4,11 @@
     "default": "minecraft:dark_oak_leaf_litter",
     "features": [
       {
-        "chance": 0.05,
+        "chance": 0.01,
         "feature": "withers_overhaul:clump_trees_teak"
       },
       {
-        "chance": 0.05,
+        "chance": 0.01,
         "feature": "withers_overhaul:clump_trees_elm"
       },
       {

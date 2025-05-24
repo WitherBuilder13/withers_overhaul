@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "withers_overhaul:block/spinach_stage0"
+    },
+    "age=1": {
+      "model": "withers_overhaul:block/spinach_stage0"
+    },
+    "age=2": {
+      "model": "withers_overhaul:block/spinach_stage1"
+    },
+    "age=3": {
+      "model": "withers_overhaul:block/spinach_stage1"
+    },
+    "age=4": {
+      "model": "withers_overhaul:block/spinach_stage2"
+    },
+    "age=5": {
+      "model": "withers_overhaul:block/spinach_stage2"
+    },
+    "age=6": {
+      "model": "withers_overhaul:block/spinach_stage2"
+    },
+    "age=7": {
+      "model": "withers_overhaul:block/spinach_stage3"
+    }
+  }
+}

@@ -58,9 +58,6 @@
     [],
     [],
     [
-      "withers_overhaul:trees_lavender_fields",
-      "withers_overhaul:lavender_flowers",
-      "withers_overhaul:purple_petals",
       "minecraft:patch_bush",
       "minecraft:flower_default",
       "minecraft:patch_grass_forest",
@@ -68,7 +65,11 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "withers_overhaul:trees_lavender_fields",
+      "withers_overhaul:lavender_flowers",
+      "withers_overhaul:purple_petals",
+      "withers_overhaul:patch_jalapenos"
     ],
     [
       "minecraft:freeze_top_layer"

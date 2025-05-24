@@ -4,7 +4,7 @@
     "default": "withers_overhaul:aspen",
     "features": [
       {
-        "chance": 0.05,
+        "chance": 0.01,
         "feature": "withers_overhaul:clump_trees_birch"
       }
     ]

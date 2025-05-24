@@ -1,9 +1,9 @@
 package me.withers_overhaul.world.feature.configured;
 
-import me.withers_overhaul.block.fruit.MediterraneanFruitLeavesBlock;
-import me.withers_overhaul.block.fruit.SubtropicalFruitLeavesBlock;
-import me.withers_overhaul.block.fruit.TemperateFruitLeavesBlock;
-import me.withers_overhaul.block.fruit.TreeFruit;
+import me.withers_overhaul.block.fruit.tree.MediterraneanFruitLeavesBlock;
+import me.withers_overhaul.block.fruit.tree.SubtropicalFruitLeavesBlock;
+import me.withers_overhaul.block.fruit.tree.TemperateFruitLeavesBlock;
+import me.withers_overhaul.block.fruit.tree.TreeFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
@@ -25,9 +25,9 @@ import net.minecraft.world.gen.trunk.*;
 
 import java.util.OptionalInt;
 
-import static me.withers_overhaul.block.fruit.TreeFruit.Mediterranean.*;
-import static me.withers_overhaul.block.fruit.TreeFruit.Subtropical.*;
-import static me.withers_overhaul.block.fruit.TreeFruit.Temperate.*;
+import static me.withers_overhaul.block.fruit.tree.TreeFruit.Mediterranean.*;
+import static me.withers_overhaul.block.fruit.tree.TreeFruit.Subtropical.*;
+import static me.withers_overhaul.block.fruit.tree.TreeFruit.Temperate.*;
 import static me.withers_overhaul.registry.block.NaturalBlocks.*;
 import static me.withers_overhaul.registry.block.WoodBlocks.*;
 import static me.withers_overhaul.world.feature.OverhaulConfiguredFeatures.of;

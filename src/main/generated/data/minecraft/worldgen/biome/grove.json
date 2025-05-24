@@ -58,8 +58,8 @@
     [],
     [],
     [
-      "withers_overhaul:trees_grove",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "withers_overhaul:trees_grove"
     ],
     [
       "minecraft:freeze_top_layer"

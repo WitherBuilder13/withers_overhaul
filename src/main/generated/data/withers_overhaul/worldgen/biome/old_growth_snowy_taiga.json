@@ -71,8 +71,8 @@
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
-      "withers_overhaul:trees_old_growth_snowy_taiga",
-      "minecraft:patch_berry_rare"
+      "minecraft:patch_berry_rare",
+      "withers_overhaul:trees_old_growth_snowy_taiga"
     ],
     [
       "minecraft:freeze_top_layer"

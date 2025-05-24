@@ -8,7 +8,7 @@
         "feature": "minecraft:birch_bees_0002"
       },
       {
-        "chance": 0.05,
+        "chance": 0.01,
         "feature": "withers_overhaul:clump_trees_aspen"
       }
     ]

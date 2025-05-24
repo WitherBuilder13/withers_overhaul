@@ -138,6 +138,34 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> LAVENDER_FLOWERS = of("lavender_flowers");
     public static final RegistryKey<PlacedFeature> PURPLE_PETALS = of("purple_petals");
 
+    // * ------------------------------------------------------------------------------------------------------------------------------
+
+    public static final RegistryKey<PlacedFeature> PATCH_ARTICHOKES = of("patch_artichokes");
+    public static final RegistryKey<PlacedFeature> PATCH_BEETROOTS = of("patch_beetroots");
+    public static final RegistryKey<PlacedFeature> PATCH_BROCCOLI = of("patch_broccoli");
+    public static final RegistryKey<PlacedFeature> PATCH_CABBAGE = of("patch_cabbage");
+    public static final RegistryKey<PlacedFeature> PATCH_CARROTS = of("patch_carrots");
+    public static final RegistryKey<PlacedFeature> PATCH_CAULIFLOWER = of("patch_cauliflower");
+    public static final RegistryKey<PlacedFeature> PATCH_CELERY = of("patch_celery");
+    public static final RegistryKey<PlacedFeature> PATCH_EGGPLANT = of("patch_eggplant");
+    public static final RegistryKey<PlacedFeature> PATCH_JALAPENOS = of("patch_jalapenos");
+    public static final RegistryKey<PlacedFeature> PATCH_KALE = of("patch_kale");
+    public static final RegistryKey<PlacedFeature> PATCH_LETTUCE = of("patch_lettuce");
+    public static final RegistryKey<PlacedFeature> PATCH_ONIONS = of("patch_onions");
+    public static final RegistryKey<PlacedFeature> PATCH_PARSNIPS = of("patch_parsnips");
+    public static final RegistryKey<PlacedFeature> PATCH_PEAS = of("patch_peas");
+    public static final RegistryKey<PlacedFeature> PATCH_PEPPERS = of("patch_peppers");
+    public static final RegistryKey<PlacedFeature> PATCH_POTATOES = of("patch_potatoes");
+    public static final RegistryKey<PlacedFeature> PATCH_RADISHES = of("patch_radishes");
+    public static final RegistryKey<PlacedFeature> PATCH_SPINACH = of("patch_spinach");
+    public static final RegistryKey<PlacedFeature> PATCH_TURNIPS = of("patch_turnips");
+    public static final RegistryKey<PlacedFeature> PATCH_WHEAT = of("patch_wheat");
+
+    public static final RegistryKey<PlacedFeature> PATCH_GROUND_FRUIT_COLD = of("patch_ground_fruit_cold");
+    public static final RegistryKey<PlacedFeature> PATCH_GROUND_FRUIT_COOL = of("patch_ground_fruit_cool");
+    public static final RegistryKey<PlacedFeature> PATCH_GROUND_FRUIT_TEMPERATE = of("patch_ground_fruit_temperate");
+    public static final RegistryKey<PlacedFeature> PATCH_GROUND_FRUIT_MEDITERRANEAN = of("patch_ground_fruit_mediterranean");
+
     // ` -------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
@@ -228,13 +256,40 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> treesWindsweptForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINDSWEPT_FOREST);
         RegistryEntry<ConfiguredFeature<?, ?>> treesWindsweptGravellyHills = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINDSWEPT_GRAVELLY_HILLS);
         RegistryEntry<ConfiguredFeature<?, ?>> treesWindsweptHills = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINDSWEPT_HILLS);
-        RegistryEntry<ConfiguredFeature<?, ?>> treesWindsweptSavanna = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINDSWEPT_FOREST);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesWindsweptSavanna = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINDSWEPT_SAVANNA);
         RegistryEntry<ConfiguredFeature<?, ?>> treesWinterWonderland = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_WINTER_WONDERLAND);
 
         // * Other plants
         RegistryEntry<ConfiguredFeature<?, ?>> patchPrairieGrass = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_PRAIRIE_GRASS);
         RegistryEntry<ConfiguredFeature<?, ?>> lavenderFlowers = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.LAVENDER_FLOWERS);
         RegistryEntry<ConfiguredFeature<?, ?>> purplePetals = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PURPLE_PETALS);
+
+        // * Fruit patches
+        RegistryEntry<ConfiguredFeature<?, ?>> patchArtichokes = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_ARTICHOKES);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchBeetroots = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_BEETROOTS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchBroccoli = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_BROCCOLI);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchCabbage = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_CABBAGE);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchCarrots = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_CARROTS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchCauliflower = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_CAULIFLOWER);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchCelery = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_CELERY);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchEggplant = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_EGGPLANT);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchJalapenos = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_JALAPENOS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchKale = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_KALE);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchLettuce = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_LETTUCE);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchOnions = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_ONIONS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchParsnips = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_PARSNIPS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchPeas = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_PEAS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchPeppers = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_PEPPERS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchPotatoes = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_POTATOES);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchRadishes = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_RADISHES);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchSpinach = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_SPINACH);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchTurnips = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_TURNIPS);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchWheat = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_WHEAT);
+
+        RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitCold = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_COLD);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitCool = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_COOL);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitTemperate = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_TEMPERATE);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitMediterranean = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_MEDITERRANEAN);
 
         // ` --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -306,22 +361,22 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, TREES_GROVE, treesGrove, treeModifiers(10));
         PlacedFeatures.register(featureRegisterable, TREES_ICE_SPIKES, treesIceSpikes, treeModifiers(1));
         PlacedFeatures.register(featureRegisterable, TREES_LAVENDER_FIELDS, treesLavenderFields, treeModifiers(10));
-        PlacedFeatures.register(featureRegisterable, TREES_MEADOW, treesMeadow, treeSparseModifiers(5));
+        PlacedFeatures.register(featureRegisterable, TREES_MEADOW, treesMeadow, treeSparseModifiers(10));
         PlacedFeatures.register(featureRegisterable, TREES_MONTANE_CLEARING, treesMontaneClearing, treeModifiers(2));
         PlacedFeatures.register(featureRegisterable, TREES_MONTANE_WOODLANDS, treesMontaneWoodlands, treeModifiers(10));
         PlacedFeatures.register(featureRegisterable, TREES_OLD_GROWTH_BIRCH_FOREST, treesOldGrowthBirchForest, treeModifiers(15));
         PlacedFeatures.register(featureRegisterable, TREES_OLD_GROWTH_PINE_TAIGA, treesOldGrowthPineTaiga, treeModifiers(15));
         PlacedFeatures.register(featureRegisterable, TREES_OLD_GROWTH_SNOWY_TAIGA, treesOldGrowthSnowyTaiga, treeModifiers(20));
         PlacedFeatures.register(featureRegisterable, TREES_OLD_GROWTH_SPRUCE_TAIGA, treesOldGrowthSpruceTaiga, treeModifiers(20));
-        PlacedFeatures.register(featureRegisterable, TREES_PLAINS, treesPlains, treeSparseModifiers(6));
+        PlacedFeatures.register(featureRegisterable, TREES_PLAINS, treesPlains, treeSparseModifiers(12));
         PlacedFeatures.register(featureRegisterable, TREES_PINE_TAIGA, treesPineTaiga, treeModifiers(6));
         PlacedFeatures.register(featureRegisterable, TREES_REDWOOD_FOREST, treesRedwoodForest, treeModifiers(20));
         PlacedFeatures.register(featureRegisterable, TREES_SAVANNA_PLATEAU, treesSavannaPlateau, treeModifiers(8));
         PlacedFeatures.register(featureRegisterable, TREES_SHRUBLANDS, treesShrublands, treeModifiers(7));
-        PlacedFeatures.register(featureRegisterable, TREES_SNOWY_PLAINS, treesSnowyPlains, treeSparseModifiers(5));
-        PlacedFeatures.register(featureRegisterable, TREES_SNOWY_SLOPES, treesSnowySlopes, treeSparseModifiers(5));
+        PlacedFeatures.register(featureRegisterable, TREES_SNOWY_PLAINS, treesSnowyPlains, treeSparseModifiers(10));
+        PlacedFeatures.register(featureRegisterable, TREES_SNOWY_SLOPES, treesSnowySlopes, treeSparseModifiers(10));
         PlacedFeatures.register(featureRegisterable, TREES_SNOWY_TAIGA, treesSnowyTaiga, treeModifiers(10));
-        PlacedFeatures.register(featureRegisterable, TREES_SUNFLOWER_PLAINS, treesPlains, treeSparseModifiers(2));
+        PlacedFeatures.register(featureRegisterable, TREES_SUNFLOWER_PLAINS, treesPlains, treeSparseModifiers(6));
         PlacedFeatures.register(featureRegisterable, TREES_TAIGA, treesTaiga, treeModifiers(10));
         PlacedFeatures.register(featureRegisterable, TREES_WINDSWEPT_FOREST, treesWindsweptForest, treeModifiers(3));
         PlacedFeatures.register(featureRegisterable, TREES_WINDSWEPT_GRAVELLY_HILLS, treesWindsweptGravellyHills, treeModifiers(1));
@@ -331,27 +386,37 @@ public class OverhaulVegetationPlacedFeatures {
 
         // * --------------------------------------------------------------------------------------------------------------------
 
-        PlacedFeatures.register(featureRegisterable, PATCH_PRAIRIE_GRASS, patchPrairieGrass, ImmutableList.<PlacementModifier>builder()
-                .add(NoiseThresholdCountPlacementModifier.of(0.4F, 10, 14))
-                .add(SquarePlacementModifier.of())
-                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
-                .add(BiomePlacementModifier.of())
-                .build()
-        );
-        PlacedFeatures.register(featureRegisterable, LAVENDER_FLOWERS, lavenderFlowers, ImmutableList.<PlacementModifier>builder()
-                .add(NoiseThresholdCountPlacementModifier.of(0.3F, 10, 6))
-                .add(SquarePlacementModifier.of())
-                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
-                .add(BiomePlacementModifier.of())
-                .build()
-        );
-        PlacedFeatures.register(featureRegisterable, PURPLE_PETALS, purplePetals, ImmutableList.<PlacementModifier>builder()
-                .add(NoiseThresholdCountPlacementModifier.of(-0.2F, 6, 8))
-                .add(SquarePlacementModifier.of())
-                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
-                .add(BiomePlacementModifier.of())
-                .build()
-        );
+        PlacedFeatures.register(featureRegisterable, PATCH_PRAIRIE_GRASS, patchPrairieGrass, noiseVegetationModifiers(0.4F, 10, 14).build());
+        PlacedFeatures.register(featureRegisterable, LAVENDER_FLOWERS, lavenderFlowers, noiseVegetationModifiers(0.3F, 10, 6).build());
+        PlacedFeatures.register(featureRegisterable, PURPLE_PETALS, purplePetals, noiseVegetationModifiers(-0.2F, 6, 8).build());
+
+        // * --------------------------------------------------------------------------------------------------------------------
+
+        PlacedFeatures.register(featureRegisterable, PATCH_ARTICHOKES, patchArtichokes, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_BEETROOTS, patchBeetroots, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_BROCCOLI, patchBroccoli, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_CABBAGE, patchCabbage, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_CARROTS, patchCarrots, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_CAULIFLOWER, patchCauliflower, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_CELERY, patchCelery, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_EGGPLANT, patchEggplant, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_JALAPENOS, patchJalapenos, patchModifiers(20).build());
+        PlacedFeatures.register(featureRegisterable, PATCH_KALE, patchKale, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_LETTUCE, patchLettuce, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_ONIONS, patchOnions, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_PARSNIPS, patchParsnips, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_PEAS, patchPeas, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_PEPPERS, patchPeppers, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_POTATOES, patchPotatoes, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_RADISHES, patchRadishes, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_SPINACH, patchSpinach, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_TURNIPS, patchTurnips, empty());
+        PlacedFeatures.register(featureRegisterable, PATCH_WHEAT, patchWheat, empty());
+
+        PlacedFeatures.register(featureRegisterable, PATCH_GROUND_FRUIT_COLD, patchGroundFruitCold, patchModifiers(20).build());
+        PlacedFeatures.register(featureRegisterable, PATCH_GROUND_FRUIT_COOL, patchGroundFruitCool, patchModifiers(20).build());
+        PlacedFeatures.register(featureRegisterable, PATCH_GROUND_FRUIT_TEMPERATE, patchGroundFruitTemperate, patchModifiers(20).build());
+        PlacedFeatures.register(featureRegisterable, PATCH_GROUND_FRUIT_MEDITERRANEAN, patchGroundFruitMediterranean, patchModifiers(20).build());
     }
 
     // ` ----------------------------------------------------------------------------------------------------------------------------------------
@@ -359,9 +424,24 @@ public class OverhaulVegetationPlacedFeatures {
     private static ImmutableList.Builder<PlacementModifier> clumpModifiers() {
         return ImmutableList.<PlacementModifier>builder()
                 .add(PlacedFeatures.createCountExtraModifier(3, 0.1F, 1))
-                .add(RandomOffsetPlacementModifier.of(ConstantIntProvider.create(4), ConstantIntProvider.create(3)))
-                .add(SurfaceWaterDepthFilterPlacementModifier.of(0))
-                .add(PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP);
+                .add(SquarePlacementModifier.of())
+                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP);
+    }
+
+    private static ImmutableList.Builder<PlacementModifier> noiseVegetationModifiers(float noiseLevel, int belowNoise, int aboveNoise) {
+        return ImmutableList.<PlacementModifier>builder()
+                .add(NoiseThresholdCountPlacementModifier.of(noiseLevel, belowNoise, aboveNoise))
+                .add(SquarePlacementModifier.of())
+                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
+                .add(BiomePlacementModifier.of());
+    }
+
+    private static ImmutableList.Builder<PlacementModifier> patchModifiers(int chance) {
+        return ImmutableList.<PlacementModifier>builder()
+                .add(RarityFilterPlacementModifier.of(chance))
+                .add(SquarePlacementModifier.of())
+                .add(PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
+                .add(BiomePlacementModifier.of());
     }
     
     private static List<PlacementModifier> treeModifiers(int count) {
@@ -369,7 +449,7 @@ public class OverhaulVegetationPlacedFeatures {
     }
 
     private static List<PlacementModifier> treeSparseModifiers(int emptyWeight) {
-        Pool< IntProvider > pool = Pool.<IntProvider>builder()
+        Pool<IntProvider> pool = Pool.<IntProvider>builder()
                 .add(ConstantIntProvider.create(0), emptyWeight)
                 .add(ConstantIntProvider.create(1), 1)
                 .build();

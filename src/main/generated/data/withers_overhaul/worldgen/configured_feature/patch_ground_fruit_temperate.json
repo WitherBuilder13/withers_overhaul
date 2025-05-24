@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "withers_overhaul:patch_artichokes",
+      "withers_overhaul:patch_spinach",
+      "withers_overhaul:patch_wheat"
+    ]
+  }
+}

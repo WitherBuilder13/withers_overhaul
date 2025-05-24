@@ -58,7 +58,6 @@
     [],
     [],
     [
-      "withers_overhaul:trees_old_growth_birch_forest",
       "minecraft:forest_flowers",
       "minecraft:wildflowers_birch_forest",
       "minecraft:patch_bush",
@@ -68,7 +67,9 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "withers_overhaul:trees_old_growth_birch_forest",
+      "withers_overhaul:patch_ground_fruit_cool"
     ],
     [
       "minecraft:freeze_top_layer"

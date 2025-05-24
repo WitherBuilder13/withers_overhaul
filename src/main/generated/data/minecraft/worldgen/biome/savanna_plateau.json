@@ -47,7 +47,6 @@
     [],
     [],
     [
-      "withers_overhaul:trees_savanna_plateau",
       "minecraft:patch_tall_grass",
       "minecraft:flower_warm",
       "minecraft:patch_grass_savanna",
@@ -55,7 +54,9 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "withers_overhaul:trees_savanna_plateau",
+      "withers_overhaul:patch_ground_fruit_mediterranean"
     ],
     [
       "minecraft:freeze_top_layer"

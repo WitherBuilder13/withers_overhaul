@@ -103,7 +103,6 @@ public class OverhaulBiomes {
         biomeRegisterable.register(OverhaulBiomeKeys.DEEP_COOL_OCEAN, ocean(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COOL, true, false));
         biomeRegisterable.register(OverhaulBiomeKeys.DEEP_WARM_OCEAN, ocean(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.HOT, true, false));
         biomeRegisterable.register(OverhaulBiomeKeys.DESERT_FIELDS, desert(placedFeatureLookup, configuredCarverLookup, true));
-        //biomeRegisterable.register(OverhaulBiomeKeys.EBONY_THICKET, ebonyThicket(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.ECHOING_HOLLOW, echoingHollow(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.ENCHANTED_FOREST, enchantedForest(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.FORGOTTEN_ISLES, forgottenIsles(placedFeatureLookup, configuredCarverLookup));
@@ -159,7 +158,7 @@ public class OverhaulBiomes {
         biomeRegisterable.register(OverhaulBiomeKeys.WINTER_WONDERLAND, winterWonderland(placedFeatureLookup, configuredCarverLookup));
     }
 
-    // Biome creation methods (copied from OverworldBiomeCreator)
+    // ` -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     private static Biome createBiome(
             boolean precipitation,
@@ -210,17 +209,10 @@ public class OverhaulBiomes {
                 .skyColor(skyColor)
                 .moodSound(BiomeMoodSound.CAVE)
                 .music(music);
-        if (grassColor != null) {
-            builder.grassColor(grassColor);
-        }
+        if (grassColor != null) builder.grassColor(grassColor);
+        if (foliageColor != null) builder.foliageColor(foliageColor);
+        if (dryFoliageColor != null) builder.dryFoliageColor(dryFoliageColor);
 
-        if (foliageColor != null) {
-            builder.foliageColor(foliageColor);
-        }
-
-        if (dryFoliageColor != null) {
-            builder.dryFoliageColor(dryFoliageColor);
-        }
         return new Biome.Builder()
                 .precipitation(precipitation)
                 .temperature(temperature)
@@ -231,7 +223,7 @@ public class OverhaulBiomes {
                 .build();
     }
 
-    // Actual biomes
+    // ` ------------------------------------------------------------------------------------------------------------------------------------
 
     public static Biome alpineForest(
             RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup
@@ -245,13 +237,16 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.alpineForestVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
+
+        OverhaulBiomeFeatures.alpineForestVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
@@ -269,7 +264,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.alpineTangleVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
@@ -277,6 +272,9 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OverhaulOrePlacedFeatures.ORE_EMERALD);
+
+        OverhaulBiomeFeatures.alpineTangleVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
         return createBiome(true, 0.2F, 0.8F, builder, lookupBackedBuilder, null);
     }
@@ -293,13 +291,16 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.alpineThicketVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
+
+        OverhaulBiomeFeatures.alpineThicketVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
@@ -313,6 +314,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
         return createBiome(true, 0.2F, 1.0F, builder, lookupBackedBuilder, null);
@@ -328,13 +330,16 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.aspenGroveVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addBirchForestWildflowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.aspenGroveVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -356,6 +361,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addBadlandsGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addBadlandsVegetation(lookupBackedBuilder);
@@ -377,6 +383,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addSwampVegetation(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OceanPlacedFeatures.SEAGRASS_SWAMP);
@@ -396,11 +403,11 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
-
 
         switch (temperature) {
             case SNOWY -> temp = -1.0F;
@@ -430,11 +437,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        if (oldGrowth) {
-            OverhaulBiomeFeatures.oldGrowthBirchForestVegetation(lookupBackedBuilder);
-        } else {
-            OverhaulBiomeFeatures.birchForestVegetation(lookupBackedBuilder);
-        }
+
         DefaultBiomeFeatures.addForestFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addBirchForestWildflowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
@@ -442,6 +445,10 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        if (oldGrowth) OverhaulBiomeFeatures.oldGrowthBirchForestVegetation(lookupBackedBuilder);
+        else OverhaulBiomeFeatures.birchForestVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -460,6 +467,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addSwampVegetation(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OceanPlacedFeatures.SEAGRASS_SWAMP);
@@ -489,6 +497,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
@@ -508,8 +517,11 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addCherryGroveFeatures(lookupBackedBuilder);
+        DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
+
+        OverhaulBiomeFeatures.subtropicalFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE);
 
@@ -525,9 +537,12 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.cloudForestVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.cloudForestVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.temperateFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -543,13 +558,16 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.darkForestVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addForestFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addLeafLitter(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.darkForestVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.temperateFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -565,6 +583,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addSculk(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DEEP_DARK);
@@ -579,8 +598,9 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDesertMobs(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         addBasicFeatures(lookupBackedBuilder);
+
+        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addDesertDryVegetation(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDesertVegetation(lookupBackedBuilder);
@@ -598,9 +618,11 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDripstoneCaveMobs(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
+        // * Modified addBasicFeatures()
         OverhaulBiomeFeatures.addCarvers(lookupBackedBuilder);
         OverhaulBiomeFeatures.addOres(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addFrozenTopLayer(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDripstone(lookupBackedBuilder);
 
@@ -608,28 +630,6 @@ public class OverhaulBiomes {
 
         return createBiome(true, 0.4F, 0.4F, builder, lookupBackedBuilder, musicSound);
     }
-
-    /*public static Biome ebonyThicket(
-            RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup
-    ) {
-        SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        DefaultBiomeFeatures.addFarmAnimals(builder);
-        DefaultBiomeFeatures.addBatsAndMonsters(builder);
-
-        GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.ebonyThicketVegetation(lookupBackedBuilder);
-        DefaultBiomeFeatures.addForestFlowers(lookupBackedBuilder);
-        DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
-        DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
-
-        MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
-
-        return createBiome(true, 1.0F, 0.8F, builder, lookupBackedBuilder, musicSound);
-    }*/
 
     public static Biome echoingHollow(
             RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup
@@ -653,11 +653,14 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.subtropicalFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -674,6 +677,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addBadlandsGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addBadlandsVegetation(lookupBackedBuilder);
@@ -689,26 +693,23 @@ public class OverhaulBiomes {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
-        if (flower) {
-            builder.spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3));
-        } else {
-            builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4));
-        }
+        if (flower) builder.spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3));
+        else builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4));
+
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        if (flower) {
-            OverhaulBiomeFeatures.flowerForestVegetation(lookupBackedBuilder);
-            lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
-            DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
-        } else {
-            OverhaulBiomeFeatures.forestVegetation(lookupBackedBuilder);
-            DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
-            DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
-            DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
-        }
+
+        DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
+        if (flower) lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
+        else DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
+        DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        if (flower) OverhaulBiomeFeatures.flowerForestVegetation(lookupBackedBuilder);
+        else OverhaulBiomeFeatures.forestVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.temperateFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -722,6 +723,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         
         return createBiome(true, 0.4F, 1.0F, builder, lookupBackedBuilder, null);
@@ -735,6 +737,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
@@ -769,13 +772,15 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.frostedTangleVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushesSnowy(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OverhaulOrePlacedFeatures.ORE_EMERALD);
+
+        OverhaulBiomeFeatures.frostedTangleVegetation(lookupBackedBuilder);
 
         return createBiome(true, -1.0F, 0.8F, builder, lookupBackedBuilder, null);
     }
@@ -792,7 +797,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.frostedWoodlandsVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addMossyRocks(lookupBackedBuilder);
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
@@ -800,6 +805,8 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushesSnowy(lookupBackedBuilder);
+
+        OverhaulBiomeFeatures.frostedWoodlandsVegetation(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
@@ -817,8 +824,9 @@ public class OverhaulBiomes {
         builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         addBasicFeatures(lookupBackedBuilder);
+
+        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addSwampVegetation(lookupBackedBuilder);
 
@@ -835,6 +843,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
         return createBiome(true, 0.2F, 0.8F, builder, lookupBackedBuilder, null);
@@ -860,6 +869,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
         return createBiome(true, 0.8F, 1.0F, builder, lookupBackedBuilder, null);
@@ -875,7 +885,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.goldenSweepVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addForestFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addBirchForestWildflowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
@@ -884,6 +894,9 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         lookupBackedBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OverhaulOrePlacedFeatures.ORE_EMERALD);
+
+        OverhaulBiomeFeatures.goldenSweepVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -901,8 +914,10 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.groveVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, false);
+
+        OverhaulBiomeFeatures.groveVegetation(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_GROVE);
 
@@ -921,11 +936,9 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        if (bamboo) {
-            DefaultBiomeFeatures.addBambooJungleTrees(lookupBackedBuilder);
-        } else {
-            DefaultBiomeFeatures.addJungleTrees(lookupBackedBuilder);
-        }
+
+        if (bamboo) DefaultBiomeFeatures.addBambooJungleTrees(lookupBackedBuilder);
+        else DefaultBiomeFeatures.addJungleTrees(lookupBackedBuilder);
         DefaultBiomeFeatures.addExtraDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addJungleGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
@@ -945,6 +958,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
         return createBiome(true, 2.0F, 1.0F, builder, lookupBackedBuilder, null);
@@ -960,12 +974,15 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.lavenderFieldsVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.lavenderFieldsVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.subtropicalFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -982,6 +999,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addClayOre(lookupBackedBuilder);
         DefaultBiomeFeatures.addLushCavesDecoration(lookupBackedBuilder);
@@ -1002,8 +1020,9 @@ public class OverhaulBiomes {
         builder.spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         addBasicFeatures(lookupBackedBuilder);
+
+        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addMangroveSwampFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addMangroveSwampAquaticFeatures(lookupBackedBuilder);
 
@@ -1022,8 +1041,9 @@ public class OverhaulBiomes {
         builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         addBasicFeatures(lookupBackedBuilder);
+
+        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addSwampVegetation(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OceanPlacedFeatures.SEAGRASS_SWAMP);
@@ -1044,9 +1064,12 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.meadowVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.WILDFLOWERS_MEADOW);
+
+        OverhaulBiomeFeatures.meadowVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.temperateFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
 
@@ -1079,16 +1102,16 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        if (clearing) {
-            OverhaulBiomeFeatures.montaneClearingVegetation(lookupBackedBuilder);
-        } else {
-            OverhaulBiomeFeatures.montaneWoodlandsVegetation(lookupBackedBuilder);
-        }
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
+
+        if (clearing) OverhaulBiomeFeatures.montaneClearingVegetation(lookupBackedBuilder);
+        else OverhaulBiomeFeatures.montaneWoodlandsVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
         return createBiome(true, 0.4F, 0.8F, 4159204, 329011, null, null, null, builder, lookupBackedBuilder, null);
     }
@@ -1126,8 +1149,9 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDesertMobs(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         addBasicFeatures(lookupBackedBuilder);
+
+        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addDesertDryVegetation(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDesertVegetation(lookupBackedBuilder);
@@ -1145,9 +1169,8 @@ public class OverhaulBiomes {
         int waterColor, waterFogColor;
 
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        if (cave) {
-            builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.GLOW_SQUID, 1, 4));
-        }
+        if (cave) builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.GLOW_SQUID, 1, 4));
+
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -1196,16 +1219,12 @@ public class OverhaulBiomes {
                 waterColor = 4566514;
                 waterFogColor = 267827;
 
-                if (deep) {
-                    DefaultBiomeFeatures.addOceanMobs(builder, 8, 4, 8);
-                } else {
-                    DefaultBiomeFeatures.addOceanMobs(builder, 10, 2, 15);
-                }
+                if (deep) DefaultBiomeFeatures.addOceanMobs(builder, 8, 4, 8);
+                else DefaultBiomeFeatures.addOceanMobs(builder, 10, 2, 15);
+
                 builder.spawn(SpawnGroup.WATER_AMBIENT, 5, new SpawnSettings.SpawnEntry(EntityType.PUFFERFISH, 1, 3))
                         .spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8));
-                if (!cave) {
-                    builder.spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.DOLPHIN, 1, 2));
-                }
+                if (!cave) builder.spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.DOLPHIN, 1, 2));
 
                 lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, deep ? OceanPlacedFeatures.SEAGRASS_DEEP_WARM : OceanPlacedFeatures.SEAGRASS_WARM);
                 DefaultBiomeFeatures.addLessKelp(lookupBackedBuilder);
@@ -1233,9 +1252,8 @@ public class OverhaulBiomes {
                 waterFogColor = 329011;
 
                 DefaultBiomeFeatures.addOceanMobs(builder, 1, 4, 10);
-                if (!cave) {
-                    builder.spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.DOLPHIN, 1, 2));
-                }
+                if (!cave) builder.spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.DOLPHIN, 1, 2));
+
 
                 lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, deep ? OceanPlacedFeatures.SEAGRASS_DEEP : OceanPlacedFeatures.SEAGRASS_NORMAL);
                 DefaultBiomeFeatures.addKelp(lookupBackedBuilder);
@@ -1257,6 +1275,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addMossyRocks(lookupBackedBuilder);
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
@@ -1264,11 +1283,14 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         if (snowy) {
-            OverhaulBiomeFeatures.oldGrowthSnowyTaigaVegetation(lookupBackedBuilder);
             DefaultBiomeFeatures.addSweetBerryBushesSnowy(lookupBackedBuilder);
+
+            OverhaulBiomeFeatures.oldGrowthSnowyTaigaVegetation(lookupBackedBuilder);
         } else {
-            OverhaulBiomeFeatures.oldGrowthSpruceTaigaVegetation(lookupBackedBuilder);
             DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
+
+            OverhaulBiomeFeatures.oldGrowthSpruceTaigaVegetation(lookupBackedBuilder);
+            OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
         }
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
@@ -1284,12 +1306,15 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PALE_GARDEN_VEGETATION);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PALE_MOSS_PATCH);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PALE_GARDEN_FLOWERS);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_PALE_GARDEN);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -1306,6 +1331,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
         return createBiome(true, 0.2F, 0.8F, builder, lookupBackedBuilder, null);
@@ -1333,6 +1359,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         lookupBackedBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OverhaulOrePlacedFeatures.ORE_EMERALD);
 
         MusicSound musicSound;
@@ -1402,18 +1429,18 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
-        if (oldGrowth) {
-            OverhaulBiomeFeatures.oldGrowthPineTaigaVegetation(lookupBackedBuilder);
-            DefaultBiomeFeatures.addGiantTaigaGrass(lookupBackedBuilder);
-        } else {
-            OverhaulBiomeFeatures.pineTaigaVegetation(lookupBackedBuilder);
-            DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
-        }
+        if (oldGrowth) DefaultBiomeFeatures.addGiantTaigaGrass(lookupBackedBuilder);
+        else DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
+
+        if (oldGrowth) OverhaulBiomeFeatures.oldGrowthPineTaigaVegetation(lookupBackedBuilder);
+        else OverhaulBiomeFeatures.pineTaigaVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
@@ -1431,6 +1458,8 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
+        lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
@@ -1449,9 +1478,10 @@ public class OverhaulBiomes {
                 DefaultBiomeFeatures.addSnowyMobs(builder);
 
                 if (iceSpikes) {
-                    OverhaulBiomeFeatures.iceSpikesVegetation(lookupBackedBuilder);
                     lookupBackedBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.ICE_SPIKE);
                     lookupBackedBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.ICE_PATCH);
+
+                    OverhaulBiomeFeatures.iceSpikesVegetation(lookupBackedBuilder);
                 } else {
                     OverhaulBiomeFeatures.snowyPlainsVegetation(lookupBackedBuilder);
                 }
@@ -1465,8 +1495,7 @@ public class OverhaulBiomes {
                 foliageColor = 9987967;
                 dryFoliageColor = 9987967;
 
-                lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
-
+                OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
             }
             case COOL -> {
                 temp = 0.4F;
@@ -1479,13 +1508,13 @@ public class OverhaulBiomes {
 
                 DefaultBiomeFeatures.addPlainsMobs(builder);
 
-                lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
-                OverhaulBiomeFeatures.prairieVegetation(lookupBackedBuilder);
+                if (!steppe) OverhaulBiomeFeatures.prairieVegetation(lookupBackedBuilder);
+                OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
             }
             case WARM -> {
                 temp = 1.0F;
                 df = 0.7F;
-                waterColor = 3750089;
+                waterColor = 4159204;
                 waterFogColor = 329011;
                 grassColor = null;
                 foliageColor = null;
@@ -1493,12 +1522,15 @@ public class OverhaulBiomes {
 
                 DefaultBiomeFeatures.addFarmAnimals(builder);
 
+                lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_PLAIN);
+
                 OverhaulBiomeFeatures.shrublandsVegetation(lookupBackedBuilder);
+                OverhaulBiomeFeatures.subtropicalFruitPatch(lookupBackedBuilder);
             }
             case HOT -> {
                 temp = 2.0F;
                 df = 0.6F;
-                waterColor = 3750089;
+                waterColor = 4159204;
                 waterFogColor = 329011;
                 grassColor = null;
                 foliageColor = null;
@@ -1509,7 +1541,7 @@ public class OverhaulBiomes {
             default -> {
                 temp = 0.8F;
                 df = 0.4F;
-                waterColor = 3750089;
+                waterColor = 4159204;
                 waterFogColor = 329011;
                 grassColor = null;
                 foliageColor = null;
@@ -1517,14 +1549,14 @@ public class OverhaulBiomes {
 
                 DefaultBiomeFeatures.addPlainsMobs(builder);
 
-                DefaultBiomeFeatures.addPlainsFeatures(lookupBackedBuilder);
                 if (sunflower) {
-                    OverhaulBiomeFeatures.sunflowerPlainsVegetation(lookupBackedBuilder);
-                    lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_SUNFLOWER);
                     lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.WILDFLOWERS_MEADOW);
+                    OverhaulBiomeFeatures.sunflowerPlainsVegetation(lookupBackedBuilder);
                 } else {
+                    lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_PLAIN);
                     OverhaulBiomeFeatures.plainsVegetation(lookupBackedBuilder);
                 }
+                OverhaulBiomeFeatures.temperateFruitPatch(lookupBackedBuilder);
             }
         }
 
@@ -1538,6 +1570,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
         return createBiome(true, 1.0F, 1.0F, builder, lookupBackedBuilder, null);
@@ -1555,13 +1588,16 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.redwoodForestVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addGiantTaigaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
+
+        OverhaulBiomeFeatures.redwoodForestVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
         return createBiome(true, 0.2F, 1.0F, builder, lookupBackedBuilder, null);
     }
@@ -1577,6 +1613,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
         switch (temperature) {
@@ -1647,8 +1684,9 @@ public class OverhaulBiomes {
         builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         addBasicFeatures(lookupBackedBuilder);
+
+        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addSwampVegetation(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OceanPlacedFeatures.SEAGRASS_SWAMP);
@@ -1678,20 +1716,22 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addFarmAnimals(builder);
         builder.spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.HORSE, 2, 6)).spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.DONKEY, 1, 1)).spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.ARMADILLO, 2, 3));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
-
-        GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        addBasicFeatures(lookupBackedBuilder);
         if (plateau) {
             builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.LLAMA, 4, 4));
             builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 8));
-
-            OverhaulBiomeFeatures.savannaPlateauVegetation(lookupBackedBuilder);
         }
+
+        GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
+        addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addSavannaTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addExtraDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addSavannaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        if (plateau) OverhaulBiomeFeatures.savannaPlateauVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.mediterraneanFruitPatch(lookupBackedBuilder);
 
         return createBiome(false, 2.0F, 0.0F, builder, lookupBackedBuilder, null);
     }
@@ -1703,6 +1743,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
         return createBiome(true, -1.0F, 1.0F, builder, lookupBackedBuilder, null);
@@ -1718,8 +1759,10 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.snowySlopesVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, false);
+
+        OverhaulBiomeFeatures.snowySlopesVegetation(lookupBackedBuilder);
 
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SNOWY_SLOPES);
 
@@ -1735,6 +1778,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addSparseJungleTrees(lookupBackedBuilder);
         DefaultBiomeFeatures.addExtraDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addJungleGrass(lookupBackedBuilder);
@@ -1784,8 +1828,9 @@ public class OverhaulBiomes {
         builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
-        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         addBasicFeatures(lookupBackedBuilder);
+
+        DefaultBiomeFeatures.addFossils(lookupBackedBuilder);
         DefaultBiomeFeatures.addClayDisk(lookupBackedBuilder);
         DefaultBiomeFeatures.addSwampFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
@@ -1809,16 +1854,19 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addLargeFerns(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addTaigaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         if (snowy) {
-            OverhaulBiomeFeatures.snowyTaigaVegetation(lookupBackedBuilder);
             DefaultBiomeFeatures.addSweetBerryBushesSnowy(lookupBackedBuilder);
+            OverhaulBiomeFeatures.snowyTaigaVegetation(lookupBackedBuilder);
         } else {
-            OverhaulBiomeFeatures.taigaVegetation(lookupBackedBuilder);
             DefaultBiomeFeatures.addSweetBerryBushes(lookupBackedBuilder);
+
+            OverhaulBiomeFeatures.taigaVegetation(lookupBackedBuilder);
+            OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
         }
 
         return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F, snowy ? 4020182 : 4159204, 329011, null, null, null, builder, lookupBackedBuilder, null);
@@ -1832,6 +1880,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addSparseJungleTrees(lookupBackedBuilder);
         DefaultBiomeFeatures.addExtraDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addJungleGrass(lookupBackedBuilder);
@@ -1854,6 +1903,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DRIPSTONE_CAVES);
@@ -1873,6 +1923,7 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addJungleTrees(lookupBackedBuilder);
         DefaultBiomeFeatures.addExtraDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addJungleGrass(lookupBackedBuilder);
@@ -1896,11 +1947,14 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.subtropicalFruitPatch(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
@@ -1917,13 +1971,16 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.windsweptGravellyHillsVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         lookupBackedBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OverhaulOrePlacedFeatures.ORE_EMERALD);
+
+        OverhaulBiomeFeatures.windsweptGravellyHillsVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
         return createBiome(true, 0.8F, 0.4F, builder, lookupBackedBuilder, null);
     }
@@ -1938,17 +1995,18 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        if (forest) {
-            OverhaulBiomeFeatures.windsweptForestVegetation(lookupBackedBuilder);
-        } else {
-            OverhaulBiomeFeatures.windsweptHillsVegetation(lookupBackedBuilder);
-        }
+
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         lookupBackedBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OverhaulOrePlacedFeatures.ORE_EMERALD);
+
+        if (forest) OverhaulBiomeFeatures.windsweptForestVegetation(lookupBackedBuilder);
+        else OverhaulBiomeFeatures.windsweptHillsVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.temperateFruitPatch(lookupBackedBuilder);
+
         return createBiome(true, 0.8F, 0.4F, builder, lookupBackedBuilder, null);
     }
 
@@ -1962,11 +2020,14 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.windsweptSavannaVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addWindsweptSavannaGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.windsweptSavannaVegetation(lookupBackedBuilder);
+        OverhaulBiomeFeatures.mediterraneanFruitPatch(lookupBackedBuilder);
 
         return createBiome(false, 2.0F, 0.0F, builder, lookupBackedBuilder, null);
     }
@@ -1978,10 +2039,13 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addBushes(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
         return createBiome(true, 0.2F, 0.0F, 3750089, 329011, 12086123, 9987967, 9987967, builder, lookupBackedBuilder, null);
     }
@@ -1994,9 +2058,11 @@ public class OverhaulBiomes {
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
-        OverhaulBiomeFeatures.winterWonderlandVegetation(lookupBackedBuilder);
+
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
+
+        OverhaulBiomeFeatures.winterWonderlandVegetation(lookupBackedBuilder);
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 

@@ -15,7 +15,7 @@
     },
     "music_volume": 1.0,
     "sky_color": 7907327,
-    "water_color": 3750089,
+    "water_color": 4159204,
     "water_fog_color": 329011
   },
   "features": [
@@ -47,6 +47,7 @@
     [],
     [],
     [
+      "minecraft:patch_grass_plain",
       "minecraft:patch_tall_grass_2",
       "minecraft:patch_bush",
       "minecraft:brown_mushroom_normal",
@@ -54,10 +55,9 @@
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
-      "minecraft:trees_plains",
       "minecraft:flower_plains",
-      "minecraft:patch_grass_plain",
-      "withers_overhaul:trees_plains"
+      "withers_overhaul:trees_plains",
+      "withers_overhaul:patch_ground_fruit_temperate"
     ],
     [
       "minecraft:freeze_top_layer"

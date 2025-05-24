@@ -58,11 +58,12 @@
     [],
     [],
     [
+      "minecraft:patch_tall_grass_2",
+      "minecraft:wildflowers_meadow",
       "withers_overhaul:trees_meadow",
       "minecraft:patch_grass_meadow",
       "minecraft:flower_meadow",
-      "minecraft:patch_tall_grass_2",
-      "minecraft:wildflowers_meadow"
+      "withers_overhaul:patch_ground_fruit_temperate"
     ],
     [
       "minecraft:freeze_top_layer"

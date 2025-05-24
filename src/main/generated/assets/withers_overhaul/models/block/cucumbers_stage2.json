@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "withers_overhaul:block/cucumbers_stage2"
+  }
+}

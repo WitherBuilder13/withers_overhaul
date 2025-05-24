@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "withers_overhaul:patch_broccoli",
+      "withers_overhaul:patch_cauliflower",
+      "withers_overhaul:patch_celery",
+      "withers_overhaul:patch_lettuce",
+      "withers_overhaul:patch_potatoes"
+    ]
+  }
+}

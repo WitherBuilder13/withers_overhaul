@@ -17,6 +17,7 @@ bdfbf89013bce7c8fb72c3c2ff4de8289a307ec5 data/minecraft/tags/block/iron_ores.jso
 e7239b96eee63dbc21e3560a78da0af53a4c053e data/minecraft/tags/block/lapis_ores.json
 9df087fae64f75c2201fae1c1065bdcadb8bfd06 data/minecraft/tags/block/leaves.json
 cb4e87d158317a4a91593193f2db3d7d5e764ccf data/minecraft/tags/block/logs_that_burn.json
+219b69362079c1411abf2295206f2c2370280bdc data/minecraft/tags/block/maintains_farmland.json
 06bf584c243337e6f1ec219c550175ea11b8b4c6 data/minecraft/tags/block/mineable/axe.json
 9a9804633c35781160c9253b8bd36df96dc9620a data/minecraft/tags/block/mineable/hoe.json
 d690b7ff5e5924acf0634fff89ab430701e27b00 data/minecraft/tags/block/mineable/pickaxe.json
