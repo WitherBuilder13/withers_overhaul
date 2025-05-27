@@ -1,5 +1,6 @@
 package me.withers_overhaul.block.util;
 
+import me.withers_overhaul.WithersOverhaul;
 import me.withers_overhaul.registry.block.ColoredBlocks;
 import me.withers_overhaul.registry.block.StoneBlocks;
 import net.minecraft.block.Blocks;
@@ -1390,7 +1391,6 @@ public class OverhaulBlockFamilies {
             .build();
 
     public static void registerBlockFamilies() {
-
+        WithersOverhaul.LOGGER.debug("Registering block families");
     }
-
 }

@@ -388,15 +388,10 @@ public class ColoredBlocks {
 
     private static Block registerColoredBlock(String name) {
         AbstractBlock.Settings settings;
-        if (name.contains("concrete")) {
-            settings = copy(Blocks.WHITE_CONCRETE);
-        } else if (name.contains("terracotta")) {
-            settings = copy(Blocks.TERRACOTTA);
-        } else if (name.contains("chalk")) {
-            settings = copy(Blocks.CALCITE);
-        } else {
-            settings = copy(Blocks.STONE);
-        }
+        if (name.contains("concrete")) settings = copy(Blocks.WHITE_CONCRETE);
+        else if (name.contains("terracotta")) settings = copy(Blocks.TERRACOTTA);
+        else if (name.contains("chalk")) settings = copy(Blocks.CALCITE);
+        else settings = copy(Blocks.STONE);
         return register(name, new Block(settings.registryKey(keyOf(name))), true);
     }
 
@@ -420,14 +415,10 @@ public class ColoredBlocks {
         settings = settings.registryKey(keyOf(blockName));
 
         switch (variant) {
-            case STAIRS ->
-                block = new StairsBlock(blockState, settings);
-            case SLAB ->
-                block = new SlabBlock(settings);
-            case WALL ->
-                block = new WallBlock(settings);
-            default ->
-                throw new IllegalStateException("Unexpected variant '" + variant + "' for" + name);
+            case STAIRS -> block = new StairsBlock(blockState, settings);
+            case SLAB -> block = new SlabBlock(settings);
+            case WALL -> block = new WallBlock(settings);
+            default -> throw new IllegalStateException("Unexpected variant '" + variant + "' for" + name);
         }
 
         return register(blockName, block, true);

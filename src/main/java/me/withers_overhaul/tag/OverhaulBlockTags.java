@@ -45,15 +45,10 @@ public class OverhaulBlockTags {
     public static final TagKey<Block> CATTAILS_CAN_GROW_ON = BlockTagKey("cattails_can_grow_on");
 
     public static TagKey<Block> LogTagKey(OverhaulWoodTypes.WoodType woodType) {
-
         return BlockTagKey(woodType.getName() + "_logs");
-
     }
 
     public static TagKey<Block> BlockTagKey(String name) {
-
         return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, name));
-
     }
-
 }

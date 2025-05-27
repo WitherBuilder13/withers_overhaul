@@ -28,13 +28,11 @@ public class AridFruitLeavesBlock extends LeavesBlock {
     public static final BooleanProperty FRUIT = BooleanProperty.of("fruit");
 
     public static final MapCodec<AridFruitLeavesBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(
-                            Codecs.rangedInclusiveFloat(0.0F, 1.0F)
-                                    .fieldOf("leaf_particle_chance")
-                                    .forGetter(aridFruitLeavesBlock -> aridFruitLeavesBlock.leafParticleChance),
-                            createSettingsCodec()
-                    )
-                    .apply(instance, AridFruitLeavesBlock::new)
+            instance -> instance.group(Codecs.rangedInclusiveFloat(0.0F, 1.0F)
+                            .fieldOf("leaf_particle_chance")
+                            .forGetter(aridFruitLeavesBlock -> aridFruitLeavesBlock.leafParticleChance),
+                    createSettingsCodec()
+                    ).apply(instance, AridFruitLeavesBlock::new)
     );
 
     @Override
@@ -62,9 +60,7 @@ public class AridFruitLeavesBlock extends LeavesBlock {
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.SUCCESS;
-        } else {
-            return super.onUse(state, world, pos, player, hit);
-        }
+        } else return super.onUse(state, world, pos, player, hit);
     }
 
     @Override

@@ -611,96 +611,47 @@ public class OverhaulVegetationConfiguredFeatures {
         float clumpChance = 0.01F;
         ConfiguredFeatures.register(featureRegisterable, TREES_ALPINE_FOREST, Feature.RANDOM_SELECTOR, randomSelector(cedarSelector, Pair.of(spruceClump, clumpChance)));
         ConfiguredFeatures.register(featureRegisterable, TREES_ALPINE_TANGLE, Feature.RANDOM_BOOLEAN_SELECTOR, booleanSelector(spruceSelector, cedarSelector));
-        ConfiguredFeatures.register(featureRegisterable, TREES_ALPINE_THICKET, Feature.RANDOM_SELECTOR, randomSelector(megaCedarSelector, Pair.of(cedarSelector, 0.5F), Pair.of(spruceClump, clumpChance)));
+        ConfiguredFeatures.register(featureRegisterable, TREES_ALPINE_THICKET, Feature.RANDOM_SELECTOR, randomSelector(
+                megaCedarSelector, Pair.of(cedarSelector, 0.5F), Pair.of(spruceClump, clumpChance)
+        ));
         ConfiguredFeatures.register(featureRegisterable, TREES_ASPEN_GROVE, Feature.RANDOM_SELECTOR, randomSelector(aspen, Pair.of(birchClump, clumpChance)));
         ConfiguredFeatures.register(featureRegisterable, TREES_BIRCH_FOREST, Feature.RANDOM_SELECTOR, randomSelector(birchBees0002, Pair.of(aspenClump, clumpChance)));
-        ConfiguredFeatures.register(
-                featureRegisterable,
-                TREES_CLOUD_FOREST,
-                Feature.RANDOM_SELECTOR,
-                randomSelector(
-                        megaEbonySelector,
-                        Pair.of(ebonySelector, 0.2F),
-                        Pair.of(darkOak, 0.2F),
-                        Pair.of(ebonyBushSelector, 0.2F),
-                        Pair.of(teakClump, clumpChance),
-                        Pair.of(elmClump, clumpChance)
-                )
-        );
-        ConfiguredFeatures.register(
-                featureRegisterable,
-                TREES_DARK_FOREST,
-                Feature.RANDOM_SELECTOR,
-                randomSelector(
-                        darkOakLeafLitter,
-                        Pair.of(teakClump, clumpChance),
-                        Pair.of(elmClump, clumpChance),
-                        Pair.of(PlacedFeatures.createEntry(hugeRedMushroom), 0.1F),
-                        Pair.of(PlacedFeatures.createEntry(hugeBrownMushroom), 0.1F)
-                )
-        );
-        ConfiguredFeatures.register(
-                featureRegisterable,
-                TREES_FLOWER_FOREST,
-                Feature.RANDOM_SELECTOR,
-                randomSelector(
-                        oakBees002,
-                        Pair.of(fancyOakBees002, 0.1F),
-                        Pair.of(mapleSelector, 0.2F),
-                        Pair.of(fancyMapleSelector, 0.1F),
-                        Pair.of(poplarSelector, 0.3F),
-                        Pair.of(beechSelector, 0.1F)
-                )
-        );
-        ConfiguredFeatures.register(
-                featureRegisterable,
-                TREES_FOREST,
-                Feature.RANDOM_SELECTOR,
-                randomSelector(
-                        oakBees0002,
-                        Pair.of(fancyOakBees0002, 0.2F),
-                        Pair.of(mapleSelector, 0.3F),
-                        Pair.of(fancyMapleSelector, 0.2F)
-                )
-        );
+        ConfiguredFeatures.register(featureRegisterable, TREES_CLOUD_FOREST, Feature.RANDOM_SELECTOR, randomSelector(
+                megaEbonySelector, Pair.of(ebonySelector, 0.2F), Pair.of(darkOak, 0.2F), Pair.of(ebonyBushSelector, 0.2F), Pair.of(teakClump, clumpChance), Pair.of(elmClump, clumpChance)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, TREES_DARK_FOREST, Feature.RANDOM_SELECTOR, randomSelector(
+                darkOakLeafLitter, Pair.of(teakClump, clumpChance), Pair.of(elmClump, clumpChance),
+                Pair.of(PlacedFeatures.createEntry(hugeRedMushroom), 0.1F), Pair.of(PlacedFeatures.createEntry(hugeBrownMushroom), 0.1F)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, TREES_FLOWER_FOREST, Feature.RANDOM_SELECTOR, randomSelector(
+                oakBees002, Pair.of(fancyOakBees002, 0.1F), Pair.of(mapleSelector, 0.2F), Pair.of(fancyMapleSelector, 0.1F), Pair.of(poplarSelector, 0.3F), Pair.of(beechSelector, 0.1F)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, TREES_FOREST, Feature.RANDOM_SELECTOR, randomSelector(
+                oakBees0002, Pair.of(fancyOakBees0002, 0.2F), Pair.of(mapleSelector, 0.3F), Pair.of(fancyMapleSelector, 0.2F)
+        ));
         ConfiguredFeatures.register(featureRegisterable, TREES_FROSTED_TANGLE, Feature.RANDOM_BOOLEAN_SELECTOR, booleanSelector(fir, hemlock));
-        ConfiguredFeatures.register(featureRegisterable, TREES_FROSTED_WOODLANDS, Feature.RANDOM_SELECTOR, randomSelector(megaHemlock, Pair.of(hemlock, 0.3F), Pair.of(firClump, clumpChance)));
+        ConfiguredFeatures.register(featureRegisterable, TREES_FROSTED_WOODLANDS, Feature.RANDOM_SELECTOR, randomSelector(
+                megaHemlock, Pair.of(hemlock, 0.3F), Pair.of(firClump, clumpChance)
+        ));
         ConfiguredFeatures.register(featureRegisterable, TREES_GOLDEN_SWEEP, Feature.RANDOM_BOOLEAN_SELECTOR, booleanSelector(birchBees0002, aspen));
         ConfiguredFeatures.register(featureRegisterable, TREES_GROVE, Feature.RANDOM_SELECTOR, randomSelector(hemlock, Pair.of(firClump, clumpChance)));
-        ConfiguredFeatures.register(featureRegisterable, TREES_LAVENDER_FIELDS, Feature.RANDOM_SELECTOR, randomSelector(magnolia, Pair.of(floweringMagnolia, 0.1F), Pair.of(jacaranda, 0.3F)));
+        ConfiguredFeatures.register(featureRegisterable, TREES_LAVENDER_FIELDS, Feature.RANDOM_SELECTOR, randomSelector(
+                magnolia, Pair.of(floweringMagnolia, 0.1F), Pair.of(jacaranda, 0.3F)
+        ));
         ConfiguredFeatures.register(featureRegisterable, TREES_MONTANE_CLEARING, Feature.RANDOM_SELECTOR, randomSelector(larchSelector, Pair.of(pineClump, clumpChance)));
-        ConfiguredFeatures.register(featureRegisterable, TREES_MONTANE_WOODLANDS, Feature.RANDOM_SELECTOR, randomSelector(larchTallSelector, Pair.of(larchSelector, 0.3F), Pair.of(pineClump, clumpChance)));
-        ConfiguredFeatures.register(
-                featureRegisterable,
-                TREES_OLD_GROWTH_BIRCH_FOREST,
-                Feature.RANDOM_SELECTOR,
-                randomSelector(
-                        birchTallBees0002,
-                        Pair.of(birchBees0002, 0.3F),
-                        Pair.of(aspenClump, clumpChance)
-                )
-        );
-        ConfiguredFeatures.register(
-                featureRegisterable,
-                TREES_OLD_GROWTH_PINE_TAIGA,
-                Feature.RANDOM_SELECTOR,
-                randomSelector(
-                        pineTallSelector,
-                        Pair.of(pineSelector, 0.3F),
-                        Pair.of(larchClump, clumpChance)
-                )
-        );
+        ConfiguredFeatures.register(featureRegisterable, TREES_MONTANE_WOODLANDS, Feature.RANDOM_SELECTOR, randomSelector(
+                larchTallSelector, Pair.of(larchSelector, 0.3F), Pair.of(pineClump, clumpChance)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, TREES_OLD_GROWTH_BIRCH_FOREST, Feature.RANDOM_SELECTOR, randomSelector(
+                birchTallBees0002, Pair.of(birchBees0002, 0.3F), Pair.of(aspenClump, clumpChance)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, TREES_OLD_GROWTH_PINE_TAIGA, Feature.RANDOM_SELECTOR, randomSelector(
+                pineTallSelector, Pair.of(pineSelector, 0.3F), Pair.of(larchClump, clumpChance)
+        ));
         ConfiguredFeatures.register(featureRegisterable, TREES_OLD_GROWTH_SNOWY_TAIGA, Feature.RANDOM_SELECTOR, randomSelector(megaFir, Pair.of(fir, 0.3F), Pair.of(hemlockClump, clumpChance)));
-        ConfiguredFeatures.register(
-                featureRegisterable,
-                TREES_OLD_GROWTH_SPRUCE_TAIGA,
-                Feature.RANDOM_SELECTOR,
-                randomSelector(
-                        megaSpruceSelector,
-                        Pair.of(spruceSelector, 0.3F),
-                        Pair.of(cedarClump, clumpChance)
-                )
-        );
+        ConfiguredFeatures.register(featureRegisterable, TREES_OLD_GROWTH_SPRUCE_TAIGA, Feature.RANDOM_SELECTOR, randomSelector(
+                megaSpruceSelector, Pair.of(spruceSelector, 0.3F), Pair.of(cedarClump, clumpChance)
+        ));
         ConfiguredFeatures.register(featureRegisterable, TREES_PINE_TAIGA, Feature.RANDOM_SELECTOR, randomSelector(pineSelector, Pair.of(larchClump, clumpChance)));
         ConfiguredFeatures.register(featureRegisterable, TREES_REDWOOD_FOREST, Feature.RANDOM_SELECTOR, randomSelector(redwood, Pair.of(spruceClump, 0.2F), Pair.of(cedarClump, 0.2F)));
         ConfiguredFeatures.register(featureRegisterable, TREES_SAVANNA_PLATEAU, Feature.RANDOM_SELECTOR, randomSelector(paloVerdeSelector, Pair.of(acaciaBush, 0.4F)));
@@ -715,14 +666,10 @@ public class OverhaulVegetationConfiguredFeatures {
 
         // * Other plants
         ConfiguredFeatures.register(featureRegisterable, PATCH_PRAIRIE_GRASS, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(
-                        32, 7, 3, PlacedFeatures.createEntry(
-                                Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
-                                        new WeightedBlockStateProvider(
-                                                Pool.<BlockState>builder()
-                                                        .add(NaturalBlocks.SHORT_PRAIRIE_GRASS.getDefaultState(), 1)
-                                                        .add(NaturalBlocks.TALL_PRAIRIE_GRASS.getDefaultState(), 1)
-                                        )
-                )))
+                32, 7, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(Pool.<BlockState>builder()
+                .add(NaturalBlocks.SHORT_PRAIRIE_GRASS.getDefaultState(), 1)
+                .add(NaturalBlocks.TALL_PRAIRIE_GRASS.getDefaultState(), 1)
+                ))))
         );
         ConfiguredFeatures.register(featureRegisterable, LAVENDER_FLOWERS, Feature.RANDOM_SELECTOR, new RandomFeatureConfig(
                 List.of(
@@ -811,11 +758,11 @@ public class OverhaulVegetationConfiguredFeatures {
     @SafeVarargs
     private static RandomFeatureConfig randomSelector(RegistryEntry<PlacedFeature> defaultFeature, Pair<RegistryEntry<PlacedFeature>, Float>... additionalFeatures) {
         List<RandomFeatureEntry> entries = new ArrayList<>();
-        for (Pair<RegistryEntry<PlacedFeature>, Float> additionalFeature : additionalFeatures) {
+        for (Pair<RegistryEntry<PlacedFeature>, Float> additionalFeature : additionalFeatures)
             entries.add(new RandomFeatureEntry(additionalFeature.getFirst(), additionalFeature.getSecond()));
-        }
 
         return new RandomFeatureConfig(entries, defaultFeature);
+
     }
 
     private static RandomPatchFeatureConfig groundCropPatch(Block crop) {
@@ -860,11 +807,8 @@ public class OverhaulVegetationConfiguredFeatures {
     private static Pool.Builder<BlockState> segmentedBlock(Block block, int min, int max, IntProperty amountProperty, EnumProperty<Direction> facingProperty) {
         Pool.Builder<BlockState> builder = Pool.builder();
 
-        for (int i = min; i <= max; i++) {
-            for (Direction direction : Direction.Type.HORIZONTAL) {
-                builder.add(block.getDefaultState().with(amountProperty, i).with(facingProperty, direction), 1);
-            }
-        }
+        for (int i = min; i <= max; i++) for (Direction direction : Direction.Type.HORIZONTAL)
+            builder.add(block.getDefaultState().with(amountProperty, i).with(facingProperty, direction), 1);
 
         return builder;
     }

@@ -63,18 +63,13 @@ public class HangingMossBlock extends Block implements Fertilizable {
             BlockState neighborState,
             Random random
     ) {
-        if (!this.canPlaceAt(world, pos)) {
-            tickView.scheduleBlockTick(pos, this, 1);
-        }
-
+        if (!this.canPlaceAt(world, pos)) tickView.scheduleBlockTick(pos, this, 1);
         return state.with(TIP, !world.getBlockState(pos.down()).isOf(this));
     }
 
     @Override
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (!this.canPlaceAt(world, pos)) {
-            world.breakBlock(pos, true);
-        }
+        if (!this.canPlaceAt(world, pos)) world.breakBlock(pos, true);
     }
 
     @Override
@@ -111,8 +106,6 @@ public class HangingMossBlock extends Block implements Fertilizable {
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         BlockPos blockPos = this.getTipPos(world, pos).down();
-        if (this.canGrowInto(world.getBlockState(blockPos))) {
-            world.setBlockState(blockPos, state.with(TIP, true));
-        }
+        if (this.canGrowInto(world.getBlockState(blockPos))) world.setBlockState(blockPos, state.with(TIP, true));
     }
 }

@@ -289,9 +289,11 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitCold = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_COLD);
         RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitCool = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_COOL);
         RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitTemperate = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_TEMPERATE);
-        RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitMediterranean = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_MEDITERRANEAN);
+        RegistryEntry<ConfiguredFeature<?, ?>> patchGroundFruitMediterranean = configuredFeatureLookup.getOrThrow(
+                OverhaulVegetationConfiguredFeatures.PATCH_GROUND_FRUIT_MEDITERRANEAN
+        );
 
-        // ` --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // ` -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         PlacedFeatures.register(featureRegisterable, MAPLE_SELECTOR, mapleSelector, empty());
         PlacedFeatures.register(featureRegisterable, FANCY_MAPLE_SELECTOR, fancyMapleSelector, empty());

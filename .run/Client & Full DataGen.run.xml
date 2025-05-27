@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Client &amp; Full DataGen" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="net.fabricmc.devlaunchinjector.Main" />
+    <module name="withers_overhaul.main" />
+    <option name="VM_PARAMETERS" value="-Dfabric.dli.config=C:\Users\jryou\IdeaProjects\withers_overhaul\.gradle\loom-cache\launch.cfg -Dfabric.dli.env=client -Dfabric.dli.main=net.fabricmc.loader.impl.launch.knot.KnotClient" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Full Data Generation" run_configuration_type="Application" />
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

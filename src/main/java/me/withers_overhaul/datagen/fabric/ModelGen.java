@@ -64,9 +64,7 @@ public class ModelGen extends FabricModelProvider {
                 PINE_LEAVES, LARCH_LEAVES, ASPEN_LEAVES, SAKURA_LEAVES, MAGNOLIA_LEAVES, FLOWERING_MAGNOLIA_LEAVES, JACARANDA_LEAVES
         };
 
-        for (Block simpleCubeAllBlock : simpleCubeAllBlocks) {
-            blockStateModelGenerator.registerSimpleCubeAll(simpleCubeAllBlock);
-        }
+        for (Block simpleCubeAllBlock : simpleCubeAllBlocks) blockStateModelGenerator.registerSimpleCubeAll(simpleCubeAllBlock);
 
         Map<Block, Block> logBlocks = new HashMap<>();
 
@@ -132,18 +130,14 @@ public class ModelGen extends FabricModelProvider {
         logBlocks.put(STRIPPED_MAGNOLIA_LOG, STRIPPED_MAGNOLIA_WOOD);
         logBlocks.put(STRIPPED_JACARANDA_LOG, STRIPPED_JACARANDA_WOOD);
 
-        for (Map.Entry<Block, Block> entry : logBlocks.entrySet()) {
-            blockStateModelGenerator.createLogTexturePool(entry.getKey()).log(entry.getKey()).wood(entry.getValue());
-        }
+        for (Map.Entry<Block, Block> entry : logBlocks.entrySet()) blockStateModelGenerator.createLogTexturePool(entry.getKey()).log(entry.getKey()).wood(entry.getValue());
 
         Block[] pillarBlocks = {
                 STONE_BRICK_PILLAR, GRANITE_BRICK_PILLAR, DIORITE_BRICK_PILLAR, ANDESITE_BRICK_PILLAR, GNEISS_BRICK_PILLAR,
                 SHALE_BRICK_PILLAR, LIMESTONE_BRICK_PILLAR, MARBLE_BRICK_PILLAR, GABBRO_BRICK_PILLAR, PHYLLITE_BRICK_PILLAR
         };
 
-        for (Block pillarBlock : pillarBlocks) {
-            blockStateModelGenerator.registerAxisRotated(pillarBlock, TexturedModel.CUBE_COLUMN);
-        }
+        for (Block pillarBlock : pillarBlocks) blockStateModelGenerator.registerAxisRotated(pillarBlock, TexturedModel.CUBE_COLUMN);
 
         Map<Block, BlockFamily> blockFamilies = new HashMap<>();
 
@@ -324,9 +318,7 @@ public class ModelGen extends FabricModelProvider {
         blockFamilies.put(MAGENTA_CHALK_BRICKS, MAGENTA_CHALK_BRICK);
         blockFamilies.put(PINK_CHALK_BRICKS, PINK_CHALK_BRICK);
 
-        for (Map.Entry<Block, BlockFamily> entry : blockFamilies.entrySet()) {
-            blockStateModelGenerator.registerCubeAllModelTexturePool(entry.getKey()).family(entry.getValue());
-        }
+        for (Map.Entry<Block, BlockFamily> entry : blockFamilies.entrySet()) blockStateModelGenerator.registerCubeAllModelTexturePool(entry.getKey()).family(entry.getValue());
 
         List<Block[]> hangingSigns = new ArrayList<>();
 
@@ -361,18 +353,14 @@ public class ModelGen extends FabricModelProvider {
         hangingSigns.add(new Block[]{STRIPPED_MAGNOLIA_LOG, WoodBlocks.MAGNOLIA_HANGING_SIGN, MAGNOLIA_WALL_HANGING_SIGN});
         hangingSigns.add(new Block[]{STRIPPED_JACARANDA_LOG, WoodBlocks.JACARANDA_HANGING_SIGN, JACARANDA_WALL_HANGING_SIGN});
 
-        for (Block[] hangingSign : hangingSigns) {
-            blockStateModelGenerator.registerHangingSign(hangingSign[0], hangingSign[1], hangingSign[2]);
-        }
+        for (Block[] hangingSign : hangingSigns) blockStateModelGenerator.registerHangingSign(hangingSign[0], hangingSign[1], hangingSign[2]);
 
         Block[] tintedLeaves = {
                 MAPLE_LEAVES, POPLAR_LEAVES, BEECH_LEAVES, HICKORY_LEAVES, KAPOK_LEAVES, MAHOGANY_LEAVES, EUCALYPTUS_LEAVES, BAOBAB_LEAVES, PALO_VERDE_LEAVES,
                 JOSHUA_LEAVES, JUNIPER_LEAVES, PALM_LEAVES, EBONY_LEAVES, TEAK_LEAVES, ELM_LEAVES, WILLOW_LEAVES, CYPRESS_LEAVES
         };
 
-        for (Block leaf : tintedLeaves) {
-            blockStateModelGenerator.registerSingleton(leaf, TexturedModel.LEAVES);
-        }
+        for (Block leaf : tintedLeaves) blockStateModelGenerator.registerSingleton(leaf, TexturedModel.LEAVES);
 
         Map<Block, Block> saplings = new HashMap<>();
 
@@ -408,17 +396,11 @@ public class ModelGen extends FabricModelProvider {
         saplings.put(FLOWERING_MAGNOLIA_SAPLING, POTTED_FLOWERING_MAGNOLIA_SAPLING);
         saplings.put(JACARANDA_SAPLING, POTTED_JACARANDA_SAPLING);
 
-        for (Map.Entry<Block, Block> sapling : saplings.entrySet()) {
-            blockStateModelGenerator.registerFlowerPotPlantAndItem(sapling.getKey(), sapling.getValue(), BlockStateModelGenerator.CrossType.NOT_TINTED);
-        }
+        for (Map.Entry<Block, Block> sapling : saplings.entrySet()) blockStateModelGenerator.registerFlowerPotPlantAndItem(sapling.getKey(), sapling.getValue(), BlockStateModelGenerator.CrossType.NOT_TINTED);
 
-        Block[] crops = {
-            ARTICHOKES, BROCCOLI, CABBAGE, CANTALOUPE, CAULIFLOWER, CELERY, CUCUMBERS, EGGPLANT, JALAPENOS, KALE, LETTUCE, ONIONS, RADISHES, SPINACH
-        };
+        Block[] crops = {ARTICHOKES, BROCCOLI, CABBAGE, CANTALOUPE, CAULIFLOWER, CELERY, CUCUMBERS, EGGPLANT, JALAPENOS, KALE, LETTUCE, ONIONS, RADISHES, SPINACH};
 
-        for (Block crop : crops) {
-            blockStateModelGenerator.registerCrop(crop, Properties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
-        }
+        for (Block crop : crops) blockStateModelGenerator.registerCrop(crop, Properties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(STONE).wall(STONE_WALL);
         blockStateModelGenerator.registerCubeAllModelTexturePool(SMOOTH_STONE).stairs(SMOOTH_STONE_STAIRS).wall(SMOOTH_STONE_WALL);
@@ -454,17 +436,17 @@ public class ModelGen extends FabricModelProvider {
         Item[] simpleItems = {
                 WARPED_WART, GOURD_SEEDS, PICKLE,
 
-                APRICOT, AVOCADO, BANANA, CHERRY, DATE, FIG, GRAPEFRUIT, GUAVA, KIWI, KUMQUAT, LEMON, LIME, MANGO, NECTARINE, OLIVE, ORANGE, PEACH, PEAR, PERSIMMON, PLUM, POMEGRANATE, STARFRUIT, TANGERINE,
+                APRICOT, AVOCADO, BANANA, CHERRY, DATE, FIG, GRAPEFRUIT, GUAVA, KIWI, KUMQUAT, LEMON, LIME, MANGO,
+                NECTARINE, OLIVE, ORANGE, PEACH, PEAR, PERSIMMON, PLUM, POMEGRANATE, STARFRUIT, TANGERINE,
 
-                RUNE_AQUA_AFFINITY, RUNE_BANE_OF_ARTHROPODS, RUNE_BLAST_PROTECTION, RUNE_BREACH, RUNE_CHANNELING, RUNE_DENSITY, RUNE_DEPTH_STRIDER, RUNE_EFFICIENCY, RUNE_FEATHER_FALLING,
-                RUNE_FIRE_ASPECT, RUNE_FIRE_PROTECTION, RUNE_FLAME, RUNE_FORTUNE, RUNE_FROST_WALKER, RUNE_IMPALING, RUNE_INFINITY, RUNE_KNOCKBACK, RUNE_LOOTING, RUNE_LOYALTY,
-                RUNE_LUCK_OF_THE_SEA, RUNE_LURE, RUNE_MENDING, RUNE_MULTISHOT, RUNE_PIERCING, RUNE_POWER, RUNE_PROJECTILE_PROTECTION, RUNE_PROTECTION, RUNE_PUNCH, RUNE_QUICK_CHARGE,
-                RUNE_RESPIRATION, RUNE_RIPTIDE, RUNE_SHARPNESS, RUNE_SILK_TOUCH, RUNE_SMITE, RUNE_SOUL_SPEED, RUNE_SWEEPING_EDGE, RUNE_SWIFT_SNEAK, RUNE_THORNS, RUNE_UNBREAKING, RUNE_WIND_BURST
+                RUNE_AQUA_AFFINITY, RUNE_BANE_OF_ARTHROPODS, RUNE_BLAST_PROTECTION, RUNE_BREACH, RUNE_CHANNELING, RUNE_DENSITY, RUNE_DEPTH_STRIDER, RUNE_EFFICIENCY,
+                RUNE_FEATHER_FALLING, RUNE_FIRE_ASPECT, RUNE_FIRE_PROTECTION, RUNE_FLAME, RUNE_FORTUNE, RUNE_FROST_WALKER, RUNE_IMPALING, RUNE_INFINITY, RUNE_KNOCKBACK,
+                RUNE_LOOTING, RUNE_LOYALTY, RUNE_LUCK_OF_THE_SEA, RUNE_LURE, RUNE_MENDING, RUNE_MULTISHOT, RUNE_PIERCING, RUNE_POWER, RUNE_PROJECTILE_PROTECTION,
+                RUNE_PROTECTION, RUNE_PUNCH, RUNE_QUICK_CHARGE, RUNE_RESPIRATION, RUNE_RIPTIDE, RUNE_SHARPNESS, RUNE_SILK_TOUCH, RUNE_SMITE, RUNE_SOUL_SPEED,
+                RUNE_SWEEPING_EDGE, RUNE_SWIFT_SNEAK, RUNE_THORNS, RUNE_UNBREAKING, RUNE_WIND_BURST
         };
 
-        for (Item item : simpleItems) {
-            itemModelGenerator.register(item, Models.GENERATED);
-        }
+        for (Item item : simpleItems) itemModelGenerator.register(item, Models.GENERATED);
     }
 
     private void registerPeat(BlockStateModelGenerator blockStateModelGenerator) {

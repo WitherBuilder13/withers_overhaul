@@ -20,6 +20,7 @@ public class RedwoodTrunkPlacer extends TrunkPlacer {
     public static final MapCodec<RedwoodTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(
             instance -> fillTrunkPlacerFields(instance).apply(instance, RedwoodTrunkPlacer::new)
     );
+
     public RedwoodTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
     }
@@ -30,7 +31,9 @@ public class RedwoodTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {
+    public List<FoliagePlacer.TreeNode> generate(
+            TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config
+    ) {
         BlockPos blockPos = startPos.down();
         setToDirt(world, replacer, random, blockPos, config);
         setToDirt(world, replacer, random, blockPos.north(), config);
@@ -45,14 +48,14 @@ public class RedwoodTrunkPlacer extends TrunkPlacer {
 
         for (int i = 0; i < height; i++) {
             this.setLog(world, replacer, random, mutable, config, startPos, 0, i, 0);
+            this.setLog(world, replacer, random, mutable, config, startPos, 1, i, 0);
+            this.setLog(world, replacer, random, mutable, config, startPos, 0, i, 1);
+            this.setLog(world, replacer, random, mutable, config, startPos, -1, i, 0);
+            this.setLog(world, replacer, random, mutable, config, startPos, 0, i, -1);
             if (i < height - 1) {
-                this.setLog(world, replacer, random, mutable, config, startPos, 1, i, 0);
                 this.setLog(world, replacer, random, mutable, config, startPos, 1, i, 1);
-                this.setLog(world, replacer, random, mutable, config, startPos, 0, i, 1);
                 this.setLog(world, replacer, random, mutable, config, startPos, -1, i, 1);
-                this.setLog(world, replacer, random, mutable, config, startPos, -1, i, 0);
                 this.setLog(world, replacer, random, mutable, config, startPos, -1, i, -1);
-                this.setLog(world, replacer, random, mutable, config, startPos, 0, i, -1);
                 this.setLog(world, replacer, random, mutable, config, startPos, 1, i, -1);
             }
         }

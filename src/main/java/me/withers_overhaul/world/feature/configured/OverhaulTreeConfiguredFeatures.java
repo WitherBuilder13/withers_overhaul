@@ -330,11 +330,21 @@ public class OverhaulTreeConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, ACACIA_BUSH_PERSIMMON, Feature.TREE, bushMediterranean(ACACIA_LOG, ACACIA_LEAVES, PERSIMMON).build());
         ConfiguredFeatures.register(featureRegisterable, ACACIA_BUSH_POMEGRANATE, Feature.TREE, bushMediterranean(ACACIA_LOG, ACACIA_LEAVES, POMEGRANATE).build());*/
         
-        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE, Feature.TREE, smallFlatMediterranean(PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, TreeFruit.Mediterranean.NONE).build());
-        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_KUMQUAT, Feature.TREE, smallFlatMediterranean(PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, KUMQUAT).build());
-        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_OLIVE, Feature.TREE, smallFlatMediterranean(PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, OLIVE).build());
-        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_PERSIMMON, Feature.TREE, smallFlatMediterranean(PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, PERSIMMON).build());
-        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_POMEGRANATE, Feature.TREE, smallFlatMediterranean(PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, POMEGRANATE).build());
+        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE, Feature.TREE, smallFlatMediterranean(
+                PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, TreeFruit.Mediterranean.NONE
+        ).build());
+        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_KUMQUAT, Feature.TREE, smallFlatMediterranean(
+                PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, KUMQUAT
+        ).build());
+        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_OLIVE, Feature.TREE, smallFlatMediterranean(
+                PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, OLIVE
+        ).build());
+        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_PERSIMMON, Feature.TREE, smallFlatMediterranean(
+                PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, PERSIMMON
+        ).build());
+        ConfiguredFeatures.register(featureRegisterable, PALO_VERDE_POMEGRANATE, Feature.TREE, smallFlatMediterranean(
+                PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, POMEGRANATE
+        ).build());
         
         ConfiguredFeatures.register(featureRegisterable, EBONY, Feature.TREE, ebony(TreeFruit.Temperate.NONE).build());
         ConfiguredFeatures.register(featureRegisterable, EBONY_APPLE, Feature.TREE, ebony(APPLE).build());
@@ -390,7 +400,9 @@ public class OverhaulTreeConfiguredFeatures {
                 7, 3, 1, 3, PLUM).build());
         
         ConfiguredFeatures.register(featureRegisterable, MAGNOLIA, Feature.TREE, flat(MAGNOLIA_LOG, MAGNOLIA_LEAVES, 5, 2, 2).build());
-        ConfiguredFeatures.register(featureRegisterable, FLOWERING_MAGNOLIA, Feature.TREE, flat(MAGNOLIA_LOG, FLOWERING_MAGNOLIA_LEAVES, 5, 1, 2).build());
+        ConfiguredFeatures.register(featureRegisterable, FLOWERING_MAGNOLIA, Feature.TREE, flat(
+                MAGNOLIA_LOG, FLOWERING_MAGNOLIA_LEAVES, 5, 1, 2
+        ).build());
         ConfiguredFeatures.register(featureRegisterable, JACARANDA, Feature.TREE, jacaranda().build());
     }
 

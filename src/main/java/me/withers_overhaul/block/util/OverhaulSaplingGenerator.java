@@ -195,9 +195,7 @@ public class OverhaulSaplingGenerator {
                             world.setBlockState(pos.add(i + 1, 0, j - 1), blockState, Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
                             world.setBlockState(pos.add(i - 1, 0, j - 1), blockState, Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
                             world.setBlockState(pos.add(i - 1, 0, j + 1), blockState, Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
-                            if (configuredFeature.generate(world, chunkGenerator, random, pos.add(i, 0, j))) {
-                                return true;
-                            }
+                            if (configuredFeature.generate(world, chunkGenerator, random, pos.add(i, 0, j))) return true;
 
                             world.setBlockState(pos.add(i, 0, j), state, Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
                             world.setBlockState(pos.add(i + 1, 0, j), state, Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);

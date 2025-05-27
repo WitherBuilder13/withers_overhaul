@@ -54,5 +54,4 @@ public class OverhaulItemTags {
     public static TagKey<Item> ItemTagKey(String name) {
         return TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name));
     }
-
 }

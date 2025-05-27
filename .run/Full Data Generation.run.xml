@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Full Data Generation" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="me.withers_overhaul.datagen.overhaul.OverhaulDataGenerator" />
+    <module name="withers_overhaul.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="me.withers_overhaul.datagen.overhaul.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Data Generation" run_configuration_type="Application" />
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

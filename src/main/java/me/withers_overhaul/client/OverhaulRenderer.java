@@ -25,18 +25,14 @@ public class OverhaulRenderer {
                 SHORT_PRAIRIE_GRASS, TALL_PRAIRIE_GRASS, CATTAIL, LAVENDER, PURPLE_PETALS, HANGING_MOSS
         };
 
-        for (Block block : partialBlocksWithTransparency) {
-            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
-        }
+        for (Block block : partialBlocksWithTransparency) BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
 
         Block[] tintedFoliageBlocks = {
                 MAPLE_LEAVES, POPLAR_LEAVES, BEECH_LEAVES, HICKORY_LEAVES, KAPOK_LEAVES, MAHOGANY_LEAVES, EUCALYPTUS_LEAVES, BAOBAB_LEAVES, PALO_VERDE_LEAVES,
                 JOSHUA_LEAVES, JUNIPER_LEAVES, PALM_LEAVES, EBONY_LEAVES, TEAK_LEAVES, ELM_LEAVES, WILLOW_LEAVES, CYPRESS_LEAVES
         };
 
-        Block[] tintedGrassBlocks = {
-                PURPLE_PETALS
-        };
+        Block[] tintedGrassBlocks = {PURPLE_PETALS};
 
         if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
             for (Block block : tintedFoliageBlocks) {

@@ -31,17 +31,13 @@ public abstract class FruitSaplingBlock extends PlantBlock implements Fertilizab
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (world.getLightLevel(pos.up()) >= 9 && random.nextInt(7) == 0) {
+        if (world.getLightLevel(pos.up()) >= 9 && random.nextInt(7) == 0)
             this.generate(world, pos, state, random);
-        }
     }
 
     public void generate(ServerWorld world, BlockPos pos, BlockState state, Random random) {
-        if (state.get(STAGE) == 0) {
-            world.setBlockState(pos, state.cycle(STAGE), Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
-        } else {
-            this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
-        }
+        if (state.get(STAGE) == 0) world.setBlockState(pos, state.cycle(STAGE), Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
+        else this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
     }
 
     @Override

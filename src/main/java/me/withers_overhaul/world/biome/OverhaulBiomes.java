@@ -46,7 +46,9 @@ public class OverhaulBiomes {
         biomeRegisterable.register(VanillaBiomeKeys.FROZEN_PEAKS, peaks(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.SNOWY, false));
         biomeRegisterable.register(VanillaBiomeKeys.FROZEN_RIVER, river(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.SNOWY));
         biomeRegisterable.register(VanillaBiomeKeys.GROVE, grove(placedFeatureLookup, configuredCarverLookup));
-        biomeRegisterable.register(VanillaBiomeKeys.ICE_SPIKES, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.SNOWY, false, true, false));
+        biomeRegisterable.register(VanillaBiomeKeys.ICE_SPIKES, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.SNOWY, false, true, false
+        ));
         biomeRegisterable.register(VanillaBiomeKeys.JAGGED_PEAKS, peaks(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COOL, false));
         biomeRegisterable.register(VanillaBiomeKeys.JUNGLE, jungle(placedFeatureLookup, configuredCarverLookup, false));
         biomeRegisterable.register(VanillaBiomeKeys.LUKEWARM_OCEAN, ocean(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.WARM, false, false));
@@ -59,18 +61,24 @@ public class OverhaulBiomes {
         biomeRegisterable.register(VanillaBiomeKeys.OLD_GROWTH_PINE_TAIGA, pineTaiga(placedFeatureLookup, configuredCarverLookup, true));
         biomeRegisterable.register(VanillaBiomeKeys.OLD_GROWTH_SPRUCE_TAIGA, oldGrowthTaiga(placedFeatureLookup, configuredCarverLookup, false));
         biomeRegisterable.register(VanillaBiomeKeys.PALE_GARDEN, paleGarden(placedFeatureLookup, configuredCarverLookup));
-        biomeRegisterable.register(VanillaBiomeKeys.PLAINS, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.DEFAULT, false, false, false));
+        biomeRegisterable.register(VanillaBiomeKeys.PLAINS, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.DEFAULT, false, false, false
+        ));
         biomeRegisterable.register(VanillaBiomeKeys.RIVER, river(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.DEFAULT));
         biomeRegisterable.register(VanillaBiomeKeys.SAVANNA, savanna(placedFeatureLookup, configuredCarverLookup, false));
         biomeRegisterable.register(VanillaBiomeKeys.SAVANNA_PLATEAU, savanna(placedFeatureLookup, configuredCarverLookup, true));
         biomeRegisterable.register(VanillaBiomeKeys.SNOWY_BEACH, beach(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.SNOWY));
-        biomeRegisterable.register(VanillaBiomeKeys.SNOWY_PLAINS, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.SNOWY, false, false, false));
+        biomeRegisterable.register(VanillaBiomeKeys.SNOWY_PLAINS, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.SNOWY, false, false, false
+        ));
         biomeRegisterable.register(VanillaBiomeKeys.SNOWY_SLOPES, snowySlopes(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(VanillaBiomeKeys.SNOWY_TAIGA, taiga(placedFeatureLookup, configuredCarverLookup, true));
         biomeRegisterable.register(VanillaBiomeKeys.SPARSE_JUNGLE, sparseJungle(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(VanillaBiomeKeys.STONY_PEAKS, peaks(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.DEFAULT, false));
         biomeRegisterable.register(VanillaBiomeKeys.STONY_SHORE, beach(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COOL));
-        biomeRegisterable.register(VanillaBiomeKeys.SUNFLOWER_PLAINS, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.DEFAULT, true, false, false));
+        biomeRegisterable.register(VanillaBiomeKeys.SUNFLOWER_PLAINS, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.DEFAULT, true, false, false
+        ));
         biomeRegisterable.register(VanillaBiomeKeys.SWAMP, swamp(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(VanillaBiomeKeys.TAIGA, taiga(placedFeatureLookup, configuredCarverLookup, false));
         biomeRegisterable.register(VanillaBiomeKeys.WARM_OCEAN, ocean(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.HOT, false, false));
@@ -134,16 +142,22 @@ public class OverhaulBiomes {
         biomeRegisterable.register(OverhaulBiomeKeys.PASTEL_CAVERNS, pastelCaverns(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.PHANTOM_HOLLOW, phantomHollow(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.PINE_TAIGA, pineTaiga(placedFeatureLookup, configuredCarverLookup, false));
-        biomeRegisterable.register(OverhaulBiomeKeys.PRAIRIE, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COOL, false, false, false));
+        biomeRegisterable.register(OverhaulBiomeKeys.PRAIRIE, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COOL, false, false, false
+        ));
         biomeRegisterable.register(OverhaulBiomeKeys.RAINBOW_FIELDS, rainbowFields(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.REDWOOD_FOREST, redwoodForest(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.SALT_MARSH, saltMarsh(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.SALT_RIVER, river(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.WARM));
         biomeRegisterable.register(OverhaulBiomeKeys.SANDY_RIVER, sandyRiver(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.SHIMMERING_WASTELANDS, shimmeringWastelands(placedFeatureLookup, configuredCarverLookup));
-        biomeRegisterable.register(OverhaulBiomeKeys.SHRUBLANDS, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.WARM, false, false, false));
+        biomeRegisterable.register(OverhaulBiomeKeys.SHRUBLANDS, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.WARM, false, false, false
+        ));
         biomeRegisterable.register(OverhaulBiomeKeys.SPECTRAL_ABYSS, spectralAbyss(placedFeatureLookup, configuredCarverLookup));
-        biomeRegisterable.register(OverhaulBiomeKeys.STEPPE, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COOL, false, false, true));
+        biomeRegisterable.register(OverhaulBiomeKeys.STEPPE, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COOL, false, false, true
+        ));
         biomeRegisterable.register(OverhaulBiomeKeys.SUBZERO_ABYSS, subzeroAbyss(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.SUNBAKED_PEAKS, peaks(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.WARM, true));
         biomeRegisterable.register(OverhaulBiomeKeys.SUNBAKED_SHORE, beach(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.WARM));
@@ -151,7 +165,9 @@ public class OverhaulBiomes {
         biomeRegisterable.register(OverhaulBiomeKeys.TOXIC_WASTES, toxicWastes(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.TROPICAL_BEACH, beach(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.HOT));
         biomeRegisterable.register(OverhaulBiomeKeys.TROPICAL_RAINFOREST, tropicalRainforest(placedFeatureLookup, configuredCarverLookup, false));
-        biomeRegisterable.register(OverhaulBiomeKeys.TUNDRA, plains(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COLD, false, false, false));
+        biomeRegisterable.register(OverhaulBiomeKeys.TUNDRA, plains(
+                placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.COLD, false, false, false
+        ));
         biomeRegisterable.register(OverhaulBiomeKeys.VOLCANIC_PEAKS, peaks(placedFeatureLookup, configuredCarverLookup, OverhaulTemperature.HOT, false));
         biomeRegisterable.register(OverhaulBiomeKeys.WHIMSY, whimsy(placedFeatureLookup, configuredCarverLookup));
         biomeRegisterable.register(OverhaulBiomeKeys.WINDSWEPT_TUNDRA, windsweptTundra(placedFeatureLookup, configuredCarverLookup));
@@ -168,7 +184,10 @@ public class OverhaulBiomes {
             GenerationSettings.LookupBackedBuilder generationSettings,
             @Nullable MusicSound music
     ) {
-        return createBiome(precipitation, temperature, downfall, 4159204, 329011, null, null, null, spawnSettings, generationSettings, music);
+        return createBiome(precipitation, temperature, downfall,
+                4159204, 329011, null, null, null,
+                spawnSettings, generationSettings, music
+        );
     }
 
     private static Biome createBiome(
@@ -184,7 +203,10 @@ public class OverhaulBiomes {
             GenerationSettings.LookupBackedBuilder generationSettings,
             @Nullable MusicSound music
     ) {
-        return createBiome(precipitation, temperature, downfall, waterColor, waterFogColor, 12638463, getSkyColor(temperature), grassColor, foliageColor, dryFoliageColor, spawnSettings, generationSettings, music);
+        return createBiome(precipitation, temperature, downfall, waterColor, waterFogColor,
+                12638463, getSkyColor(temperature), grassColor, foliageColor, dryFoliageColor,
+                spawnSettings, generationSettings, music
+        );
     }
 
     private static Biome createBiome(
@@ -230,9 +252,9 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3));
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
+        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3))
+                .spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -257,9 +279,9 @@ public class OverhaulBiomes {
             RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3));
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
+        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3))
+                .spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -284,9 +306,9 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3));
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
+        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3))
+                .spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -377,9 +399,9 @@ public class OverhaulBiomes {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
-        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 4));
-        builder.spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 2, 4));
-        builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
+        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 4))
+                .spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 2, 4))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -390,7 +412,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
-        return createBiome(true, 1.0F, 1.0F, 6388580, 2302743, null, 6975545, 8082228, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 1.0F, 1.0F,
+                6388580, 2302743, null, 6975545, 8082228,
+                builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome beach(
@@ -461,9 +486,9 @@ public class OverhaulBiomes {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
-        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 4));
-        builder.spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 2, 4));
-        builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
+        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 4))
+                .spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 2, 4))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -475,17 +500,9 @@ public class OverhaulBiomes {
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
         return createBiome(
-                true,
-                0.2F,
-                1.0F,
-                6388580,
-                2302743,
-                null,
-                6975545,
-                8082228,
-                builder,
-                lookupBackedBuilder,
-                musicSound
+                true, 0.2F, 1.0F,
+                6388580, 2302743, null, 6975545, 8082228,
+                builder, lookupBackedBuilder, musicSound
         );
     }
 
@@ -503,7 +520,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DESERT);
 
-        return createBiome(false, 2.0F, 0.0F, 12235916, 14737100, null, null, null,builder, lookupBackedBuilder, musicSound);
+        return createBiome(false, 2.0F, 0.0F,
+                12235916, 14737100, null, null, null,
+                builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome cherryGrove(
@@ -525,7 +545,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE);
 
-        return createBiome(true, 0.8F, 0.8F, 6141935, 6141935, 11983713, 11983713, null, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.8F, 0.8F,
+                6141935, 6141935, 11983713, 11983713, null,
+                builder, lookupBackedBuilder, musicSound
+                );
     }
 
     public static Biome cloudForest(
@@ -608,7 +631,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DESERT);
 
-        return createBiome(false, 2.0F, fields ? 0.2F : 0.0F, 12235916, 14737100, null, null, null, builder, lookupBackedBuilder, musicSound);
+        return createBiome(false, 2.0F, fields ? 0.2F : 0.0F,
+                12235916, 14737100, null, null, null,
+                builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome dripstoneCaves(
@@ -810,7 +836,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, -1.0F, 0.8F, 4020182, 329011, null, null, null, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, -1.0F, 0.8F,
+                4020182, 329011, null, null, null,
+                builder, lookupBackedBuilder, musicSound
+        );
     }
     
     public static Biome frozenWetlands(
@@ -818,10 +847,10 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
-        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1));
-        builder.spawn(SpawnGroup.MONSTER, 15, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4));
-        builder.spawn(SpawnGroup.MONSTER, 15, new SpawnSettings.SpawnEntry(EntityType.STRAY, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
+        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1))
+                .spawn(SpawnGroup.MONSTER, 15, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4))
+                .spawn(SpawnGroup.MONSTER, 15, new SpawnSettings.SpawnEntry(EntityType.STRAY, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -993,8 +1022,8 @@ public class OverhaulBiomes {
             RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        builder.spawn(SpawnGroup.AXOLOTLS, 10, new SpawnSettings.SpawnEntry(EntityType.AXOLOTL, 4, 6));
-        builder.spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8));
+        builder.spawn(SpawnGroup.AXOLOTLS, 10, new SpawnSettings.SpawnEntry(EntityType.AXOLOTL, 4, 6))
+                .spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -1014,10 +1043,10 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addBatsAndMonsters(builder, 70);
-        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1));
-        builder.spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
-        builder.spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8));
+        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1))
+                .spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5))
+                .spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -1036,9 +1065,9 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addBatsAndMonsters(builder, 70);
-        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1));
-        builder.spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
+        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1))
+                .spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -1073,7 +1102,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
 
-        return createBiome(true, 0.5F, 0.8F, 937679, 329011, null, null, null, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.5F, 0.8F,
+                937679, 329011, null, null, null,
+                builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome moltenUndergrowth(
@@ -1113,7 +1145,10 @@ public class OverhaulBiomes {
         else OverhaulBiomeFeatures.montaneWoodlandsVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
-        return createBiome(true, 0.4F, 0.8F, 4159204, 329011, null, null, null, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.4F, 0.8F,
+                4159204, 329011, null, null, null,
+                builder, lookupBackedBuilder, null
+        );
     }
 
     public static Biome mushroomFields(
@@ -1234,9 +1269,9 @@ public class OverhaulBiomes {
                 waterColor = 4445678;
                 waterFogColor = 270131;
 
-                builder.spawn(SpawnGroup.WATER_CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.SQUID, 4, 4));
-                builder.spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8));
-                builder.spawn(SpawnGroup.WATER_AMBIENT, 15, new SpawnSettings.SpawnEntry(EntityType.PUFFERFISH, 1, 3));
+                builder.spawn(SpawnGroup.WATER_CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.SQUID, 4, 4))
+                        .spawn(SpawnGroup.WATER_AMBIENT, 25, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 8, 8))
+                        .spawn(SpawnGroup.WATER_AMBIENT, 15, new SpawnSettings.SpawnEntry(EntityType.PUFFERFISH, 1, 3));
                 if (!cave) {
                     builder.spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.DOLPHIN, 1, 2));
                     lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OceanPlacedFeatures.WARM_OCEAN_VEGETATION);
@@ -1260,7 +1295,10 @@ public class OverhaulBiomes {
             }
         }
 
-        return createBiome(true, temp, 0.4F, waterColor, waterFogColor, null, null, null, builder, lookupBackedBuilder, null);
+        return createBiome(true, temp, 0.4F,
+                waterColor, waterFogColor, null, null, null,
+                builder, lookupBackedBuilder, null
+        );
     }
 
     public static Biome oldGrowthTaiga(
@@ -1295,7 +1333,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F, snowy ? 4020182 : 4159204, 329011, null, null, null, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F,
+                snowy ? 4020182 : 4159204, 329011, null, null, null,
+                builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome paleGarden(
@@ -1320,7 +1361,8 @@ public class OverhaulBiomes {
 
         return createBiome(true, 0.4F, 1.0F,
                 7768221, 5597568, 8484720, 12171705, 7832178, 8883574, 10528412,
-                builder, lookupBackedBuilder, musicSound);
+                builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome paleUndergrowth(
@@ -1422,9 +1464,9 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3));
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
+        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3))
+                .spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -1449,7 +1491,8 @@ public class OverhaulBiomes {
 
 
     public static Biome plains(
-            RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup, OverhaulTemperature temperature, boolean sunflower, boolean iceSpikes, boolean steppe
+            RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup,
+            OverhaulTemperature temperature, boolean sunflower, boolean iceSpikes, boolean steppe
     ) {
         float temp, df;
         int waterColor, waterFogColor;
@@ -1581,9 +1624,9 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3));
-        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
+        builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3))
+                .spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -1608,7 +1651,9 @@ public class OverhaulBiomes {
         float temp;
         int waterColor, waterFogColor;
 
-        SpawnSettings.Builder builder = (new SpawnSettings.Builder()).spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.SQUID, 1, 4)).spawn(SpawnGroup.WATER_AMBIENT, 5, new SpawnSettings.SpawnEntry(EntityType.SALMON, 1, 5));
+        SpawnSettings.Builder builder = new SpawnSettings.Builder();
+        builder.spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.SQUID, 1, 4))
+                .spawn(SpawnGroup.WATER_AMBIENT, 5, new SpawnSettings.SpawnEntry(EntityType.SALMON, 1, 5));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -1671,7 +1716,10 @@ public class OverhaulBiomes {
             }
         }
 
-        return createBiome(true, temp, 0.5F, waterColor, waterFogColor, null, null, null, builder, lookupBackedBuilder, null);
+        return createBiome(true, temp, 0.5F,
+                waterColor, waterFogColor, null, null, null,
+                builder, lookupBackedBuilder, null
+        );
     }
 
     public static Biome saltMarsh(
@@ -1679,9 +1727,9 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addBatsAndMonsters(builder, 70);
-        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1));
-        builder.spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
+        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1))
+                .spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -1706,7 +1754,10 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, 2.0F, 0.2F, 12235916, 14737100, null, null, null, builder, lookupBackedBuilder, null);
+        return createBiome(true, 2.0F, 0.2F,
+                12235916, 14737100, null, null, null,
+                builder, lookupBackedBuilder, null
+        );
     }
 
     public static Biome savanna(
@@ -1714,11 +1765,13 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
-        builder.spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.HORSE, 2, 6)).spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.DONKEY, 1, 1)).spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.ARMADILLO, 2, 3));
+        builder.spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.HORSE, 2, 6))
+                .spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.DONKEY, 1, 1))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.ARMADILLO, 2, 3));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
         if (plateau) {
-            builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.LLAMA, 4, 4));
-            builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 8));
+            builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.LLAMA, 4, 4))
+                    .spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 8));
         }
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -1823,9 +1876,9 @@ public class OverhaulBiomes {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
         DefaultBiomeFeatures.addBatsAndMonsters(builder, 70);
-        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1));
-        builder.spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4));
-        builder.spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
+        builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1))
+                .spawn(SpawnGroup.MONSTER, 30, new SpawnSettings.SpawnEntry(EntityType.BOGGED, 4, 4))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.FROG, 2, 5));
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
@@ -1839,7 +1892,10 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
-        return createBiome(true, 0.4F, 0.9F, 6388580, 2302743, null, 6975545, 8082228, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.4F, 0.9F,
+                6388580, 2302743, null, 6975545, 8082228,
+                builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome taiga(
@@ -1848,8 +1904,8 @@ public class OverhaulBiomes {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
         builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4))
-                .spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3)
-                ).spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
+                .spawn(SpawnGroup.CREATURE, 4, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 3))
+                .spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.FOX, 2, 4));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -1869,7 +1925,10 @@ public class OverhaulBiomes {
             OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
         }
 
-        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F, snowy ? 4020182 : 4159204, 329011, null, null, null, builder, lookupBackedBuilder, null);
+        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F,
+                snowy ? 4020182 : 4159204, 329011, null, null, null,
+                builder, lookupBackedBuilder, null
+        );
     }
 
     public static Biome tangledTropics(
@@ -2015,7 +2074,9 @@ public class OverhaulBiomes {
     ) {
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(builder);
-        builder.spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.HORSE, 2, 6)).spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.DONKEY, 1, 1)).spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.ARMADILLO, 2, 3));
+        builder.spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.HORSE, 2, 6))
+                .spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.DONKEY, 1, 1))
+                .spawn(SpawnGroup.CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.ARMADILLO, 2, 3));
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
 
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
@@ -2047,7 +2108,10 @@ public class OverhaulBiomes {
 
         OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
-        return createBiome(true, 0.2F, 0.0F, 3750089, 329011, 12086123, 9987967, 9987967, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.2F, 0.0F,
+                3750089, 329011, 12086123, 9987967, 9987967,
+                builder, lookupBackedBuilder, null
+        );
     }
 
     public static Biome winterWonderland(

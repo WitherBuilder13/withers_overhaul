@@ -23,7 +23,9 @@ import static net.minecraft.world.gen.densityfunction.DensityFunctions.*;
 
 public class OverhaulChunkGenerator {
 
-    public static final RegistryKey<ChunkGeneratorSettings> OVERHAUL = RegistryKey.of(RegistryKeys.CHUNK_GENERATOR_SETTINGS, Identifier.of(WithersOverhaul.MOD_ID, "overhaul"));
+    public static final RegistryKey<ChunkGeneratorSettings> OVERHAUL = RegistryKey.of(
+            RegistryKeys.CHUNK_GENERATOR_SETTINGS, Identifier.of(WithersOverhaul.MOD_ID, "overhaul")
+    );
 
     public static void bootstrap(Registerable<ChunkGeneratorSettings> chunkGenerationSettingsRegisterable) {
         chunkGenerationSettingsRegisterable.register(OVERHAUL, createSurfaceSettings(chunkGenerationSettingsRegisterable));
@@ -98,7 +100,9 @@ public class OverhaulChunkGenerator {
                 slopedCheeseOverworld, DensityFunctionTypes.mul(DensityFunctionTypes.constant(5.0), entryHolder(densityFunctionLookup, CAVES_ENTRANCES_OVERWORLD))
         );
         DensityFunction rangeSlopedCheeseCavesEntrance = DensityFunctionTypes.rangeChoice(
-                slopedCheeseOverworld, -1000000.0, 1.5625, cavesEntrancesOverworld, createCavesFunction(densityFunctionLookup, noiseParametersLookup, slopedCheeseOverworld)
+                slopedCheeseOverworld, -1000000.0, 1.5625, cavesEntrancesOverworld, createCavesFunction(
+                        densityFunctionLookup, noiseParametersLookup, slopedCheeseOverworld
+                )
         );
         DensityFunction cavesNoodleOverworld = DensityFunctionTypes.min(
                 applyBlendDensity(applySurfaceSlides(rangeSlopedCheeseCavesEntrance)), entryHolder(densityFunctionLookup, CAVES_NOODLE_OVERWORLD)
@@ -159,7 +163,9 @@ public class OverhaulChunkGenerator {
         DensityFunction caveCheese = DensityFunctionTypes.noise(noiseParametersLookup.getOrThrow(NoiseParametersKeys.CAVE_CHEESE), 0.6666666666666666);
         DensityFunction caveCheeseAndSlopedCheese = DensityFunctionTypes.add(
                 DensityFunctionTypes.add(DensityFunctionTypes.constant(0.27), caveCheese).clamp(-1.0, 1.0),
-                DensityFunctionTypes.add(DensityFunctionTypes.constant(1.5), DensityFunctionTypes.mul(DensityFunctionTypes.constant(-0.64), slopedCheese)).clamp(0.0, 0.5)
+                DensityFunctionTypes.add(DensityFunctionTypes.constant(1.5),
+                        DensityFunctionTypes.mul(DensityFunctionTypes.constant(-0.64), slopedCheese)
+                ).clamp(0.0, 0.5)
         );
         DensityFunction caveLayerSquareAndCaveCheeseAndSlopedCheese = DensityFunctionTypes.add(caveLayerSquare, caveCheeseAndSlopedCheese);
         DensityFunction cavesAll = DensityFunctionTypes.min(

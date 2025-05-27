@@ -37,18 +37,23 @@ public class GourdBlock extends Block {
         super(settings);
     }
 
-    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!stack.isOf(Items.SHEARS)) {
-            return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
-        } else if (world.isClient) {
-            return ActionResult.SUCCESS;
-        } else {
+    protected ActionResult onUseWithItem(
+            ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit
+    ) {
+        if (!stack.isOf(Items.SHEARS)) return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
+        else if (world.isClient) return ActionResult.SUCCESS;
+        else {
             Direction direction = hit.getSide();
             Direction direction2 = direction.getAxis() == Axis.Y ? player.getHorizontalFacing().getOpposite() : direction;
-            world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_PUMPKIN_CARVE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            world.setBlockState(pos, (BlockState) NaturalBlocks.CARVED_GOURD.getDefaultState().with(CarvedPumpkinBlock.FACING, direction2), 11);
-            ItemEntity itemEntity = new ItemEntity(world, (double)pos.getX() + 0.5 + (double)direction2.getOffsetX() * 0.65, (double)pos.getY() + 0.1, (double)pos.getZ() + 0.5 + (double)direction2.getOffsetZ() * 0.65, new ItemStack(BasicItems.GOURD_SEEDS, 4));
-            itemEntity.setVelocity(0.05 * (double)direction2.getOffsetX() + world.random.nextDouble() * 0.02, 0.05, 0.05 * (double)direction2.getOffsetZ() + world.random.nextDouble() * 0.02);
+            world.playSound(null, pos, SoundEvents.BLOCK_PUMPKIN_CARVE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            world.setBlockState(pos, NaturalBlocks.CARVED_GOURD.getDefaultState().with(CarvedPumpkinBlock.FACING, direction2), 11);
+            ItemEntity itemEntity = new ItemEntity(world,
+                    (double) pos.getX() + 0.5 + (double) direction2.getOffsetX() * 0.65,
+                    (double) pos.getY() + 0.1,
+                    (double) pos.getZ() + 0.5 + (double) direction2.getOffsetZ() * 0.65,
+                    new ItemStack(BasicItems.GOURD_SEEDS, 4));
+            itemEntity.setVelocity(0.05 * (double) direction2.getOffsetX() + world.random.nextDouble() * 0.02, 0.05,
+                    0.05 * (double) direction2.getOffsetZ() + world.random.nextDouble() * 0.02);
             world.spawnEntity(itemEntity);
             stack.damage(1, player, LivingEntity.getSlotForHand(hand));
             world.emitGameEvent(player, GameEvent.SHEAR, pos);

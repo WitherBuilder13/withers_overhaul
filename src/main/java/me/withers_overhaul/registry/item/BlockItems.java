@@ -192,11 +192,8 @@ public class BlockItems {
     // ` -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static Item signItem(Block sign, Block wallSign, boolean hangingSign) {
-        if (hangingSign) {
-            return Items.register(sign, (block, settings) -> new HangingSignItem(block, wallSign, settings), new Item.Settings().maxCount(16));
-        } else {
-            return Items.register(sign, (block, settings) -> new SignItem(block, wallSign, settings), new Item.Settings().maxCount(16));
-        }
+        if (hangingSign) return Items.register(sign, (block, settings) -> new HangingSignItem(block, wallSign, settings), new Item.Settings().maxCount(16));
+        else return Items.register(sign, (block, settings) -> new SignItem(block, wallSign, settings), new Item.Settings().maxCount(16));
     }
 
     // * -------------------------------------------------------------------------------------------------------------------------------------------------------------

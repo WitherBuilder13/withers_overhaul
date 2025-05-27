@@ -22,8 +22,9 @@ import net.minecraft.world.event.GameEvent;
 public class AridFruitSaplingBlock extends FruitSaplingBlock {
 
     public MapCodec<AridFruitSaplingBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec())
-                    .apply(instance, AridFruitSaplingBlock::new));
+            instance -> instance.group(
+                    FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec()
+            ).apply(instance, AridFruitSaplingBlock::new));
     public MapCodec getCodec() {
         return CODEC;
     }
@@ -58,9 +59,7 @@ public class AridFruitSaplingBlock extends FruitSaplingBlock {
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.SUCCESS;
-        } else {
-            return super.onUse(state, world, pos, player, hit);
-        }
+        } else return super.onUse(state, world, pos, player, hit);
     }
 
     @Override

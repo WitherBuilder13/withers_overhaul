@@ -1,5 +1,6 @@
 package me.withers_overhaul.block.util;
 
+import me.withers_overhaul.WithersOverhaul;
 import net.minecraft.block.BlockSetType;
 
 public class OverhaulBlockSetType {
@@ -35,5 +36,7 @@ public class OverhaulBlockSetType {
     public static final BlockSetType MAGNOLIA = new BlockSetType("magnolia");
     public static final BlockSetType JACARANDA = new BlockSetType("jacaranda");
 
-    public static void registerBlockSetTypes() {}
+    public static void registerBlockSetTypes() {
+        WithersOverhaul.LOGGER.info("Registering block set types");
+    }
 }

@@ -23,8 +23,9 @@ import net.minecraft.world.event.GameEvent;
 public class TropicalFruitSaplingBlock extends FruitSaplingBlock {
 
     public MapCodec<TropicalFruitSaplingBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec())
-                    .apply(instance, TropicalFruitSaplingBlock::new));
+            instance -> instance.group(
+                    FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec()
+                    ).apply(instance, TropicalFruitSaplingBlock::new));
     public MapCodec getCodec() {
         return CODEC;
     }
@@ -43,23 +44,14 @@ public class TropicalFruitSaplingBlock extends FruitSaplingBlock {
             world.playSound(null, pos, SoundEvents.BLOCK_AZALEA_LEAVES_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
             BlockState blockState;
 
-            if (stack.isOf(BasicItems.AVOCADO)) {
-                blockState = state.with(FRUIT, TreeFruit.Tropical.AVOCADO);
-            } else if (stack.isOf(BasicItems.BANANA)) {
-                blockState = state.with(FRUIT, TreeFruit.Tropical.BANANA);
-            } else if (stack.isOf(BasicItems.LEMON)) {
-                blockState = state.with(FRUIT, TreeFruit.Tropical.LEMON);
-            } else if (stack.isOf(BasicItems.LIME)) {
-                blockState = state.with(FRUIT, TreeFruit.Tropical.LIME);
-            } else if (stack.isOf(BasicItems.MANGO)) {
-                blockState = state.with(FRUIT, TreeFruit.Tropical.MANGO);
-            } else if (stack.isOf(BasicItems.ORANGE)) {
-                blockState = state.with(FRUIT, TreeFruit.Tropical.ORANGE);
-            } else if (stack.isOf(BasicItems.STARFRUIT)) {
-                blockState = state.with(FRUIT, TreeFruit.Tropical.STARFRUIT);
-            } else {
-                blockState = state;
-            }
+            if (stack.isOf(BasicItems.AVOCADO)) blockState = state.with(FRUIT, TreeFruit.Tropical.AVOCADO);
+            else if (stack.isOf(BasicItems.BANANA)) blockState = state.with(FRUIT, TreeFruit.Tropical.BANANA);
+            else if (stack.isOf(BasicItems.LEMON)) blockState = state.with(FRUIT, TreeFruit.Tropical.LEMON);
+            else if (stack.isOf(BasicItems.LIME)) blockState = state.with(FRUIT, TreeFruit.Tropical.LIME);
+            else if (stack.isOf(BasicItems.MANGO)) blockState = state.with(FRUIT, TreeFruit.Tropical.MANGO);
+            else if (stack.isOf(BasicItems.ORANGE)) blockState = state.with(FRUIT, TreeFruit.Tropical.ORANGE);
+            else if (stack.isOf(BasicItems.STARFRUIT)) blockState = state.with(FRUIT, TreeFruit.Tropical.STARFRUIT);
+            else blockState = state;
 
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
@@ -78,9 +70,7 @@ public class TropicalFruitSaplingBlock extends FruitSaplingBlock {
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.SUCCESS;
-        } else {
-            return super.onUse(state, world, pos, player, hit);
-        }
+        } else return super.onUse(state, world, pos, player, hit);
     }
 
     @Override

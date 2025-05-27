@@ -561,24 +561,15 @@ public class WoodBlocks {
         AbstractBlock.Settings settings = copy(OAK_PLANKS).registryKey(keyOf(name));
         Block block;
         switch (variant) {
-            case STAIRS ->
-                    block = new StairsBlock(OAK_PLANKS.getDefaultState(), settings);
-            case SLAB ->
-                    block = new SlabBlock(settings);
-            case FENCE ->
-                    block = new FenceBlock(settings);
-            case FENCE_GATE ->
-                   block = new FenceGateBlock(woodType.getWoodType(), settings);
-            case DOOR ->
-                    block = new DoorBlock(woodType.getWoodType().setType(), settings);
-            case TRAPDOOR ->
-                    block = new TrapdoorBlock(woodType.getWoodType().setType(), settings);
-            case PRESSURE_PLATE ->
-                    block = new PressurePlateBlock(woodType.getWoodType().setType(), settings);
-            case BUTTON ->
-                    block = new ButtonBlock(woodType.getWoodType().setType(), 30, settings);
-            default ->
-                throw new IllegalStateException("Unexpected variant '" + variant + "' for" + woodType);
+            case STAIRS -> block = new StairsBlock(OAK_PLANKS.getDefaultState(), settings);
+            case SLAB -> block = new SlabBlock(settings);
+            case FENCE -> block = new FenceBlock(settings);
+            case FENCE_GATE -> block = new FenceGateBlock(woodType.getWoodType(), settings);
+            case DOOR -> block = new DoorBlock(woodType.getWoodType().setType(), settings);
+            case TRAPDOOR -> block = new TrapdoorBlock(woodType.getWoodType().setType(), settings);
+            case PRESSURE_PLATE -> block = new PressurePlateBlock(woodType.getWoodType().setType(), settings);
+            case BUTTON -> block = new ButtonBlock(woodType.getWoodType().setType(), 30, settings);
+            default -> throw new IllegalStateException("Unexpected variant '" + variant + "' for" + woodType);
         }
         return register(name, block, true);
     }
@@ -586,28 +577,22 @@ public class WoodBlocks {
     public static Block registerSignBlock(OverhaulWoodTypes.WoodType woodType, boolean isHanging) {
         String name = woodType.getName() + (isHanging ? "_hanging" : "") + "_sign";
         AbstractBlock.Settings settings = Block.Settings.create().solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().registryKey(keyOf(name));
-            if (isHanging) {
-                return register(name, new HangingSignBlock(woodType.getWoodType(), settings), false);
-            } else {
-                return register(name, new OverhaulSignBlock(woodType.getWoodType(), settings),false);
-            }
+        if (isHanging) return register(name, new HangingSignBlock(woodType.getWoodType(), settings), false);
+        else return register(name, new OverhaulSignBlock(woodType.getWoodType(), settings),false);
     }
 
     public static Block registerSignBlock(OverhaulWoodTypes.WoodType woodType, boolean isHanging, Block drops) {
         String name = woodType.getName() + "_wall" + (isHanging ? "_hanging" : "") + "_sign";
-        AbstractBlock.Settings settings = copyLootTable(drops, true).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().registryKey(keyOf(name));
-        if (isHanging) {
-            return register(name, new WallHangingSignBlock(woodType.getWoodType(), settings), false);
-        } else {
-            return register(name, new WallSignBlock(woodType.getWoodType(), settings), false);
-        }
+        AbstractBlock.Settings settings = copyLootTable(
+                drops, true).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().registryKey(keyOf(name)
+        );
+        if (isHanging) return register(name, new WallHangingSignBlock(woodType.getWoodType(), settings), false);
+        else return register(name, new WallSignBlock(woodType.getWoodType(), settings), false);
     }
 
     public static AbstractBlock.Settings copyLootTable(Block block, boolean copyTranslationKey) {
         AbstractBlock.Settings settings = AbstractBlock.Settings.create().lootTable(block.getLootTableKey());
-        if (copyTranslationKey) {
-            settings = settings.overrideTranslationKey(block.getTranslationKey());
-        }
+        if (copyTranslationKey) settings = settings.overrideTranslationKey(block.getTranslationKey());
         return settings;
     }
 

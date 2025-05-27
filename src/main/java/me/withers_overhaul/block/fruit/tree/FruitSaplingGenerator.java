@@ -234,16 +234,12 @@ public class FruitSaplingGenerator {
     // ` ---------------------------------------------------------------------------------------------------------------
 
     private RegistryKey<ConfiguredFeature<?, ?>> getDefaultTreeConfiguredFeature(Random random) {
-        if (this.rareDefaultTreeConfiguredFeature.isPresent() && random.nextFloat() < this.rareChance) {
-            return this.rareDefaultTreeConfiguredFeature.get();
-        }
+        if (this.rareDefaultTreeConfiguredFeature.isPresent() && random.nextFloat() < this.rareChance) return this.rareDefaultTreeConfiguredFeature.get();
         return this.defaultTreeConfiguredFeature;
     }
 
     private RegistryKey<ConfiguredFeature<?, ?>> getFruitTreeConfiguredFeature(int index, Random random) {
-        if (this.rareFruitTreeConfiguredFeatures.isPresent() && random.nextFloat() < this.rareChance) {
-            return this.rareFruitTreeConfiguredFeatures.get().get(index);
-        }
+        if (this.rareFruitTreeConfiguredFeatures.isPresent() && random.nextFloat() < this.rareChance) return this.rareFruitTreeConfiguredFeatures.get().get(index);
         return this.fruitTreeConfiguredFeatures.get(index);
     }
 
@@ -326,33 +322,19 @@ public class FruitSaplingGenerator {
             ConfiguredFeature<?, ?> plumTreeConfiguredFeature = plumTreeEntry.value();
 
             if (state == state.with(TemperateFruitSaplingBlock.FRUIT, TreeFruit.Temperate.APPLE)) {
-                if (appleTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (appleTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TemperateFruitSaplingBlock.FRUIT, TreeFruit.Temperate.APRICOT)) {
-                if (apricotTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (apricotTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TemperateFruitSaplingBlock.FRUIT, TreeFruit.Temperate.KIWI)) {
-                if (kiwiTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (kiwiTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TemperateFruitSaplingBlock.FRUIT, TreeFruit.Temperate.NECTARINE)) {
-                if (nectarineTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (nectarineTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TemperateFruitSaplingBlock.FRUIT, TreeFruit.Temperate.PEACH)) {
-                if (peachTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (peachTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TemperateFruitSaplingBlock.FRUIT, TreeFruit.Temperate.PEAR)) {
-                if (pearTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (pearTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TemperateFruitSaplingBlock.FRUIT, TreeFruit.Temperate.PLUM)) {
-                if (plumTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (plumTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             }
 
         } else if (fruitEnum.equals(TreeFruit.Mediterranean.class)) {
@@ -389,21 +371,13 @@ public class FruitSaplingGenerator {
             ConfiguredFeature<?, ?> pomegranateTreeConfiguredFeature = pomegranateTreeEntry.value();
 
             if (state == state.with(MediterraneanFruitSaplingBlock.FRUIT, TreeFruit.Mediterranean.KUMQUAT)) {
-                if (kumquatTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (kumquatTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(MediterraneanFruitSaplingBlock.FRUIT, TreeFruit.Mediterranean.OLIVE)) {
-                if (oliveTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (oliveTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(MediterraneanFruitSaplingBlock.FRUIT, TreeFruit.Mediterranean.PERSIMMON)) {
-                if (persimmonTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (persimmonTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(MediterraneanFruitSaplingBlock.FRUIT, TreeFruit.Mediterranean.POMEGRANATE)) {
-                if (pomegranateTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (pomegranateTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             }
 
         } else if (fruitEnum.equals(TreeFruit.Subtropical.class)) {
@@ -447,25 +421,15 @@ public class FruitSaplingGenerator {
             ConfiguredFeature<?, ?> tangerineTreeConfiguredFeature = tangerineTreeEntry.value();
 
             if (state == state.with(SubtropicalFruitSaplingBlock.FRUIT, TreeFruit.Subtropical.CHERRY)) {
-                if (cherryTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (cherryTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(SubtropicalFruitSaplingBlock.FRUIT, TreeFruit.Subtropical.FIG)) {
-                if (figTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (figTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(SubtropicalFruitSaplingBlock.FRUIT, TreeFruit.Subtropical.GRAPEFRUIT)) {
-                if (grapefruitTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (grapefruitTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(SubtropicalFruitSaplingBlock.FRUIT, TreeFruit.Subtropical.GUAVA)) {
-                if (guavaTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (guavaTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(SubtropicalFruitSaplingBlock.FRUIT, TreeFruit.Subtropical.TANGERINE)) {
-                if (tangerineTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (tangerineTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             }
 
         } else if (fruitEnum.equals(TreeFruit.Tropical.class)) {
@@ -523,39 +487,23 @@ public class FruitSaplingGenerator {
             ConfiguredFeature<?, ?> starfruitTreeConfiguredFeature = starfruitTreeEntry.value();
 
             if (state == state.with(TropicalFruitSaplingBlock.FRUIT, TreeFruit.Tropical.AVOCADO)) {
-                if (avocadoTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (avocadoTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TropicalFruitSaplingBlock.FRUIT, TreeFruit.Tropical.BANANA)) {
-                if (bananaTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (bananaTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TropicalFruitSaplingBlock.FRUIT, TreeFruit.Tropical.LEMON)) {
-                if (lemonTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (lemonTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TropicalFruitSaplingBlock.FRUIT, TreeFruit.Tropical.LIME)) {
-                if (limeTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (limeTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TropicalFruitSaplingBlock.FRUIT, TreeFruit.Tropical.MANGO)) {
-                if (mangoTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (mangoTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TropicalFruitSaplingBlock.FRUIT, TreeFruit.Tropical.ORANGE)) {
-                if (orangeTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (orangeTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             } else if (state == state.with(TropicalFruitSaplingBlock.FRUIT, TreeFruit.Tropical.STARFRUIT)) {
-                if (starfruitTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-                    return true;
-                }
+                if (starfruitTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
             }
         }
 
-        if (defaultTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) {
-            return true;
-        }
+        if (defaultTreeConfiguredFeature.generate(world, chunkGenerator, random, pos)) return true;
 
         world.setBlockState(pos, state, Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
         return false;

@@ -476,23 +476,14 @@ public class StoneBlocks {
 
     private static Block registerStoneBlock(String stoneName) {
         AbstractBlock.Settings settings;
-        if (stoneName.contains("calcite")) {
-            settings = copy(CALCITE);
-        } else if (stoneName.contains("dripstone")) {
-            settings = copy(DRIPSTONE_BLOCK);
-        } else if (containsAny(stoneName, "amethyst", "dolomite", "gypsum")) {
-            settings = copy(AMETHYST_BLOCK);
-        } else if (stoneName.contains("quartz")) {
-            settings = copy(QUARTZ_BLOCK);
-        } else if (stoneName.contains("sandstone")) {
-            settings = copy(SANDSTONE);
-        } else if (stoneName.contains("prismarine")) {
-            settings = copy(PRISMARINE);
-        } else if (stoneName.contains("nether_brick")) {
-            settings = copy(NETHER_BRICKS);
-        } else {
-            settings = copy(STONE);
-        }
+        if (stoneName.contains("calcite")) settings = copy(CALCITE);
+        else if (stoneName.contains("dripstone")) settings = copy(DRIPSTONE_BLOCK);
+        else if (containsAny(stoneName, "amethyst", "dolomite", "gypsum")) settings = copy(AMETHYST_BLOCK);
+        else if (stoneName.contains("quartz")) settings = copy(QUARTZ_BLOCK);
+        else if (stoneName.contains("sandstone")) settings = copy(SANDSTONE);
+        else if (stoneName.contains("prismarine")) settings = copy(PRISMARINE);
+        else if (stoneName.contains("nether_brick")) settings = copy(NETHER_BRICKS);
+        else settings = copy(STONE);
         return register(stoneName, new Block(settings.registryKey(keyOf(stoneName))), true);
     }
 
@@ -532,30 +523,19 @@ public class StoneBlocks {
         settings = settings.registryKey(keyOf(name));
 
         switch (variant) {
-            case SLAB ->
-                    block = new SlabBlock(settings);
-            case STAIRS ->
-                    block = new StairsBlock(blockState, settings);
-            case WALL ->
-                    block = new WallBlock(settings);
-            case PRESSURE_PLATE ->
-                    block = new PressurePlateBlock(BlockSetType.STONE, settings);
-            case BUTTON ->
-                    block = new ButtonBlock(BlockSetType.STONE, 20, settings);
-            case FENCE ->
-                    block = new FenceBlock(settings);
-            default ->
-                    throw new IllegalStateException("Unexpected variant '" + variant + "' for" + stoneName);
+            case SLAB -> block = new SlabBlock(settings);
+            case STAIRS -> block = new StairsBlock(blockState, settings);
+            case WALL -> block = new WallBlock(settings);
+            case PRESSURE_PLATE -> block = new PressurePlateBlock(BlockSetType.STONE, settings);
+            case BUTTON -> block = new ButtonBlock(BlockSetType.STONE, 20, settings);
+            case FENCE -> block = new FenceBlock(settings);
+            default -> throw new IllegalStateException("Unexpected variant '" + variant + "' for" + stoneName);
         }
         return register(name, block, true);
     }
 
     private static boolean containsAny(String text, String... stoneNames) {
-        for (String phrase : stoneNames) {
-            if (text.contains(phrase)) {
-                return true;
-            }
-        }
+        for (String phrase : stoneNames) if (text.contains(phrase)) return true;
         return false;
     }
 
@@ -564,18 +544,12 @@ public class StoneBlocks {
     private static Block registerOreBlock(String stoneType, String oreType) {
         String name = stoneType + "_" + oreType + "_ore";
         return switch (oreType) {
-            case "iron", "copper", "gold" ->
-                    register(name, new Block(copy(IRON_ORE).registryKey(keyOf(name))), false);
-            case "coal" ->
-                    register(name, new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), copy(COAL_ORE).registryKey(keyOf(name))), false);
-            case "lapis" ->
-                    register(name, new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), copy(LAPIS_ORE).registryKey(keyOf(name))), false);
-            case "emerald", "diamond" ->
-                    register(name, new ExperienceDroppingBlock(UniformIntProvider.create(3, 7), copy(EMERALD_ORE).registryKey(keyOf(name))), false);
-            case "redstone" ->
-                    register(name, new RedstoneOreBlock(copy(REDSTONE_ORE).registryKey(keyOf(name))), false);
-            default ->
-                    throw new IllegalStateException("Unexpected value for 'oreType': " + oreType);
+            case "iron", "copper", "gold" -> register(name, new Block(copy(IRON_ORE).registryKey(keyOf(name))), false);
+            case "coal" -> register(name, new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), copy(COAL_ORE).registryKey(keyOf(name))), false);
+            case "lapis" -> register(name, new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), copy(LAPIS_ORE).registryKey(keyOf(name))), false);
+            case "emerald", "diamond" -> register(name, new ExperienceDroppingBlock(UniformIntProvider.create(3, 7), copy(EMERALD_ORE).registryKey(keyOf(name))), false);
+            case "redstone" -> register(name, new RedstoneOreBlock(copy(REDSTONE_ORE).registryKey(keyOf(name))), false);
+            default -> throw new IllegalStateException("Unexpected value for 'oreType': " + oreType);
         };
     }
 

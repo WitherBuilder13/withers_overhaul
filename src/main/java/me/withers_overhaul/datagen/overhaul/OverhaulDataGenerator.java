@@ -35,9 +35,7 @@ public class OverhaulDataGenerator {
 
         // Check if the destination directory exists, create it if not
         File dstFile = new File(destinationDirectory);
-        if (!dstFile.exists()) {
-            dstFile.mkdirs();
-        }
+        if (!dstFile.exists()) dstFile.mkdirs();
 
         // Move all files from source to destination
         try {

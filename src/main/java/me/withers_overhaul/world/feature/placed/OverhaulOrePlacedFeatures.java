@@ -72,7 +72,9 @@ public class OverhaulOrePlacedFeatures {
                 featureRegisterable, ORE_COAL_UPPER, coalUpper, modifiersWithCount(30, HeightRangePlacementModifier.uniform(YOffset.fixed(136), YOffset.getTop()))
         );
         PlacedFeatures.register(
-                featureRegisterable, ORE_COAL_LOWER, coalLower, modifiersWithCount(20, HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(192)))
+                featureRegisterable, ORE_COAL_LOWER, coalLower, modifiersWithCount(
+                        20, HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(192))
+                )
         );
         PlacedFeatures.register(
                 featureRegisterable, ORE_IRON_UPPER, iron, modifiersWithCount(90, HeightRangePlacementModifier.trapezoid(YOffset.fixed(80), YOffset.fixed(384)))
@@ -105,7 +107,9 @@ public class OverhaulOrePlacedFeatures {
                 modifiersWithCount(7, HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(-80), YOffset.aboveBottom(80)))
         );
         PlacedFeatures.register(
-                featureRegisterable, ORE_DIAMOND_MEDIUM, diamondMedium, modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4)))
+                featureRegisterable, ORE_DIAMOND_MEDIUM, diamondMedium, modifiersWithCount(
+                        2, HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))
+                )
         );
         PlacedFeatures.register(
                 featureRegisterable, ORE_DIAMOND_LARGE, diamondLarge,

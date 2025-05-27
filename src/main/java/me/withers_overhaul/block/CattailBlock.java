@@ -36,7 +36,8 @@ public class CattailBlock extends TallPlantBlock implements Waterloggable, Ferti
     }
 
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return (world.getFluidState(pos.up()).isEqualAndStill(Fluids.WATER) && world.getFluidState(pos.up(2)).isEmpty()) && (super.canPlantOnTop(floor, world, pos) || floor.isIn(OverhaulBlockTags.CATTAILS_CAN_GROW_ON));
+        return (world.getFluidState(pos.up()).isEqualAndStill(Fluids.WATER) && world.getFluidState(pos.up(2)).isEmpty())
+                && (super.canPlantOnTop(floor, world, pos) || floor.isIn(OverhaulBlockTags.CATTAILS_CAN_GROW_ON));
     }
 
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -63,19 +64,18 @@ public class CattailBlock extends TallPlantBlock implements Waterloggable, Ferti
     }
 
     protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        if (state.get(HALF) == DoubleBlockHalf.UPPER) {
-            return super.canPlaceAt(state, world, pos);
-        } else {
+        if (state.get(HALF) == DoubleBlockHalf.UPPER) return super.canPlaceAt(state, world, pos);
+        else {
             BlockPos blockPos = pos.down();
             BlockState blockState = world.getBlockState(blockPos);
             return this.canPlantOnTop(blockState, world, blockPos);
         }
     }
 
-    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
-        if (state.get(WATERLOGGED)) {
-            tickView.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-        }
+    protected BlockState getStateForNeighborUpdate(
+            BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random
+    ) {
+        if (state.get(WATERLOGGED)) tickView.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 

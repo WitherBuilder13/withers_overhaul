@@ -75,8 +75,12 @@ public class OverhaulSurfaceRule {
         MaterialRules.MaterialCondition steepSlope = MaterialRules.steepSlope();
         MaterialRules.MaterialRule underwaterDirt = MaterialRules.sequence(MaterialRules.condition(water, GRASS_BLOCK), DIRT);
         MaterialRules.MaterialRule sandWithSandstoneCeiling = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, SANDSTONE), SAND);
-        MaterialRules.MaterialRule frostedSandWithSandstoneCeiling = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, FROSTED_SANDSTONE), FROSTED_SAND);
-        MaterialRules.MaterialRule charredSandWithSandstoneCeiling = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, CHARRED_SANDSTONE), CHARRED_SAND);
+        MaterialRules.MaterialRule frostedSandWithSandstoneCeiling = MaterialRules.sequence(
+                MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, FROSTED_SANDSTONE), FROSTED_SAND
+        );
+        MaterialRules.MaterialRule charredSandWithSandstoneCeiling = MaterialRules.sequence(
+                MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, CHARRED_SANDSTONE), CHARRED_SAND
+        );
         MaterialRules.MaterialRule gravelWithAndesiteCeiling = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, ANDESITE), GRAVEL);
         MaterialRules.MaterialCondition sandstoneShallowBiomes = MaterialRules.biome(WARM_OCEAN, BEACH, SANDY_RIVER, LUSH_RIVER, TROPICAL_BEACH);
         MaterialRules.MaterialCondition frostedSandstoneShallowBiomes = MaterialRules.biome(FROZEN_OCEAN, FROZEN_RIVER, SNOWY_BEACH);
@@ -125,11 +129,17 @@ public class OverhaulSurfaceRule {
                 ),
                 MaterialRules.condition(
                         MaterialRules.biome(STONY_SHORE, COOL_RIVER),
-                        MaterialRules.sequence(MaterialRules.condition(MaterialRules.noiseThreshold(OverhaulNoiseParameters.GRAVEL, 0.0, 1.0), gravelWithAndesiteCeiling), ANDESITE)
+                        MaterialRules.sequence(
+                                MaterialRules.condition(MaterialRules.noiseThreshold(OverhaulNoiseParameters.GRAVEL, 0.0, 1.0), gravelWithAndesiteCeiling), ANDESITE
+                        )
                 ),
                 MaterialRules.condition(
                         MaterialRules.biome(DESERT_FIELDS),
-                        MaterialRules.sequence(MaterialRules.condition(MaterialRules.noiseThreshold(OverhaulNoiseParameters.COARSE_DIRT_DESERT, 0.0, 1.0), COARSE_DIRT), sandWithSandstoneCeiling)
+                        MaterialRules.sequence(
+                                MaterialRules.condition(
+                                        MaterialRules.noiseThreshold(OverhaulNoiseParameters.COARSE_DIRT_DESERT, 0.0, 1.0), COARSE_DIRT
+                                ), sandWithSandstoneCeiling
+                        )
                 ),
                 MaterialRules.condition(MaterialRules.biome(WINDSWEPT_HILLS), MaterialRules.condition(surfaceNoiseThreshold(1.0), STONE)),
                 MaterialRules.condition(sandstoneShallowBiomes, sandWithSandstoneCeiling),

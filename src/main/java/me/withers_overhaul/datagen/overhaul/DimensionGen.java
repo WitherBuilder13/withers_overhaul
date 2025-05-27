@@ -72,37 +72,21 @@ public class DimensionGen {
     public static final Pair<Float, Float> highWeirdness12 = Pair.of(0.7666667F, 0.93333334F);
     public static final Pair<Float, Float> midWeirdness13 = Pair.of(0.93333334F, 1.0F);
 
-    public static final Pair<Float, Float>[] lowWeirdness = new Pair[]{
-            lowWeirdness6, lowWeirdness8
-    };
+    public static final Pair<Float, Float>[] lowWeirdness = new Pair[]{lowWeirdness6, lowWeirdness8};
 
-    public static final Pair<Float, Float>[] midWeirdness = new Pair[]{
-            midWeirdness1, midWeirdness5, midWeirdness9, midWeirdness13
-    };
+    public static final Pair<Float, Float>[] midWeirdness = new Pair[]{midWeirdness1, midWeirdness5, midWeirdness9, midWeirdness13};
 
-    public static final Pair<Float, Float>[] midWeirdnessN = new Pair[]{
-            midWeirdness1, midWeirdness5
-    };
+    public static final Pair<Float, Float>[] midWeirdnessN = new Pair[]{midWeirdness1, midWeirdness5};
 
-    public final Pair<Float, Float>[] midWeirdnessP = new Pair[]{
-            midWeirdness9, midWeirdness13
-    };
+    public final Pair<Float, Float>[] midWeirdnessP = new Pair[]{midWeirdness9, midWeirdness13};
 
-    public static final Pair<Float, Float>[] highWeirdness = new Pair[]{
-            highWeirdness2, highWeirdness4, highWeirdness10, highWeirdness12
-    };
+    public static final Pair<Float, Float>[] highWeirdness = new Pair[]{highWeirdness2, highWeirdness4, highWeirdness10, highWeirdness12};
 
-    public static final Pair<Float, Float>[] highWeirdnessN = new Pair[]{
-            highWeirdness2, highWeirdness4
-    };
+    public static final Pair<Float, Float>[] highWeirdnessN = new Pair[]{highWeirdness2, highWeirdness4};
 
-    public static final Pair<Float, Float>[] highWeirdnessP = new Pair[]{
-            highWeirdness10, highWeirdness12
-    };
+    public static final Pair<Float, Float>[] highWeirdnessP = new Pair[]{highWeirdness10, highWeirdness12};
 
-    public static final Pair<Float, Float>[] peakWeirdness = new Pair[]{
-            peakWeirdness3, peakWeirdness11
-    };
+    public static final Pair<Float, Float>[] peakWeirdness = new Pair[]{peakWeirdness3, peakWeirdness11};
 
     // `------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -194,7 +178,7 @@ public class DimensionGen {
             {FOSSILIZED_DEPTHS, FOSSILIZED_DEPTHS, MOLTEN_UNDERGROWTH, MOLTEN_UNDERGROWTH, MOLTEN_UNDERGROWTH}
     };
 
-    // ` ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // ` ------------------------------------------------------------------------------------------------------------------
 
     public static void addBiomes() {
         addOceanBiomes();
@@ -210,7 +194,9 @@ public class DimensionGen {
             addSurfaceParameterSet(temperatureParameters[t], defaultParameter, oceanContinentalness, defaultParameter, defaultParameter, oceanBiomes[0][t]);
             addSurfaceParameterSet(temperatureParameters[t], defaultParameter, deepOceanContinentalness, defaultParameter, defaultParameter, oceanBiomes[1][t]);
             addSurfaceParameterSet(temperatureParameters[t], defaultParameter, islandContinentalness, defaultParameter, defaultParameter, oceanBiomes[2][t]);
-            addCaveParameterSet(temperatureParameters[t], defaultParameter, range(deepOceanContinentalness, oceanContinentalness), defaultParameter, defaultParameter, oceanBiomes[3][t]);
+            addCaveParameterSet(
+                    temperatureParameters[t], defaultParameter, range(deepOceanContinentalness, oceanContinentalness), defaultParameter, defaultParameter, oceanBiomes[3][t]
+            );
         }
     }
 
@@ -544,7 +530,7 @@ public class DimensionGen {
         }
     }
 
-    // `--------------------------------------------------------------------------------------------------------------------------------------------
+    // ` --------------------------------------------------------------------------------------------------------------------------------------------
 
     public static void addSurfaceParameterSet(
             Pair<Float, Float> temperature,
@@ -648,9 +634,7 @@ public class DimensionGen {
 
         Pair[] pairs = {temperature, humidity, continentalness, erosion, weirdness, depth};
 
-        if (Arrays.stream(pairs).allMatch(pair -> (float)pair.getFirst() < (float)pair.getSecond())) {
-            parameterSets.add(parameterPoint);
-        }
+        if (Arrays.stream(pairs).allMatch(pair -> (float)pair.getFirst() < (float)pair.getSecond())) parameterSets.add(parameterPoint);
     }
     
     public static Pair<Float, Float> range(Pair<Float, Float> min, Pair<Float, Float> max) {
@@ -662,9 +646,7 @@ public class DimensionGen {
         String path = "src/main/resources/data/vanilla/dimension";
 
         File dstDir = new File(path);
-        if (!dstDir.exists()) {
-            dstDir.mkdirs();
-        }
+        if (!dstDir.exists()) dstDir.mkdirs();
 
         try (FileWriter file = new FileWriter("src/main/generated/data/vanilla/dimension/overworld.json")) {
 

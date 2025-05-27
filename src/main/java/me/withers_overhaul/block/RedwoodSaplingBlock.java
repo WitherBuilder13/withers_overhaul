@@ -17,8 +17,9 @@ import net.minecraft.world.WorldView;
 
 public class RedwoodSaplingBlock extends PlantBlock implements Fertilizable {
     public MapCodec<RedwoodSaplingBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(OverhaulSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec())
-                    .apply(instance, RedwoodSaplingBlock::new));
+            instance -> instance.group(
+                    OverhaulSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec()
+                    ).apply(instance, RedwoodSaplingBlock::new));
     public MapCodec getCodec() {
         return CODEC;
     }
@@ -39,17 +40,12 @@ public class RedwoodSaplingBlock extends PlantBlock implements Fertilizable {
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (world.getLightLevel(pos.up()) >= 9 && random.nextInt(7) == 0) {
-            this.generate(world, pos, state, random);
-        }
+        if (world.getLightLevel(pos.up()) >= 9 && random.nextInt(7) == 0) this.generate(world, pos, state, random);
     }
 
     public void generate(ServerWorld world, BlockPos pos, BlockState state, Random random) {
-        if (state.get(STAGE) == 0) {
-            world.setBlockState(pos, state.cycle(STAGE), Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
-        } else {
-            this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
-        }
+        if (state.get(STAGE) == 0) world.setBlockState(pos, state.cycle(STAGE), Block.SKIP_REDRAW_AND_BLOCK_ENTITY_REPLACED_CALLBACK);
+        else this.generator.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
     }
 
     @Override

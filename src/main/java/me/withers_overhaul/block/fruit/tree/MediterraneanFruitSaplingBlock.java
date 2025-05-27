@@ -23,8 +23,9 @@ import net.minecraft.world.event.GameEvent;
 public class MediterraneanFruitSaplingBlock extends FruitSaplingBlock {
 
     public MapCodec<MediterraneanFruitSaplingBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec())
-                    .apply(instance, MediterraneanFruitSaplingBlock::new));
+            instance -> instance.group(
+                    FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec()
+                    ).apply(instance, MediterraneanFruitSaplingBlock::new));
     public MapCodec getCodec() {
         return CODEC;
     }
@@ -43,17 +44,12 @@ public class MediterraneanFruitSaplingBlock extends FruitSaplingBlock {
             world.playSound(null, pos, SoundEvents.BLOCK_AZALEA_LEAVES_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
             BlockState blockState;
 
-            if (stack.isOf(BasicItems.KUMQUAT)) {
-                blockState = state.with(FRUIT, TreeFruit.Mediterranean.KUMQUAT);
-            } else if (stack.isOf(BasicItems.OLIVE)) {
-                blockState = state.with(FRUIT, TreeFruit.Mediterranean.OLIVE);
-            } else if (stack.isOf(BasicItems.PERSIMMON)) {
-                blockState = state.with(FRUIT, TreeFruit.Mediterranean.PERSIMMON);
-            } else if (stack.isOf(BasicItems.POMEGRANATE)) {
-                blockState = state.with(FRUIT, TreeFruit.Mediterranean.POMEGRANATE);
-            } else {
-                blockState = state;
-            }
+            if (stack.isOf(BasicItems.KUMQUAT)) blockState = state.with(FRUIT, TreeFruit.Mediterranean.KUMQUAT);
+            else if (stack.isOf(BasicItems.OLIVE)) blockState = state.with(FRUIT, TreeFruit.Mediterranean.OLIVE);
+            else if (stack.isOf(BasicItems.PERSIMMON)) blockState = state.with(FRUIT, TreeFruit.Mediterranean.PERSIMMON);
+            else if (stack.isOf(BasicItems.POMEGRANATE)) blockState = state.with(FRUIT, TreeFruit.Mediterranean.POMEGRANATE);
+            else blockState = state;
+
 
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
@@ -72,9 +68,7 @@ public class MediterraneanFruitSaplingBlock extends FruitSaplingBlock {
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.SUCCESS;
-        } else {
-            return super.onUse(state, world, pos, player, hit);
-        }
+        } else return super.onUse(state, world, pos, player, hit);
     }
 
     @Override

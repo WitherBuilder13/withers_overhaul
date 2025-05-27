@@ -23,8 +23,9 @@ import net.minecraft.world.event.GameEvent;
 public class TemperateFruitSaplingBlock extends FruitSaplingBlock {
 
     public MapCodec<TemperateFruitSaplingBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec())
-                    .apply(instance, TemperateFruitSaplingBlock::new));
+            instance -> instance.group(
+                    FruitSaplingGenerator.CODEC.fieldOf("tree").forGetter(block -> block.generator), createSettingsCodec()
+                    ).apply(instance, TemperateFruitSaplingBlock::new));
     public MapCodec getCodec() {
         return CODEC;
     }
@@ -43,23 +44,14 @@ public class TemperateFruitSaplingBlock extends FruitSaplingBlock {
             world.playSound(null, pos, SoundEvents.BLOCK_AZALEA_LEAVES_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
             BlockState blockState;
 
-            if (stack.isOf(Items.APPLE)) {
-                blockState = state.with(FRUIT, TreeFruit.Temperate.APPLE);
-            } else if (stack.isOf(BasicItems.APRICOT)) {
-                blockState = state.with(FRUIT, TreeFruit.Temperate.APRICOT);
-            } else if (stack.isOf(BasicItems.KIWI)) {
-                blockState = state.with(FRUIT, TreeFruit.Temperate.KIWI);
-            } else if (stack.isOf(BasicItems.NECTARINE)) {
-                blockState = state.with(FRUIT, TreeFruit.Temperate.NECTARINE);
-            } else if (stack.isOf(BasicItems.PEACH)) {
-                blockState = state.with(FRUIT, TreeFruit.Temperate.PEACH);
-            } else if (stack.isOf(BasicItems.PEAR)) {
-                blockState = state.with(FRUIT, TreeFruit.Temperate.PEAR);
-            } else if (stack.isOf(BasicItems.PLUM)) {
-                blockState = state.with(FRUIT, TreeFruit.Temperate.PLUM);
-            } else {
-                blockState = state;
-            }
+            if (stack.isOf(Items.APPLE)) blockState = state.with(FRUIT, TreeFruit.Temperate.APPLE);
+            else if (stack.isOf(BasicItems.APRICOT)) blockState = state.with(FRUIT, TreeFruit.Temperate.APRICOT);
+            else if (stack.isOf(BasicItems.KIWI)) blockState = state.with(FRUIT, TreeFruit.Temperate.KIWI);
+            else if (stack.isOf(BasicItems.NECTARINE)) blockState = state.with(FRUIT, TreeFruit.Temperate.NECTARINE);
+            else if (stack.isOf(BasicItems.PEACH)) blockState = state.with(FRUIT, TreeFruit.Temperate.PEACH);
+            else if (stack.isOf(BasicItems.PEAR)) blockState = state.with(FRUIT, TreeFruit.Temperate.PEAR);
+            else if (stack.isOf(BasicItems.PLUM)) blockState = state.with(FRUIT, TreeFruit.Temperate.PLUM);
+            else blockState = state;
 
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
@@ -78,9 +70,7 @@ public class TemperateFruitSaplingBlock extends FruitSaplingBlock {
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.SUCCESS;
-        } else {
-            return super.onUse(state, world, pos, player, hit);
-        }
+        } else return super.onUse(state, world, pos, player, hit);
     }
 
     @Override

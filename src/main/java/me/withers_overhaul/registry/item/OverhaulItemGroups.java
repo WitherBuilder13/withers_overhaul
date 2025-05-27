@@ -22,7 +22,9 @@ import static net.minecraft.item.Items.*;
 
 public class OverhaulItemGroups {
 
-    public static final RegistryKey<ItemGroup> WITHERS_OVERHAUL_BLOCKS_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(WithersOverhaul.MOD_ID, "withers_overhaul_blocks"));
+    public static final RegistryKey<ItemGroup> WITHERS_OVERHAUL_BLOCKS_KEY = RegistryKey.of(
+            RegistryKeys.ITEM_GROUP, Identifier.of(WithersOverhaul.MOD_ID, "withers_overhaul_blocks")
+    );
 
     public static final ItemGroup WITHERS_OVERHAUL_BLOCKS = Registry.register(Registries.ITEM_GROUP, WITHERS_OVERHAUL_BLOCKS_KEY,
             FabricItemGroup.builder().icon(() -> new ItemStack(FIR_LOG))
@@ -1406,7 +1408,9 @@ public class OverhaulItemGroups {
                     }))
                     .build());
 
-    public static final RegistryKey<ItemGroup> WITHERS_OVERHAUL_ITEMS_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(WithersOverhaul.MOD_ID, "withers_overhaul_items"));
+    public static final RegistryKey<ItemGroup> WITHERS_OVERHAUL_ITEMS_KEY = RegistryKey.of(
+            RegistryKeys.ITEM_GROUP, Identifier.of(WithersOverhaul.MOD_ID, "withers_overhaul_items")
+    );
 
     public static final ItemGroup WITHERS_OVERHAUL_ITEMS = Registry.register(Registries.ITEM_GROUP, WITHERS_OVERHAUL_ITEMS_KEY,
             FabricItemGroup.builder().icon(() -> new ItemStack(RUNE_AQUA_AFFINITY))

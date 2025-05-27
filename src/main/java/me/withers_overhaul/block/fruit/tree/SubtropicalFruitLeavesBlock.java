@@ -28,13 +28,11 @@ public class SubtropicalFruitLeavesBlock extends LeavesBlock {
     public static final EnumProperty<TreeFruit.Subtropical> FRUIT = EnumProperty.of("fruit", TreeFruit.Subtropical.class);
 
     public static final MapCodec<SubtropicalFruitLeavesBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(
-                            Codecs.rangedInclusiveFloat(0.0F, 1.0F)
-                                    .fieldOf("leaf_particle_chance")
-                                    .forGetter(subtropicalFruitLeavesBlock -> subtropicalFruitLeavesBlock.leafParticleChance),
-                            createSettingsCodec()
-                    )
-                    .apply(instance, SubtropicalFruitLeavesBlock::new)
+            instance -> instance.group(Codecs.rangedInclusiveFloat(0.0F, 1.0F)
+                            .fieldOf("leaf_particle_chance")
+                            .forGetter(subtropicalFruitLeavesBlock -> subtropicalFruitLeavesBlock.leafParticleChance),
+                    createSettingsCodec()
+            ).apply(instance, SubtropicalFruitLeavesBlock::new)
     );
 
     @Override
@@ -62,9 +60,7 @@ public class SubtropicalFruitLeavesBlock extends LeavesBlock {
             world.setBlockState(pos, blockState);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.SUCCESS;
-        } else {
-            return super.onUse(state, world, pos, player, hit);
-        }
+        } else return super.onUse(state, world, pos, player, hit);
     }
 
     @Override
