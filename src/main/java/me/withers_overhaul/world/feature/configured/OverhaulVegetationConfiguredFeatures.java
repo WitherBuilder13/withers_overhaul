@@ -206,7 +206,6 @@ public class OverhaulVegetationConfiguredFeatures {
         RegistryEntry<PlacedFeature> megaJungle = placedFeatureLookup.getOrThrow(TreePlacedFeatures.MEGA_JUNGLE_TREE_CHECKED);
         RegistryEntry<PlacedFeature> jungleBush = placedFeatureLookup.getOrThrow(TreePlacedFeatures.JUNGLE_BUSH);
         RegistryEntry<PlacedFeature> acacia = placedFeatureLookup.getOrThrow(TreePlacedFeatures.ACACIA_CHECKED);
-        RegistryEntry<PlacedFeature> darkOak = placedFeatureLookup.getOrThrow(TreePlacedFeatures.DARK_OAK_CHECKED);
         RegistryEntry<PlacedFeature> darkOakLeafLitter = placedFeatureLookup.getOrThrow(TreePlacedFeatures.DARK_OAK_LEAF_LITTER);
         RegistryEntry<PlacedFeature> cherryBees005 = placedFeatureLookup.getOrThrow(TreePlacedFeatures.CHERRY_BEES_005);
         RegistryEntry<ConfiguredFeature<?, ?>> hugeBrownMushroom = configuredFeatureLookup.getOrThrow(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM);
@@ -349,6 +348,9 @@ public class OverhaulVegetationConfiguredFeatures {
         RegistryEntry<PlacedFeature> juniperDate = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.JUNIPER_DATE);
         
         RegistryEntry<PlacedFeature> palm = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.PALM);*/
+
+        RegistryEntry<PlacedFeature> darkOak = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.DARK_OAK);
+        RegistryEntry<PlacedFeature> darkOakSmall = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.DARK_OAK_SMALL);
         
         RegistryEntry<PlacedFeature> ebony = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.EBONY);
         RegistryEntry<PlacedFeature> ebonyApple = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.EBONY_APPLE);

@@ -152,6 +152,9 @@ public class OverhaulTreePlacedFeatures {
     public static final RegistryKey<PlacedFeature> JUNIPER_DATE = of("juniper_date");
     
     public static final RegistryKey<PlacedFeature> PALM = of("palm");*/
+
+    public static final RegistryKey<PlacedFeature> DARK_OAK = of("dark_oak");
+    public static final RegistryKey<PlacedFeature> DARK_OAK_SMALL = of("dark_oak_small");
     
     public static final RegistryKey<PlacedFeature> EBONY = of("ebony");
     public static final RegistryKey<PlacedFeature> EBONY_APPLE = of("ebony_apple");
@@ -346,6 +349,9 @@ public class OverhaulTreePlacedFeatures {
         /*RegistryEntry<ConfiguredFeature<?, ?>> juniperDate = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.JUNIPER_DATE);
 
         RegistryEntry<ConfiguredFeature<?, ?>> palm = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.PALM);*/
+
+        RegistryEntry<ConfiguredFeature<?, ?>> darkOak = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.DARK_OAK);
+        RegistryEntry<ConfiguredFeature<?, ?>> darkOakSmall = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.DARK_OAK_SMALL);
         
         RegistryEntry<ConfiguredFeature<?, ?>> ebony = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.EBONY);
         RegistryEntry<ConfiguredFeature<?, ?>> ebonyApple = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.EBONY_APPLE);
@@ -527,6 +533,9 @@ public class OverhaulTreePlacedFeatures {
         PlacedFeatures.register(featureRegisterable, JUNIPER_DATE, juniperDate, wouldSurvive(NaturalBlocks.JUNIPER_SAPLING));
         
         PlacedFeatures.register(featureRegisterable, PALM, palm, wouldSurvive(NaturalBlocks.PALM_SAPLING));*/
+
+        PlacedFeatures.register(featureRegisterable, DARK_OAK, darkOak, wouldSurvive(Blocks.DARK_OAK_SAPLING));
+        PlacedFeatures.register(featureRegisterable, DARK_OAK_SMALL, darkOakSmall, wouldSurvive(Blocks.DARK_OAK_SAPLING));
 
         PlacedFeatures.register(featureRegisterable, EBONY, ebony, wouldSurvive(NaturalBlocks.EBONY_SAPLING));
         PlacedFeatures.register(featureRegisterable, EBONY_APPLE, ebonyApple, wouldSurvive(NaturalBlocks.EBONY_SAPLING));
