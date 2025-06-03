@@ -1,8 +1,20 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "minecraft:dark_oak_leaf_litter",
+    "default": "withers_overhaul:dark_oak_leaf_litter",
     "features": [
+      {
+        "chance": 0.2,
+        "feature": "withers_overhaul:dark_oak"
+      },
+      {
+        "chance": 0.2,
+        "feature": "withers_overhaul:dark_oak_small"
+      },
+      {
+        "chance": 0.2,
+        "feature": "withers_overhaul:dark_oak_small_leaf_litter"
+      },
       {
         "chance": 0.01,
         "feature": "withers_overhaul:clump_trees_teak"

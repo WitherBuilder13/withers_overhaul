@@ -176,16 +176,20 @@ public class OverhaulBiomes {
 
     // ` -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    private static final int DEFAULT_WATER_COLOR = 4159204, DEFAULT_WATER_FOG_COLOR = 329011, SNOWY_WATER_COLOR = 3750089,
+            COLD_WATER_COLOR = 4020182, COOL_WATER_COLOR = 4943314, LUKEWARM_WATER_COLOR = 4566514, WARM_WATER_COLOR = 4445678;
+
     private static Biome createBiome(
             boolean precipitation,
             float temperature,
             float downfall,
+            int waterColor,
             SpawnSettings.Builder spawnSettings,
             GenerationSettings.LookupBackedBuilder generationSettings,
             @Nullable MusicSound music
     ) {
         return createBiome(precipitation, temperature, downfall,
-                4159204, 329011, null, null, null,
+                waterColor, DEFAULT_WATER_FOG_COLOR, null, null, null,
                 spawnSettings, generationSettings, music
         );
     }
@@ -272,7 +276,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, 0.3F, 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.3F, 0.8F, COLD_WATER_COLOR,  builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome alpineTangle(
@@ -298,7 +302,7 @@ public class OverhaulBiomes {
         OverhaulBiomeFeatures.alpineTangleVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
-        return createBiome(true, 0.2F, 0.8F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.2F, 0.8F, COLD_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome alpineThicket(
@@ -326,7 +330,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, 0.3F, 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.3F, 0.8F, COLD_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome ashenFields(
@@ -339,7 +343,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
-        return createBiome(true, 0.2F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.2F, 1.0F, COLD_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome aspenGrove(
@@ -365,7 +369,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(true, 0.4F, 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.4F, 0.8F, COOL_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome badlands(
@@ -390,7 +394,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_BADLANDS);
 
-        return createBiome(true, 2.0F, wooded ? 0.2F : 0.0F , builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 2.0F, wooded ? 0.2F : 0.0F, 15046487, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome bayou(
@@ -422,6 +426,7 @@ public class OverhaulBiomes {
             RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup, OverhaulTemperature temperature
     ) {
         float temp;
+        int waterColor;
 
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
@@ -435,21 +440,35 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
         switch (temperature) {
-            case SNOWY -> temp = -1.0F;
-            case COLD -> temp = 0.2F;
-            case COOL -> temp = 0.4F;
-            case WARM -> temp = 1.0F;
+            case SNOWY -> {
+                temp = -1.0F;
+                waterColor = SNOWY_WATER_COLOR;
+            }
+            case COLD -> {
+                temp = 0.2F;
+                waterColor = COLD_WATER_COLOR;
+            }
+            case COOL -> {
+                temp = 0.4F;
+                waterColor = COOL_WATER_COLOR;
+            }
+            case WARM -> {
+                temp = 1.0F;
+                waterColor = LUKEWARM_WATER_COLOR;
+            }
             case HOT -> {
                 temp = 2.0F;
+                waterColor = WARM_WATER_COLOR;
                 builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.TURTLE, 2, 5));
             }
             default -> {
                 temp = 0.8F;
+                waterColor = DEFAULT_WATER_COLOR;
                 builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.TURTLE, 2, 5));
             }
         }
 
-        return createBiome(true, temp, 0.4F, builder, lookupBackedBuilder, null);
+        return createBiome(true, temp, 0.4F, waterColor, DEFAULT_WATER_FOG_COLOR, temperature.equals(OverhaulTemperature.COLD) ? 6250335 : null, null, null, builder, lookupBackedBuilder, null);
     }
 
     public static Biome birchForest(
@@ -477,7 +496,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(true, 0.6F, 0.6F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.6F, 0.6F, COOL_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome bog(
@@ -569,7 +588,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(false, 0.8F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(false, 0.8F, 1.0F, DEFAULT_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome darkForest(
@@ -611,7 +630,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DEEP_DARK);
 
-        return createBiome(true, 0.8F, 0.4F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.8F, 0.4F, 11330, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome desert(
@@ -654,7 +673,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DRIPSTONE_CAVES);
 
-        return createBiome(true, 0.4F, 0.4F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.4F, 0.4F, 3201455, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome echoingHollow(
@@ -666,7 +685,7 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, 0.8F, 0.4F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.8F, 0.4F, DEFAULT_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome enchantedForest(
@@ -690,7 +709,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(true, 1.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 1.0F, 1.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome erodedBadlands(
@@ -710,7 +729,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_BADLANDS);
 
-        return createBiome(true, 1.0F, 0.1F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 1.0F, 0.1F, 15046487, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome forest(
@@ -739,7 +758,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(true, 0.8F, flower ? 1.0F : 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.8F, flower ? 1.0F : 0.8F, DEFAULT_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome forgottenIsles(
@@ -752,7 +771,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
         
-        return createBiome(true, 0.4F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.4F, 1.0F, COOL_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome fossilizedDepths(
@@ -769,7 +788,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DEEP_DARK);
 
-        return createBiome(false, 2.0F, 0.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(false, 2.0F, 0.0F, 12235916, 14737100, null, null, null, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome frostburnCaves(
@@ -782,7 +801,7 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, -1.0F, 0.4F, builder, lookupBackedBuilder, null);
+        return createBiome(true, -1.0F, 0.4F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome frostedTangle(
@@ -808,7 +827,7 @@ public class OverhaulBiomes {
 
         OverhaulBiomeFeatures.frostedTangleVegetation(lookupBackedBuilder);
 
-        return createBiome(true, -1.0F, 0.8F, builder, lookupBackedBuilder, null);
+        return createBiome(true, -1.0F, 0.8F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome frostedWoodlands(
@@ -836,10 +855,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, -1.0F, 0.8F,
-                4020182, 329011, null, null, null,
-                builder, lookupBackedBuilder, musicSound
-        );
+        return createBiome(true, -1.0F, 0.8F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
     
     public static Biome frozenWetlands(
@@ -861,7 +877,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
-        return createBiome(true, -1.0F, 0.4F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, -1.0F, 0.4F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome fungalChasm(
@@ -875,7 +891,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
-        return createBiome(true, 0.2F, 0.8F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.2F, 0.8F, 13083494, builder, lookupBackedBuilder, null);
     }
 
     public static Biome glacialSweep(
@@ -888,7 +904,7 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, -1.0F, 0.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, -1.0F, 0.0F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome glowingGrotto(
@@ -901,7 +917,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
-        return createBiome(true, 0.8F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.8F, 1.0F, 6421759, builder, lookupBackedBuilder, null);
     }
 
     public static Biome goldenSweep(
@@ -929,7 +945,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(true, 0.6F, 0.6F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.6F, 0.6F, DEFAULT_WATER_COLOR, DEFAULT_WATER_FOG_COLOR, 16506136, null, null, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome grove(
@@ -950,7 +966,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_GROVE);
 
-        return createBiome(true, -1.0F, 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, -1.0F, 0.8F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome jungle(
@@ -977,7 +993,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(bamboo ? SoundEvents.MUSIC_OVERWORLD_BAMBOO_JUNGLE : SoundEvents.MUSIC_OVERWORLD_JUNGLE);
 
-        return createBiome(true, 2.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 2.0F, 1.0F, WARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome lagoon(
@@ -990,7 +1006,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
-        return createBiome(true, 2.0F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 2.0F, 1.0F, WARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome lavenderFields(
@@ -1015,7 +1031,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(true, 1.0F, 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 1.0F, 0.8F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome lushCaves(
@@ -1035,7 +1051,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_LUSH_CAVES);
 
-        return createBiome(true, 2.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 2.0F, 1.0F, WARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome mangroveSwamp(
@@ -1057,7 +1073,9 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
-        return createBiome(true, 1.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 1.0F, 1.0F, 3832426, 5077600,
+                null, null, null, builder, lookupBackedBuilder, musicSound
+        );
     }
 
     public static Biome marsh(
@@ -1079,7 +1097,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
-        return createBiome(true, 0.8F, 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.8F, 0.8F, 6388580, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome meadow(
@@ -1119,7 +1137,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DEEP_DARK);
 
-        return createBiome(true, 2.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 2.0F, 1.0F, WARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome montane(
@@ -1162,7 +1180,7 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addMushroomFieldsFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
-        return createBiome(true, 0.9F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.9F, 1.0F, DEFAULT_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome mutedTunnels(
@@ -1174,7 +1192,7 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, 1.0F, 0.8F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 1.0F, 0.8F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome oasis(
@@ -1194,7 +1212,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DESERT);
 
-        return createBiome(false, 2.0F, 0.3F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(false, 2.0F, 0.3F, WARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome ocean(
@@ -1213,8 +1231,8 @@ public class OverhaulBiomes {
         switch (temperature) {
             case SNOWY -> {
                 temp = -1.0F;
-                waterColor = 3750089;
-                waterFogColor = 329011;
+                waterColor = SNOWY_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 builder.spawn(SpawnGroup.WATER_CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.SQUID, 1, 4))
                         .spawn(SpawnGroup.WATER_AMBIENT, 15, new SpawnSettings.SpawnEntry(EntityType.SALMON, 1, 5));
@@ -1229,8 +1247,8 @@ public class OverhaulBiomes {
             }
             case COLD -> {
                 temp = 0.2F;
-                waterColor = 4020182;
-                waterFogColor = 329011;
+                waterColor = COLD_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 DefaultBiomeFeatures.addOceanMobs(builder, 3, 4, 15);
                 builder.spawn(SpawnGroup.WATER_AMBIENT, 15, new SpawnSettings.SpawnEntry(EntityType.SALMON, 1, 5));
@@ -1240,8 +1258,8 @@ public class OverhaulBiomes {
             }
             case COOL -> {
                 temp = 0.4F;
-                waterColor = 4020182;
-                waterFogColor = 329011;
+                waterColor = COOL_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 DefaultBiomeFeatures.addOceanMobs(builder, 3, 4, 15);
                 builder.spawn(SpawnGroup.WATER_AMBIENT, 15, new SpawnSettings.SpawnEntry(EntityType.SALMON, 1, 5));
@@ -1251,7 +1269,7 @@ public class OverhaulBiomes {
             }
             case WARM -> {
                 temp = 1.0F;
-                waterColor = 4566514;
+                waterColor = LUKEWARM_WATER_COLOR;
                 waterFogColor = 267827;
 
                 if (deep) DefaultBiomeFeatures.addOceanMobs(builder, 8, 4, 8);
@@ -1266,7 +1284,7 @@ public class OverhaulBiomes {
             }
             case HOT -> {
                 temp = 2.0F;
-                waterColor = 4445678;
+                waterColor = WARM_WATER_COLOR;
                 waterFogColor = 270131;
 
                 builder.spawn(SpawnGroup.WATER_CREATURE, 10, new SpawnSettings.SpawnEntry(EntityType.SQUID, 4, 4))
@@ -1283,8 +1301,8 @@ public class OverhaulBiomes {
             }
             default -> {
                 temp = 0.8F;
-                waterColor = 4159204;
-                waterFogColor = 329011;
+                waterColor = DEFAULT_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 DefaultBiomeFeatures.addOceanMobs(builder, 1, 4, 10);
                 if (!cave) builder.spawn(SpawnGroup.WATER_CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.DOLPHIN, 1, 2));
@@ -1333,10 +1351,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F,
-                snowy ? 4020182 : 4159204, 329011, null, null, null,
-                builder, lookupBackedBuilder, musicSound
-        );
+        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F, snowy ? SNOWY_WATER_COLOR : COLD_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome paleGarden(
@@ -1376,7 +1391,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultMushrooms(lookupBackedBuilder);
 
-        return createBiome(true, 0.2F, 0.8F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.2F, 0.8F, 15323838, builder, lookupBackedBuilder, null);
     }
 
     public static Biome pastelCaverns(
@@ -1388,13 +1403,14 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, 1.0F, 0.8F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 1.0F, 0.8F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome peaks(
             RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup, OverhaulTemperature temperature, boolean sunbaked
     ) {
         float temp, df;
+        int waterColor;
 
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addBatsAndMonsters(builder);
@@ -1410,41 +1426,47 @@ public class OverhaulBiomes {
             case SNOWY -> {
                 temp = -1.0F;
                 df = 0.8F;
+                waterColor = SNOWY_WATER_COLOR;
                 builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.GOAT, 1, 3));
                 musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FROZEN_PEAKS);
             }
             case COLD -> {
                 temp = 0.2F;
                 df = 0.8F;
+                waterColor = COLD_WATER_COLOR;
                 builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.GOAT, 1, 3));
                 musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_JAGGED_PEAKS);
             }
             case COOL -> {
                 temp = 0.4F;
                 df = 0.8F;
+                waterColor = COOL_WATER_COLOR;
                 builder.spawn(SpawnGroup.CREATURE, 5, new SpawnSettings.SpawnEntry(EntityType.GOAT, 1, 3));
                 musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_JAGGED_PEAKS);
             }
             case WARM -> {
                 temp = 1.0F;
                 df = sunbaked ? 0.0F : 0.8F;
+                waterColor = LUKEWARM_WATER_COLOR;
                 builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.GOAT, 1, 3));
                 musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_STONY_PEAKS);
             }
             case HOT -> {
                 temp = 2.0F;
                 df = 1.0F;
+                waterColor = WARM_WATER_COLOR;
                 musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_JUNGLE);
             }
             default -> {
                 temp = 0.8F;
                 df = 0.7F;
+                waterColor = DEFAULT_WATER_COLOR;
                 builder.spawn(SpawnGroup.CREATURE, 8, new SpawnSettings.SpawnEntry(EntityType.GOAT, 1, 3));
                 musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_STONY_PEAKS);
             }
         }
 
-        return createBiome(true, temp, df, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, temp, df, waterColor, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome phantomHollow(
@@ -1456,7 +1478,7 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, 1.0F, 0.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 1.0F, 0.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome pineTaiga(
@@ -1486,7 +1508,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, 0.4F, oldGrowth ? 0.6F : 0.4F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.4F, oldGrowth ? 0.6F : 0.4F, COOL_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
 
@@ -1494,7 +1516,7 @@ public class OverhaulBiomes {
             RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup,
             OverhaulTemperature temperature, boolean sunflower, boolean iceSpikes, boolean steppe
     ) {
-        float temp, df;
+        float temp, downfall;
         int waterColor, waterFogColor;
         @Nullable Integer grassColor, foliageColor, dryFoliageColor;
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
@@ -1511,9 +1533,9 @@ public class OverhaulBiomes {
         switch (temperature) {
             case SNOWY -> {
                 temp = -1.0F;
-                df = 0.2F;
-                waterColor = 3750089;
-                waterFogColor = 329011;
+                downfall = 0.2F;
+                waterColor = SNOWY_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
                 grassColor = null;
                 foliageColor = null;
                 dryFoliageColor = null;
@@ -1531,9 +1553,9 @@ public class OverhaulBiomes {
             }
             case COLD -> {
                 temp = 0.2F;
-                df = 0.0F;
-                waterColor = 3750089;
-                waterFogColor = 329011;
+                downfall = 0.0F;
+                waterColor = COLD_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
                 grassColor = 12086123;
                 foliageColor = 9987967;
                 dryFoliageColor = 9987967;
@@ -1542,9 +1564,9 @@ public class OverhaulBiomes {
             }
             case COOL -> {
                 temp = 0.4F;
-                df = 0.2F;
-                waterColor = 3750089;
-                waterFogColor = 329011;
+                downfall = 0.2F;
+                waterColor = COOL_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
                 grassColor = null;
                 foliageColor = null;
                 dryFoliageColor = null;
@@ -1556,9 +1578,9 @@ public class OverhaulBiomes {
             }
             case WARM -> {
                 temp = 1.0F;
-                df = 0.7F;
-                waterColor = 4159204;
-                waterFogColor = 329011;
+                downfall = 0.4F;
+                waterColor = LUKEWARM_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
                 grassColor = null;
                 foliageColor = null;
                 dryFoliageColor = null;
@@ -1570,22 +1592,11 @@ public class OverhaulBiomes {
                 OverhaulBiomeFeatures.shrublandsVegetation(lookupBackedBuilder);
                 OverhaulBiomeFeatures.subtropicalFruitPatch(lookupBackedBuilder);
             }
-            case HOT -> {
-                temp = 2.0F;
-                df = 0.6F;
-                waterColor = 4159204;
-                waterFogColor = 329011;
-                grassColor = null;
-                foliageColor = null;
-                dryFoliageColor = null;
-
-                DefaultBiomeFeatures.addFarmAnimals(builder);
-            }
             default -> {
                 temp = 0.8F;
-                df = 0.4F;
-                waterColor = 4159204;
-                waterFogColor = 329011;
+                downfall = 0.4F;
+                waterColor = DEFAULT_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
                 grassColor = null;
                 foliageColor = null;
                 dryFoliageColor = null;
@@ -1603,7 +1614,7 @@ public class OverhaulBiomes {
             }
         }
 
-        return createBiome(true, temp, df, waterColor, waterFogColor, grassColor, foliageColor, dryFoliageColor, builder, lookupBackedBuilder, null);
+        return createBiome(true, temp, downfall, waterColor, waterFogColor, grassColor, foliageColor, dryFoliageColor, builder, lookupBackedBuilder, null);
     }
 
     public static Biome rainbowFields(
@@ -1616,7 +1627,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
-        return createBiome(true, 1.0F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 1.0F, 1.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome redwoodForest(
@@ -1642,7 +1653,7 @@ public class OverhaulBiomes {
         OverhaulBiomeFeatures.redwoodForestVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
-        return createBiome(true, 0.2F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.2F, 1.0F, COLD_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome river(
@@ -1664,15 +1675,15 @@ public class OverhaulBiomes {
         switch (temperature) {
             case SNOWY -> {
                 temp = -1.0F;
-                waterColor = 3750089;
-                waterFogColor = 329011;
+                waterColor = SNOWY_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 builder.spawn(SpawnGroup.MONSTER, 1, new SpawnSettings.SpawnEntry(EntityType.DROWNED, 1, 1));
             }
             case COLD -> {
                 temp = 0.2F;
-                waterColor = 4020182;
-                waterFogColor = 329011;
+                waterColor = COLD_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 builder.spawn(SpawnGroup.MONSTER, 100, new SpawnSettings.SpawnEntry(EntityType.DROWNED, 1, 1));
 
@@ -1681,7 +1692,7 @@ public class OverhaulBiomes {
             case COOL -> {
                 temp = 0.4F;
                 waterColor = 4020182;
-                waterFogColor = 329011;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 builder.spawn(SpawnGroup.MONSTER, 100, new SpawnSettings.SpawnEntry(EntityType.DROWNED, 1, 1));
 
@@ -1707,8 +1718,8 @@ public class OverhaulBiomes {
             }
             default -> {
                 temp = 0.8F;
-                waterColor = 4159204;
-                waterFogColor = 329011;
+                waterColor = DEFAULT_WATER_COLOR;
+                waterFogColor = DEFAULT_WATER_FOG_COLOR;
 
                 builder.spawn(SpawnGroup.MONSTER, 100, new SpawnSettings.SpawnEntry(EntityType.DROWNED, 1, 1));
 
@@ -1741,7 +1752,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
-        return createBiome(true, 1.0F, 0.4F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 1.0F, 0.4F, 6388580, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome sandyRiver(
@@ -1786,7 +1797,7 @@ public class OverhaulBiomes {
         if (plateau) OverhaulBiomeFeatures.savannaPlateauVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.mediterraneanFruitPatch(lookupBackedBuilder);
 
-        return createBiome(false, 2.0F, 0.0F, builder, lookupBackedBuilder, null);
+        return createBiome(false, 2.0F, 0.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome shimmeringWastelands(
@@ -1799,7 +1810,7 @@ public class OverhaulBiomes {
 
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
-        return createBiome(true, -1.0F, 1.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, -1.0F, 1.0F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome snowySlopes(
@@ -1819,7 +1830,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SNOWY_SLOPES);
 
-        return createBiome(true, -1.0F, 0.4F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, -1.0F, 0.4F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome sparseJungle(
@@ -1842,7 +1853,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SPARSE_JUNGLE);
 
-        return createBiome(true, 2.0F, 0.8F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 2.0F, 0.8F, WARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome spectralAbyss(
@@ -1854,7 +1865,7 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, 1.0F, 0.0F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 1.0F, 0.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome subzeroAbyss(
@@ -1867,7 +1878,7 @@ public class OverhaulBiomes {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         addBasicFeatures(lookupBackedBuilder);
 
-        return createBiome(true, -1.0F, 0.2F, builder, lookupBackedBuilder, null);
+        return createBiome(true, -1.0F, 0.2F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome swamp(
@@ -1893,7 +1904,7 @@ public class OverhaulBiomes {
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_SWAMP);
 
         return createBiome(true, 0.4F, 0.9F,
-                6388580, 2302743, null, 6975545, 8082228,
+                6388580, 2302743, 3234071, 6975545, 8082228,
                 builder, lookupBackedBuilder, musicSound
         );
     }
@@ -1925,10 +1936,7 @@ public class OverhaulBiomes {
             OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
         }
 
-        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F,
-                snowy ? 4020182 : 4159204, 329011, null, null, null,
-                builder, lookupBackedBuilder, null
-        );
+        return createBiome(true, snowy ? -1.0F : 0.2F, 0.8F, snowy ? SNOWY_WATER_COLOR : COLD_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome tangledTropics(
@@ -1951,7 +1959,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_JUNGLE);
 
-        return createBiome(true, 2.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 2.0F, 1.0F, WARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome toxicWastes(
@@ -1967,7 +1975,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DRIPSTONE_CAVES);
 
-        return createBiome(true, 0.4F, 0.4F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.4F, 0.4F, 5169010, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome tropicalRainforest(
@@ -1993,7 +2001,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_JUNGLE);
 
-        return createBiome(true, 2.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 2.0F, 1.0F, WARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome whimsy(
@@ -2017,7 +2025,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST);
 
-        return createBiome(true, 1.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 1.0F, 1.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome windsweptGravellyHills(
@@ -2041,7 +2049,7 @@ public class OverhaulBiomes {
         OverhaulBiomeFeatures.windsweptGravellyHillsVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.coolFruitPatch(lookupBackedBuilder);
 
-        return createBiome(true, 0.8F, 0.4F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.8F, 0.4F, COOL_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome windsweptHills(
@@ -2066,7 +2074,7 @@ public class OverhaulBiomes {
         else OverhaulBiomeFeatures.windsweptHillsVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.temperateFruitPatch(lookupBackedBuilder);
 
-        return createBiome(true, 0.8F, 0.4F, builder, lookupBackedBuilder, null);
+        return createBiome(true, 0.8F, 0.4F, DEFAULT_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome windsweptSavanna(
@@ -2090,7 +2098,7 @@ public class OverhaulBiomes {
         OverhaulBiomeFeatures.windsweptSavannaVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.mediterraneanFruitPatch(lookupBackedBuilder);
 
-        return createBiome(false, 2.0F, 0.0F, builder, lookupBackedBuilder, null);
+        return createBiome(false, 2.0F, 0.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);
     }
 
     public static Biome windsweptTundra(
@@ -2109,7 +2117,7 @@ public class OverhaulBiomes {
         OverhaulBiomeFeatures.coldFruitPatch(lookupBackedBuilder);
 
         return createBiome(true, 0.2F, 0.0F,
-                3750089, 329011, 12086123, 9987967, 9987967,
+                COLD_WATER_COLOR, DEFAULT_WATER_FOG_COLOR, 12086123, 9987967, 9987967,
                 builder, lookupBackedBuilder, null
         );
     }
@@ -2130,7 +2138,7 @@ public class OverhaulBiomes {
 
         MusicSound musicSound = createIngameMusic(SoundEvents.MUSIC_OVERWORLD_OLD_GROWTH_TAIGA);
 
-        return createBiome(true, -1.0F, 1.0F, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, -1.0F, 1.0F, SNOWY_WATER_COLOR, builder, lookupBackedBuilder, musicSound);
     }
 
     private static void addBasicFeatures(GenerationSettings.LookupBackedBuilder generationSettings) {

@@ -3388,7 +3388,8 @@
                 "withers_overhaul:forgotten_isles",
                 "minecraft:mushroom_fields",
                 "withers_overhaul:rainbow_fields",
-                "withers_overhaul:lagoon"
+                "withers_overhaul:lagoon",
+                "withers_overhaul:glowing_grotto"
               ]
             },
             "then_run": {

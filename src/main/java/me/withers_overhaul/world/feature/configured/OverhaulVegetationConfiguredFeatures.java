@@ -206,7 +206,6 @@ public class OverhaulVegetationConfiguredFeatures {
         RegistryEntry<PlacedFeature> megaJungle = placedFeatureLookup.getOrThrow(TreePlacedFeatures.MEGA_JUNGLE_TREE_CHECKED);
         RegistryEntry<PlacedFeature> jungleBush = placedFeatureLookup.getOrThrow(TreePlacedFeatures.JUNGLE_BUSH);
         RegistryEntry<PlacedFeature> acacia = placedFeatureLookup.getOrThrow(TreePlacedFeatures.ACACIA_CHECKED);
-        RegistryEntry<PlacedFeature> darkOakLeafLitter = placedFeatureLookup.getOrThrow(TreePlacedFeatures.DARK_OAK_LEAF_LITTER);
         RegistryEntry<PlacedFeature> cherryBees005 = placedFeatureLookup.getOrThrow(TreePlacedFeatures.CHERRY_BEES_005);
         RegistryEntry<ConfiguredFeature<?, ?>> hugeBrownMushroom = configuredFeatureLookup.getOrThrow(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM);
         RegistryEntry<ConfiguredFeature<?, ?>> hugeRedMushroom = configuredFeatureLookup.getOrThrow(TreeConfiguredFeatures.HUGE_RED_MUSHROOM);
@@ -350,7 +349,9 @@ public class OverhaulVegetationConfiguredFeatures {
         RegistryEntry<PlacedFeature> palm = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.PALM);*/
 
         RegistryEntry<PlacedFeature> darkOak = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.DARK_OAK);
+        RegistryEntry<PlacedFeature> darkOakLeafLitter = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.DARK_OAK_LEAF_LITTER);
         RegistryEntry<PlacedFeature> darkOakSmall = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.DARK_OAK_SMALL);
+        RegistryEntry<PlacedFeature> darkOakSmallLeafLitter = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.DARK_OAK_SMALL_LEAF_LITTER);
         
         RegistryEntry<PlacedFeature> ebony = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.EBONY);
         RegistryEntry<PlacedFeature> ebonyApple = placedFeatureLookup.getOrThrow(OverhaulTreePlacedFeatures.EBONY_APPLE);
@@ -619,10 +620,10 @@ public class OverhaulVegetationConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, TREES_ASPEN_GROVE, Feature.RANDOM_SELECTOR, randomSelector(aspen, Pair.of(birchClump, clumpChance)));
         ConfiguredFeatures.register(featureRegisterable, TREES_BIRCH_FOREST, Feature.RANDOM_SELECTOR, randomSelector(birchBees0002, Pair.of(aspenClump, clumpChance)));
         ConfiguredFeatures.register(featureRegisterable, TREES_CLOUD_FOREST, Feature.RANDOM_SELECTOR, randomSelector(
-                megaEbonySelector, Pair.of(ebonySelector, 0.2F), Pair.of(darkOak, 0.2F), Pair.of(ebonyBushSelector, 0.2F), Pair.of(teakClump, clumpChance), Pair.of(elmClump, clumpChance)
+                megaEbonySelector, Pair.of(ebonySelector, 0.2F), Pair.of(darkOak, 0.2F), Pair.of(darkOakSmall, 0.2F), Pair.of(ebonyBushSelector, 0.2F), Pair.of(teakClump, clumpChance), Pair.of(elmClump, clumpChance)
         ));
         ConfiguredFeatures.register(featureRegisterable, TREES_DARK_FOREST, Feature.RANDOM_SELECTOR, randomSelector(
-                darkOakLeafLitter, Pair.of(teakClump, clumpChance), Pair.of(elmClump, clumpChance),
+                darkOakLeafLitter, Pair.of(darkOak, 0.2F), Pair.of(darkOakSmall, 0.2F), Pair.of(darkOakSmallLeafLitter, 0.2F), Pair.of(teakClump, clumpChance), Pair.of(elmClump, clumpChance),
                 Pair.of(PlacedFeatures.createEntry(hugeRedMushroom), 0.1F), Pair.of(PlacedFeatures.createEntry(hugeBrownMushroom), 0.1F)
         ));
         ConfiguredFeatures.register(featureRegisterable, TREES_FLOWER_FOREST, Feature.RANDOM_SELECTOR, randomSelector(

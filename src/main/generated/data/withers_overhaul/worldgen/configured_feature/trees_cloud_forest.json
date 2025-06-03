@@ -9,7 +9,11 @@
       },
       {
         "chance": 0.2,
-        "feature": "minecraft:dark_oak_checked"
+        "feature": "withers_overhaul:dark_oak"
+      },
+      {
+        "chance": 0.2,
+        "feature": "withers_overhaul:dark_oak_small"
       },
       {
         "chance": 0.2,

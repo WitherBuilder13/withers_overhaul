@@ -1,14 +1,12 @@
 package me.withers_overhaul.world.feature.configured;
 
 import com.google.common.collect.ImmutableList;
-import com.sun.source.tree.Tree;
 import me.withers_overhaul.block.fruit.tree.MediterraneanFruitLeavesBlock;
 import me.withers_overhaul.block.fruit.tree.SubtropicalFruitLeavesBlock;
 import me.withers_overhaul.block.fruit.tree.TemperateFruitLeavesBlock;
 import me.withers_overhaul.block.fruit.tree.TreeFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.collection.Pool;
@@ -174,7 +172,9 @@ public class OverhaulTreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> PALM = of("palm");*/
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> DARK_OAK = of("dark_oak");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> DARK_OAK_LEAF_LITTER = of("dark_oak_leaf_litter");
     public static final RegistryKey<ConfiguredFeature<?, ?>> DARK_OAK_SMALL = of("dark_oak_small");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> DARK_OAK_SMALL_LEAF_LITTER = of("dark_oak_small_leaf_litter");
     
     public static final RegistryKey<ConfiguredFeature<?, ?>> EBONY = of("ebony");
     public static final RegistryKey<ConfiguredFeature<?, ?>> EBONY_APPLE = of("ebony_apple");
@@ -350,7 +350,9 @@ public class OverhaulTreeConfiguredFeatures {
         ));
 
         ConfiguredFeatures.register(featureRegisterable, DARK_OAK, Feature.TREE, darkOak(TreeFruit.Temperate.NONE, false));
-        ConfiguredFeatures.register(featureRegisterable, DARK_OAK_SMALL, Feature.TREE, flat(DARK_OAK_LOG, DARK_OAK_LEAVES, 10, 7, 3));
+        ConfiguredFeatures.register(featureRegisterable, DARK_OAK_LEAF_LITTER, Feature.TREE, darkOak(TreeFruit.Temperate.NONE, true));
+        ConfiguredFeatures.register(featureRegisterable, DARK_OAK_SMALL, Feature.TREE, flat(DARK_OAK_LOG, DARK_OAK_LEAVES, 10, 7, 3, false));
+        ConfiguredFeatures.register(featureRegisterable, DARK_OAK_SMALL_LEAF_LITTER, Feature.TREE, flat(DARK_OAK_LOG, DARK_OAK_LEAVES, 10, 7, 3, true));
         
         ConfiguredFeatures.register(featureRegisterable, EBONY, Feature.TREE, ebony(TreeFruit.Temperate.NONE));
         ConfiguredFeatures.register(featureRegisterable, EBONY_APPLE, Feature.TREE, ebony(APPLE));
@@ -405,9 +407,9 @@ public class OverhaulTreeConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, ELM_PLUM, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
                 7, 3, 1, 3, PLUM));
         
-        ConfiguredFeatures.register(featureRegisterable, MAGNOLIA, Feature.TREE, flat(MAGNOLIA_LOG, MAGNOLIA_LEAVES, 5, 2, 2));
+        ConfiguredFeatures.register(featureRegisterable, MAGNOLIA, Feature.TREE, flat(MAGNOLIA_LOG, MAGNOLIA_LEAVES, 5, 2, 2, false));
         ConfiguredFeatures.register(featureRegisterable, FLOWERING_MAGNOLIA, Feature.TREE, flat(
-                MAGNOLIA_LOG, FLOWERING_MAGNOLIA_LEAVES, 5, 1, 2
+                MAGNOLIA_LOG, FLOWERING_MAGNOLIA_LEAVES, 5, 1, 2, false
         ));
         ConfiguredFeatures.register(featureRegisterable, JACARANDA, Feature.TREE, jacaranda());
     }
@@ -484,7 +486,7 @@ public class OverhaulTreeConfiguredFeatures {
         TreeFeatureConfig.Builder builder = new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(DARK_OAK_LOG),
                 new DarkOakTrunkPlacer(10, 8, 4),
-                BlockStateProvider.of(DARK_OAK_LOG),
+                BlockStateProvider.of(DARK_OAK_LEAVES),
                 new DarkOakFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0)),
                 new TwoLayersFeatureSize(1, 1, 0)
         ).ignoreVines();
@@ -512,14 +514,22 @@ public class OverhaulTreeConfiguredFeatures {
         ).build();
     }
 
-    private static TreeFeatureConfig flat(Block log, Block leaves, int baseHeight, int heightRandA, int heightRandB) {
-        return new TreeFeatureConfig.Builder(
+    private static TreeFeatureConfig flat(Block log, Block leaves, int baseHeight, int heightRandA, int heightRandB, boolean leafLitter) {
+        TreeFeatureConfig.Builder builder;
+        builder = new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(log),
                 new ForkingTrunkPlacer(baseHeight, heightRandA, heightRandB),
                 BlockStateProvider.of(leaves),
                 new AcaciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0)),
                 new TwoLayersFeatureSize(1, 0, 2)
-        ).build();
+        );
+        if (leafLitter) {
+            builder.decorators(ImmutableList.of(
+                    new PlaceOnGroundTreeDecorator(96, 4, 2, new WeightedBlockStateProvider(VegetationConfiguredFeatures.leafLitter(1, 3))),
+                    new PlaceOnGroundTreeDecorator(150, 2, 2, new WeightedBlockStateProvider(VegetationConfiguredFeatures.leafLitter(1, 4)))
+            ));
+        }
+        return builder.build();
     }
 
     private static TreeFeatureConfig jacaranda() {
@@ -557,7 +567,7 @@ public class OverhaulTreeConfiguredFeatures {
     private static TreeFeatureConfig megaEbony(TreeFruit.Temperate fruit) {
         return new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(EBONY_LOG),
-                new DarkOakTrunkPlacer(10, 4, 7),
+                new DarkOakTrunkPlacer(20, 4, 7),
                 new WeightedBlockStateProvider(Pool.<BlockState>builder()
                         .add(EBONY_LEAVES.getDefaultState(), 3)
                         .add(EBONY_LEAVES.getStateWithProperties(EBONY_LEAVES.getDefaultState().with(TemperateFruitLeavesBlock.FRUIT, fruit)), 1).build()),

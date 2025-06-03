@@ -119,7 +119,7 @@ public class OverhaulSurfaceRule {
                 CRYSTAL_CAVES_FROZEN, CRYSTAL_CAVES_COLD, CRYSTAL_CAVES_COOL, CRYSTAL_CAVES, CRYSTAL_CAVES_LUKEWARM, CRYSTAL_CAVES_WARM
         );
         MaterialRules.MaterialCondition islandBiomesPhyllite = MaterialRules.biome(
-                SHIMMERING_WASTELANDS, ASHEN_FIELDS, FORGOTTEN_ISLES, MUSHROOM_FIELDS, RAINBOW_FIELDS, LAGOON
+                SHIMMERING_WASTELANDS, ASHEN_FIELDS, FORGOTTEN_ISLES, MUSHROOM_FIELDS, RAINBOW_FIELDS, LAGOON, GLOWING_GROTTO
         );
 
         MaterialRules.MaterialRule stoneNoise = MaterialRules.sequence(

@@ -7,6 +7,7 @@
   "downfall": 0.6,
   "effects": {
     "fog_color": 12638463,
+    "grass_color": 16506136,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
