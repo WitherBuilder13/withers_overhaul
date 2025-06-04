@@ -1,4 +1,4 @@
-package me.withers_overhaul.world.feature.configured;
+package me.withers_overhaul.world.feature.configured.vegetation.util;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

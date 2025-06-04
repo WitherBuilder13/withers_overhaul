@@ -1,10 +1,11 @@
-package me.withers_overhaul.world.feature.configured;
+package me.withers_overhaul.world.feature.configured.vegetation;
 
 import com.google.common.collect.ImmutableList;
 import me.withers_overhaul.block.fruit.tree.MediterraneanFruitLeavesBlock;
 import me.withers_overhaul.block.fruit.tree.SubtropicalFruitLeavesBlock;
 import me.withers_overhaul.block.fruit.tree.TemperateFruitLeavesBlock;
 import me.withers_overhaul.block.fruit.tree.TreeFruit;
+import me.withers_overhaul.world.feature.configured.vegetation.util.RedwoodTrunkPlacer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
@@ -200,10 +201,10 @@ public class OverhaulTreeConfiguredFeatures {
     /*public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_BUSH_KUMQUAT = of("acacia_bush_kumquat");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_BUSH_OLIVE = of("acacia_bush_olive");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_BUSH_PERSIMMON = of("acacia_bush_persimmon");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_BUSH_POMEGRANATE = of("acacia_bush_pomegranate");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_BUSH_POMEGRANATE = of("acacia_bush_pomegranate");*/
     
     public static final RegistryKey<ConfiguredFeature<?, ?>> BAOBAB = of("baobab");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BAOBAB_KUMQUAT = of("baobab_kumquat");
+    /*public static final RegistryKey<ConfiguredFeature<?, ?>> BAOBAB_KUMQUAT = of("baobab_kumquat");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BAOBAB_OLIVE = of("baobab_olive");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BAOBAB_PERSIMMON = of("baobab_persimmon");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BAOBAB_POMEGRANATE = of("baobab_pomegranate");*/
@@ -411,6 +412,8 @@ public class OverhaulTreeConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, ACACIA_BUSH_OLIVE, Feature.TREE, bushMediterranean(ACACIA_LOG, ACACIA_LEAVES, OLIVE));
         ConfiguredFeatures.register(featureRegisterable, ACACIA_BUSH_PERSIMMON, Feature.TREE, bushMediterranean(ACACIA_LOG, ACACIA_LEAVES, PERSIMMON));
         ConfiguredFeatures.register(featureRegisterable, ACACIA_BUSH_POMEGRANATE, Feature.TREE, bushMediterranean(ACACIA_LOG, ACACIA_LEAVES, POMEGRANATE));*/
+
+        ConfiguredFeatures.register(featureRegisterable, BAOBAB, Feature.TREE, baobab(TreeFruit.Mediterranean.NONE));
         
         ConfiguredFeatures.register(featureRegisterable, PALO_VERDE, Feature.TREE, smallFlatMediterranean(
                 PALO_VERDE_LOG, PALO_VERDE_LEAVES, 3, TreeFruit.Mediterranean.NONE
@@ -504,6 +507,18 @@ public class OverhaulTreeConfiguredFeatures {
     // ` ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     // * Tree configurations
+
+    private static TreeFeatureConfig baobab(TreeFruit.Mediterranean fruit) {
+        return new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(BAOBAB_LOG),
+                new MegaJungleTrunkPlacer(15, 6, 1),
+                new WeightedBlockStateProvider(Pool.<BlockState>builder()
+                        .add(BAOBAB_LEAVES.getDefaultState(), 3)
+                        .add(BAOBAB_LEAVES.getStateWithProperties(BAOBAB_LEAVES.getDefaultState().with(MediterraneanFruitLeavesBlock.FRUIT, fruit)), 1).build()),
+                new DarkOakFoliagePlacer(ConstantIntProvider.create(1), ConstantIntProvider.create(0)),
+                new TwoLayersFeatureSize(1, 0, 1)
+        ).build();
+    }
 
     private static TreeFeatureConfig beech(TreeFruit.Temperate fruit) {
         return new TreeFeatureConfig.Builder(

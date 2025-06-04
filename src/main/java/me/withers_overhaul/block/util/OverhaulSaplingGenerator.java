@@ -2,8 +2,8 @@ package me.withers_overhaul.block.util;
 
 import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
-import me.withers_overhaul.world.feature.configured.OverhaulTreeConfiguredFeatures;
-import me.withers_overhaul.world.feature.configured.OverhaulVegetationConfiguredFeatures;
+import me.withers_overhaul.world.feature.configured.vegetation.OverhaulTreeConfiguredFeatures;
+import me.withers_overhaul.world.feature.configured.vegetation.OverhaulVegetationConfiguredFeatures;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

@@ -2,8 +2,8 @@ package me.withers_overhaul.world.feature;
 
 import me.withers_overhaul.WithersOverhaul;
 import me.withers_overhaul.world.feature.configured.OverhaulOreConfiguredFeatures;
-import me.withers_overhaul.world.feature.configured.OverhaulTreeConfiguredFeatures;
-import me.withers_overhaul.world.feature.configured.OverhaulVegetationConfiguredFeatures;
+import me.withers_overhaul.world.feature.configured.vegetation.OverhaulTreeConfiguredFeatures;
+import me.withers_overhaul.world.feature.configured.vegetation.OverhaulVegetationConfiguredFeatures;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;

@@ -2,8 +2,8 @@ package me.withers_overhaul.world.feature;
 
 import com.mojang.serialization.MapCodec;
 import me.withers_overhaul.WithersOverhaul;
-import me.withers_overhaul.world.feature.configured.RedwoodFoliagePlacer;
-import me.withers_overhaul.world.feature.configured.RedwoodTrunkPlacer;
+import me.withers_overhaul.world.feature.configured.vegetation.util.RedwoodFoliagePlacer;
+import me.withers_overhaul.world.feature.configured.vegetation.util.RedwoodTrunkPlacer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;

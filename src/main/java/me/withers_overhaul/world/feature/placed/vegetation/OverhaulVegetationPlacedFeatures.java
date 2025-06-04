@@ -1,7 +1,7 @@
-package me.withers_overhaul.world.feature.placed;
+package me.withers_overhaul.world.feature.placed.vegetation;
 
 import com.google.common.collect.ImmutableList;
-import me.withers_overhaul.world.feature.configured.OverhaulVegetationConfiguredFeatures;
+import me.withers_overhaul.world.feature.configured.vegetation.OverhaulVegetationConfiguredFeatures;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
@@ -57,6 +57,8 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_PINE = of("clump_trees_pine");
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_LARCH = of("clump_trees_larch");
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_ASPEN = of("clump_trees_aspen");
+    public static final RegistryKey<PlacedFeature> CLUMP_TREES_ACACIA = of("clump_trees_acacia");
+    public static final RegistryKey<PlacedFeature> CLUMP_TREES_BAOBAB = of("clump_trees_baobab");
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_TEAK = of("clump_trees_teak");
     public static final RegistryKey<PlacedFeature> CLUMP_TREES_ELM = of("clump_trees_elm");
 
@@ -113,7 +115,7 @@ public class OverhaulVegetationPlacedFeatures {
     public static final RegistryKey<PlacedFeature> TREES_PINE_TAIGA = of("trees_pine_taiga");
     public static final RegistryKey<PlacedFeature> TREES_PLAINS = of("trees_plains");
     public static final RegistryKey<PlacedFeature> TREES_REDWOOD_FOREST = of("trees_redwood_forest");
-    //public static final RegistryKey<PlacedFeature> TREES_SAVANNA = of("trees_savanna");
+    public static final RegistryKey<PlacedFeature> TREES_SAVANNA = of("trees_savanna");
     public static final RegistryKey<PlacedFeature> TREES_SAVANNA_PLATEAU = of("trees_savanna_plateau");
     public static final RegistryKey<PlacedFeature> TREES_SHRUBLANDS = of("trees_shrublands");
     public static final RegistryKey<PlacedFeature> TREES_SNOWY_PLAINS = of("trees_snowy_plains");
@@ -218,6 +220,8 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> pine = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_PINE);
         RegistryEntry<ConfiguredFeature<?, ?>> larch = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_LARCH);
         RegistryEntry<ConfiguredFeature<?, ?>> aspen = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_ASPEN);
+        RegistryEntry<ConfiguredFeature<?, ?>> acacia = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_ACACIA);
+        RegistryEntry<ConfiguredFeature<?, ?>> baobab = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_BAOBAB);
         RegistryEntry<ConfiguredFeature<?, ?>> teak = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_TEAK);
         RegistryEntry<ConfiguredFeature<?, ?>> elm = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_ELM);
 
@@ -247,6 +251,7 @@ public class OverhaulVegetationPlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> treesPlains = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.CLUMP_TREES_OAK);
         RegistryEntry<ConfiguredFeature<?, ?>> treesPineTaiga = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_PINE_TAIGA);
         RegistryEntry<ConfiguredFeature<?, ?>> treesRedwoodForest = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_REDWOOD_FOREST);
+        RegistryEntry<ConfiguredFeature<?, ?>> treesSavanna = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_SAVANNA);
         RegistryEntry<ConfiguredFeature<?, ?>> treesSavannaPlateau = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_SAVANNA_PLATEAU);
         RegistryEntry<ConfiguredFeature<?, ?>> treesShrublands = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.TREES_SHRUBLANDS);
         RegistryEntry<ConfiguredFeature<?, ?>> treesSnowyPlains = configuredFeatureLookup.getOrThrow(OverhaulVegetationConfiguredFeatures.CLUMP_TREES_FIR);
@@ -328,6 +333,8 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_PINE, pine, clumpModifiers().build());
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_LARCH, larch, clumpModifiers().build());
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_ASPEN, aspen, clumpModifiers().build());
+        PlacedFeatures.register(featureRegisterable, CLUMP_TREES_ACACIA, acacia, clumpModifiers().build());
+        PlacedFeatures.register(featureRegisterable, CLUMP_TREES_BAOBAB, baobab, clumpModifiers().build());
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_TEAK, teak, clumpModifiers().build());
         PlacedFeatures.register(featureRegisterable, CLUMP_TREES_ELM, elm, clumpModifiers().build());
 
@@ -373,6 +380,7 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, TREES_PLAINS, treesPlains, treeSparseModifiers(12));
         PlacedFeatures.register(featureRegisterable, TREES_PINE_TAIGA, treesPineTaiga, treeModifiers(6));
         PlacedFeatures.register(featureRegisterable, TREES_REDWOOD_FOREST, treesRedwoodForest, treeModifiers(15));
+        PlacedFeatures.register(featureRegisterable, TREES_SAVANNA, treesSavanna, treeModifiers(8));
         PlacedFeatures.register(featureRegisterable, TREES_SAVANNA_PLATEAU, treesSavannaPlateau, treeModifiers(8));
         PlacedFeatures.register(featureRegisterable, TREES_SHRUBLANDS, treesShrublands, treeModifiers(7));
         PlacedFeatures.register(featureRegisterable, TREES_SNOWY_PLAINS, treesSnowyPlains, treeSparseModifiers(10));

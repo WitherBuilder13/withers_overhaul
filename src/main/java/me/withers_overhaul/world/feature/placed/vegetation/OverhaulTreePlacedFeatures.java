@@ -1,7 +1,7 @@
-package me.withers_overhaul.world.feature.placed;
+package me.withers_overhaul.world.feature.placed.vegetation;
 
 import me.withers_overhaul.registry.block.NaturalBlocks;
-import me.withers_overhaul.world.feature.configured.OverhaulTreeConfiguredFeatures;
+import me.withers_overhaul.world.feature.configured.vegetation.OverhaulTreeConfiguredFeatures;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
@@ -147,10 +147,10 @@ public class OverhaulTreePlacedFeatures {
     /*public static final RegistryKey<PlacedFeature> ACACIA_BUSH_KUMQUAT = of("acacia_bush_kumquat");
     public static final RegistryKey<PlacedFeature> ACACIA_BUSH_OLIVE = of("acacia_bush_olive");
     public static final RegistryKey<PlacedFeature> ACACIA_BUSH_PERSIMMON = of("acacia_bush_persimmon");
-    public static final RegistryKey<PlacedFeature> ACACIA_BUSH_POMEGRANATE = of("acacia_bush_pomegranate");
+    public static final RegistryKey<PlacedFeature> ACACIA_BUSH_POMEGRANATE = of("acacia_bush_pomegranate");*/
     
     public static final RegistryKey<PlacedFeature> BAOBAB = of("baobab");
-    public static final RegistryKey<PlacedFeature> BAOBAB_KUMQUAT = of("baobab_kumquat");
+    /*public static final RegistryKey<PlacedFeature> BAOBAB_KUMQUAT = of("baobab_kumquat");
     public static final RegistryKey<PlacedFeature> BAOBAB_OLIVE = of("baobab_olive");
     public static final RegistryKey<PlacedFeature> BAOBAB_PERSIMMON = of("baobab_persimmon");
     public static final RegistryKey<PlacedFeature> BAOBAB_POMEGRANATE = of("baobab_pomegranate");*/
@@ -361,10 +361,10 @@ public class OverhaulTreePlacedFeatures {
         /*RegistryEntry<ConfiguredFeature<?, ?>> acaciaBushKumquat = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA_BUSH_KUMQUAT);
         RegistryEntry<ConfiguredFeature<?, ?>> acaciaBushOlive = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA_BUSH_OLIVE);
         RegistryEntry<ConfiguredFeature<?, ?>> acaciaBushPersimmon = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA_BUSH_PERSIMMON);
-        RegistryEntry<ConfiguredFeature<?, ?>> acaciaBushPomegranate = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA_BUSH_POMEGRANATE);
+        RegistryEntry<ConfiguredFeature<?, ?>> acaciaBushPomegranate = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA_BUSH_POMEGRANATE);*/
 
         RegistryEntry<ConfiguredFeature<?, ?>> baobab = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BAOBAB);
-        RegistryEntry<ConfiguredFeature<?, ?>> baobabKumquat = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BAOBAB_KUMQUAT);
+        /*RegistryEntry<ConfiguredFeature<?, ?>> baobabKumquat = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BAOBAB_KUMQUAT);
         RegistryEntry<ConfiguredFeature<?, ?>> baobabOlive = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BAOBAB_OLIVE);
         RegistryEntry<ConfiguredFeature<?, ?>> baobabPersimmon = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BAOBAB_PERSIMMON);
         RegistryEntry<ConfiguredFeature<?, ?>> baobabPomegranate = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BAOBAB_POMEGRANATE);*/
@@ -562,10 +562,10 @@ public class OverhaulTreePlacedFeatures {
         /*PlacedFeatures.register(featureRegisterable, ACACIA_BUSH_KUMQUAT, acaciaBushKumquat, wouldSurvive(Blocks.ACACIA_SAPLING));
         PlacedFeatures.register(featureRegisterable, ACACIA_BUSH_OLIVE, acaciaBushOlive, wouldSurvive(Blocks.ACACIA_SAPLING));
         PlacedFeatures.register(featureRegisterable, ACACIA_BUSH_PERSIMMON, acaciaBushPersimmon, wouldSurvive(Blocks.ACACIA_SAPLING));
-        PlacedFeatures.register(featureRegisterable, ACACIA_BUSH_POMEGRANATE, acaciaBushPomegranate, wouldSurvive(Blocks.ACACIA_SAPLING));
+        PlacedFeatures.register(featureRegisterable, ACACIA_BUSH_POMEGRANATE, acaciaBushPomegranate, wouldSurvive(Blocks.ACACIA_SAPLING));*/
         
         PlacedFeatures.register(featureRegisterable, BAOBAB, baobab, wouldSurvive(NaturalBlocks.BAOBAB_SAPLING));
-        PlacedFeatures.register(featureRegisterable, BAOBAB_KUMQUAT, baobabKumquat, wouldSurvive(NaturalBlocks.BAOBAB_SAPLING));
+        /*PlacedFeatures.register(featureRegisterable, BAOBAB_KUMQUAT, baobabKumquat, wouldSurvive(NaturalBlocks.BAOBAB_SAPLING));
         PlacedFeatures.register(featureRegisterable, BAOBAB_OLIVE, baobabOlive, wouldSurvive(NaturalBlocks.BAOBAB_SAPLING));
         PlacedFeatures.register(featureRegisterable, BAOBAB_PERSIMMON, baobabPersimmon, wouldSurvive(NaturalBlocks.BAOBAB_SAPLING));
         PlacedFeatures.register(featureRegisterable, BAOBAB_POMEGRANATE, baobabPomegranate, wouldSurvive(NaturalBlocks.BAOBAB_SAPLING));*/

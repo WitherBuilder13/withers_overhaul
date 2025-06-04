@@ -1,6 +1,6 @@
 package me.withers_overhaul.world.feature;
 
-import me.withers_overhaul.world.feature.placed.OverhaulVegetationPlacedFeatures;
+import me.withers_overhaul.world.feature.placed.vegetation.OverhaulVegetationPlacedFeatures;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarvers;
@@ -144,6 +144,10 @@ public class OverhaulBiomeFeatures extends DefaultBiomeFeatures {
 
     public static void redwoodForestVegetation(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_REDWOOD_FOREST);
+    }
+
+    public static void savannaVegetation(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, OverhaulVegetationPlacedFeatures.TREES_SAVANNA);
     }
 
     public static void savannaPlateauVegetation(GenerationSettings.LookupBackedBuilder builder) {

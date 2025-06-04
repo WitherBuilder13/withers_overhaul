@@ -1,4 +1,4 @@
-package me.withers_overhaul.world.feature.configured;
+package me.withers_overhaul.world.feature.configured.vegetation.util;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.MapCodec;

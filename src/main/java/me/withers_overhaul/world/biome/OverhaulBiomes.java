@@ -1795,6 +1795,7 @@ public class OverhaulBiomes {
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, true);
 
         if (plateau) OverhaulBiomeFeatures.savannaPlateauVegetation(lookupBackedBuilder);
+        else OverhaulBiomeFeatures.savannaVegetation(lookupBackedBuilder);
         OverhaulBiomeFeatures.mediterraneanFruitPatch(lookupBackedBuilder);
 
         return createBiome(false, 2.0F, 0.0F, LUKEWARM_WATER_COLOR, builder, lookupBackedBuilder, null);

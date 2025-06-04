@@ -110,7 +110,7 @@ public class OverhaulSurfaceRule {
                 DESERT, DESERT_FIELDS, BADLANDS, WOODED_BADLANDS, ERODED_BADLANDS, OASIS, SANDY_RIVER, BURIED_DUNES, FOSSILIZED_DEPTHS
         );
         MaterialRules.MaterialCondition hotWetBiomesLimestone = MaterialRules.biome(
-                /*GRASSLANDS,*/ SPARSE_JUNGLE, JUNGLE, TROPICAL_RAINFOREST, BAMBOO_JUNGLE, MONSOON_RAINFOREST,
+                SPARSE_JUNGLE, JUNGLE, TROPICAL_RAINFOREST, BAMBOO_JUNGLE, MONSOON_RAINFOREST,
                 TANGLED_TROPICS, VOLCANIC_PEAKS, MANGROVE_SWAMP, TROPICAL_BEACH, LUSH_RIVER, LUSH_CAVES, MOLTEN_UNDERGROWTH
         );
         MaterialRules.MaterialCondition oceanBiomesGabbro = MaterialRules.biome(

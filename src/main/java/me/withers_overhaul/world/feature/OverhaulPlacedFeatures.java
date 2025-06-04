@@ -2,8 +2,8 @@ package me.withers_overhaul.world.feature;
 
 import me.withers_overhaul.WithersOverhaul;
 import me.withers_overhaul.world.feature.placed.OverhaulOrePlacedFeatures;
-import me.withers_overhaul.world.feature.placed.OverhaulTreePlacedFeatures;
-import me.withers_overhaul.world.feature.placed.OverhaulVegetationPlacedFeatures;
+import me.withers_overhaul.world.feature.placed.vegetation.OverhaulTreePlacedFeatures;
+import me.withers_overhaul.world.feature.placed.vegetation.OverhaulVegetationPlacedFeatures;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
