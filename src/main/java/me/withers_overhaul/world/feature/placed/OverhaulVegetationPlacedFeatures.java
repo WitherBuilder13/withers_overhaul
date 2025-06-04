@@ -372,7 +372,7 @@ public class OverhaulVegetationPlacedFeatures {
         PlacedFeatures.register(featureRegisterable, TREES_OLD_GROWTH_SPRUCE_TAIGA, treesOldGrowthSpruceTaiga, treeModifiers(20));
         PlacedFeatures.register(featureRegisterable, TREES_PLAINS, treesPlains, treeSparseModifiers(12));
         PlacedFeatures.register(featureRegisterable, TREES_PINE_TAIGA, treesPineTaiga, treeModifiers(6));
-        PlacedFeatures.register(featureRegisterable, TREES_REDWOOD_FOREST, treesRedwoodForest, treeModifiers(20));
+        PlacedFeatures.register(featureRegisterable, TREES_REDWOOD_FOREST, treesRedwoodForest, treeModifiers(15));
         PlacedFeatures.register(featureRegisterable, TREES_SAVANNA_PLATEAU, treesSavannaPlateau, treeModifiers(8));
         PlacedFeatures.register(featureRegisterable, TREES_SHRUBLANDS, treesShrublands, treeModifiers(7));
         PlacedFeatures.register(featureRegisterable, TREES_SNOWY_PLAINS, treesSnowyPlains, treeSparseModifiers(10));

@@ -75,9 +75,7 @@ public class OverhaulSurfaceRule {
         MaterialRules.MaterialCondition steepSlope = MaterialRules.steepSlope();
         MaterialRules.MaterialRule underwaterDirt = MaterialRules.sequence(MaterialRules.condition(water, GRASS_BLOCK), DIRT);
         MaterialRules.MaterialRule sandWithSandstoneCeiling = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, SANDSTONE), SAND);
-        MaterialRules.MaterialRule frostedSandWithSandstoneCeiling = MaterialRules.sequence(
-                MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, FROSTED_SANDSTONE), FROSTED_SAND
-        );
+        MaterialRules.MaterialRule frostedSandWithSandstoneCeiling = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, FROSTED_SANDSTONE), FROSTED_SAND);
         MaterialRules.MaterialRule charredSandWithSandstoneCeiling = MaterialRules.sequence(
                 MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, CHARRED_SANDSTONE), CHARRED_SAND
         );
@@ -86,7 +84,9 @@ public class OverhaulSurfaceRule {
         MaterialRules.MaterialCondition frostedSandstoneShallowBiomes = MaterialRules.biome(FROZEN_OCEAN, FROZEN_RIVER, SNOWY_BEACH);
         MaterialRules.MaterialCondition charredSandstoneShallowBiomes = MaterialRules.biome(COLD_OCEAN, COLD_RIVER, CHARCOAL_SHORE);
         MaterialRules.MaterialCondition deserts = MaterialRules.biome(DESERT, DESERT_FIELDS);
-        // New
+        MaterialRules.MaterialCondition coarseDirtPodzolBiomes = MaterialRules.biome(
+                OLD_GROWTH_PINE_TAIGA, OLD_GROWTH_SPRUCE_TAIGA, PINE_TAIGA, MONTANE_CLEARING, MONTANE_WOODLANDS, REDWOOD_FOREST, ALPINE_THICKET
+        );
         MaterialRules.MaterialCondition snowyBiomesMarble = MaterialRules.biome(
                 ICE_SPIKES, SNOWY_PLAINS, SNOWY_TAIGA, OLD_GROWTH_SNOWY_TAIGA, WINTER_WONDERLAND, SNOWY_SLOPES, GROVE, FROSTED_WOODLANDS,
                 GLACIAL_SWEEP, FROSTED_TANGLE, FROZEN_PEAKS, FROZEN_WETLANDS, SNOWY_BEACH, FROZEN_RIVER, FROSTBURN_CAVES, SUBZERO_ABYSS
@@ -238,7 +238,7 @@ public class OverhaulSurfaceRule {
                         )
                 ),
                 MaterialRules.condition(
-                        MaterialRules.biome(OLD_GROWTH_PINE_TAIGA, OLD_GROWTH_SPRUCE_TAIGA, PINE_TAIGA, MONTANE_CLEARING, MONTANE_WOODLANDS, REDWOOD_FOREST, ALPINE_THICKET),
+                        coarseDirtPodzolBiomes,
                         MaterialRules.sequence(MaterialRules.condition(surfaceNoiseThreshold(1.75), COARSE_DIRT), MaterialRules.condition(surfaceNoiseThreshold(-0.95), PODZOL))
                 ),
                 MaterialRules.condition(MaterialRules.biome(ICE_SPIKES), MaterialRules.condition(water, SNOW_BLOCK)),
@@ -350,8 +350,12 @@ public class OverhaulSurfaceRule {
                                 MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, MaterialRules.condition(frozenOceans, MaterialRules.condition(hole, WATER))),
                                 MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH, stoneDepthFloorWithSurfaceDepth),
                                 MaterialRules.condition(sandstoneShallowBiomes, MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, SANDSTONE)),
-                                MaterialRules.condition(MaterialRules.biome(FROZEN_OCEAN, SNOWY_BEACH, FROZEN_RIVER), MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, FROSTED_SANDSTONE)),
-                                MaterialRules.condition(MaterialRules.biome(COLD_OCEAN, CHARCOAL_SHORE, COLD_RIVER), MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, CHARRED_SANDSTONE)),
+                                MaterialRules.condition(MaterialRules.biome(FROZEN_OCEAN, SNOWY_BEACH, FROZEN_RIVER), MaterialRules.condition(
+                                        MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, FROSTED_SANDSTONE
+                                )),
+                                MaterialRules.condition(MaterialRules.biome(COLD_OCEAN, CHARCOAL_SHORE, COLD_RIVER), MaterialRules.condition(
+                                        MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, CHARRED_SANDSTONE
+                                )),
                                 MaterialRules.condition(deserts, MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_30, SANDSTONE))
                         )
                 ),

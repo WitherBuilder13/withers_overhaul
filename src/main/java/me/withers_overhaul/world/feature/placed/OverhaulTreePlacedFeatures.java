@@ -16,6 +16,10 @@ import static me.withers_overhaul.world.feature.OverhaulPlacedFeatures.of;
 import static net.minecraft.world.gen.feature.PlacedFeatures.wouldSurvive;
 
 public class OverhaulTreePlacedFeatures {
+    public static final RegistryKey<PlacedFeature> OAK = of("oak");
+
+    public static final RegistryKey<PlacedFeature> FANCY_OAK = of("fancy_oak");
+
     public static final RegistryKey<PlacedFeature> MAPLE = of("maple");
     public static final RegistryKey<PlacedFeature> MAPLE_APPLE = of("maple_apple");
     public static final RegistryKey<PlacedFeature> MAPLE_APRICOT = of("maple_apricot");
@@ -79,7 +83,9 @@ public class OverhaulTreePlacedFeatures {
     public static final RegistryKey<PlacedFeature> CHESTNUT_GRAPEFRUIT = of("chestnut_grapefruit");
     public static final RegistryKey<PlacedFeature> CHESTNUT_GUAVA = of("chestnut_guava");
     public static final RegistryKey<PlacedFeature> CHESTNUT_TANGERINE = of("chestnut_tangerine");*/
-    
+
+    public static final RegistryKey<PlacedFeature> SPRUCE = of("spruce");
+    public static final RegistryKey<PlacedFeature> SPRUCE_TOP = of("spruce_top");
     public static final RegistryKey<PlacedFeature> CEDAR = of("cedar");
     public static final RegistryKey<PlacedFeature> CEDAR_FLAT = of("cedar_flat");
     public static final RegistryKey<PlacedFeature> MEGA_CEDAR = of("mega_cedar");
@@ -98,7 +104,15 @@ public class OverhaulTreePlacedFeatures {
     public static final RegistryKey<PlacedFeature> LARCH_TOP = of("larch_top");
     public static final RegistryKey<PlacedFeature> LARCH_TALL = of("larch_tall");
     public static final RegistryKey<PlacedFeature> LARCH_TOP_TALL = of("larch_top_tall");
+
+    public static final RegistryKey<PlacedFeature> BIRCH = of("birch");
+    public static final RegistryKey<PlacedFeature> BIRCH_TALL = of("birch_tall");
     public static final RegistryKey<PlacedFeature> ASPEN = of("aspen");
+    public static final RegistryKey<PlacedFeature> PALE_OAK = of("pale_oak");
+    public static final RegistryKey<PlacedFeature> PALE_OAK_CREAKING = of("pale_oak_creaking");
+
+    public static final RegistryKey<PlacedFeature> JUNGLE = of("jungle");
+    public static final RegistryKey<PlacedFeature> MEGA_JUNGLE = of("mega_jungle");
     
     /*public static final RegistryKey<PlacedFeature> KAPOK = of("kapok");
     public static final RegistryKey<PlacedFeature> KAPOK_AVOCADO = of("kapok_avocado");
@@ -126,6 +140,8 @@ public class OverhaulTreePlacedFeatures {
     public static final RegistryKey<PlacedFeature> EUCALYPTUS_MANGO = of("eucalyptus_mango");
     public static final RegistryKey<PlacedFeature> EUCALYPTUS_ORANGE = of("eucalyptus_orange");
     public static final RegistryKey<PlacedFeature> EUCALYPTUS_STARFRUIT = of("eucalyptus_starfruit");*/
+
+    public static final RegistryKey<PlacedFeature> ACACIA = of("acacia");
     
     public static final RegistryKey<PlacedFeature> ACACIA_BUSH = of("acacia_bush");
     /*public static final RegistryKey<PlacedFeature> ACACIA_BUSH_KUMQUAT = of("acacia_bush_kumquat");
@@ -215,6 +231,9 @@ public class OverhaulTreePlacedFeatures {
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatureLookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
+        RegistryEntry<ConfiguredFeature<?, ?>> oak = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.OAK);
+        RegistryEntry<ConfiguredFeature<?, ?>> fancyOak = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.FANCY_OAK);
+
         RegistryEntry<ConfiguredFeature<?, ?>> maple = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.MAPLE);
         RegistryEntry<ConfiguredFeature<?, ?>> mapleApple = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.MAPLE_APPLE);
         RegistryEntry<ConfiguredFeature<?, ?>> mapleApricot = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.MAPLE_APRICOT);
@@ -278,7 +297,9 @@ public class OverhaulTreePlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> chestnutGrapefruit = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.CHESTNUT_GRAPEFRUIT);
         RegistryEntry<ConfiguredFeature<?, ?>> chestnutGuava = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.CHESTNUT_GUAVA);
         RegistryEntry<ConfiguredFeature<?, ?>> chestnutTangerine = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.CHESTNUT_TANGERINE);*/
-        
+
+        RegistryEntry<ConfiguredFeature<?, ?>> spruce = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.SPRUCE);
+        RegistryEntry<ConfiguredFeature<?, ?>> spruceTop = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.SPRUCE_TOP);
         RegistryEntry<ConfiguredFeature<?, ?>> cedar = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.CEDAR);
         RegistryEntry<ConfiguredFeature<?, ?>> cedarFlat = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.CEDAR_FLAT);
         RegistryEntry<ConfiguredFeature<?, ?>> megaCedar = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.MEGA_CEDAR);
@@ -297,7 +318,15 @@ public class OverhaulTreePlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> larchTop = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.LARCH_TOP);
         RegistryEntry<ConfiguredFeature<?, ?>> larchTall = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.LARCH_TALL);
         RegistryEntry<ConfiguredFeature<?, ?>> larchTopTall = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.LARCH_TOP_TALL);
+
+        RegistryEntry<ConfiguredFeature<?, ?>> birch = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BIRCH);
+        RegistryEntry<ConfiguredFeature<?, ?>> birchTall = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.BIRCH_TALL);
         RegistryEntry<ConfiguredFeature<?, ?>> aspen = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ASPEN);
+        RegistryEntry<ConfiguredFeature<?, ?>> paleOak = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.PALE_OAK);
+        RegistryEntry<ConfiguredFeature<?, ?>> paleOakCreaking = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.PALE_OAK_CREAKING);
+
+        RegistryEntry<ConfiguredFeature<?, ?>> jungle = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.JUNGLE);
+        RegistryEntry<ConfiguredFeature<?, ?>> megaJungle = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.MEGA_JUNGLE);
 
         /*RegistryEntry<ConfiguredFeature<?, ?>> kapok = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.KAPOK);
         RegistryEntry<ConfiguredFeature<?, ?>> kapokAvocado = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.KAPOK_AVOCADO);
@@ -325,6 +354,8 @@ public class OverhaulTreePlacedFeatures {
         RegistryEntry<ConfiguredFeature<?, ?>> eucalyptusMango = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.EUCALYPTUS_MANGO);
         RegistryEntry<ConfiguredFeature<?, ?>> eucalyptusOrange = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.EUCALYPTUS_ORANGE);
         RegistryEntry<ConfiguredFeature<?, ?>> eucalyptusStarfruit = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.EUCALYPTUS_STARFRUIT);*/
+
+        RegistryEntry<ConfiguredFeature<?, ?>> acacia = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA);
         
         RegistryEntry<ConfiguredFeature<?, ?>> acaciaBush = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA_BUSH);
         /*RegistryEntry<ConfiguredFeature<?, ?>> acaciaBushKumquat = configuredFeatureLookup.getOrThrow(OverhaulTreeConfiguredFeatures.ACACIA_BUSH_KUMQUAT);
@@ -411,6 +442,9 @@ public class OverhaulTreePlacedFeatures {
         
         // ` ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        PlacedFeatures.register(featureRegisterable, OAK, oak, wouldSurvive(Blocks.OAK_SAPLING));
+        PlacedFeatures.register(featureRegisterable, FANCY_OAK, fancyOak, wouldSurvive(Blocks.OAK_SAPLING));
+
         PlacedFeatures.register(featureRegisterable, MAPLE, maple, wouldSurvive(NaturalBlocks.MAPLE_SAPLING));
         PlacedFeatures.register(featureRegisterable, MAPLE_APPLE, mapleApple, wouldSurvive(NaturalBlocks.MAPLE_SAPLING));
         PlacedFeatures.register(featureRegisterable, MAPLE_APRICOT, mapleApricot, wouldSurvive(NaturalBlocks.MAPLE_SAPLING));
@@ -461,10 +495,12 @@ public class OverhaulTreePlacedFeatures {
         PlacedFeatures.register(featureRegisterable, HICKORY_BUSH_GUAVA, hickoryBushGuava, wouldSurvive(NaturalBlocks.HICKORY_SAPLING));
         PlacedFeatures.register(featureRegisterable, HICKORY_BUSH_TANGERINE, hickoryBushTangerine, wouldSurvive(NaturalBlocks.HICKORY_SAPLING));
         
-        //PlacedFeatures.register(featureRegisterable, WALNUT, pine, wouldSurvive(NaturalBlocks.WALNUT_SAPLING));
+        //PlacedFeatures.register(featureRegisterable, WALNUT, walnut, wouldSurvive(NaturalBlocks.WALNUT_SAPLING));
         
-        //PlacedFeatures.register(featureRegisterable, CHESTNUT, pine, wouldSurvive(NaturalBlocks.CHESTNUT_SAPLING));
-        
+        //PlacedFeatures.register(featureRegisterable, CHESTNUT, chestnut, wouldSurvive(NaturalBlocks.CHESTNUT_SAPLING));
+
+        PlacedFeatures.register(featureRegisterable, SPRUCE, spruce, wouldSurvive(Blocks.SPRUCE_SAPLING));
+        PlacedFeatures.register(featureRegisterable, SPRUCE_TOP, spruceTop, wouldSurvive(Blocks.SPRUCE_SAPLING));
         PlacedFeatures.register(featureRegisterable, CEDAR, cedar, wouldSurvive(NaturalBlocks.CEDAR_SAPLING));
         PlacedFeatures.register(featureRegisterable, CEDAR_FLAT, cedarFlat, wouldSurvive(NaturalBlocks.CEDAR_SAPLING));
         PlacedFeatures.register(featureRegisterable, MEGA_CEDAR, megaCedar, wouldSurvive(NaturalBlocks.CEDAR_SAPLING));
@@ -483,7 +519,15 @@ public class OverhaulTreePlacedFeatures {
         PlacedFeatures.register(featureRegisterable, LARCH_TOP, larchTop, wouldSurvive(NaturalBlocks.LARCH_SAPLING));
         PlacedFeatures.register(featureRegisterable, LARCH_TALL, larchTall, wouldSurvive(NaturalBlocks.LARCH_SAPLING));
         PlacedFeatures.register(featureRegisterable, LARCH_TOP_TALL, larchTopTall, wouldSurvive(NaturalBlocks.LARCH_SAPLING));
+
+        PlacedFeatures.register(featureRegisterable, BIRCH, birch, wouldSurvive(Blocks.BIRCH_SAPLING));
+        PlacedFeatures.register(featureRegisterable, BIRCH_TALL, birchTall, wouldSurvive(Blocks.BIRCH_SAPLING));
         PlacedFeatures.register(featureRegisterable, ASPEN, aspen, wouldSurvive(NaturalBlocks.ASPEN_SAPLING));
+        PlacedFeatures.register(featureRegisterable, PALE_OAK, paleOak, wouldSurvive(Blocks.PALE_OAK_SAPLING));
+        PlacedFeatures.register(featureRegisterable, PALE_OAK_CREAKING, paleOakCreaking, wouldSurvive(Blocks.PALE_OAK_SAPLING));
+
+        PlacedFeatures.register(featureRegisterable, JUNGLE, jungle, wouldSurvive(Blocks.JUNGLE_SAPLING));
+        PlacedFeatures.register(featureRegisterable, MEGA_JUNGLE, megaJungle, wouldSurvive(Blocks.JUNGLE_SAPLING));
         
         /*PlacedFeatures.register(featureRegisterable, KAPOK, kapok, wouldSurvive(NaturalBlocks.KAPOK_SAPLING));
         PlacedFeatures.register(featureRegisterable, KAPOK_AVOCADO, kapokAvocado, wouldSurvive(NaturalBlocks.KAPOK_SAPLING));
@@ -511,6 +555,8 @@ public class OverhaulTreePlacedFeatures {
         PlacedFeatures.register(featureRegisterable, EUCALYPTUS_MANGO, eucalyptusMango, wouldSurvive(NaturalBlocks.EUCALYPTUS_SAPLING));
         PlacedFeatures.register(featureRegisterable, EUCALYPTUS_ORANGE, eucalyptusOrange, wouldSurvive(NaturalBlocks.EUCALYPTUS_SAPLING));
         PlacedFeatures.register(featureRegisterable, EUCALYPTUS_STARFRUIT, eucalyptusStarfruit, wouldSurvive(NaturalBlocks.EUCALYPTUS_SAPLING));*/
+
+        PlacedFeatures.register(featureRegisterable, ACACIA, acacia, wouldSurvive(Blocks.ACACIA_SAPLING));
         
         PlacedFeatures.register(featureRegisterable, ACACIA_BUSH, acaciaBush, wouldSurvive(Blocks.ACACIA_SAPLING));
         /*PlacedFeatures.register(featureRegisterable, ACACIA_BUSH_KUMQUAT, acaciaBushKumquat, wouldSurvive(Blocks.ACACIA_SAPLING));

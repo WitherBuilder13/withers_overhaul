@@ -4,11 +4,11 @@
     "default": "withers_overhaul:redwood",
     "features": [
       {
-        "chance": 0.2,
+        "chance": 0.1,
         "feature": "withers_overhaul:clump_trees_spruce"
       },
       {
-        "chance": 0.2,
+        "chance": 0.1,
         "feature": "withers_overhaul:clump_trees_cedar"
       }
     ]

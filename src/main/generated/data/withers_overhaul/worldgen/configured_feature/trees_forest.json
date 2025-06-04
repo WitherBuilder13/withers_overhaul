@@ -1,11 +1,11 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "minecraft:oak_bees_0002_leaf_litter",
+    "default": "withers_overhaul:oak",
     "features": [
       {
         "chance": 0.2,
-        "feature": "minecraft:fancy_oak_bees_0002_leaf_litter"
+        "feature": "withers_overhaul:fancy_oak"
       },
       {
         "chance": 0.3,

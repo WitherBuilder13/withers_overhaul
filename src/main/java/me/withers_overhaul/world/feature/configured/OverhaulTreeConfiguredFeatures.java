@@ -15,10 +15,13 @@ import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.intprovider.WeightedListIntProvider;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.ThreeLayersFeatureSize;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.treedecorator.CreakingHeartTreeDecorator;
+import net.minecraft.world.gen.treedecorator.PaleMossTreeDecorator;
 import net.minecraft.world.gen.treedecorator.PlaceOnGroundTreeDecorator;
 import net.minecraft.world.gen.trunk.*;
 
@@ -33,6 +36,24 @@ import static me.withers_overhaul.world.feature.OverhaulConfiguredFeatures.of;
 import static net.minecraft.block.Blocks.*;
 
 public class OverhaulTreeConfiguredFeatures {
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OAK = of("oak");
+    /*public static final RegistryKey<ConfiguredFeature<?, ?>> OAK_APPLE = of("oak_apple");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OAK_APRICOT = of("oak_apricot");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OAK_KIWI = of("oak_kiwi");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OAK_NECTARINE = of("oak_nectarine");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OAK_PEACH = of("oak_peach");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OAK_PEAR = of("oak_pear");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OAK_PLUM = of("oak_plum");*/
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK = of("fancy_oak");
+   /* public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK_APPLE = of("fancy_oak_apple");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK_APRICOT = of("fancy_oak_apricot");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK_KIWI = of("fancy_oak_kiwi");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK_NECTARINE = of("fancy_oak_nectarine");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK_PEACH = of("fancy_oak_peach");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK_PEAR = of("fancy_oak_pear");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_OAK_PLUM = of("fancy_oak_plum");*/
+    
     public static final RegistryKey<ConfiguredFeature<?, ?>> MAPLE = of("maple");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MAPLE_APPLE = of("maple_apple");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MAPLE_APRICOT = of("maple_apricot");
@@ -97,6 +118,8 @@ public class OverhaulTreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHESTNUT_GUAVA = of("chestnut_guava");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHESTNUT_TANGERINE = of("chestnut_tangerine");*/
     
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SPRUCE = of("spruce");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SPRUCE_TOP = of("spruce_top");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CEDAR = of("cedar");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CEDAR_FLAT = of("cedar_flat");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_CEDAR = of("mega_cedar");
@@ -115,7 +138,30 @@ public class OverhaulTreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> LARCH_TOP = of("larch_top");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LARCH_TALL = of("larch_tall");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LARCH_TOP_TALL = of("larch_top_tall");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BIRCH = of("birch");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BIRCH_TALL = of("birch_tall");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ASPEN = of("aspen");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PALE_OAK = of("pale_oak");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PALE_OAK_CREAKING = of("pale_oak_creaking");
+    
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE = of("jungle");
+    /*public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE_AVOCADO = of("jungle_avocado");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE_BANANA = of("jungle_banana");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE_LEMON = of("jungle_lemon");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE_LIME = of("jungle_lime");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE_MANGO = of("jungle_mango");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE_ORANGE = of("jungle_orange");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> JUNGLE_STARFRUIT = of("jungle_starfruit");*/
+    
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE = of("mega_jungle");
+    /*public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_AVOCADO = of("mega_jungle_avocado");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_BANANA = of("mega_jungle_banana");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_LEMON = of("mega_jungle_lemon");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_LIME = of("mega_jungle_lime");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_MANGO = of("mega_jungle_mango");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_ORANGE = of("mega_jungle_orange");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_STARFRUIT = of("mega_jungle_starfruit");*/
     
     /*public static final RegistryKey<ConfiguredFeature<?, ?>> KAPOK = of("kapok");
     public static final RegistryKey<ConfiguredFeature<?, ?>> KAPOK_AVOCADO = of("kapok_avocado");
@@ -144,6 +190,11 @@ public class OverhaulTreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> EUCALYPTUS_ORANGE = of("eucalyptus_orange");
     public static final RegistryKey<ConfiguredFeature<?, ?>> EUCALYPTUS_STARFRUIT = of("eucalyptus_starfruit");*/
     
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA = of("acacia");
+    /*public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_KUMQUAT = of("acacia_kumquat");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_OLIVE = of("acacia_olive");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_PERSIMMON = of("acacia_persimmon");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_POMEGRANATE = of("acacia_pomegranate");*/
     
     public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_BUSH = of("acacia_bush");
     /*public static final RegistryKey<ConfiguredFeature<?, ?>> ACACIA_BUSH_KUMQUAT = of("acacia_bush_kumquat");
@@ -232,22 +283,18 @@ public class OverhaulTreeConfiguredFeatures {
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
 
-        ConfiguredFeatures.register(featureRegisterable, MAPLE, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, TreeFruit.Temperate.NONE));
-        ConfiguredFeatures.register(featureRegisterable, MAPLE_APPLE, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, APPLE));
-        ConfiguredFeatures.register(featureRegisterable, MAPLE_APRICOT, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, APRICOT));
-        ConfiguredFeatures.register(featureRegisterable, MAPLE_KIWI, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, KIWI));
-        ConfiguredFeatures.register(featureRegisterable, MAPLE_NECTARINE, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, NECTARINE));
-        ConfiguredFeatures.register(featureRegisterable, MAPLE_PEACH, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, PEACH));
-        ConfiguredFeatures.register(featureRegisterable, MAPLE_PEAR, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, PEAR));
-        ConfiguredFeatures.register(featureRegisterable, MAPLE_PLUM, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES,
-                7, 2, 0, 2, PLUM));
+        ConfiguredFeatures.register(featureRegisterable, OAK, Feature.TREE, simple(OAK_LOG, OAK_LEAVES, 13, 5, 3, 2));
+
+        ConfiguredFeatures.register(featureRegisterable, FANCY_OAK, Feature.TREE, simpleFancy(OAK_LOG, OAK_LEAVES, 14));
+
+        ConfiguredFeatures.register(featureRegisterable, MAPLE, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, TreeFruit.Temperate.NONE));
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_APPLE, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, APPLE));
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_APRICOT, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, APRICOT));
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_KIWI, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, KIWI));
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_NECTARINE, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, NECTARINE));
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_PEACH, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, PEACH));
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_PEAR, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, PEAR));
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_PLUM, Feature.TREE, simpleTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, 2, 0, 2, PLUM));
         
         ConfiguredFeatures.register(featureRegisterable, FANCY_MAPLE, Feature.TREE, simpleFancyTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, TreeFruit.Temperate.NONE));
         ConfiguredFeatures.register(featureRegisterable, FANCY_MAPLE_APPLE, Feature.TREE, simpleFancyTemperate(MAPLE_LOG, MAPLE_LEAVES, 7, APPLE));
@@ -289,43 +336,75 @@ public class OverhaulTreeConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, HICKORY_BUSH_GRAPEFRUIT, Feature.TREE, bushSubtropical(HICKORY_LOG, HICKORY_LEAVES, GRAPEFRUIT));
         ConfiguredFeatures.register(featureRegisterable, HICKORY_BUSH_GUAVA, Feature.TREE, bushSubtropical(HICKORY_LOG, HICKORY_LEAVES, GUAVA));
         ConfiguredFeatures.register(featureRegisterable, HICKORY_BUSH_TANGERINE, Feature.TREE, bushSubtropical(HICKORY_LOG, HICKORY_LEAVES, TANGERINE));
-        
-        ConfiguredFeatures.register(featureRegisterable, CEDAR, Feature.TREE, conifer(false, CEDAR_LOG, CEDAR_LEAVES,
-                7, 3, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)));
+
+        ConfiguredFeatures.register(featureRegisterable, SPRUCE, Feature.TREE, conifer(
+                false, SPRUCE_LOG, SPRUCE_LEAVES, 8, 5, 2, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(3, 5)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, SPRUCE_TOP, Feature.TREE, conifer(
+                true, SPRUCE_LOG, SPRUCE_LEAVES, 8, 5, 2, UniformIntProvider.create(1, 2), UniformIntProvider.create(0, 2), UniformIntProvider.create(6, 9)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, CEDAR, Feature.TREE, conifer(
+                false, CEDAR_LOG, CEDAR_LEAVES, 7, 3, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)
+        ));
         ConfiguredFeatures.register(featureRegisterable, CEDAR_FLAT, Feature.TREE, smallFlat(CEDAR_LOG, CEDAR_LEAVES, 5));
-        ConfiguredFeatures.register(featureRegisterable, MEGA_CEDAR, Feature.TREE, megaConifer(CEDAR_LOG, CEDAR_LEAVES,
-                12, 5, 11, ConstantIntProvider.create(0), ConstantIntProvider.create(1), UniformIntProvider.create(11, 16)));
-        ConfiguredFeatures.register(featureRegisterable, MEGA_CEDAR_FLAT, Feature.TREE, megaFlat(CEDAR_LOG, CEDAR_LEAVES,
-                7, 4, 1, ConstantIntProvider.create(1), ConstantIntProvider.create(0), 1));
+        ConfiguredFeatures.register(featureRegisterable, MEGA_CEDAR, Feature.TREE, megaConifer(
+                CEDAR_LOG, CEDAR_LEAVES, 12, 5, 11, ConstantIntProvider.create(0), ConstantIntProvider.create(1), UniformIntProvider.create(11, 16)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, MEGA_CEDAR_FLAT, Feature.TREE, megaFlat(
+                CEDAR_LOG, CEDAR_LEAVES, 7, 4, 1, ConstantIntProvider.create(1), ConstantIntProvider.create(0), 1
+        ));
         ConfiguredFeatures.register(featureRegisterable, REDWOOD, Feature.TREE, redwood());
         ConfiguredFeatures.register(featureRegisterable, FIR, Feature.TREE, conifer(false, FIR_LOG, FIR_LEAVES,
-                9, 7, 2, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)));
-        ConfiguredFeatures.register(featureRegisterable, MEGA_FIR, Feature.TREE, megaConifer(FIR_LOG, FIR_LEAVES,
-                23, 6, 12, ConstantIntProvider.create(0), ConstantIntProvider.create(1), UniformIntProvider.create(17, 24)));
-        ConfiguredFeatures.register(featureRegisterable, HEMLOCK, Feature.TREE, conifer(false, HEMLOCK_LOG, HEMLOCK_LEAVES,
-                4, 2, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)));
-        ConfiguredFeatures.register(featureRegisterable, MEGA_HEMLOCK, Feature.TREE, megaConifer(HEMLOCK_LOG, HEMLOCK_LEAVES,
-                13, 4, 7, ConstantIntProvider.create(0), ConstantIntProvider.create(1), UniformIntProvider.create(8, 14)));
-        ConfiguredFeatures.register(featureRegisterable, HOLLY, Feature.TREE, megaConifer(HOLLY_LOG, HOLLY_LEAVES,
-                9, 2, 10, ConstantIntProvider.create(1), ConstantIntProvider.create(0), UniformIntProvider.create(9, 15)));
-        ConfiguredFeatures.register(featureRegisterable, PINE, Feature.TREE, conifer(false, PINE_LOG, PINE_LEAVES,
-                5, 2, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)));
-        ConfiguredFeatures.register(featureRegisterable, PINE_TOP, Feature.TREE, conifer(true, PINE_LOG, PINE_LEAVES,
-                5, 2, 1, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)));
-        ConfiguredFeatures.register(featureRegisterable, PINE_TALL, Feature.TREE, conifer(false, PINE_LOG, PINE_LEAVES,
-                11, 5, 2, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(6, 7)));
-        ConfiguredFeatures.register(featureRegisterable, PINE_TOP_TALL, Feature.TREE, conifer(true, PINE_LOG, PINE_LEAVES,
-                11, 5, 2, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)));
-        ConfiguredFeatures.register(featureRegisterable, LARCH, Feature.TREE, conifer(false, LARCH_LOG, LARCH_LEAVES,
-                6, 2, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)));
-        ConfiguredFeatures.register(featureRegisterable, LARCH_TOP, Feature.TREE, conifer(true, LARCH_LOG, LARCH_LEAVES,
-                6, 2, 1, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)));
-        ConfiguredFeatures.register(featureRegisterable, LARCH_TALL, Feature.TREE, conifer(false, LARCH_LOG, LARCH_LEAVES,
-                11, 6, 3, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(6, 7)));
-        ConfiguredFeatures.register(featureRegisterable, LARCH_TOP_TALL, Feature.TREE, conifer(true, LARCH_LOG, LARCH_LEAVES,
-                11, 6, 3, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)));
-        ConfiguredFeatures.register(featureRegisterable, ASPEN, Feature.TREE, conifer(true, ASPEN_LOG, ASPEN_LEAVES,
-                8, 1, 3, ConstantIntProvider.create(1), ConstantIntProvider.create(1), ConstantIntProvider.create(3)));
+                9, 7, 2, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, MEGA_FIR, Feature.TREE, megaConifer(
+                FIR_LOG, FIR_LEAVES, 23, 6, 12, ConstantIntProvider.create(0), ConstantIntProvider.create(1), UniformIntProvider.create(17, 24)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, HEMLOCK, Feature.TREE, conifer(
+                false, HEMLOCK_LOG, HEMLOCK_LEAVES, 4, 2, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, MEGA_HEMLOCK, Feature.TREE, megaConifer(
+                HEMLOCK_LOG, HEMLOCK_LEAVES, 13, 4, 7, ConstantIntProvider.create(0), ConstantIntProvider.create(1), UniformIntProvider.create(8, 14)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, HOLLY, Feature.TREE, megaConifer(
+                HOLLY_LOG, HOLLY_LEAVES, 9, 2, 10, ConstantIntProvider.create(1), ConstantIntProvider.create(0), UniformIntProvider.create(9, 15)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, PINE, Feature.TREE, conifer(
+                false, PINE_LOG, PINE_LEAVES, 5, 2, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, PINE_TOP, Feature.TREE, conifer(
+                true, PINE_LOG, PINE_LEAVES, 5, 2, 1, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, PINE_TALL, Feature.TREE, conifer(
+                false, PINE_LOG, PINE_LEAVES, 11, 5, 2, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(6, 7)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, PINE_TOP_TALL, Feature.TREE, conifer(
+                true, PINE_LOG, PINE_LEAVES, 11, 5, 2, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, LARCH, Feature.TREE, conifer(
+                false, LARCH_LOG, LARCH_LEAVES, 6, 2, 1, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, LARCH_TOP, Feature.TREE, conifer(
+                true, LARCH_LOG, LARCH_LEAVES, 6, 2, 1, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, LARCH_TALL, Feature.TREE, conifer(
+                false, LARCH_LOG, LARCH_LEAVES, 11, 6, 3, UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(6, 7)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, LARCH_TOP_TALL, Feature.TREE, conifer(
+                true, LARCH_LOG, LARCH_LEAVES, 11, 6, 3, UniformIntProvider.create(1, 2), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, BIRCH, Feature.TREE, simple(BIRCH_LOG, BIRCH_LEAVES, 11, 7, 3, 2));
+        ConfiguredFeatures.register(featureRegisterable, BIRCH_TALL, Feature.TREE, simple(BIRCH_LOG, BIRCH_LEAVES, 15, 7, 3, 2));
+        ConfiguredFeatures.register(featureRegisterable, ASPEN, Feature.TREE, conifer(
+                true, ASPEN_LOG, ASPEN_LEAVES, 8, 1, 3, ConstantIntProvider.create(1), ConstantIntProvider.create(1), ConstantIntProvider.create(3)
+        ));
+        ConfiguredFeatures.register(featureRegisterable, PALE_OAK, Feature.TREE, paleOak(false));
+        ConfiguredFeatures.register(featureRegisterable, PALE_OAK_CREAKING, Feature.TREE, paleOak(true));
+
+        ConfiguredFeatures.register(featureRegisterable, JUNGLE, Feature.TREE, simple(JUNGLE_LOG, JUNGLE_LEAVES, 10, 4, 1, 2));
+        ConfiguredFeatures.register(featureRegisterable, MEGA_JUNGLE, Feature.TREE, megaFlat(JUNGLE_LOG, JUNGLE_LEAVES, 24, 8, 2, UniformIntProvider.create(2, 3), ConstantIntProvider.create(0), 1));
+
+        ConfiguredFeatures.register(featureRegisterable, ACACIA, Feature.TREE, flat(ACACIA_LOG, ACACIA_LEAVES, 7, 5, 2, false));
         
         ConfiguredFeatures.register(featureRegisterable, ACACIA_BUSH, Feature.TREE, bushMediterranean(ACACIA_LOG, ACACIA_LEAVES/*, TreeFruit.Mediterranean.NONE*/));
         /*ConfiguredFeatures.register(featureRegisterable, ACACIA_BUSH_KUMQUAT, Feature.TREE, bushMediterranean(ACACIA_LOG, ACACIA_LEAVES, KUMQUAT));
@@ -390,22 +469,30 @@ public class OverhaulTreeConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, TEAK_PEAR, Feature.TREE, teak(PEAR));
         ConfiguredFeatures.register(featureRegisterable, TEAK_PLUM, Feature.TREE, teak(PLUM));
         
-        ConfiguredFeatures.register(featureRegisterable, ELM, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, TreeFruit.Temperate.NONE));
-        ConfiguredFeatures.register(featureRegisterable, ELM_APPLE, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, APPLE));
-        ConfiguredFeatures.register(featureRegisterable, ELM_APRICOT, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, APRICOT));
-        ConfiguredFeatures.register(featureRegisterable, ELM_KIWI, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, KIWI));
-        ConfiguredFeatures.register(featureRegisterable, ELM_NECTARINE, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, NECTARINE));
-        ConfiguredFeatures.register(featureRegisterable, ELM_PEACH, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, PEACH));
-        ConfiguredFeatures.register(featureRegisterable, ELM_PEAR, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, PEAR));
-        ConfiguredFeatures.register(featureRegisterable, ELM_PLUM, Feature.TREE, simpleTemperate(ELM_LOG, ELM_LEAVES,
-                7, 3, 1, 3, PLUM));
+        ConfiguredFeatures.register(featureRegisterable, ELM, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, TreeFruit.Temperate.NONE
+        ));
+        ConfiguredFeatures.register(featureRegisterable, ELM_APPLE, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, APPLE
+        ));
+        ConfiguredFeatures.register(featureRegisterable, ELM_APRICOT, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, APRICOT
+        ));
+        ConfiguredFeatures.register(featureRegisterable, ELM_KIWI, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, KIWI
+        ));
+        ConfiguredFeatures.register(featureRegisterable, ELM_NECTARINE, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, NECTARINE
+        ));
+        ConfiguredFeatures.register(featureRegisterable, ELM_PEACH, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, PEACH
+        ));
+        ConfiguredFeatures.register(featureRegisterable, ELM_PEAR, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, PEAR
+        ));
+        ConfiguredFeatures.register(featureRegisterable, ELM_PLUM, Feature.TREE, simpleTemperate(
+                ELM_LOG, ELM_LEAVES, 7, 3, 1, 3, PLUM
+        ));
         
         ConfiguredFeatures.register(featureRegisterable, MAGNOLIA, Feature.TREE, flat(MAGNOLIA_LOG, MAGNOLIA_LEAVES, 5, 2, 2, false));
         ConfiguredFeatures.register(featureRegisterable, FLOWERING_MAGNOLIA, Feature.TREE, flat(
@@ -588,6 +675,19 @@ public class OverhaulTreeConfiguredFeatures {
         ).build();
     }
 
+    private static TreeFeatureConfig paleOak(boolean creaking) {
+        TreeFeatureConfig.Builder builder = new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(PALE_OAK_LOG),
+                new DarkOakTrunkPlacer(10, 8, 4),
+                BlockStateProvider.of(PALE_OAK_LEAVES),
+                new DarkOakFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0)),
+                new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
+        ).ignoreVines();
+        if (creaking) builder.decorators(ImmutableList.of(new PaleMossTreeDecorator(0.15f, 0.4f, 0.8f), new CreakingHeartTreeDecorator(1.0F)));
+        else builder.decorators(ImmutableList.of(new PaleMossTreeDecorator(0.15f, 0.4f, 0.8f)));
+        return builder.build();
+    }
+
     private static TreeFeatureConfig poplar(TreeFruit.Temperate fruit) {
         return new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(POPLAR_LOG),
@@ -607,6 +707,32 @@ public class OverhaulTreeConfiguredFeatures {
                 BlockStateProvider.of(REDWOOD_LEAVES),
                 new MegaPineFoliagePlacer(ConstantIntProvider.create(1), ConstantIntProvider.create(0), UniformIntProvider.create(21, 24)),
                 new TwoLayersFeatureSize(1, 1, 2)
+        ).build();
+    }
+
+    private static TreeFeatureConfig simple(
+            Block log, Block leaves, int baseHeight, int heightRandA, int heightRandB, int radius
+    ) {
+        return new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(log),
+                new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB),
+                new WeightedBlockStateProvider(Pool.<BlockState>builder()
+                        .add(leaves.getDefaultState(), 3)
+                        .add(leaves.getDefaultState(), 1).build()),
+                new BlobFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1)
+        ).build();
+    }
+
+    private static TreeFeatureConfig simpleFancy(Block log, Block leaves, int baseHeight) {
+        return new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(log),
+                new LargeOakTrunkPlacer(baseHeight, 7, 0),
+                new WeightedBlockStateProvider(Pool.<BlockState>builder()
+                        .add(leaves.getDefaultState(), 3)
+                        .add(leaves.getDefaultState(), 1).build()),
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
         ).build();
     }
 

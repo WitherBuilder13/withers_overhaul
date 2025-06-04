@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "minecraft:oak_checked",
+    "default": "withers_overhaul:oak",
     "features": []
   }
 }

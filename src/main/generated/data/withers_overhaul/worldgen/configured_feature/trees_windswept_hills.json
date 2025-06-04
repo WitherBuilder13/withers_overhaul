@@ -1,11 +1,11 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "minecraft:oak_checked",
+    "default": "withers_overhaul:oak",
     "features": [
       {
         "chance": 0.1,
-        "feature": "minecraft:fancy_oak_checked"
+        "feature": "withers_overhaul:fancy_oak"
       },
       {
         "chance": 0.5,
